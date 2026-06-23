@@ -95,10 +95,6 @@ const packageSchema = new mongoose.Schema({
   seo: {
     type: seoSchema,
     default: () => ({})
-  },
-  isFeatured: {
-    type: Boolean,
-    default: false
   }
 }, {
   timestamps: true // Automatically manages createdAt and updatedAt

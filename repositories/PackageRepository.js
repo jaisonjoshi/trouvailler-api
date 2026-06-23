@@ -1,8 +1,14 @@
 import Package from "../models/Package.js";
 
 class PackageRepository {
-  async findAll(filters = {}) {
-    return await Package.find(filters).sort({ createdAt: -1 });
+  async findAll(filters = {}, options = {}) {
+    const sortBy = options.sortBy || "createdAt";
+    const sortOrder = options.sortOrder === "asc" ? 1 : -1;
+
+    const sortOption = {};
+    sortOption[sortBy] = sortOrder;
+
+    return await Package.find(filters).sort(sortOption);
   }
 
   async findById(id) {

@@ -38,8 +38,7 @@ export const createPackageSchema = z.object({
   activities: z.array(activityDetailSchema).default([]),
   inclusions: z.array(z.string()).default([]),
   exclusions: z.array(z.string()).default([]),
-  seo: seoSchema.optional(),
-  isFeatured: z.boolean().default(false)
+  seo: seoSchema.optional()
 });
 
 export const updatePackageSchema = createPackageSchema.partial();

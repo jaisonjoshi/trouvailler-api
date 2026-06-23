@@ -8,7 +8,11 @@ class PackageController {
         category: req.query.category,
         search: req.query.search
       };
-      const packages = await PackageService.getAllPackages(filters);
+      const options = {
+        sortBy: req.query.sortBy,
+        sortOrder: req.query.sortOrder
+      };
+      const packages = await PackageService.getAllPackages(filters, options);
       res.status(200).json(packages);
     } catch (err) {
       next(err);

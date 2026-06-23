@@ -2,7 +2,7 @@ import PackageRepository from "../repositories/PackageRepository.js";
 import { createPackageSchema, updatePackageSchema } from "../validation/PackageValidation.js";
 
 class PackageService {
-  async getAllPackages(filters = {}) {
+  async getAllPackages(filters = {}, options = {}) {
     // If we want to add search logic (e.g. by title or location), we can parse it here
     const query = {};
     if (filters.destinationId) {
@@ -17,7 +17,7 @@ class PackageService {
         { location: { $regex: filters.search, $options: "i" } }
       ];
     }
-    return await PackageRepository.findAll(query);
+    return await PackageRepository.findAll(query, options);
   }
 
   async getPackageById(id) {

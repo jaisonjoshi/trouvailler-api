@@ -130,9 +130,6 @@ const router = express.Router();
  *             keywords:
  *               type: string
  *               example: "amalfi, italy"
- *         isFeatured:
- *           type: boolean
- *           default: false
  */
 
 /**
