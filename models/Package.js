@@ -27,7 +27,11 @@ const packageSchema = new mongoose.Schema({
   destinationId: {
     type: String,
     required: true,
-    trim: true // e.g. "amalfi", "bali" to match destination galleries
+    trim: true
+  },
+  category: {
+    type: String,
+    trim: true
   },
   title: {
     type: String,

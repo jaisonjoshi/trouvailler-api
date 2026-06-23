@@ -22,6 +22,7 @@ const seoSchema = z.object({
 
 export const createPackageSchema = z.object({
   destinationId: z.string().min(1, "Destination ID is required"),
+  category: z.string().optional(),
   title: z.string().min(1, "Package title is required"),
   location: z.string().min(1, "Location is required"),
   image: z.string().url("Cover image must be a valid URL"),
