@@ -275,4 +275,32 @@ router.put("/:id", PackageController.update);
  */
 router.delete("/:id", PackageController.delete);
 
+/**
+ * @openapi
+ * /api/packages/media/delete:
+ *   post:
+ *     summary: Delete uploaded media from Cloudinary
+ *     tags:
+ *       - Packages
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - urls
+ *             properties:
+ *               urls:
+ *                 type: array
+ *                 items:
+ *                   type: string
+ *     responses:
+ *       200:
+ *         description: Media successfully processed/deleted
+ *       400:
+ *         description: Bad request
+ */
+router.post("/media/delete", PackageController.deleteMedia);
+
 export default router;
