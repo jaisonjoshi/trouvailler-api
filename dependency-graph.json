@@ -1,0 +1,3548 @@
+{
+  "generatedAt": "2026-06-24T15:24:52.556Z",
+  "project": "trouvailler-admin",
+  "version": "1.0",
+  "sourceCount": 54,
+  "symbolCount": 99,
+  "edgeCount": 398,
+  "files": [
+    {
+      "path": "admin/src/App.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
+        "admin/node_modules/@tanstack/react-query/build/modern/index.d.ts",
+        "admin/src/router.tsx"
+      ],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "admin/src/main.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/@types/react-dom/client.d.ts",
+        "admin/src/App.tsx",
+        "./index.css"
+      ],
+      "exports": []
+    },
+    {
+      "path": "admin/src/router.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
+        "admin/src/components/RootLayout.tsx",
+        "admin/src/pages/packages/PackagesList.tsx",
+        "admin/src/pages/packages/PackageEditor.tsx",
+        "admin/src/pages/Settings.tsx"
+      ],
+      "exports": [
+        "rootRoute",
+        "indexRoute",
+        "packagesRoute",
+        "packageCreateRoute",
+        "packageEditRoute",
+        "settingsRoute",
+        "router"
+      ]
+    },
+    {
+      "path": "api/routes/PackageRoutes.js",
+      "project": "api",
+      "imports": [
+        "api/controllers/PackageController.js",
+        "api/utils/validate.js",
+        "api/validation/PackageValidation.js"
+      ],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "api/controllers/PackageController.js",
+      "project": "api",
+      "imports": [
+        "api/services/PackageService.js"
+      ],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "api/services/PackageService.js",
+      "project": "api",
+      "imports": [
+        "api/repositories/PackageRepository.js",
+        "api/validation/PackageValidation.js"
+      ],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "api/validation/PackageValidation.js",
+      "project": "api",
+      "imports": [
+        "admin/node_modules/zod/index.d.cts"
+      ],
+      "exports": [
+        "activityDetailSchema",
+        "scheduleItemSchema",
+        "createPackageSchema",
+        "updatePackageSchema"
+      ]
+    },
+    {
+      "path": "api/models/Package.js",
+      "project": "api",
+      "imports": [
+        "api/node_modules/mongoose/types/aggregate.d.ts"
+      ],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/app/data.ts",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "CATEGORIES_METADATA",
+        "DESTINATION_GALLERIES",
+        "TRAVEL_CATEGORIES",
+        "DESTINATIONS",
+        "PACKAGES",
+        "CAROUSEL_SECTIONS"
+      ]
+    },
+    {
+      "path": "frontend/app/layout.tsx",
+      "project": "frontend",
+      "imports": [
+        "./globals.css"
+      ],
+      "exports": [
+        "default",
+        "metadata"
+      ]
+    },
+    {
+      "path": "frontend/app/page.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/components/ActivityCard.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/components/BookingForm.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/components/CarouselSection.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/components/CategoryCard.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/components/DestinationCard.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/components/DirectoryCard.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/components/DynamicSections.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/components/Footer.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/components/Header.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/components/ImageGallery.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/components/Navbar.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/components/PackageCard.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/components/SearchBar.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/types/index.ts",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "ActivityDetail",
+        "Package",
+        "Destination",
+        "TravelCategory",
+        "CarouselSectionConfig",
+        "CategoryMetadata"
+      ]
+    },
+    {
+      "path": "admin/src/components/Header.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
+        "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
+        "admin/src/contexts/SidebarContext.tsx"
+      ],
+      "exports": [
+        "Header"
+      ]
+    },
+    {
+      "path": "admin/src/components/RootLayout.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
+        "admin/src/components/Sidebar.tsx",
+        "admin/src/components/Header.tsx",
+        "admin/src/contexts/SidebarContext.tsx"
+      ],
+      "exports": [
+        "RootLayout"
+      ]
+    },
+    {
+      "path": "admin/src/components/Sidebar.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
+        "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
+        "admin/src/contexts/SidebarContext.tsx"
+      ],
+      "exports": [
+        "Sidebar"
+      ]
+    },
+    {
+      "path": "admin/src/contexts/SidebarContext.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts"
+      ],
+      "exports": [
+        "useSidebar",
+        "SidebarProvider"
+      ]
+    },
+    {
+      "path": "admin/src/handlers/apiClient.ts",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/axios/index.d.ts"
+      ],
+      "exports": [
+        "apiClient",
+        "ApiError",
+        "handleApiError"
+      ]
+    },
+    {
+      "path": "admin/src/handlers/packages.ts",
+      "project": "admin",
+      "imports": [
+        "admin/src/handlers/apiClient.ts",
+        "admin/src/types/package.ts"
+      ],
+      "exports": [
+        "BackendPackage",
+        "mapBackendPackageToFrontend",
+        "mapFrontendPackageToBackend",
+        "PackageFilters",
+        "getAllPackages",
+        "getPackageById",
+        "createPackage",
+        "updatePackage",
+        "deletePackage"
+      ]
+    },
+    {
+      "path": "admin/src/hooks/queryKeys.ts",
+      "project": "admin",
+      "imports": [
+        "admin/src/handlers/packages.ts"
+      ],
+      "exports": [
+        "packageKeys"
+      ]
+    },
+    {
+      "path": "admin/src/hooks/useCloudinaryUpload.ts",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts"
+      ],
+      "exports": [
+        "useCloudinaryUpload"
+      ]
+    },
+    {
+      "path": "admin/src/hooks/usePackages.ts",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@tanstack/react-query/build/modern/index.d.ts",
+        "admin/src/handlers/packages.ts",
+        "admin/src/handlers/packages.ts",
+        "admin/src/hooks/queryKeys.ts",
+        "admin/src/handlers/apiClient.ts",
+        "admin/src/handlers/apiClient.ts",
+        "admin/src/types/package.ts"
+      ],
+      "exports": [
+        "usePackagesList",
+        "usePackageDetails",
+        "useCreatePackage",
+        "useUpdatePackage",
+        "useDeletePackage"
+      ]
+    },
+    {
+      "path": "admin/src/pages/Settings.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/@types/react-dom/index.d.ts",
+        "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
+        "admin/src/components/ui/Button.tsx"
+      ],
+      "exports": [
+        "Settings"
+      ]
+    },
+    {
+      "path": "admin/src/types/package.ts",
+      "project": "admin",
+      "imports": [],
+      "exports": [
+        "ScheduleItem",
+        "ActivityItem",
+        "PlaceItem",
+        "SeoItem",
+        "Package",
+        "Location",
+        "Category",
+        "PopularPlace",
+        "Review"
+      ]
+    },
+    {
+      "path": "frontend/app/destinations/page.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "admin/src/components/ui/Button.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts"
+      ],
+      "exports": [
+        "Button"
+      ]
+    },
+    {
+      "path": "admin/src/components/ui/Input.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts"
+      ],
+      "exports": [
+        "Input"
+      ]
+    },
+    {
+      "path": "admin/src/components/ui/Select.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts"
+      ],
+      "exports": [
+        "Select"
+      ]
+    },
+    {
+      "path": "admin/src/components/ui/Textarea.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts"
+      ],
+      "exports": [
+        "Textarea"
+      ]
+    },
+    {
+      "path": "admin/src/pages/packages/PackageEditor.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/@types/react-dom/index.d.ts",
+        "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/node_modules/@hookform/resolvers/zod/dist/index.d.ts",
+        "admin/src/types/package.ts",
+        "admin/src/hooks/usePackages.ts",
+        "admin/src/handlers/packages.ts",
+        "admin/src/pages/packages/schema.ts",
+        "admin/src/pages/packages/schema.ts",
+        "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
+        "admin/src/components/ui/Button.tsx",
+        "admin/src/hooks/useCloudinaryUpload.ts",
+        "admin/src/handlers/apiClient.ts",
+        "admin/src/pages/packages/components/MediaSection.tsx",
+        "admin/src/pages/packages/components/HeaderSection.tsx",
+        "admin/src/pages/packages/components/OverviewSection.tsx",
+        "admin/src/pages/packages/components/InclusionsSection.tsx",
+        "admin/src/pages/packages/components/ItinerarySection.tsx",
+        "admin/src/pages/packages/components/SeoSection.tsx",
+        "admin/src/pages/packages/components/PricingSection.tsx"
+      ],
+      "exports": [
+        "PackageEditor"
+      ]
+    },
+    {
+      "path": "admin/src/pages/packages/PackagesList.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
+        "admin/src/hooks/usePackages.ts",
+        "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
+        "admin/src/components/ui/Button.tsx",
+        "admin/node_modules/react-tooltip/dist/react-tooltip.d.ts"
+      ],
+      "exports": [
+        "PackagesList"
+      ]
+    },
+    {
+      "path": "admin/src/pages/packages/schema.ts",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/zod/index.d.cts"
+      ],
+      "exports": [
+        "scheduleItemSchema",
+        "packageSchema",
+        "PackageFormValues"
+      ]
+    },
+    {
+      "path": "frontend/app/destinations/[id]/page.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "generateStaticParams",
+        "default"
+      ]
+    },
+    {
+      "path": "frontend/app/packages/[id]/page.tsx",
+      "project": "frontend",
+      "imports": [],
+      "exports": [
+        "generateStaticParams",
+        "generateMetadata",
+        "default"
+      ]
+    },
+    {
+      "path": "admin/src/pages/packages/components/HeaderSection.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/src/pages/packages/schema.ts",
+        "admin/src/components/ui/Input.tsx",
+        "admin/src/components/ui/Select.tsx",
+        "admin/src/components/ui/Button.tsx"
+      ],
+      "exports": [
+        "HeaderSection"
+      ]
+    },
+    {
+      "path": "admin/src/pages/packages/components/ImageCropperModal.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/@types/react-dom/index.d.ts",
+        "admin/node_modules/react-image-crop/dist/index.d.ts",
+        "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
+        "admin/src/components/ui/Button.tsx"
+      ],
+      "exports": [
+        "ImageCropperModal"
+      ]
+    },
+    {
+      "path": "admin/src/pages/packages/components/InclusionsSection.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/src/pages/packages/schema.ts",
+        "admin/src/components/ui/Input.tsx",
+        "admin/src/components/ui/Button.tsx"
+      ],
+      "exports": [
+        "InclusionsSection"
+      ]
+    },
+    {
+      "path": "admin/src/pages/packages/components/ItinerarySection.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/src/pages/packages/schema.ts",
+        "admin/src/components/ui/Input.tsx",
+        "admin/src/components/ui/Textarea.tsx",
+        "admin/src/components/ui/Button.tsx"
+      ],
+      "exports": [
+        "ItinerarySection"
+      ]
+    },
+    {
+      "path": "admin/src/pages/packages/components/MediaSection.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/src/pages/packages/schema.ts",
+        "admin/src/components/ui/Button.tsx",
+        "admin/src/pages/packages/components/ImageCropperModal.tsx"
+      ],
+      "exports": [
+        "MediaSection"
+      ]
+    },
+    {
+      "path": "admin/src/pages/packages/components/OverviewSection.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/src/pages/packages/schema.ts",
+        "admin/src/components/ui/Input.tsx",
+        "admin/src/components/ui/Textarea.tsx",
+        "admin/src/components/ui/Button.tsx"
+      ],
+      "exports": [
+        "OverviewSection"
+      ]
+    },
+    {
+      "path": "admin/src/pages/packages/components/PricingSection.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/src/pages/packages/schema.ts",
+        "admin/src/components/ui/Input.tsx",
+        "admin/src/components/ui/Button.tsx"
+      ],
+      "exports": [
+        "PricingSection"
+      ]
+    },
+    {
+      "path": "admin/src/pages/packages/components/SeoSection.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/src/pages/packages/schema.ts",
+        "admin/src/components/ui/Input.tsx",
+        "admin/src/components/ui/Textarea.tsx",
+        "admin/src/components/ui/Button.tsx"
+      ],
+      "exports": [
+        "SeoSection"
+      ]
+    }
+  ],
+  "symbols": [
+    {
+      "id": "COMPONENT:admin/src/App.tsx:App",
+      "type": "COMPONENT",
+      "name": "App",
+      "file": "admin/src/App.tsx",
+      "project": "admin",
+      "startLine": 16,
+      "endLine": 22
+    },
+    {
+      "id": "FUNC:api/controllers/PackageController.js:PackageController.getAll",
+      "type": "FUNC",
+      "name": "PackageController.getAll",
+      "file": "api/controllers/PackageController.js",
+      "project": "api",
+      "startLine": 5,
+      "endLine": 21
+    },
+    {
+      "id": "FUNC:api/controllers/PackageController.js:PackageController.getById",
+      "type": "FUNC",
+      "name": "PackageController.getById",
+      "file": "api/controllers/PackageController.js",
+      "project": "api",
+      "startLine": 23,
+      "endLine": 31
+    },
+    {
+      "id": "FUNC:api/controllers/PackageController.js:PackageController.create",
+      "type": "FUNC",
+      "name": "PackageController.create",
+      "file": "api/controllers/PackageController.js",
+      "project": "api",
+      "startLine": 33,
+      "endLine": 40
+    },
+    {
+      "id": "FUNC:api/controllers/PackageController.js:PackageController.update",
+      "type": "FUNC",
+      "name": "PackageController.update",
+      "file": "api/controllers/PackageController.js",
+      "project": "api",
+      "startLine": 42,
+      "endLine": 50
+    },
+    {
+      "id": "FUNC:api/controllers/PackageController.js:PackageController.delete",
+      "type": "FUNC",
+      "name": "PackageController.delete",
+      "file": "api/controllers/PackageController.js",
+      "project": "api",
+      "startLine": 52,
+      "endLine": 60
+    },
+    {
+      "id": "FUNC:api/controllers/PackageController.js:PackageController.deleteMedia",
+      "type": "FUNC",
+      "name": "PackageController.deleteMedia",
+      "file": "api/controllers/PackageController.js",
+      "project": "api",
+      "startLine": 62,
+      "endLine": 135
+    },
+    {
+      "id": "FUNC:api/services/PackageService.js:PackageService.getAllPackages",
+      "type": "FUNC",
+      "name": "PackageService.getAllPackages",
+      "file": "api/services/PackageService.js",
+      "project": "api",
+      "startLine": 5,
+      "endLine": 21
+    },
+    {
+      "id": "FUNC:api/services/PackageService.js:PackageService.getPackageById",
+      "type": "FUNC",
+      "name": "PackageService.getPackageById",
+      "file": "api/services/PackageService.js",
+      "project": "api",
+      "startLine": 23,
+      "endLine": 31
+    },
+    {
+      "id": "FUNC:api/services/PackageService.js:PackageService.createPackage",
+      "type": "FUNC",
+      "name": "PackageService.createPackage",
+      "file": "api/services/PackageService.js",
+      "project": "api",
+      "startLine": 33,
+      "endLine": 37
+    },
+    {
+      "id": "FUNC:api/services/PackageService.js:PackageService.updatePackage",
+      "type": "FUNC",
+      "name": "PackageService.updatePackage",
+      "file": "api/services/PackageService.js",
+      "project": "api",
+      "startLine": 39,
+      "endLine": 47
+    },
+    {
+      "id": "FUNC:api/services/PackageService.js:PackageService.deletePackage",
+      "type": "FUNC",
+      "name": "PackageService.deletePackage",
+      "file": "api/services/PackageService.js",
+      "project": "api",
+      "startLine": 49,
+      "endLine": 53
+    },
+    {
+      "id": "SCHEMA:api/validation/PackageValidation.js:activityDetailSchema",
+      "type": "SCHEMA",
+      "name": "activityDetailSchema",
+      "file": "api/validation/PackageValidation.js",
+      "project": "api",
+      "startLine": 3,
+      "endLine": 10
+    },
+    {
+      "id": "SCHEMA:api/validation/PackageValidation.js:scheduleItemSchema",
+      "type": "SCHEMA",
+      "name": "scheduleItemSchema",
+      "file": "api/validation/PackageValidation.js",
+      "project": "api",
+      "startLine": 12,
+      "endLine": 15
+    },
+    {
+      "id": "SCHEMA:api/validation/PackageValidation.js:seoSchema",
+      "type": "SCHEMA",
+      "name": "seoSchema",
+      "file": "api/validation/PackageValidation.js",
+      "project": "api",
+      "startLine": 17,
+      "endLine": 21
+    },
+    {
+      "id": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "type": "SCHEMA",
+      "name": "createPackageSchema",
+      "file": "api/validation/PackageValidation.js",
+      "project": "api",
+      "startLine": 23,
+      "endLine": 43
+    },
+    {
+      "id": "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema",
+      "type": "SCHEMA",
+      "name": "updatePackageSchema",
+      "file": "api/validation/PackageValidation.js",
+      "project": "api",
+      "startLine": 45,
+      "endLine": 45
+    },
+    {
+      "id": "SCHEMA:api/models/Package.js:activityDetailSchema",
+      "type": "SCHEMA",
+      "name": "activityDetailSchema",
+      "file": "api/models/Package.js",
+      "project": "api",
+      "startLine": 4,
+      "endLine": 11
+    },
+    {
+      "id": "SCHEMA:api/models/Package.js:scheduleItemSchema",
+      "type": "SCHEMA",
+      "name": "scheduleItemSchema",
+      "file": "api/models/Package.js",
+      "project": "api",
+      "startLine": 14,
+      "endLine": 17
+    },
+    {
+      "id": "SCHEMA:api/models/Package.js:seoSchema",
+      "type": "SCHEMA",
+      "name": "seoSchema",
+      "file": "api/models/Package.js",
+      "project": "api",
+      "startLine": 20,
+      "endLine": 24
+    },
+    {
+      "id": "SCHEMA:api/models/Package.js:packageSchema",
+      "type": "SCHEMA",
+      "name": "packageSchema",
+      "file": "api/models/Package.js",
+      "project": "api",
+      "startLine": 26,
+      "endLine": 105
+    },
+    {
+      "id": "COMPONENT:frontend/app/layout.tsx:RootLayout",
+      "type": "COMPONENT",
+      "name": "RootLayout",
+      "file": "frontend/app/layout.tsx",
+      "project": "frontend",
+      "startLine": 20,
+      "endLine": 33
+    },
+    {
+      "id": "COMPONENT:frontend/app/page.tsx:Home",
+      "type": "COMPONENT",
+      "name": "Home",
+      "file": "frontend/app/page.tsx",
+      "project": "frontend",
+      "startLine": 8,
+      "endLine": 17
+    },
+    {
+      "id": "COMPONENT:frontend/components/ActivityCard.tsx:ActivityCard",
+      "type": "COMPONENT",
+      "name": "ActivityCard",
+      "file": "frontend/components/ActivityCard.tsx",
+      "project": "frontend",
+      "startLine": 12,
+      "endLine": 58
+    },
+    {
+      "id": "COMPONENT:frontend/components/BookingForm.tsx:BookingForm",
+      "type": "COMPONENT",
+      "name": "BookingForm",
+      "file": "frontend/components/BookingForm.tsx",
+      "project": "frontend",
+      "startLine": 10,
+      "endLine": 153
+    },
+    {
+      "id": "COMPONENT:frontend/components/CarouselSection.tsx:CarouselSection",
+      "type": "COMPONENT",
+      "name": "CarouselSection",
+      "file": "frontend/components/CarouselSection.tsx",
+      "project": "frontend",
+      "startLine": 18,
+      "endLine": 144
+    },
+    {
+      "id": "COMPONENT:frontend/components/CategoryCard.tsx:CategoryCard",
+      "type": "COMPONENT",
+      "name": "CategoryCard",
+      "file": "frontend/components/CategoryCard.tsx",
+      "project": "frontend",
+      "startLine": 8,
+      "endLine": 36
+    },
+    {
+      "id": "COMPONENT:frontend/components/DestinationCard.tsx:DestinationCard",
+      "type": "COMPONENT",
+      "name": "DestinationCard",
+      "file": "frontend/components/DestinationCard.tsx",
+      "project": "frontend",
+      "startLine": 12,
+      "endLine": 71
+    },
+    {
+      "id": "COMPONENT:frontend/components/DirectoryCard.tsx:DirectoryCard",
+      "type": "COMPONENT",
+      "name": "DirectoryCard",
+      "file": "frontend/components/DirectoryCard.tsx",
+      "project": "frontend",
+      "startLine": 12,
+      "endLine": 95
+    },
+    {
+      "id": "COMPONENT:frontend/components/DynamicSections.tsx:DynamicSections",
+      "type": "COMPONENT",
+      "name": "DynamicSections",
+      "file": "frontend/components/DynamicSections.tsx",
+      "project": "frontend",
+      "startLine": 10,
+      "endLine": 73
+    },
+    {
+      "id": "COMPONENT:frontend/components/Footer.tsx:Footer",
+      "type": "COMPONENT",
+      "name": "Footer",
+      "file": "frontend/components/Footer.tsx",
+      "project": "frontend",
+      "startLine": 6,
+      "endLine": 200
+    },
+    {
+      "id": "COMPONENT:frontend/components/Header.tsx:Header",
+      "type": "COMPONENT",
+      "name": "Header",
+      "file": "frontend/components/Header.tsx",
+      "project": "frontend",
+      "startLine": 3,
+      "endLine": 46
+    },
+    {
+      "id": "COMPONENT:frontend/components/ImageGallery.tsx:ImageGallery",
+      "type": "COMPONENT",
+      "name": "ImageGallery",
+      "file": "frontend/components/ImageGallery.tsx",
+      "project": "frontend",
+      "startLine": 11,
+      "endLine": 114
+    },
+    {
+      "id": "COMPONENT:frontend/components/Navbar.tsx:Navbar",
+      "type": "COMPONENT",
+      "name": "Navbar",
+      "file": "frontend/components/Navbar.tsx",
+      "project": "frontend",
+      "startLine": 8,
+      "endLine": 188
+    },
+    {
+      "id": "COMPONENT:frontend/components/PackageCard.tsx:PackageCard",
+      "type": "COMPONENT",
+      "name": "PackageCard",
+      "file": "frontend/components/PackageCard.tsx",
+      "project": "frontend",
+      "startLine": 13,
+      "endLine": 123
+    },
+    {
+      "id": "COMPONENT:frontend/components/SearchBar.tsx:SearchBar",
+      "type": "COMPONENT",
+      "name": "SearchBar",
+      "file": "frontend/components/SearchBar.tsx",
+      "project": "frontend",
+      "startLine": 5,
+      "endLine": 37
+    },
+    {
+      "id": "COMPONENT:admin/src/components/Header.tsx:Header",
+      "type": "COMPONENT",
+      "name": "Header",
+      "file": "admin/src/components/Header.tsx",
+      "project": "admin",
+      "startLine": 11,
+      "endLine": 70
+    },
+    {
+      "id": "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent",
+      "type": "COMPONENT",
+      "name": "LayoutContent",
+      "file": "admin/src/components/RootLayout.tsx",
+      "project": "admin",
+      "startLine": 7,
+      "endLine": 30
+    },
+    {
+      "id": "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout",
+      "type": "COMPONENT",
+      "name": "RootLayout",
+      "file": "admin/src/components/RootLayout.tsx",
+      "project": "admin",
+      "startLine": 33,
+      "endLine": 39
+    },
+    {
+      "id": "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar",
+      "type": "COMPONENT",
+      "name": "Sidebar",
+      "file": "admin/src/components/Sidebar.tsx",
+      "project": "admin",
+      "startLine": 12,
+      "endLine": 127
+    },
+    {
+      "id": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
+      "type": "FUNC",
+      "name": "useSidebar",
+      "file": "admin/src/contexts/SidebarContext.tsx",
+      "project": "admin",
+      "startLine": 15,
+      "endLine": 15
+    },
+    {
+      "id": "COMPONENT:admin/src/contexts/SidebarContext.tsx:SidebarProvider",
+      "type": "COMPONENT",
+      "name": "SidebarProvider",
+      "file": "admin/src/contexts/SidebarContext.tsx",
+      "project": "admin",
+      "startLine": 17,
+      "endLine": 28
+    },
+    {
+      "id": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "FUNC",
+      "name": "handleApiError",
+      "file": "admin/src/handlers/apiClient.ts",
+      "project": "admin",
+      "startLine": 25,
+      "endLine": 44
+    },
+    {
+      "id": "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend",
+      "type": "FUNC",
+      "name": "mapBackendPackageToFrontend",
+      "file": "admin/src/handlers/packages.ts",
+      "project": "admin",
+      "startLine": 29,
+      "endLine": 60
+    },
+    {
+      "id": "FUNC:admin/src/handlers/packages.ts:mapFrontendPackageToBackend",
+      "type": "FUNC",
+      "name": "mapFrontendPackageToBackend",
+      "file": "admin/src/handlers/packages.ts",
+      "project": "admin",
+      "startLine": 63,
+      "endLine": 86
+    },
+    {
+      "id": "FUNC:admin/src/handlers/packages.ts:getAllPackages",
+      "type": "FUNC",
+      "name": "getAllPackages",
+      "file": "admin/src/handlers/packages.ts",
+      "project": "admin",
+      "startLine": 97,
+      "endLine": 102
+    },
+    {
+      "id": "FUNC:admin/src/handlers/packages.ts:getPackageById",
+      "type": "FUNC",
+      "name": "getPackageById",
+      "file": "admin/src/handlers/packages.ts",
+      "project": "admin",
+      "startLine": 105,
+      "endLine": 108
+    },
+    {
+      "id": "FUNC:admin/src/handlers/packages.ts:createPackage",
+      "type": "FUNC",
+      "name": "createPackage",
+      "file": "admin/src/handlers/packages.ts",
+      "project": "admin",
+      "startLine": 111,
+      "endLine": 114
+    },
+    {
+      "id": "FUNC:admin/src/handlers/packages.ts:updatePackage",
+      "type": "FUNC",
+      "name": "updatePackage",
+      "file": "admin/src/handlers/packages.ts",
+      "project": "admin",
+      "startLine": 117,
+      "endLine": 120
+    },
+    {
+      "id": "FUNC:admin/src/handlers/packages.ts:deletePackage",
+      "type": "FUNC",
+      "name": "deletePackage",
+      "file": "admin/src/handlers/packages.ts",
+      "project": "admin",
+      "startLine": 123,
+      "endLine": 125
+    },
+    {
+      "id": "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload",
+      "type": "FUNC",
+      "name": "useCloudinaryUpload",
+      "file": "admin/src/hooks/useCloudinaryUpload.ts",
+      "project": "admin",
+      "startLine": 7,
+      "endLine": 39
+    },
+    {
+      "id": "FUNC:admin/src/hooks/usePackages.ts:usePackagesList",
+      "type": "FUNC",
+      "name": "usePackagesList",
+      "file": "admin/src/hooks/usePackages.ts",
+      "project": "admin",
+      "startLine": 16,
+      "endLine": 27
+    },
+    {
+      "id": "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails",
+      "type": "FUNC",
+      "name": "usePackageDetails",
+      "file": "admin/src/hooks/usePackages.ts",
+      "project": "admin",
+      "startLine": 30,
+      "endLine": 43
+    },
+    {
+      "id": "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
+      "type": "FUNC",
+      "name": "useCreatePackage",
+      "file": "admin/src/hooks/usePackages.ts",
+      "project": "admin",
+      "startLine": 46,
+      "endLine": 60
+    },
+    {
+      "id": "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage",
+      "type": "FUNC",
+      "name": "useUpdatePackage",
+      "file": "admin/src/hooks/usePackages.ts",
+      "project": "admin",
+      "startLine": 63,
+      "endLine": 78
+    },
+    {
+      "id": "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage",
+      "type": "FUNC",
+      "name": "useDeletePackage",
+      "file": "admin/src/hooks/usePackages.ts",
+      "project": "admin",
+      "startLine": 81,
+      "endLine": 95
+    },
+    {
+      "id": "COMPONENT:admin/src/pages/Settings.tsx:Settings",
+      "type": "COMPONENT",
+      "name": "Settings",
+      "file": "admin/src/pages/Settings.tsx",
+      "project": "admin",
+      "startLine": 6,
+      "endLine": 59
+    },
+    {
+      "id": "COMPONENT:frontend/app/destinations/page.tsx:DestinationsPage",
+      "type": "COMPONENT",
+      "name": "DestinationsPage",
+      "file": "frontend/app/destinations/page.tsx",
+      "project": "frontend",
+      "startLine": 11,
+      "endLine": 85
+    },
+    {
+      "id": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "COMPONENT",
+      "name": "Button",
+      "file": "admin/src/components/ui/Button.tsx",
+      "project": "admin",
+      "startLine": 7,
+      "endLine": 31
+    },
+    {
+      "id": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "type": "COMPONENT",
+      "name": "PackageEditor",
+      "file": "admin/src/pages/packages/PackageEditor.tsx",
+      "project": "admin",
+      "startLine": 54,
+      "endLine": 773
+    },
+    {
+      "id": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+      "type": "COMPONENT",
+      "name": "PackagesList",
+      "file": "admin/src/pages/packages/PackagesList.tsx",
+      "project": "admin",
+      "startLine": 14,
+      "endLine": 252
+    },
+    {
+      "id": "SCHEMA:admin/src/pages/packages/schema.ts:scheduleItemSchema",
+      "type": "SCHEMA",
+      "name": "scheduleItemSchema",
+      "file": "admin/src/pages/packages/schema.ts",
+      "project": "admin",
+      "startLine": 3,
+      "endLine": 6
+    },
+    {
+      "id": "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema",
+      "type": "SCHEMA",
+      "name": "packageSchema",
+      "file": "admin/src/pages/packages/schema.ts",
+      "project": "admin",
+      "startLine": 8,
+      "endLine": 33
+    },
+    {
+      "id": "FUNC:frontend/app/destinations/[id]/page.tsx:generateStaticParams",
+      "type": "FUNC",
+      "name": "generateStaticParams",
+      "file": "frontend/app/destinations/[id]/page.tsx",
+      "project": "frontend",
+      "startLine": 17,
+      "endLine": 21
+    },
+    {
+      "id": "COMPONENT:frontend/app/destinations/[id]/page.tsx:DestinationDetailPage",
+      "type": "COMPONENT",
+      "name": "DestinationDetailPage",
+      "file": "frontend/app/destinations/[id]/page.tsx",
+      "project": "frontend",
+      "startLine": 23,
+      "endLine": 149
+    },
+    {
+      "id": "FUNC:frontend/app/packages/[id]/page.tsx:generateStaticParams",
+      "type": "FUNC",
+      "name": "generateStaticParams",
+      "file": "frontend/app/packages/[id]/page.tsx",
+      "project": "frontend",
+      "startLine": 17,
+      "endLine": 21
+    },
+    {
+      "id": "FUNC:frontend/app/packages/[id]/page.tsx:generateMetadata",
+      "type": "FUNC",
+      "name": "generateMetadata",
+      "file": "frontend/app/packages/[id]/page.tsx",
+      "project": "frontend",
+      "startLine": 23,
+      "endLine": 33
+    },
+    {
+      "id": "FUNC:frontend/app/packages/[id]/page.tsx:generateItinerary",
+      "type": "FUNC",
+      "name": "generateItinerary",
+      "file": "frontend/app/packages/[id]/page.tsx",
+      "project": "frontend",
+      "startLine": 36,
+      "endLine": 118
+    },
+    {
+      "id": "COMPONENT:frontend/app/packages/[id]/page.tsx:PackageDetailPage",
+      "type": "COMPONENT",
+      "name": "PackageDetailPage",
+      "file": "frontend/app/packages/[id]/page.tsx",
+      "project": "frontend",
+      "startLine": 120,
+      "endLine": 581
+    },
+    {
+      "id": "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection",
+      "type": "COMPONENT",
+      "name": "HeaderSection",
+      "file": "admin/src/pages/packages/components/HeaderSection.tsx",
+      "project": "admin",
+      "startLine": 20,
+      "endLine": 133
+    },
+    {
+      "id": "FUNC:admin/src/pages/packages/components/ImageCropperModal.tsx:centerAspectCrop",
+      "type": "FUNC",
+      "name": "centerAspectCrop",
+      "file": "admin/src/pages/packages/components/ImageCropperModal.tsx",
+      "project": "admin",
+      "startLine": 15,
+      "endLine": 33
+    },
+    {
+      "id": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
+      "type": "COMPONENT",
+      "name": "ImageCropperModal",
+      "file": "admin/src/pages/packages/components/ImageCropperModal.tsx",
+      "project": "admin",
+      "startLine": 35,
+      "endLine": 180
+    },
+    {
+      "id": "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection",
+      "type": "COMPONENT",
+      "name": "InclusionsSection",
+      "file": "admin/src/pages/packages/components/InclusionsSection.tsx",
+      "project": "admin",
+      "startLine": 22,
+      "endLine": 192
+    },
+    {
+      "id": "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection",
+      "type": "COMPONENT",
+      "name": "ItinerarySection",
+      "file": "admin/src/pages/packages/components/ItinerarySection.tsx",
+      "project": "admin",
+      "startLine": 20,
+      "endLine": 132
+    },
+    {
+      "id": "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection",
+      "type": "COMPONENT",
+      "name": "MediaSection",
+      "file": "admin/src/pages/packages/components/MediaSection.tsx",
+      "project": "admin",
+      "startLine": 26,
+      "endLine": 322
+    },
+    {
+      "id": "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection",
+      "type": "COMPONENT",
+      "name": "OverviewSection",
+      "file": "admin/src/pages/packages/components/OverviewSection.tsx",
+      "project": "admin",
+      "startLine": 20,
+      "endLine": 129
+    },
+    {
+      "id": "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection",
+      "type": "COMPONENT",
+      "name": "PricingSection",
+      "file": "admin/src/pages/packages/components/PricingSection.tsx",
+      "project": "admin",
+      "startLine": 21,
+      "endLine": 148
+    },
+    {
+      "id": "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection",
+      "type": "COMPONENT",
+      "name": "SeoSection",
+      "file": "admin/src/pages/packages/components/SeoSection.tsx",
+      "project": "admin",
+      "startLine": 23,
+      "endLine": 143
+    },
+    {
+      "id": "HOOK:useState",
+      "type": "HOOK",
+      "name": "useState",
+      "file": "node_modules",
+      "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "HOOK:useEmblaCarousel",
+      "type": "HOOK",
+      "name": "useEmblaCarousel",
+      "file": "node_modules",
+      "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "HOOK:useCallback",
+      "type": "HOOK",
+      "name": "useCallback",
+      "file": "node_modules",
+      "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "HOOK:useEffect",
+      "type": "HOOK",
+      "name": "useEffect",
+      "file": "node_modules",
+      "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "HOOK:useLocation",
+      "type": "HOOK",
+      "name": "useLocation",
+      "file": "node_modules",
+      "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "HOOK:useContext",
+      "type": "HOOK",
+      "name": "useContext",
+      "file": "node_modules",
+      "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "API:GET:/api/packages",
+      "type": "API",
+      "name": "GET /api/packages",
+      "file": "admin/src/handlers/packages.ts",
+      "project": "api",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "API:GET:/api/packages/:id",
+      "type": "API",
+      "name": "GET /api/packages/:id",
+      "file": "admin/src/handlers/packages.ts",
+      "project": "api",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "API:POST:/api/packages",
+      "type": "API",
+      "name": "POST /api/packages",
+      "file": "admin/src/handlers/packages.ts",
+      "project": "api",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "API:PUT:/api/packages/:id",
+      "type": "API",
+      "name": "PUT /api/packages/:id",
+      "file": "admin/src/handlers/packages.ts",
+      "project": "api",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "API:DELETE:/api/packages/:id",
+      "type": "API",
+      "name": "DELETE /api/packages/:id",
+      "file": "admin/src/handlers/packages.ts",
+      "project": "api",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "HOOK:useQuery",
+      "type": "HOOK",
+      "name": "useQuery",
+      "file": "node_modules",
+      "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "HOOK:useQueryClient",
+      "type": "HOOK",
+      "name": "useQueryClient",
+      "file": "node_modules",
+      "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "HOOK:useMutation",
+      "type": "HOOK",
+      "name": "useMutation",
+      "file": "node_modules",
+      "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "HOOK:useNavigate",
+      "type": "HOOK",
+      "name": "useNavigate",
+      "file": "node_modules",
+      "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "HOOK:useParams",
+      "type": "HOOK",
+      "name": "useParams",
+      "file": "node_modules",
+      "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "HOOK:useForm",
+      "type": "HOOK",
+      "name": "useForm",
+      "file": "node_modules",
+      "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "HOOK:useWatch",
+      "type": "HOOK",
+      "name": "useWatch",
+      "file": "node_modules",
+      "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "API:POST:/api/packages/media/delete",
+      "type": "API",
+      "name": "POST /api/packages/media/delete",
+      "file": "admin/src/pages/packages/PackageEditor.tsx",
+      "project": "api",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "HOOK:useRef",
+      "type": "HOOK",
+      "name": "useRef",
+      "file": "node_modules",
+      "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "HOOK:useFieldArray",
+      "type": "HOOK",
+      "name": "useFieldArray",
+      "file": "node_modules",
+      "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    }
+  ],
+  "edges": [
+    {
+      "source": "FILE:admin/src/App.tsx",
+      "target": "FILE:admin/src/router.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/App.tsx",
+      "target": "COMPONENT:admin/src/App.tsx:App",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/main.tsx",
+      "target": "FILE:admin/src/App.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/router.tsx",
+      "target": "FILE:admin/src/components/RootLayout.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/router.tsx",
+      "target": "FILE:admin/src/pages/packages/PackagesList.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/router.tsx",
+      "target": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/router.tsx",
+      "target": "FILE:admin/src/pages/Settings.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:api/routes/PackageRoutes.js",
+      "target": "FILE:api/controllers/PackageController.js",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:api/routes/PackageRoutes.js",
+      "target": "FILE:api/utils/validate.js",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:api/routes/PackageRoutes.js",
+      "target": "FILE:api/validation/PackageValidation.js",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:api/controllers/PackageController.js",
+      "target": "FILE:api/services/PackageService.js",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:api/controllers/PackageController.js",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.getAll",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/controllers/PackageController.js",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.getById",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/controllers/PackageController.js",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.create",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/controllers/PackageController.js",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.update",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/controllers/PackageController.js",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.delete",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/controllers/PackageController.js",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.deleteMedia",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/services/PackageService.js",
+      "target": "FILE:api/repositories/PackageRepository.js",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:api/services/PackageService.js",
+      "target": "FILE:api/validation/PackageValidation.js",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:api/services/PackageService.js",
+      "target": "FUNC:api/services/PackageService.js:PackageService.getAllPackages",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/services/PackageService.js",
+      "target": "FUNC:api/services/PackageService.js:PackageService.getPackageById",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/services/PackageService.js",
+      "target": "FUNC:api/services/PackageService.js:PackageService.createPackage",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/services/PackageService.js",
+      "target": "FUNC:api/services/PackageService.js:PackageService.updatePackage",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/services/PackageService.js",
+      "target": "FUNC:api/services/PackageService.js:PackageService.deletePackage",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/validation/PackageValidation.js",
+      "target": "SCHEMA:api/validation/PackageValidation.js:activityDetailSchema",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/validation/PackageValidation.js",
+      "target": "SCHEMA:api/validation/PackageValidation.js:scheduleItemSchema",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/validation/PackageValidation.js",
+      "target": "SCHEMA:api/validation/PackageValidation.js:seoSchema",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/validation/PackageValidation.js",
+      "target": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/validation/PackageValidation.js",
+      "target": "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/models/Package.js",
+      "target": "SCHEMA:api/models/Package.js:activityDetailSchema",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/models/Package.js",
+      "target": "SCHEMA:api/models/Package.js:scheduleItemSchema",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/models/Package.js",
+      "target": "SCHEMA:api/models/Package.js:seoSchema",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/models/Package.js",
+      "target": "SCHEMA:api/models/Package.js:packageSchema",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/app/layout.tsx",
+      "target": "COMPONENT:frontend/app/layout.tsx:RootLayout",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/app/page.tsx",
+      "target": "COMPONENT:frontend/app/page.tsx:Home",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/components/ActivityCard.tsx",
+      "target": "COMPONENT:frontend/components/ActivityCard.tsx:ActivityCard",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/components/BookingForm.tsx",
+      "target": "COMPONENT:frontend/components/BookingForm.tsx:BookingForm",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/components/CarouselSection.tsx",
+      "target": "COMPONENT:frontend/components/CarouselSection.tsx:CarouselSection",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/components/CategoryCard.tsx",
+      "target": "COMPONENT:frontend/components/CategoryCard.tsx:CategoryCard",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/components/DestinationCard.tsx",
+      "target": "COMPONENT:frontend/components/DestinationCard.tsx:DestinationCard",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/components/DirectoryCard.tsx",
+      "target": "COMPONENT:frontend/components/DirectoryCard.tsx:DirectoryCard",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/components/DynamicSections.tsx",
+      "target": "COMPONENT:frontend/components/DynamicSections.tsx:DynamicSections",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/components/Footer.tsx",
+      "target": "COMPONENT:frontend/components/Footer.tsx:Footer",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/components/Header.tsx",
+      "target": "COMPONENT:frontend/components/Header.tsx:Header",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/components/ImageGallery.tsx",
+      "target": "COMPONENT:frontend/components/ImageGallery.tsx:ImageGallery",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/components/Navbar.tsx",
+      "target": "COMPONENT:frontend/components/Navbar.tsx:Navbar",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/components/PackageCard.tsx",
+      "target": "COMPONENT:frontend/components/PackageCard.tsx:PackageCard",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/components/SearchBar.tsx",
+      "target": "COMPONENT:frontend/components/SearchBar.tsx:SearchBar",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/components/Header.tsx",
+      "target": "FILE:admin/src/contexts/SidebarContext.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/components/Header.tsx",
+      "target": "COMPONENT:admin/src/components/Header.tsx:Header",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/components/RootLayout.tsx",
+      "target": "FILE:admin/src/components/Sidebar.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/components/RootLayout.tsx",
+      "target": "FILE:admin/src/components/Header.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/components/RootLayout.tsx",
+      "target": "FILE:admin/src/contexts/SidebarContext.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/components/RootLayout.tsx",
+      "target": "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/components/RootLayout.tsx",
+      "target": "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/components/Sidebar.tsx",
+      "target": "FILE:admin/src/contexts/SidebarContext.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/components/Sidebar.tsx",
+      "target": "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/contexts/SidebarContext.tsx",
+      "target": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/contexts/SidebarContext.tsx",
+      "target": "COMPONENT:admin/src/contexts/SidebarContext.tsx:SidebarProvider",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/handlers/apiClient.ts",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/handlers/packages.ts",
+      "target": "FILE:admin/src/handlers/apiClient.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/handlers/packages.ts",
+      "target": "FILE:admin/src/types/package.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/handlers/packages.ts",
+      "target": "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/handlers/packages.ts",
+      "target": "FUNC:admin/src/handlers/packages.ts:mapFrontendPackageToBackend",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/handlers/packages.ts",
+      "target": "FUNC:admin/src/handlers/packages.ts:getAllPackages",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/handlers/packages.ts",
+      "target": "FUNC:admin/src/handlers/packages.ts:getPackageById",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/handlers/packages.ts",
+      "target": "FUNC:admin/src/handlers/packages.ts:createPackage",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/handlers/packages.ts",
+      "target": "FUNC:admin/src/handlers/packages.ts:updatePackage",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/handlers/packages.ts",
+      "target": "FUNC:admin/src/handlers/packages.ts:deletePackage",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/hooks/queryKeys.ts",
+      "target": "FILE:admin/src/handlers/packages.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/hooks/useCloudinaryUpload.ts",
+      "target": "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/hooks/usePackages.ts",
+      "target": "FILE:admin/src/handlers/packages.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/hooks/usePackages.ts",
+      "target": "FILE:admin/src/hooks/queryKeys.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/hooks/usePackages.ts",
+      "target": "FILE:admin/src/handlers/apiClient.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/hooks/usePackages.ts",
+      "target": "FILE:admin/src/types/package.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/hooks/usePackages.ts",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:usePackagesList",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/hooks/usePackages.ts",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/hooks/usePackages.ts",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/hooks/usePackages.ts",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/hooks/usePackages.ts",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/Settings.tsx",
+      "target": "FILE:admin/src/components/ui/Button.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/Settings.tsx",
+      "target": "COMPONENT:admin/src/pages/Settings.tsx:Settings",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/app/destinations/page.tsx",
+      "target": "COMPONENT:frontend/app/destinations/page.tsx:DestinationsPage",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/components/ui/Button.tsx",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FILE:admin/src/types/package.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FILE:admin/src/hooks/usePackages.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FILE:admin/src/handlers/packages.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FILE:admin/src/pages/packages/schema.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FILE:admin/src/components/ui/Button.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FILE:admin/src/hooks/useCloudinaryUpload.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FILE:admin/src/handlers/apiClient.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FILE:admin/src/pages/packages/components/MediaSection.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FILE:admin/src/pages/packages/components/HeaderSection.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FILE:admin/src/pages/packages/components/OverviewSection.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FILE:admin/src/pages/packages/components/InclusionsSection.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FILE:admin/src/pages/packages/components/ItinerarySection.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FILE:admin/src/pages/packages/components/SeoSection.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FILE:admin/src/pages/packages/components/PricingSection.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackagesList.tsx",
+      "target": "FILE:admin/src/hooks/usePackages.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackagesList.tsx",
+      "target": "FILE:admin/src/components/ui/Button.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackagesList.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/schema.ts",
+      "target": "SCHEMA:admin/src/pages/packages/schema.ts:scheduleItemSchema",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/schema.ts",
+      "target": "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/app/destinations/[id]/page.tsx",
+      "target": "FUNC:frontend/app/destinations/[id]/page.tsx:generateStaticParams",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/app/destinations/[id]/page.tsx",
+      "target": "COMPONENT:frontend/app/destinations/[id]/page.tsx:DestinationDetailPage",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/app/packages/[id]/page.tsx",
+      "target": "FUNC:frontend/app/packages/[id]/page.tsx:generateStaticParams",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/app/packages/[id]/page.tsx",
+      "target": "FUNC:frontend/app/packages/[id]/page.tsx:generateMetadata",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/app/packages/[id]/page.tsx",
+      "target": "FUNC:frontend/app/packages/[id]/page.tsx:generateItinerary",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:frontend/app/packages/[id]/page.tsx",
+      "target": "COMPONENT:frontend/app/packages/[id]/page.tsx:PackageDetailPage",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/HeaderSection.tsx",
+      "target": "FILE:admin/src/pages/packages/schema.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/HeaderSection.tsx",
+      "target": "FILE:admin/src/components/ui/Input.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/HeaderSection.tsx",
+      "target": "FILE:admin/src/components/ui/Select.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/HeaderSection.tsx",
+      "target": "FILE:admin/src/components/ui/Button.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/HeaderSection.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/ImageCropperModal.tsx",
+      "target": "FILE:admin/src/components/ui/Button.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/ImageCropperModal.tsx",
+      "target": "FUNC:admin/src/pages/packages/components/ImageCropperModal.tsx:centerAspectCrop",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/ImageCropperModal.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/InclusionsSection.tsx",
+      "target": "FILE:admin/src/pages/packages/schema.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/InclusionsSection.tsx",
+      "target": "FILE:admin/src/components/ui/Input.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/InclusionsSection.tsx",
+      "target": "FILE:admin/src/components/ui/Button.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/InclusionsSection.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/ItinerarySection.tsx",
+      "target": "FILE:admin/src/pages/packages/schema.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/ItinerarySection.tsx",
+      "target": "FILE:admin/src/components/ui/Input.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/ItinerarySection.tsx",
+      "target": "FILE:admin/src/components/ui/Textarea.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/ItinerarySection.tsx",
+      "target": "FILE:admin/src/components/ui/Button.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/ItinerarySection.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/MediaSection.tsx",
+      "target": "FILE:admin/src/pages/packages/schema.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/MediaSection.tsx",
+      "target": "FILE:admin/src/components/ui/Button.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/MediaSection.tsx",
+      "target": "FILE:admin/src/pages/packages/components/ImageCropperModal.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/MediaSection.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/OverviewSection.tsx",
+      "target": "FILE:admin/src/pages/packages/schema.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/OverviewSection.tsx",
+      "target": "FILE:admin/src/components/ui/Input.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/OverviewSection.tsx",
+      "target": "FILE:admin/src/components/ui/Textarea.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/OverviewSection.tsx",
+      "target": "FILE:admin/src/components/ui/Button.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/OverviewSection.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/PricingSection.tsx",
+      "target": "FILE:admin/src/pages/packages/schema.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/PricingSection.tsx",
+      "target": "FILE:admin/src/components/ui/Input.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/PricingSection.tsx",
+      "target": "FILE:admin/src/components/ui/Button.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/PricingSection.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/SeoSection.tsx",
+      "target": "FILE:admin/src/pages/packages/schema.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/SeoSection.tsx",
+      "target": "FILE:admin/src/components/ui/Input.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/SeoSection.tsx",
+      "target": "FILE:admin/src/components/ui/Textarea.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/SeoSection.tsx",
+      "target": "FILE:admin/src/components/ui/Button.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/SeoSection.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/App.tsx",
+      "target": "COMPONENT:admin/src/App.tsx:App",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/main.tsx",
+      "target": "COMPONENT:admin/src/App.tsx:App",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/controllers/PackageController.js:PackageController.getAll",
+      "target": "FUNC:api/services/PackageService.js:PackageService.getAllPackages",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:api/routes/PackageRoutes.js",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.getAll",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/controllers/PackageController.js:PackageController.getById",
+      "target": "FUNC:api/services/PackageService.js:PackageService.getPackageById",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:api/routes/PackageRoutes.js",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.getById",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/controllers/PackageController.js:PackageController.create",
+      "target": "FUNC:api/services/PackageService.js:PackageService.createPackage",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:api/routes/PackageRoutes.js",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.create",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/controllers/PackageController.js:PackageController.update",
+      "target": "FUNC:api/services/PackageService.js:PackageService.updatePackage",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:api/routes/PackageRoutes.js",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.update",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/controllers/PackageController.js:PackageController.delete",
+      "target": "FUNC:api/services/PackageService.js:PackageService.deletePackage",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:api/routes/PackageRoutes.js",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.delete",
+      "type": "references"
+    },
+    {
+      "source": "FILE:api/routes/PackageRoutes.js",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.deleteMedia",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/controllers/PackageController.js:PackageController.getAll",
+      "target": "FUNC:api/services/PackageService.js:PackageService.getAllPackages",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/services/PackageService.js:PackageService.updatePackage",
+      "target": "FUNC:api/services/PackageService.js:PackageService.getPackageById",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/services/PackageService.js:PackageService.deletePackage",
+      "target": "FUNC:api/services/PackageService.js:PackageService.getPackageById",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/controllers/PackageController.js:PackageController.getById",
+      "target": "FUNC:api/services/PackageService.js:PackageService.getPackageById",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/services/PackageService.js:PackageService.createPackage",
+      "target": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "type": "uses_schema"
+    },
+    {
+      "source": "FUNC:api/controllers/PackageController.js:PackageController.create",
+      "target": "FUNC:api/services/PackageService.js:PackageService.createPackage",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/services/PackageService.js:PackageService.updatePackage",
+      "target": "FUNC:api/services/PackageService.js:PackageService.getPackageById",
+      "type": "calls"
+    },
+    {
+      "source": "FUNC:api/services/PackageService.js:PackageService.updatePackage",
+      "target": "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema",
+      "type": "uses_schema"
+    },
+    {
+      "source": "FUNC:api/controllers/PackageController.js:PackageController.update",
+      "target": "FUNC:api/services/PackageService.js:PackageService.updatePackage",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/services/PackageService.js:PackageService.deletePackage",
+      "target": "FUNC:api/services/PackageService.js:PackageService.getPackageById",
+      "type": "calls"
+    },
+    {
+      "source": "FUNC:api/controllers/PackageController.js:PackageController.delete",
+      "target": "FUNC:api/services/PackageService.js:PackageService.deletePackage",
+      "type": "references"
+    },
+    {
+      "source": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "target": "SCHEMA:api/validation/PackageValidation.js:activityDetailSchema",
+      "type": "references"
+    },
+    {
+      "source": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "target": "SCHEMA:api/validation/PackageValidation.js:scheduleItemSchema",
+      "type": "references"
+    },
+    {
+      "source": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "target": "SCHEMA:api/validation/PackageValidation.js:seoSchema",
+      "type": "references"
+    },
+    {
+      "source": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "target": "SCHEMA:api/validation/PackageValidation.js:scheduleItemSchema",
+      "type": "uses_schema"
+    },
+    {
+      "source": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "target": "SCHEMA:api/validation/PackageValidation.js:activityDetailSchema",
+      "type": "uses_schema"
+    },
+    {
+      "source": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "target": "SCHEMA:api/validation/PackageValidation.js:seoSchema",
+      "type": "uses_schema"
+    },
+    {
+      "source": "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema",
+      "target": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "type": "references"
+    },
+    {
+      "source": "FILE:api/services/PackageService.js",
+      "target": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/services/PackageService.js:PackageService.createPackage",
+      "target": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "type": "references"
+    },
+    {
+      "source": "FILE:api/routes/PackageRoutes.js",
+      "target": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "type": "references"
+    },
+    {
+      "source": "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema",
+      "target": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "type": "uses_schema"
+    },
+    {
+      "source": "FILE:api/services/PackageService.js",
+      "target": "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/services/PackageService.js:PackageService.updatePackage",
+      "target": "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema",
+      "type": "references"
+    },
+    {
+      "source": "FILE:api/routes/PackageRoutes.js",
+      "target": "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema",
+      "type": "references"
+    },
+    {
+      "source": "SCHEMA:api/models/Package.js:packageSchema",
+      "target": "SCHEMA:api/models/Package.js:activityDetailSchema",
+      "type": "references"
+    },
+    {
+      "source": "SCHEMA:api/models/Package.js:packageSchema",
+      "target": "SCHEMA:api/models/Package.js:scheduleItemSchema",
+      "type": "references"
+    },
+    {
+      "source": "SCHEMA:api/models/Package.js:packageSchema",
+      "target": "SCHEMA:api/models/Package.js:seoSchema",
+      "type": "references"
+    },
+    {
+      "source": "SCHEMA:api/models/Package.js:packageSchema",
+      "target": "SCHEMA:api/models/Package.js:scheduleItemSchema",
+      "type": "uses_schema"
+    },
+    {
+      "source": "SCHEMA:api/models/Package.js:packageSchema",
+      "target": "SCHEMA:api/models/Package.js:activityDetailSchema",
+      "type": "uses_schema"
+    },
+    {
+      "source": "SCHEMA:api/models/Package.js:packageSchema",
+      "target": "SCHEMA:api/models/Package.js:seoSchema",
+      "type": "uses_schema"
+    },
+    {
+      "source": "FILE:api/models/Package.js",
+      "target": "SCHEMA:api/models/Package.js:packageSchema",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:frontend/components/ActivityCard.tsx:ActivityCard",
+      "target": "HOOK:useState",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:frontend/components/BookingForm.tsx:BookingForm",
+      "target": "HOOK:useState",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:frontend/components/CarouselSection.tsx:CarouselSection",
+      "target": "HOOK:useEmblaCarousel",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:frontend/components/CarouselSection.tsx:CarouselSection",
+      "target": "HOOK:useState",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:frontend/components/CarouselSection.tsx:CarouselSection",
+      "target": "HOOK:useCallback",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:frontend/components/CarouselSection.tsx:CarouselSection",
+      "target": "HOOK:useEffect",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:frontend/components/ImageGallery.tsx:ImageGallery",
+      "target": "HOOK:useState",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:frontend/components/Navbar.tsx:Navbar",
+      "target": "HOOK:useState",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/Header.tsx:Header",
+      "target": "HOOK:useLocation",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/Header.tsx:Header",
+      "target": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/Header.tsx:Header",
+      "target": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FILE:admin/src/components/RootLayout.tsx",
+      "target": "COMPONENT:admin/src/components/Header.tsx:Header",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent",
+      "target": "COMPONENT:admin/src/components/Header.tsx:Header",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent",
+      "target": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent",
+      "target": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent",
+      "target": "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar",
+      "type": "renders"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent",
+      "target": "COMPONENT:admin/src/components/Header.tsx:Header",
+      "type": "renders"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout",
+      "target": "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout",
+      "target": "COMPONENT:admin/src/contexts/SidebarContext.tsx:SidebarProvider",
+      "type": "renders"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout",
+      "target": "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent",
+      "type": "renders"
+    },
+    {
+      "source": "FILE:admin/src/router.tsx",
+      "target": "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar",
+      "target": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar",
+      "target": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FILE:admin/src/components/RootLayout.tsx",
+      "target": "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent",
+      "target": "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
+      "target": "HOOK:useContext",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FILE:admin/src/components/Header.tsx",
+      "target": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/Header.tsx:Header",
+      "target": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/components/RootLayout.tsx",
+      "target": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent",
+      "target": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/components/Sidebar.tsx",
+      "target": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar",
+      "target": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/contexts/SidebarContext.tsx:SidebarProvider",
+      "target": "HOOK:useState",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FILE:admin/src/components/RootLayout.tsx",
+      "target": "COMPONENT:admin/src/contexts/SidebarContext.tsx:SidebarProvider",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout",
+      "target": "COMPONENT:admin/src/contexts/SidebarContext.tsx:SidebarProvider",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/hooks/usePackages.ts",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:usePackagesList",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/packages.ts:getAllPackages",
+      "target": "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/packages.ts:getPackageById",
+      "target": "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/packages.ts:createPackage",
+      "target": "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/packages.ts:updatePackage",
+      "target": "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FUNC:admin/src/handlers/packages.ts:mapFrontendPackageToBackend",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/handlers/packages.ts:mapFrontendPackageToBackend",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/packages.ts:getAllPackages",
+      "target": "API:GET:/api/packages",
+      "type": "calls_api"
+    },
+    {
+      "source": "FILE:admin/src/hooks/usePackages.ts",
+      "target": "FUNC:admin/src/handlers/packages.ts:getAllPackages",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:usePackagesList",
+      "target": "FUNC:admin/src/handlers/packages.ts:getAllPackages",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/packages.ts:getPackageById",
+      "target": "API:GET:/api/packages/:id",
+      "type": "calls_api"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/packages.ts:getPackageById",
+      "target": "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:admin/src/hooks/usePackages.ts",
+      "target": "FUNC:admin/src/handlers/packages.ts:getPackageById",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails",
+      "target": "FUNC:admin/src/handlers/packages.ts:getPackageById",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/packages.ts:createPackage",
+      "target": "API:POST:/api/packages",
+      "type": "calls_api"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/packages.ts:createPackage",
+      "target": "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:admin/src/hooks/usePackages.ts",
+      "target": "FUNC:admin/src/handlers/packages.ts:createPackage",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
+      "target": "FUNC:admin/src/handlers/packages.ts:createPackage",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/packages.ts:updatePackage",
+      "target": "API:PUT:/api/packages/:id",
+      "type": "calls_api"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/packages.ts:updatePackage",
+      "target": "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:admin/src/hooks/usePackages.ts",
+      "target": "FUNC:admin/src/handlers/packages.ts:updatePackage",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage",
+      "target": "FUNC:admin/src/handlers/packages.ts:updatePackage",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/packages.ts:deletePackage",
+      "target": "API:DELETE:/api/packages/:id",
+      "type": "calls_api"
+    },
+    {
+      "source": "FILE:admin/src/hooks/usePackages.ts",
+      "target": "FUNC:admin/src/handlers/packages.ts:deletePackage",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage",
+      "target": "FUNC:admin/src/handlers/packages.ts:deletePackage",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload",
+      "target": "HOOK:useState",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:usePackagesList",
+      "target": "HOOK:useQuery",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:usePackagesList",
+      "target": "FUNC:admin/src/handlers/packages.ts:getAllPackages",
+      "type": "calls"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:usePackagesList",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackagesList.tsx",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:usePackagesList",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:usePackagesList",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails",
+      "target": "HOOK:useQuery",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails",
+      "target": "FUNC:admin/src/handlers/packages.ts:getPackageById",
+      "type": "calls"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
+      "target": "HOOK:useQueryClient",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
+      "target": "HOOK:useMutation",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
+      "target": "FUNC:admin/src/handlers/packages.ts:createPackage",
+      "type": "calls"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage",
+      "target": "HOOK:useQueryClient",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage",
+      "target": "HOOK:useMutation",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage",
+      "target": "FUNC:admin/src/handlers/packages.ts:updatePackage",
+      "type": "calls"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage",
+      "target": "HOOK:useQueryClient",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage",
+      "target": "HOOK:useMutation",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage",
+      "target": "FUNC:admin/src/handlers/packages.ts:deletePackage",
+      "type": "calls"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/Settings.tsx:Settings",
+      "target": "HOOK:useState",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/Settings.tsx:Settings",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "renders"
+    },
+    {
+      "source": "FILE:admin/src/router.tsx",
+      "target": "COMPONENT:admin/src/pages/Settings.tsx:Settings",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/Settings.tsx",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/Settings.tsx:Settings",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackagesList.tsx",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/HeaderSection.tsx",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/ImageCropperModal.tsx",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/InclusionsSection.tsx",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/ItinerarySection.tsx",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/MediaSection.tsx",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/OverviewSection.tsx",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/PricingSection.tsx",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/SeoSection.tsx",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "HOOK:useNavigate",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "HOOK:useParams",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "HOOK:useState",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "HOOK:useForm",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "HOOK:useWatch",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "HOOK:useEffect",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "API:POST:/api/packages/media/delete",
+      "type": "calls_api"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/handlers/packages.ts:mapFrontendPackageToBackend",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "renders"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection",
+      "type": "renders"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection",
+      "type": "renders"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection",
+      "type": "renders"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection",
+      "type": "renders"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection",
+      "type": "renders"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection",
+      "type": "renders"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection",
+      "type": "renders"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema",
+      "type": "uses_schema"
+    },
+    {
+      "source": "FILE:admin/src/router.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+      "target": "HOOK:useNavigate",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+      "target": "HOOK:useState",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:usePackagesList",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+      "target": "FUNC:admin/src/hooks/usePackages.ts:usePackagesList",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "renders"
+    },
+    {
+      "source": "FILE:admin/src/router.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+      "type": "references"
+    },
+    {
+      "source": "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema",
+      "target": "SCHEMA:admin/src/pages/packages/schema.ts:scheduleItemSchema",
+      "type": "references"
+    },
+    {
+      "source": "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema",
+      "target": "SCHEMA:admin/src/pages/packages/schema.ts:scheduleItemSchema",
+      "type": "uses_schema"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/schema.ts",
+      "target": "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:frontend/app/packages/[id]/page.tsx:PackageDetailPage",
+      "target": "FUNC:frontend/app/packages/[id]/page.tsx:generateItinerary",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:frontend/app/packages/[id]/page.tsx:PackageDetailPage",
+      "target": "FUNC:frontend/app/packages/[id]/page.tsx:generateItinerary",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection",
+      "target": "HOOK:useWatch",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "renders"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
+      "target": "FUNC:admin/src/pages/packages/components/ImageCropperModal.tsx:centerAspectCrop",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
+      "target": "HOOK:useState",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
+      "target": "HOOK:useRef",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
+      "target": "HOOK:useEffect",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
+      "target": "FUNC:admin/src/pages/packages/components/ImageCropperModal.tsx:centerAspectCrop",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "renders"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/MediaSection.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection",
+      "target": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection",
+      "target": "HOOK:useWatch",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "renders"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection",
+      "target": "HOOK:useWatch",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection",
+      "target": "HOOK:useFieldArray",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "renders"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection",
+      "target": "HOOK:useRef",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection",
+      "target": "HOOK:useState",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection",
+      "target": "HOOK:useWatch",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "renders"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection",
+      "target": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
+      "type": "renders"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection",
+      "target": "HOOK:useWatch",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "renders"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection",
+      "target": "HOOK:useWatch",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "renders"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection",
+      "target": "HOOK:useWatch",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "renders"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection",
+      "type": "references"
+    },
+    {
+      "source": "API:GET:/api/packages",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.getAll",
+      "type": "routes_to"
+    },
+    {
+      "source": "API:GET:/api/packages/:id",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.getById",
+      "type": "routes_to"
+    },
+    {
+      "source": "API:POST:/api/packages",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.create",
+      "type": "routes_to"
+    },
+    {
+      "source": "API:PUT:/api/packages/:id",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.update",
+      "type": "routes_to"
+    },
+    {
+      "source": "API:DELETE:/api/packages/:id",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.delete",
+      "type": "routes_to"
+    },
+    {
+      "source": "API:POST:/api/packages/media/delete",
+      "target": "FUNC:api/controllers/PackageController.js:PackageController.deleteMedia",
+      "type": "routes_to"
+    }
+  ]
+}

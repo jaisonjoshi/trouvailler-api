@@ -70,14 +70,27 @@ describe("PackageValidation", () => {
       expect(() => createPackageSchema.parse(data)).toThrow();
     });
 
-    it("rejects zero price", () => {
+    it("allows zero price", () => {
       const data = buildPackage({ price: 0 });
+      const result = createPackageSchema.parse(data);
+      expect(result.price).toBe(0);
+    });
+
+    it("rejects negative originalPrice", () => {
+      const data = buildPackage({ originalPrice: -1 });
       expect(() => createPackageSchema.parse(data)).toThrow();
     });
 
-    it("rejects non-positive originalPrice", () => {
-      const data = buildPackage({ originalPrice: -1 });
-      expect(() => createPackageSchema.parse(data)).toThrow();
+    it("allows zero originalPrice", () => {
+      const data = buildPackage({ originalPrice: 0 });
+      const result = createPackageSchema.parse(data);
+      expect(result.originalPrice).toBe(0);
+    });
+
+    it("allows null originalPrice", () => {
+      const data = buildPackage({ originalPrice: null });
+      const result = createPackageSchema.parse(data);
+      expect(result.originalPrice).toBeNull();
     });
 
     it("rejects invalid image URL", () => {

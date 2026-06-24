@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const activityDetailSchema = z.object({
+export const activityDetailSchema = z.object({
   name: z.string().min(1, "Activity name is required"),
   image: z.string().url("Activity image must be a valid URL").optional().or(z.literal("")),
   description: z.string().optional(),
@@ -9,7 +9,7 @@ const activityDetailSchema = z.object({
   day: z.number().int().positive("Activity day must be a positive integer")
 });
 
-const scheduleItemSchema = z.object({
+export const scheduleItemSchema = z.object({
   dayTitle: z.string().min(1, "Day title is required"),
   dayDesc: z.string().min(1, "Day description is required")
 });
@@ -28,8 +28,8 @@ export const createPackageSchema = z.object({
   image: z.string().url("Cover image must be a valid URL"),
   images: z.array(z.string().url("Gallery slides must be valid URLs")).default([]),
   description: z.string().min(1, "Description is required"),
-  price: z.number().positive("Price must be a positive number"),
-  originalPrice: z.number().positive("Original price must be a positive number").optional(),
+  price: z.number().nonnegative("Price must be a non-negative number"),
+  originalPrice: z.number().nonnegative("Original price must be a non-negative number").optional().nullable(),
   duration: z.string().min(1, "Duration description is required"),
   shortDuration: z.string().optional(),
   accommodation: z.string().min(1, "Accommodation details are required"),

@@ -1,0 +1,297 @@
+{
+  "generatedAt": "2026-06-24T15:24:52.556Z",
+  "project": "trouvailler-admin",
+  "version": "1.0",
+  "sourceCount": 54,
+  "symbolCount": 99,
+  "edgeCount": 398,
+  "projects": {
+    "trouvailler-admin": {
+      "folders": [
+        "admin/src",
+        "admin/src/components",
+        "admin/src/contexts",
+        "admin/src/handlers",
+        "admin/src/hooks",
+        "admin/src/pages",
+        "admin/src/types",
+        "admin/src/components/ui",
+        "admin/src/pages/packages",
+        "admin/src/pages/packages/components"
+      ],
+      "dependencies": [
+        "trouvailler-api"
+      ]
+    },
+    "trouvailler-api": {
+      "folders": [
+        "api/routes",
+        "api/controllers",
+        "api/services",
+        "api/validation",
+        "api/models"
+      ],
+      "dependencies": []
+    },
+    "trouvailler-frontend": {
+      "folders": [
+        "frontend/app",
+        "frontend/components",
+        "frontend/types",
+        "frontend/app/destinations",
+        "frontend/app/destinations/[id]",
+        "frontend/app/packages/[id]"
+      ],
+      "dependencies": [
+        "trouvailler-api"
+      ]
+    }
+  },
+  "moduleEdges": [
+    {
+      "source": "admin:admin/src",
+      "target": "admin:admin/src/components",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src",
+      "target": "admin:admin/src/pages/packages",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src",
+      "target": "admin:admin/src/pages",
+      "type": "imports"
+    },
+    {
+      "source": "api:api/routes",
+      "target": "api:api/controllers",
+      "type": "imports"
+    },
+    {
+      "source": "api:api/routes",
+      "target": "api:api/utils",
+      "type": "imports"
+    },
+    {
+      "source": "api:api/routes",
+      "target": "api:api/validation",
+      "type": "imports"
+    },
+    {
+      "source": "api:api/controllers",
+      "target": "api:api/services",
+      "type": "imports"
+    },
+    {
+      "source": "api:api/services",
+      "target": "api:api/repositories",
+      "type": "imports"
+    },
+    {
+      "source": "api:api/services",
+      "target": "api:api/validation",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/components",
+      "target": "admin:admin/src/contexts",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/handlers",
+      "target": "admin:admin/src/types",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/hooks",
+      "target": "admin:admin/src/handlers",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/hooks",
+      "target": "admin:admin/src/types",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages",
+      "target": "admin:admin/src/components/ui",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/types",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/hooks",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/handlers",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/components/ui",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/components",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/pages/packages",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/components/ui",
+      "type": "imports"
+    },
+    {
+      "source": "api:api/controllers",
+      "target": "api:api/services",
+      "type": "calls"
+    },
+    {
+      "source": "api:api/routes",
+      "target": "api:api/controllers",
+      "type": "references"
+    },
+    {
+      "source": "api:api/controllers",
+      "target": "api:api/services",
+      "type": "references"
+    },
+    {
+      "source": "api:api/services",
+      "target": "api:api/validation",
+      "type": "uses_schema"
+    },
+    {
+      "source": "api:api/services",
+      "target": "api:api/validation",
+      "type": "references"
+    },
+    {
+      "source": "api:api/routes",
+      "target": "api:api/validation",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/components",
+      "target": "admin:admin/src/contexts",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/components",
+      "target": "admin:admin/src/contexts",
+      "type": "uses_hook"
+    },
+    {
+      "source": "admin:admin/src/components",
+      "target": "admin:admin/src/contexts",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src",
+      "target": "admin:admin/src/components",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/components",
+      "target": "admin:admin/src/contexts",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/hooks",
+      "target": "admin:admin/src/handlers",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/handlers",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/hooks",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/hooks",
+      "target": "admin:admin/src/handlers",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages",
+      "target": "admin:admin/src/components/ui",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src",
+      "target": "admin:admin/src/pages",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages",
+      "target": "admin:admin/src/components/ui",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/components/ui",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/components/ui",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/hooks",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/hooks",
+      "type": "uses_hook"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/handlers",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/components/ui",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/components",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src",
+      "target": "admin:admin/src/pages/packages",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/components/ui",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/components",
+      "type": "references"
+    }
+  ]
+}

@@ -1,0 +1,651 @@
+digraph G {
+  rankdir=LR;
+  node [shape=box, style="filled,rounded", fillcolor="#e0f2fe", color="#0284c7", fontname="Helvetica"];
+  edge [fontname="Helvetica", fontsize=9];
+
+  subgraph cluster_0 {
+    label="admin/src/App.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:admin/src/App.tsx:App" [label="App\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_1 {
+    label="api/controllers/PackageController.js";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "FUNC:api/controllers/PackageController.js:PackageController.getAll" [label="PackageController.getAll\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:api/controllers/PackageController.js:PackageController.getById" [label="PackageController.getById\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:api/controllers/PackageController.js:PackageController.create" [label="PackageController.create\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:api/controllers/PackageController.js:PackageController.update" [label="PackageController.update\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:api/controllers/PackageController.js:PackageController.delete" [label="PackageController.delete\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:api/controllers/PackageController.js:PackageController.deleteMedia" [label="PackageController.deleteMedia\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+  }
+
+  subgraph cluster_2 {
+    label="api/services/PackageService.js";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "FUNC:api/services/PackageService.js:PackageService.getAllPackages" [label="PackageService.getAllPackages\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:api/services/PackageService.js:PackageService.getPackageById" [label="PackageService.getPackageById\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:api/services/PackageService.js:PackageService.createPackage" [label="PackageService.createPackage\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:api/services/PackageService.js:PackageService.updatePackage" [label="PackageService.updatePackage\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:api/services/PackageService.js:PackageService.deletePackage" [label="PackageService.deletePackage\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+  }
+
+  subgraph cluster_3 {
+    label="api/validation/PackageValidation.js";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "SCHEMA:api/validation/PackageValidation.js:activityDetailSchema" [label="activityDetailSchema\n(SCHEMA)", fillcolor="#ffedd5", color="#ea580c"];
+    "SCHEMA:api/validation/PackageValidation.js:scheduleItemSchema" [label="scheduleItemSchema\n(SCHEMA)", fillcolor="#ffedd5", color="#ea580c"];
+    "SCHEMA:api/validation/PackageValidation.js:seoSchema" [label="seoSchema\n(SCHEMA)", fillcolor="#ffedd5", color="#ea580c"];
+    "SCHEMA:api/validation/PackageValidation.js:createPackageSchema" [label="createPackageSchema\n(SCHEMA)", fillcolor="#ffedd5", color="#ea580c"];
+    "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema" [label="updatePackageSchema\n(SCHEMA)", fillcolor="#ffedd5", color="#ea580c"];
+  }
+
+  subgraph cluster_4 {
+    label="api/models/Package.js";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "SCHEMA:api/models/Package.js:activityDetailSchema" [label="activityDetailSchema\n(SCHEMA)", fillcolor="#ffedd5", color="#ea580c"];
+    "SCHEMA:api/models/Package.js:scheduleItemSchema" [label="scheduleItemSchema\n(SCHEMA)", fillcolor="#ffedd5", color="#ea580c"];
+    "SCHEMA:api/models/Package.js:seoSchema" [label="seoSchema\n(SCHEMA)", fillcolor="#ffedd5", color="#ea580c"];
+    "SCHEMA:api/models/Package.js:packageSchema" [label="packageSchema\n(SCHEMA)", fillcolor="#ffedd5", color="#ea580c"];
+  }
+
+  subgraph cluster_5 {
+    label="frontend/app/layout.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/app/layout.tsx:RootLayout" [label="RootLayout\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_6 {
+    label="frontend/app/page.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/app/page.tsx:Home" [label="Home\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_7 {
+    label="frontend/components/ActivityCard.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/components/ActivityCard.tsx:ActivityCard" [label="ActivityCard\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_8 {
+    label="frontend/components/BookingForm.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/components/BookingForm.tsx:BookingForm" [label="BookingForm\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_9 {
+    label="frontend/components/CarouselSection.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/components/CarouselSection.tsx:CarouselSection" [label="CarouselSection\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_10 {
+    label="frontend/components/CategoryCard.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/components/CategoryCard.tsx:CategoryCard" [label="CategoryCard\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_11 {
+    label="frontend/components/DestinationCard.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/components/DestinationCard.tsx:DestinationCard" [label="DestinationCard\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_12 {
+    label="frontend/components/DirectoryCard.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/components/DirectoryCard.tsx:DirectoryCard" [label="DirectoryCard\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_13 {
+    label="frontend/components/DynamicSections.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/components/DynamicSections.tsx:DynamicSections" [label="DynamicSections\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_14 {
+    label="frontend/components/Footer.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/components/Footer.tsx:Footer" [label="Footer\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_15 {
+    label="frontend/components/Header.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/components/Header.tsx:Header" [label="Header\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_16 {
+    label="frontend/components/ImageGallery.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/components/ImageGallery.tsx:ImageGallery" [label="ImageGallery\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_17 {
+    label="frontend/components/Navbar.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/components/Navbar.tsx:Navbar" [label="Navbar\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_18 {
+    label="frontend/components/PackageCard.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/components/PackageCard.tsx:PackageCard" [label="PackageCard\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_19 {
+    label="frontend/components/SearchBar.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/components/SearchBar.tsx:SearchBar" [label="SearchBar\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_20 {
+    label="admin/src/components/Header.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:admin/src/components/Header.tsx:Header" [label="Header\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_21 {
+    label="admin/src/components/RootLayout.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent" [label="LayoutContent\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+    "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout" [label="RootLayout\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_22 {
+    label="admin/src/components/Sidebar.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar" [label="Sidebar\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_23 {
+    label="admin/src/contexts/SidebarContext.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar" [label="useSidebar\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "COMPONENT:admin/src/contexts/SidebarContext.tsx:SidebarProvider" [label="SidebarProvider\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_24 {
+    label="admin/src/handlers/apiClient.ts";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "FUNC:admin/src/handlers/apiClient.ts:handleApiError" [label="handleApiError\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+  }
+
+  subgraph cluster_25 {
+    label="admin/src/handlers/packages.ts";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend" [label="mapBackendPackageToFrontend\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:admin/src/handlers/packages.ts:mapFrontendPackageToBackend" [label="mapFrontendPackageToBackend\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:admin/src/handlers/packages.ts:getAllPackages" [label="getAllPackages\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:admin/src/handlers/packages.ts:getPackageById" [label="getPackageById\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:admin/src/handlers/packages.ts:createPackage" [label="createPackage\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:admin/src/handlers/packages.ts:updatePackage" [label="updatePackage\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:admin/src/handlers/packages.ts:deletePackage" [label="deletePackage\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "API:GET:/api/packages" [label="GET /api/packages\n(API)", fillcolor="#dcfce7", color="#16a34a"];
+    "API:GET:/api/packages/:id" [label="GET /api/packages/:id\n(API)", fillcolor="#dcfce7", color="#16a34a"];
+    "API:POST:/api/packages" [label="POST /api/packages\n(API)", fillcolor="#dcfce7", color="#16a34a"];
+    "API:PUT:/api/packages/:id" [label="PUT /api/packages/:id\n(API)", fillcolor="#dcfce7", color="#16a34a"];
+    "API:DELETE:/api/packages/:id" [label="DELETE /api/packages/:id\n(API)", fillcolor="#dcfce7", color="#16a34a"];
+  }
+
+  subgraph cluster_26 {
+    label="admin/src/hooks/useCloudinaryUpload.ts";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload" [label="useCloudinaryUpload\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+  }
+
+  subgraph cluster_27 {
+    label="admin/src/hooks/usePackages.ts";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "FUNC:admin/src/hooks/usePackages.ts:usePackagesList" [label="usePackagesList\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails" [label="usePackageDetails\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage" [label="useCreatePackage\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage" [label="useUpdatePackage\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage" [label="useDeletePackage\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+  }
+
+  subgraph cluster_28 {
+    label="admin/src/pages/Settings.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:admin/src/pages/Settings.tsx:Settings" [label="Settings\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_29 {
+    label="frontend/app/destinations/page.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:frontend/app/destinations/page.tsx:DestinationsPage" [label="DestinationsPage\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_30 {
+    label="admin/src/components/ui/Button.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:admin/src/components/ui/Button.tsx:Button" [label="Button\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_31 {
+    label="admin/src/pages/packages/PackageEditor.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" [label="PackageEditor\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+    "API:POST:/api/packages/media/delete" [label="POST /api/packages/media/delete\n(API)", fillcolor="#dcfce7", color="#16a34a"];
+  }
+
+  subgraph cluster_32 {
+    label="admin/src/pages/packages/PackagesList.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList" [label="PackagesList\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_33 {
+    label="admin/src/pages/packages/schema.ts";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "SCHEMA:admin/src/pages/packages/schema.ts:scheduleItemSchema" [label="scheduleItemSchema\n(SCHEMA)", fillcolor="#ffedd5", color="#ea580c"];
+    "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema" [label="packageSchema\n(SCHEMA)", fillcolor="#ffedd5", color="#ea580c"];
+  }
+
+  subgraph cluster_34 {
+    label="frontend/app/destinations/[id]/page.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "FUNC:frontend/app/destinations/[id]/page.tsx:generateStaticParams" [label="generateStaticParams\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "COMPONENT:frontend/app/destinations/[id]/page.tsx:DestinationDetailPage" [label="DestinationDetailPage\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_35 {
+    label="frontend/app/packages/[id]/page.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "FUNC:frontend/app/packages/[id]/page.tsx:generateStaticParams" [label="generateStaticParams\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:frontend/app/packages/[id]/page.tsx:generateMetadata" [label="generateMetadata\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "FUNC:frontend/app/packages/[id]/page.tsx:generateItinerary" [label="generateItinerary\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "COMPONENT:frontend/app/packages/[id]/page.tsx:PackageDetailPage" [label="PackageDetailPage\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_36 {
+    label="admin/src/pages/packages/components/HeaderSection.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection" [label="HeaderSection\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_37 {
+    label="admin/src/pages/packages/components/ImageCropperModal.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "FUNC:admin/src/pages/packages/components/ImageCropperModal.tsx:centerAspectCrop" [label="centerAspectCrop\n(FUNC)", fillcolor="#e0f2fe", color="#0284c7"];
+    "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal" [label="ImageCropperModal\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_38 {
+    label="admin/src/pages/packages/components/InclusionsSection.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection" [label="InclusionsSection\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_39 {
+    label="admin/src/pages/packages/components/ItinerarySection.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection" [label="ItinerarySection\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_40 {
+    label="admin/src/pages/packages/components/MediaSection.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection" [label="MediaSection\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_41 {
+    label="admin/src/pages/packages/components/OverviewSection.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection" [label="OverviewSection\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_42 {
+    label="admin/src/pages/packages/components/PricingSection.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection" [label="PricingSection\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  subgraph cluster_43 {
+    label="admin/src/pages/packages/components/SeoSection.tsx";
+    style="filled,dashed";
+    fillcolor="#fafafa";
+    color="#d1d5db";
+    "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection" [label="SeoSection\n(COMPONENT)", fillcolor="#fef08a", color="#ca8a04"];
+  }
+
+  "FILE:admin/src/App.tsx" -> "COMPONENT:admin/src/App.tsx:App" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/main.tsx" -> "COMPONENT:admin/src/App.tsx:App" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:api/controllers/PackageController.js:PackageController.getAll" -> "FUNC:api/services/PackageService.js:PackageService.getAllPackages" [color="#2563eb", label="calls"];
+  "FILE:api/routes/PackageRoutes.js" -> "FUNC:api/controllers/PackageController.js:PackageController.getAll" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:api/controllers/PackageController.js:PackageController.getById" -> "FUNC:api/services/PackageService.js:PackageService.getPackageById" [color="#2563eb", label="calls"];
+  "FILE:api/routes/PackageRoutes.js" -> "FUNC:api/controllers/PackageController.js:PackageController.getById" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:api/controllers/PackageController.js:PackageController.create" -> "FUNC:api/services/PackageService.js:PackageService.createPackage" [color="#2563eb", label="calls"];
+  "FILE:api/routes/PackageRoutes.js" -> "FUNC:api/controllers/PackageController.js:PackageController.create" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:api/controllers/PackageController.js:PackageController.update" -> "FUNC:api/services/PackageService.js:PackageService.updatePackage" [color="#2563eb", label="calls"];
+  "FILE:api/routes/PackageRoutes.js" -> "FUNC:api/controllers/PackageController.js:PackageController.update" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:api/controllers/PackageController.js:PackageController.delete" -> "FUNC:api/services/PackageService.js:PackageService.deletePackage" [color="#2563eb", label="calls"];
+  "FILE:api/routes/PackageRoutes.js" -> "FUNC:api/controllers/PackageController.js:PackageController.delete" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:api/routes/PackageRoutes.js" -> "FUNC:api/controllers/PackageController.js:PackageController.deleteMedia" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:api/controllers/PackageController.js:PackageController.getAll" -> "FUNC:api/services/PackageService.js:PackageService.getAllPackages" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:api/services/PackageService.js:PackageService.updatePackage" -> "FUNC:api/services/PackageService.js:PackageService.getPackageById" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:api/services/PackageService.js:PackageService.deletePackage" -> "FUNC:api/services/PackageService.js:PackageService.getPackageById" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:api/controllers/PackageController.js:PackageController.getById" -> "FUNC:api/services/PackageService.js:PackageService.getPackageById" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:api/services/PackageService.js:PackageService.createPackage" -> "SCHEMA:api/validation/PackageValidation.js:createPackageSchema" [color="#ea580c", style="dotted", label="schema"];
+  "FUNC:api/controllers/PackageController.js:PackageController.create" -> "FUNC:api/services/PackageService.js:PackageService.createPackage" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:api/services/PackageService.js:PackageService.updatePackage" -> "FUNC:api/services/PackageService.js:PackageService.getPackageById" [color="#2563eb", label="calls"];
+  "FUNC:api/services/PackageService.js:PackageService.updatePackage" -> "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema" [color="#ea580c", style="dotted", label="schema"];
+  "FUNC:api/controllers/PackageController.js:PackageController.update" -> "FUNC:api/services/PackageService.js:PackageService.updatePackage" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:api/services/PackageService.js:PackageService.deletePackage" -> "FUNC:api/services/PackageService.js:PackageService.getPackageById" [color="#2563eb", label="calls"];
+  "FUNC:api/controllers/PackageController.js:PackageController.delete" -> "FUNC:api/services/PackageService.js:PackageService.deletePackage" [color="#9ca3af", style="dashed", label="references"];
+  "SCHEMA:api/validation/PackageValidation.js:createPackageSchema" -> "SCHEMA:api/validation/PackageValidation.js:activityDetailSchema" [color="#9ca3af", style="dashed", label="references"];
+  "SCHEMA:api/validation/PackageValidation.js:createPackageSchema" -> "SCHEMA:api/validation/PackageValidation.js:scheduleItemSchema" [color="#9ca3af", style="dashed", label="references"];
+  "SCHEMA:api/validation/PackageValidation.js:createPackageSchema" -> "SCHEMA:api/validation/PackageValidation.js:seoSchema" [color="#9ca3af", style="dashed", label="references"];
+  "SCHEMA:api/validation/PackageValidation.js:createPackageSchema" -> "SCHEMA:api/validation/PackageValidation.js:scheduleItemSchema" [color="#ea580c", style="dotted", label="schema"];
+  "SCHEMA:api/validation/PackageValidation.js:createPackageSchema" -> "SCHEMA:api/validation/PackageValidation.js:activityDetailSchema" [color="#ea580c", style="dotted", label="schema"];
+  "SCHEMA:api/validation/PackageValidation.js:createPackageSchema" -> "SCHEMA:api/validation/PackageValidation.js:seoSchema" [color="#ea580c", style="dotted", label="schema"];
+  "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema" -> "SCHEMA:api/validation/PackageValidation.js:createPackageSchema" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:api/services/PackageService.js" -> "SCHEMA:api/validation/PackageValidation.js:createPackageSchema" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:api/services/PackageService.js:PackageService.createPackage" -> "SCHEMA:api/validation/PackageValidation.js:createPackageSchema" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:api/routes/PackageRoutes.js" -> "SCHEMA:api/validation/PackageValidation.js:createPackageSchema" [color="#9ca3af", style="dashed", label="references"];
+  "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema" -> "SCHEMA:api/validation/PackageValidation.js:createPackageSchema" [color="#ea580c", style="dotted", label="schema"];
+  "FILE:api/services/PackageService.js" -> "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:api/services/PackageService.js:PackageService.updatePackage" -> "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:api/routes/PackageRoutes.js" -> "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema" [color="#9ca3af", style="dashed", label="references"];
+  "SCHEMA:api/models/Package.js:packageSchema" -> "SCHEMA:api/models/Package.js:activityDetailSchema" [color="#9ca3af", style="dashed", label="references"];
+  "SCHEMA:api/models/Package.js:packageSchema" -> "SCHEMA:api/models/Package.js:scheduleItemSchema" [color="#9ca3af", style="dashed", label="references"];
+  "SCHEMA:api/models/Package.js:packageSchema" -> "SCHEMA:api/models/Package.js:seoSchema" [color="#9ca3af", style="dashed", label="references"];
+  "SCHEMA:api/models/Package.js:packageSchema" -> "SCHEMA:api/models/Package.js:scheduleItemSchema" [color="#ea580c", style="dotted", label="schema"];
+  "SCHEMA:api/models/Package.js:packageSchema" -> "SCHEMA:api/models/Package.js:activityDetailSchema" [color="#ea580c", style="dotted", label="schema"];
+  "SCHEMA:api/models/Package.js:packageSchema" -> "SCHEMA:api/models/Package.js:seoSchema" [color="#ea580c", style="dotted", label="schema"];
+  "FILE:api/models/Package.js" -> "SCHEMA:api/models/Package.js:packageSchema" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:frontend/components/ActivityCard.tsx:ActivityCard" -> "HOOK:useState" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:frontend/components/BookingForm.tsx:BookingForm" -> "HOOK:useState" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:frontend/components/CarouselSection.tsx:CarouselSection" -> "HOOK:useEmblaCarousel" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:frontend/components/CarouselSection.tsx:CarouselSection" -> "HOOK:useState" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:frontend/components/CarouselSection.tsx:CarouselSection" -> "HOOK:useCallback" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:frontend/components/CarouselSection.tsx:CarouselSection" -> "HOOK:useEffect" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:frontend/components/ImageGallery.tsx:ImageGallery" -> "HOOK:useState" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:frontend/components/Navbar.tsx:Navbar" -> "HOOK:useState" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/components/Header.tsx:Header" -> "HOOK:useLocation" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/components/Header.tsx:Header" -> "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar" [color="#2563eb", label="calls"];
+  "COMPONENT:admin/src/components/Header.tsx:Header" -> "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar" [color="#7c3aed", style="dotted", label="hook"];
+  "FILE:admin/src/components/RootLayout.tsx" -> "COMPONENT:admin/src/components/Header.tsx:Header" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent" -> "COMPONENT:admin/src/components/Header.tsx:Header" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent" -> "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar" [color="#2563eb", label="calls"];
+  "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent" -> "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent" -> "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar" [color="#ca8a04", style="bold", label="renders"];
+  "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent" -> "COMPONENT:admin/src/components/Header.tsx:Header" [color="#ca8a04", style="bold", label="renders"];
+  "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout" -> "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout" -> "COMPONENT:admin/src/contexts/SidebarContext.tsx:SidebarProvider" [color="#ca8a04", style="bold", label="renders"];
+  "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout" -> "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent" [color="#ca8a04", style="bold", label="renders"];
+  "FILE:admin/src/router.tsx" -> "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar" -> "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar" [color="#2563eb", label="calls"];
+  "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar" -> "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar" [color="#7c3aed", style="dotted", label="hook"];
+  "FILE:admin/src/components/RootLayout.tsx" -> "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent" -> "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar" -> "HOOK:useContext" [color="#7c3aed", style="dotted", label="hook"];
+  "FILE:admin/src/components/Header.tsx" -> "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/components/Header.tsx:Header" -> "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/components/RootLayout.tsx" -> "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent" -> "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/components/Sidebar.tsx" -> "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar" -> "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/contexts/SidebarContext.tsx:SidebarProvider" -> "HOOK:useState" [color="#7c3aed", style="dotted", label="hook"];
+  "FILE:admin/src/components/RootLayout.tsx" -> "COMPONENT:admin/src/contexts/SidebarContext.tsx:SidebarProvider" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout" -> "COMPONENT:admin/src/contexts/SidebarContext.tsx:SidebarProvider" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/hooks/usePackages.ts" -> "FUNC:admin/src/handlers/apiClient.ts:handleApiError" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/usePackages.ts:usePackagesList" -> "FUNC:admin/src/handlers/apiClient.ts:handleApiError" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails" -> "FUNC:admin/src/handlers/apiClient.ts:handleApiError" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage" -> "FUNC:admin/src/handlers/apiClient.ts:handleApiError" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage" -> "FUNC:admin/src/handlers/apiClient.ts:handleApiError" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage" -> "FUNC:admin/src/handlers/apiClient.ts:handleApiError" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/handlers/packages.ts:getAllPackages" -> "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/handlers/packages.ts:getPackageById" -> "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/handlers/packages.ts:createPackage" -> "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/handlers/packages.ts:updatePackage" -> "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "FUNC:admin/src/handlers/packages.ts:mapFrontendPackageToBackend" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/handlers/packages.ts:mapFrontendPackageToBackend" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/handlers/packages.ts:getAllPackages" -> "API:GET:/api/packages" [color="#16a34a", style="dashed", label="api_call"];
+  "FILE:admin/src/hooks/usePackages.ts" -> "FUNC:admin/src/handlers/packages.ts:getAllPackages" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/usePackages.ts:usePackagesList" -> "FUNC:admin/src/handlers/packages.ts:getAllPackages" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/handlers/packages.ts:getPackageById" -> "API:GET:/api/packages/:id" [color="#16a34a", style="dashed", label="api_call"];
+  "FUNC:admin/src/handlers/packages.ts:getPackageById" -> "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend" [color="#2563eb", label="calls"];
+  "FILE:admin/src/hooks/usePackages.ts" -> "FUNC:admin/src/handlers/packages.ts:getPackageById" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails" -> "FUNC:admin/src/handlers/packages.ts:getPackageById" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/handlers/packages.ts:createPackage" -> "API:POST:/api/packages" [color="#16a34a", style="dashed", label="api_call"];
+  "FUNC:admin/src/handlers/packages.ts:createPackage" -> "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend" [color="#2563eb", label="calls"];
+  "FILE:admin/src/hooks/usePackages.ts" -> "FUNC:admin/src/handlers/packages.ts:createPackage" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage" -> "FUNC:admin/src/handlers/packages.ts:createPackage" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/handlers/packages.ts:updatePackage" -> "API:PUT:/api/packages/:id" [color="#16a34a", style="dashed", label="api_call"];
+  "FUNC:admin/src/handlers/packages.ts:updatePackage" -> "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend" [color="#2563eb", label="calls"];
+  "FILE:admin/src/hooks/usePackages.ts" -> "FUNC:admin/src/handlers/packages.ts:updatePackage" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage" -> "FUNC:admin/src/handlers/packages.ts:updatePackage" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/handlers/packages.ts:deletePackage" -> "API:DELETE:/api/packages/:id" [color="#16a34a", style="dashed", label="api_call"];
+  "FILE:admin/src/hooks/usePackages.ts" -> "FUNC:admin/src/handlers/packages.ts:deletePackage" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage" -> "FUNC:admin/src/handlers/packages.ts:deletePackage" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload" -> "HOOK:useState" [color="#7c3aed", style="dotted", label="hook"];
+  "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/usePackages.ts:usePackagesList" -> "HOOK:useQuery" [color="#7c3aed", style="dotted", label="hook"];
+  "FUNC:admin/src/hooks/usePackages.ts:usePackagesList" -> "FUNC:admin/src/handlers/packages.ts:getAllPackages" [color="#2563eb", label="calls"];
+  "FUNC:admin/src/hooks/usePackages.ts:usePackagesList" -> "FUNC:admin/src/handlers/apiClient.ts:handleApiError" [color="#2563eb", label="calls"];
+  "FILE:admin/src/pages/packages/PackagesList.tsx" -> "FUNC:admin/src/hooks/usePackages.ts:usePackagesList" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList" -> "FUNC:admin/src/hooks/usePackages.ts:usePackagesList" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails" -> "HOOK:useQuery" [color="#7c3aed", style="dotted", label="hook"];
+  "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails" -> "FUNC:admin/src/handlers/packages.ts:getPackageById" [color="#2563eb", label="calls"];
+  "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails" -> "FUNC:admin/src/handlers/apiClient.ts:handleApiError" [color="#2563eb", label="calls"];
+  "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage" -> "HOOK:useQueryClient" [color="#7c3aed", style="dotted", label="hook"];
+  "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage" -> "HOOK:useMutation" [color="#7c3aed", style="dotted", label="hook"];
+  "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage" -> "FUNC:admin/src/handlers/packages.ts:createPackage" [color="#2563eb", label="calls"];
+  "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage" -> "FUNC:admin/src/handlers/apiClient.ts:handleApiError" [color="#2563eb", label="calls"];
+  "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage" -> "HOOK:useQueryClient" [color="#7c3aed", style="dotted", label="hook"];
+  "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage" -> "HOOK:useMutation" [color="#7c3aed", style="dotted", label="hook"];
+  "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage" -> "FUNC:admin/src/handlers/packages.ts:updatePackage" [color="#2563eb", label="calls"];
+  "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage" -> "FUNC:admin/src/handlers/apiClient.ts:handleApiError" [color="#2563eb", label="calls"];
+  "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage" [color="#9ca3af", style="dashed", label="references"];
+  "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage" -> "HOOK:useQueryClient" [color="#7c3aed", style="dotted", label="hook"];
+  "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage" -> "HOOK:useMutation" [color="#7c3aed", style="dotted", label="hook"];
+  "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage" -> "FUNC:admin/src/handlers/packages.ts:deletePackage" [color="#2563eb", label="calls"];
+  "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage" -> "FUNC:admin/src/handlers/apiClient.ts:handleApiError" [color="#2563eb", label="calls"];
+  "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/Settings.tsx:Settings" -> "HOOK:useState" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/Settings.tsx:Settings" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#ca8a04", style="bold", label="renders"];
+  "FILE:admin/src/router.tsx" -> "COMPONENT:admin/src/pages/Settings.tsx:Settings" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/pages/Settings.tsx" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/Settings.tsx:Settings" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/pages/packages/PackagesList.tsx" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/pages/packages/components/HeaderSection.tsx" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/pages/packages/components/ImageCropperModal.tsx" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/pages/packages/components/InclusionsSection.tsx" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/pages/packages/components/ItinerarySection.tsx" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/pages/packages/components/MediaSection.tsx" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/pages/packages/components/OverviewSection.tsx" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/pages/packages/components/PricingSection.tsx" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/pages/packages/components/SeoSection.tsx" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "HOOK:useNavigate" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "HOOK:useParams" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails" [color="#2563eb", label="calls"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage" [color="#2563eb", label="calls"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage" [color="#2563eb", label="calls"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage" [color="#2563eb", label="calls"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "HOOK:useState" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload" [color="#2563eb", label="calls"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "HOOK:useForm" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "HOOK:useWatch" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "HOOK:useEffect" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "API:POST:/api/packages/media/delete" [color="#16a34a", style="dashed", label="api_call"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "FUNC:admin/src/handlers/packages.ts:mapFrontendPackageToBackend" [color="#2563eb", label="calls"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#ca8a04", style="bold", label="renders"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection" [color="#ca8a04", style="bold", label="renders"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection" [color="#ca8a04", style="bold", label="renders"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection" [color="#ca8a04", style="bold", label="renders"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection" [color="#ca8a04", style="bold", label="renders"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection" [color="#ca8a04", style="bold", label="renders"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection" [color="#ca8a04", style="bold", label="renders"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection" [color="#ca8a04", style="bold", label="renders"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema" [color="#ea580c", style="dotted", label="schema"];
+  "FILE:admin/src/router.tsx" -> "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList" -> "HOOK:useNavigate" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList" -> "HOOK:useState" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList" -> "FUNC:admin/src/hooks/usePackages.ts:usePackagesList" [color="#2563eb", label="calls"];
+  "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList" -> "FUNC:admin/src/hooks/usePackages.ts:usePackagesList" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#ca8a04", style="bold", label="renders"];
+  "FILE:admin/src/router.tsx" -> "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList" [color="#9ca3af", style="dashed", label="references"];
+  "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema" -> "SCHEMA:admin/src/pages/packages/schema.ts:scheduleItemSchema" [color="#9ca3af", style="dashed", label="references"];
+  "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema" -> "SCHEMA:admin/src/pages/packages/schema.ts:scheduleItemSchema" [color="#ea580c", style="dotted", label="schema"];
+  "FILE:admin/src/pages/packages/schema.ts" -> "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema" [color="#9ca3af", style="dashed", label="references"];
+  "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:frontend/app/packages/[id]/page.tsx:PackageDetailPage" -> "FUNC:frontend/app/packages/[id]/page.tsx:generateItinerary" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:frontend/app/packages/[id]/page.tsx:PackageDetailPage" -> "FUNC:frontend/app/packages/[id]/page.tsx:generateItinerary" [color="#2563eb", label="calls"];
+  "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection" -> "HOOK:useWatch" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#ca8a04", style="bold", label="renders"];
+  "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal" -> "FUNC:admin/src/pages/packages/components/ImageCropperModal.tsx:centerAspectCrop" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal" -> "HOOK:useState" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal" -> "HOOK:useRef" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal" -> "HOOK:useEffect" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal" -> "FUNC:admin/src/pages/packages/components/ImageCropperModal.tsx:centerAspectCrop" [color="#2563eb", label="calls"];
+  "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#ca8a04", style="bold", label="renders"];
+  "FILE:admin/src/pages/packages/components/MediaSection.tsx" -> "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection" -> "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection" -> "HOOK:useWatch" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#ca8a04", style="bold", label="renders"];
+  "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection" -> "HOOK:useWatch" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection" -> "HOOK:useFieldArray" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#ca8a04", style="bold", label="renders"];
+  "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection" -> "HOOK:useRef" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection" -> "HOOK:useState" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection" -> "HOOK:useWatch" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#ca8a04", style="bold", label="renders"];
+  "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection" -> "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal" [color="#ca8a04", style="bold", label="renders"];
+  "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection" -> "HOOK:useWatch" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#ca8a04", style="bold", label="renders"];
+  "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection" -> "HOOK:useWatch" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#ca8a04", style="bold", label="renders"];
+  "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection" -> "HOOK:useWatch" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#ca8a04", style="bold", label="renders"];
+  "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection" [color="#9ca3af", style="dashed", label="references"];
+  "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection" [color="#9ca3af", style="dashed", label="references"];
+  "API:GET:/api/packages" -> "FUNC:api/controllers/PackageController.js:PackageController.getAll" [color="#15803d", penwidth=2, label="routes"];
+  "API:GET:/api/packages/:id" -> "FUNC:api/controllers/PackageController.js:PackageController.getById" [color="#15803d", penwidth=2, label="routes"];
+  "API:POST:/api/packages" -> "FUNC:api/controllers/PackageController.js:PackageController.create" [color="#15803d", penwidth=2, label="routes"];
+  "API:PUT:/api/packages/:id" -> "FUNC:api/controllers/PackageController.js:PackageController.update" [color="#15803d", penwidth=2, label="routes"];
+  "API:DELETE:/api/packages/:id" -> "FUNC:api/controllers/PackageController.js:PackageController.delete" [color="#15803d", penwidth=2, label="routes"];
+  "API:POST:/api/packages/media/delete" -> "FUNC:api/controllers/PackageController.js:PackageController.deleteMedia" [color="#15803d", penwidth=2, label="routes"];
+}
