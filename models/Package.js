@@ -29,9 +29,9 @@ const packageSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  category: {
-    type: String,
-    trim: true
+  categories: {
+    type: [String],
+    default: []
   },
   title: {
     type: String,
@@ -61,12 +61,15 @@ const packageSchema = new mongoose.Schema({
   originalPrice: {
     type: Number // Strike-out original price (optional)
   },
-  duration: {
-    type: String,
-    required: true // e.g. "5 Days / 4 Nights"
+  days: {
+    type: Number,
+    required: true,
+    min: 1
   },
-  shortDuration: {
-    type: String // Optional: e.g. "5D / 4N" for small mobile badges
+  nights: {
+    type: Number,
+    required: true,
+    min: 0
   },
   accommodation: {
     type: String,

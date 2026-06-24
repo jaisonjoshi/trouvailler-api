@@ -20,9 +20,9 @@ const seoSchema = z.object({
   keywords: z.string().optional()
 });
 
-export const createPackageSchema = z.object({
+const basePackageSchema = z.object({
   destinationId: z.string().min(1, "Destination ID is required"),
-  category: z.string().optional(),
+  categories: z.array(z.string()).default([]),
   title: z.string().min(1, "Package title is required"),
   location: z.string().min(1, "Location is required"),
   image: z.string().url("Cover image must be a valid URL"),
@@ -30,8 +30,8 @@ export const createPackageSchema = z.object({
   description: z.string().min(1, "Description is required"),
   price: z.number().nonnegative("Price must be a non-negative number"),
   originalPrice: z.number().nonnegative("Original price must be a non-negative number").optional().nullable(),
-  duration: z.string().min(1, "Duration description is required"),
-  shortDuration: z.string().optional(),
+  days: z.number().int().min(1, "Days must be at least 1"),
+  nights: z.number().int().min(0, "Nights must be at least 0"),
   accommodation: z.string().min(1, "Accommodation details are required"),
   excursions: z.string().min(1, "Excursion details are required"),
   meals: z.string().min(1, "Meal details are required"),
@@ -42,4 +42,23 @@ export const createPackageSchema = z.object({
   seo: seoSchema.optional()
 });
 
-export const updatePackageSchema = createPackageSchema.partial();
+export const createPackageSchema = basePackageSchema.refine(
+  (data) => data.nights <= data.days,
+  {
+    message: "Nights must be less than or equal to days",
+    path: ["nights"]
+  }
+);
+
+export const updatePackageSchema = basePackageSchema.partial().refine(
+  (data) => {
+    if (data.days !== undefined && data.nights !== undefined) {
+      return data.nights <= data.days;
+    }
+    return true;
+  },
+  {
+    message: "Nights must be less than or equal to days",
+    path: ["nights"]
+  }
+);

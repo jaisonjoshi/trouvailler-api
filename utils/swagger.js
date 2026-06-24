@@ -5,6 +5,7 @@ import {
   scheduleItemSchema,
   activityDetailSchema
 } from "../validation/PackageValidation.js";
+import { createCategorySchema } from "../validation/CategoryValidation.js";
 
 const options = {
   definition: {
@@ -37,3 +38,4 @@ if (!swaggerSpec.components.schemas) {
 swaggerSpec.components.schemas.Package = z.toJSONSchema(createPackageSchema, { target: "openapi-3.0" });
 swaggerSpec.components.schemas.ScheduleItem = z.toJSONSchema(scheduleItemSchema, { target: "openapi-3.0" });
 swaggerSpec.components.schemas.ActivityDetail = z.toJSONSchema(activityDetailSchema, { target: "openapi-3.0" });
+swaggerSpec.components.schemas.Category = z.toJSONSchema(createCategorySchema, { target: "openapi-3.0" });

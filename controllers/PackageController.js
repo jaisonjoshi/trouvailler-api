@@ -6,7 +6,7 @@ class PackageController {
     try {
       const filters = {
         destinationId: req.query.destinationId,
-        category: req.query.category,
+        categories: req.query.categories ? (Array.isArray(req.query.categories) ? req.query.categories : [req.query.categories]) : undefined,
         search: req.query.search
       };
       const options = {

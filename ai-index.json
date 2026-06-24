@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-24T15:24:52.556Z",
+  "generatedAt": "2026-06-24T19:12:51.703Z",
   "project": "trouvailler-admin",
   "version": "1.0",
-  "sourceCount": 54,
-  "symbolCount": 99,
-  "edgeCount": 398,
+  "sourceCount": 65,
+  "symbolCount": 131,
+  "edgeCount": 583,
   "symbols": {
     "COMPONENT:admin/src/App.tsx:App": {
       "name": "App",
@@ -20,6 +20,81 @@
       "referencedBy": [
         "FILE:admin/src/App.tsx",
         "FILE:admin/src/main.tsx"
+      ]
+    },
+    "FUNC:api/controllers/CategoryController.js:CategoryController.getAll": {
+      "name": "CategoryController.getAll",
+      "type": "FUNC",
+      "file": "api/controllers/CategoryController.js",
+      "project": "api",
+      "range": {
+        "start": 4,
+        "end": 16
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "FILE:api/routes/CategoryRoutes.js"
+      ]
+    },
+    "FUNC:api/controllers/CategoryController.js:CategoryController.getById": {
+      "name": "CategoryController.getById",
+      "type": "FUNC",
+      "file": "api/controllers/CategoryController.js",
+      "project": "api",
+      "range": {
+        "start": 18,
+        "end": 26
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "FILE:api/routes/CategoryRoutes.js"
+      ]
+    },
+    "FUNC:api/controllers/CategoryController.js:CategoryController.create": {
+      "name": "CategoryController.create",
+      "type": "FUNC",
+      "file": "api/controllers/CategoryController.js",
+      "project": "api",
+      "range": {
+        "start": 28,
+        "end": 35
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "FILE:api/routes/CategoryRoutes.js"
+      ]
+    },
+    "FUNC:api/controllers/CategoryController.js:CategoryController.update": {
+      "name": "CategoryController.update",
+      "type": "FUNC",
+      "file": "api/controllers/CategoryController.js",
+      "project": "api",
+      "range": {
+        "start": 37,
+        "end": 45
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "FILE:api/routes/CategoryRoutes.js"
+      ]
+    },
+    "FUNC:api/controllers/CategoryController.js:CategoryController.delete": {
+      "name": "CategoryController.delete",
+      "type": "FUNC",
+      "file": "api/controllers/CategoryController.js",
+      "project": "api",
+      "range": {
+        "start": 47,
+        "end": 58
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "FILE:api/routes/CategoryRoutes.js"
       ]
     },
     "FUNC:api/controllers/PackageController.js:PackageController.getAll": {
@@ -112,6 +187,95 @@
         "FILE:api/routes/PackageRoutes.js"
       ]
     },
+    "FUNC:api/services/CategoryService.js:CategoryService.getAllCategories": {
+      "name": "CategoryService.getAllCategories",
+      "type": "FUNC",
+      "file": "api/services/CategoryService.js",
+      "project": "api",
+      "range": {
+        "start": 5,
+        "end": 7
+      },
+      "callers": [
+        "FUNC:api/controllers/CategoryController.js:CategoryController.getAll"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/controllers/CategoryController.js:CategoryController.getAll"
+      ]
+    },
+    "FUNC:api/services/CategoryService.js:CategoryService.getCategoryById": {
+      "name": "CategoryService.getCategoryById",
+      "type": "FUNC",
+      "file": "api/services/CategoryService.js",
+      "project": "api",
+      "range": {
+        "start": 9,
+        "end": 17
+      },
+      "callers": [
+        "FUNC:api/controllers/CategoryController.js:CategoryController.getById",
+        "FUNC:api/services/CategoryService.js:CategoryService.updateCategory",
+        "FUNC:api/services/CategoryService.js:CategoryService.deleteCategory"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/services/CategoryService.js:CategoryService.updateCategory",
+        "FUNC:api/services/CategoryService.js:CategoryService.deleteCategory",
+        "FUNC:api/controllers/CategoryController.js:CategoryController.getById"
+      ]
+    },
+    "FUNC:api/services/CategoryService.js:CategoryService.createCategory": {
+      "name": "CategoryService.createCategory",
+      "type": "FUNC",
+      "file": "api/services/CategoryService.js",
+      "project": "api",
+      "range": {
+        "start": 19,
+        "end": 32
+      },
+      "callers": [
+        "FUNC:api/controllers/CategoryController.js:CategoryController.create"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/controllers/CategoryController.js:CategoryController.create"
+      ]
+    },
+    "FUNC:api/services/CategoryService.js:CategoryService.updateCategory": {
+      "name": "CategoryService.updateCategory",
+      "type": "FUNC",
+      "file": "api/services/CategoryService.js",
+      "project": "api",
+      "range": {
+        "start": 34,
+        "end": 52
+      },
+      "callers": [
+        "FUNC:api/controllers/CategoryController.js:CategoryController.update"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/controllers/CategoryController.js:CategoryController.update"
+      ]
+    },
+    "FUNC:api/services/CategoryService.js:CategoryService.deleteCategory": {
+      "name": "CategoryService.deleteCategory",
+      "type": "FUNC",
+      "file": "api/services/CategoryService.js",
+      "project": "api",
+      "range": {
+        "start": 54,
+        "end": 58
+      },
+      "callers": [
+        "FUNC:api/controllers/CategoryController.js:CategoryController.delete"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/controllers/CategoryController.js:CategoryController.delete"
+      ]
+    },
     "FUNC:api/services/PackageService.js:PackageService.getAllPackages": {
       "name": "PackageService.getAllPackages",
       "type": "FUNC",
@@ -201,6 +365,41 @@
         "FUNC:api/controllers/PackageController.js:PackageController.delete"
       ]
     },
+    "SCHEMA:api/validation/CategoryValidation.js:createCategorySchema": {
+      "name": "createCategorySchema",
+      "type": "SCHEMA",
+      "file": "api/validation/CategoryValidation.js",
+      "project": "api",
+      "range": {
+        "start": 3,
+        "end": 7
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "SCHEMA:api/validation/CategoryValidation.js:updateCategorySchema",
+        "FILE:api/services/CategoryService.js",
+        "FUNC:api/services/CategoryService.js:CategoryService.createCategory",
+        "FILE:api/routes/CategoryRoutes.js"
+      ]
+    },
+    "SCHEMA:api/validation/CategoryValidation.js:updateCategorySchema": {
+      "name": "updateCategorySchema",
+      "type": "SCHEMA",
+      "file": "api/validation/CategoryValidation.js",
+      "project": "api",
+      "range": {
+        "start": 9,
+        "end": 9
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "FILE:api/services/CategoryService.js",
+        "FUNC:api/services/CategoryService.js:CategoryService.updateCategory",
+        "FILE:api/routes/CategoryRoutes.js"
+      ]
+    },
     "SCHEMA:api/validation/PackageValidation.js:activityDetailSchema": {
       "name": "activityDetailSchema",
       "type": "SCHEMA",
@@ -213,7 +412,7 @@
       "callers": [],
       "renders": [],
       "referencedBy": [
-        "SCHEMA:api/validation/PackageValidation.js:createPackageSchema"
+        "SCHEMA:api/validation/PackageValidation.js:basePackageSchema"
       ]
     },
     "SCHEMA:api/validation/PackageValidation.js:scheduleItemSchema": {
@@ -228,7 +427,7 @@
       "callers": [],
       "renders": [],
       "referencedBy": [
-        "SCHEMA:api/validation/PackageValidation.js:createPackageSchema"
+        "SCHEMA:api/validation/PackageValidation.js:basePackageSchema"
       ]
     },
     "SCHEMA:api/validation/PackageValidation.js:seoSchema": {
@@ -243,11 +442,11 @@
       "callers": [],
       "renders": [],
       "referencedBy": [
-        "SCHEMA:api/validation/PackageValidation.js:createPackageSchema"
+        "SCHEMA:api/validation/PackageValidation.js:basePackageSchema"
       ]
     },
-    "SCHEMA:api/validation/PackageValidation.js:createPackageSchema": {
-      "name": "createPackageSchema",
+    "SCHEMA:api/validation/PackageValidation.js:basePackageSchema": {
+      "name": "basePackageSchema",
       "type": "SCHEMA",
       "file": "api/validation/PackageValidation.js",
       "project": "api",
@@ -258,7 +457,22 @@
       "callers": [],
       "renders": [],
       "referencedBy": [
-        "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema",
+        "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+        "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema"
+      ]
+    },
+    "SCHEMA:api/validation/PackageValidation.js:createPackageSchema": {
+      "name": "createPackageSchema",
+      "type": "SCHEMA",
+      "file": "api/validation/PackageValidation.js",
+      "project": "api",
+      "range": {
+        "start": 45,
+        "end": 51
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
         "FILE:api/services/PackageService.js",
         "FUNC:api/services/PackageService.js:PackageService.createPackage",
         "FILE:api/routes/PackageRoutes.js"
@@ -270,8 +484,8 @@
       "file": "api/validation/PackageValidation.js",
       "project": "api",
       "range": {
-        "start": 45,
-        "end": 45
+        "start": 53,
+        "end": 64
       },
       "callers": [],
       "renders": [],
@@ -279,6 +493,21 @@
         "FILE:api/services/PackageService.js",
         "FUNC:api/services/PackageService.js:PackageService.updatePackage",
         "FILE:api/routes/PackageRoutes.js"
+      ]
+    },
+    "SCHEMA:api/models/Category.js:categorySchema": {
+      "name": "categorySchema",
+      "type": "SCHEMA",
+      "file": "api/models/Category.js",
+      "project": "api",
+      "range": {
+        "start": 3,
+        "end": 21
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "FILE:api/models/Category.js"
       ]
     },
     "SCHEMA:api/models/Package.js:activityDetailSchema": {
@@ -333,7 +562,7 @@
       "project": "api",
       "range": {
         "start": 26,
-        "end": 105
+        "end": 108
       },
       "callers": [],
       "renders": [],
@@ -592,8 +821,8 @@
       "file": "admin/src/components/Sidebar.tsx",
       "project": "admin",
       "range": {
-        "start": 12,
-        "end": 127
+        "start": 13,
+        "end": 129
       },
       "callers": [],
       "renders": [
@@ -656,6 +885,11 @@
         "end": 44
       },
       "callers": [
+        "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+        "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails",
+        "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
+        "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
+        "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
         "FUNC:admin/src/hooks/usePackages.ts:usePackagesList",
         "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails",
         "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
@@ -664,12 +898,108 @@
       ],
       "renders": [],
       "referencedBy": [
+        "FILE:admin/src/hooks/useCategories.ts",
+        "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+        "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails",
+        "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
+        "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
+        "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
         "FILE:admin/src/hooks/usePackages.ts",
         "FUNC:admin/src/hooks/usePackages.ts:usePackagesList",
         "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails",
         "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
         "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage",
         "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage"
+      ]
+    },
+    "FUNC:admin/src/handlers/categories.ts:getAllCategories": {
+      "name": "getAllCategories",
+      "type": "FUNC",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "admin",
+      "range": {
+        "start": 5,
+        "end": 8
+      },
+      "callers": [
+        "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/hooks/useCategories.ts",
+        "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList"
+      ]
+    },
+    "FUNC:admin/src/handlers/categories.ts:getCategoryById": {
+      "name": "getCategoryById",
+      "type": "FUNC",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "admin",
+      "range": {
+        "start": 11,
+        "end": 14
+      },
+      "callers": [
+        "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/hooks/useCategories.ts",
+        "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails"
+      ]
+    },
+    "FUNC:admin/src/handlers/categories.ts:createCategory": {
+      "name": "createCategory",
+      "type": "FUNC",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "admin",
+      "range": {
+        "start": 17,
+        "end": 20
+      },
+      "callers": [
+        "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/hooks/useCategories.ts",
+        "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory"
+      ]
+    },
+    "FUNC:admin/src/handlers/categories.ts:updateCategory": {
+      "name": "updateCategory",
+      "type": "FUNC",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "admin",
+      "range": {
+        "start": 23,
+        "end": 26
+      },
+      "callers": [
+        "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/hooks/useCategories.ts",
+        "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory"
+      ]
+    },
+    "FUNC:admin/src/handlers/categories.ts:deleteCategory": {
+      "name": "deleteCategory",
+      "type": "FUNC",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "admin",
+      "range": {
+        "start": 29,
+        "end": 31
+      },
+      "callers": [
+        "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/hooks/useCategories.ts",
+        "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory"
       ]
     },
     "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend": {
@@ -802,6 +1132,105 @@
         "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage"
       ]
     },
+    "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList": {
+      "name": "useCategoriesList",
+      "type": "FUNC",
+      "file": "admin/src/hooks/useCategories.ts",
+      "project": "admin",
+      "range": {
+        "start": 21,
+        "end": 32
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+        "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+        "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/categories/CategoriesList.tsx",
+        "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
+        "FILE:admin/src/pages/packages/PackageEditor.tsx",
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+        "FILE:admin/src/pages/packages/PackagesList.tsx",
+        "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+        "FILE:admin/src/pages/packages/components/HeaderSection.tsx",
+        "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection"
+      ]
+    },
+    "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails": {
+      "name": "useCategoryDetails",
+      "type": "FUNC",
+      "file": "admin/src/hooks/useCategories.ts",
+      "project": "admin",
+      "range": {
+        "start": 35,
+        "end": 48
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+      ]
+    },
+    "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory": {
+      "name": "useCreateCategory",
+      "type": "FUNC",
+      "file": "admin/src/hooks/useCategories.ts",
+      "project": "admin",
+      "range": {
+        "start": 51,
+        "end": 65
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+      ]
+    },
+    "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory": {
+      "name": "useUpdateCategory",
+      "type": "FUNC",
+      "file": "admin/src/hooks/useCategories.ts",
+      "project": "admin",
+      "range": {
+        "start": 68,
+        "end": 83
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+      ]
+    },
+    "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory": {
+      "name": "useDeleteCategory",
+      "type": "FUNC",
+      "file": "admin/src/hooks/useCategories.ts",
+      "project": "admin",
+      "range": {
+        "start": 86,
+        "end": 100
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+      ]
+    },
     "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload": {
       "name": "useCloudinaryUpload",
       "type": "FUNC",
@@ -812,10 +1241,13 @@
         "end": 39
       },
       "callers": [
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
       ],
       "renders": [],
       "referencedBy": [
+        "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
       ]
@@ -950,6 +1382,8 @@
       "callers": [],
       "renders": [
         "COMPONENT:admin/src/pages/Settings.tsx:Settings",
+        "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
         "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
         "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection",
@@ -964,6 +1398,10 @@
       "referencedBy": [
         "FILE:admin/src/pages/Settings.tsx",
         "COMPONENT:admin/src/pages/Settings.tsx:Settings",
+        "FILE:admin/src/pages/categories/CategoriesList.tsx",
+        "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
+        "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
         "FILE:admin/src/pages/packages/PackagesList.tsx",
@@ -986,14 +1424,61 @@
         "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection"
       ]
     },
+    "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList": {
+      "name": "CategoriesList",
+      "type": "COMPONENT",
+      "file": "admin/src/pages/categories/CategoriesList.tsx",
+      "project": "admin",
+      "range": {
+        "start": 14,
+        "end": 229
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/router.tsx"
+      ]
+    },
+    "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor": {
+      "name": "CategoryEditor",
+      "type": "COMPONENT",
+      "file": "admin/src/pages/categories/CategoryEditor.tsx",
+      "project": "admin",
+      "range": {
+        "start": 27,
+        "end": 448
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/router.tsx"
+      ]
+    },
+    "SCHEMA:admin/src/pages/categories/schema.ts:categorySchema": {
+      "name": "categorySchema",
+      "type": "SCHEMA",
+      "file": "admin/src/pages/categories/schema.ts",
+      "project": "admin",
+      "range": {
+        "start": 3,
+        "end": 7
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/categories/schema.ts",
+        "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+      ]
+    },
     "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor": {
       "name": "PackageEditor",
       "type": "COMPONENT",
       "file": "admin/src/pages/packages/PackageEditor.tsx",
       "project": "admin",
       "range": {
-        "start": 54,
-        "end": 773
+        "start": 55,
+        "end": 784
       },
       "callers": [],
       "renders": [],
@@ -1007,8 +1492,8 @@
       "file": "admin/src/pages/packages/PackagesList.tsx",
       "project": "admin",
       "range": {
-        "start": 14,
-        "end": 252
+        "start": 15,
+        "end": 266
       },
       "callers": [],
       "renders": [],
@@ -1038,7 +1523,7 @@
       "project": "admin",
       "range": {
         "start": 8,
-        "end": 33
+        "end": 36
       },
       "callers": [],
       "renders": [],
@@ -1136,8 +1621,8 @@
       "file": "admin/src/pages/packages/components/HeaderSection.tsx",
       "project": "admin",
       "range": {
-        "start": 20,
-        "end": 133
+        "start": 22,
+        "end": 187
       },
       "callers": [],
       "renders": [
@@ -1176,9 +1661,12 @@
       },
       "callers": [],
       "renders": [
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
         "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection"
       ],
       "referencedBy": [
+        "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
         "FILE:admin/src/pages/packages/components/MediaSection.tsx",
         "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection"
       ]
@@ -1261,8 +1749,8 @@
       "file": "admin/src/pages/packages/components/PricingSection.tsx",
       "project": "admin",
       "range": {
-        "start": 21,
-        "end": 148
+        "start": 23,
+        "end": 166
       },
       "callers": [],
       "renders": [
@@ -1361,6 +1849,71 @@
       "type": "HOOK",
       "file": "node_modules",
       "project": "admin",
+      "range": {
+        "start": 0,
+        "end": 0
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": []
+    },
+    "API:GET:/api/categories": {
+      "name": "GET /api/categories",
+      "type": "API",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "api",
+      "range": {
+        "start": 0,
+        "end": 0
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": []
+    },
+    "API:GET:/api/categories/:id": {
+      "name": "GET /api/categories/:id",
+      "type": "API",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "api",
+      "range": {
+        "start": 0,
+        "end": 0
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": []
+    },
+    "API:POST:/api/categories": {
+      "name": "POST /api/categories",
+      "type": "API",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "api",
+      "range": {
+        "start": 0,
+        "end": 0
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": []
+    },
+    "API:PUT:/api/categories/:id": {
+      "name": "PUT /api/categories/:id",
+      "type": "API",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "api",
+      "range": {
+        "start": 0,
+        "end": 0
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": []
+    },
+    "API:DELETE:/api/categories/:id": {
+      "name": "DELETE /api/categories/:id",
+      "type": "API",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "api",
       "range": {
         "start": 0,
         "end": 0

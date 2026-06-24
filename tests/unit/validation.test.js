@@ -21,6 +21,7 @@ describe("PackageValidation", () => {
         activities: undefined,
         inclusions: undefined,
         exclusions: undefined,
+        categories: undefined,
       });
       const result = createPackageSchema.parse(data);
       expect(result.images).toEqual([]);
@@ -28,6 +29,7 @@ describe("PackageValidation", () => {
       expect(result.activities).toEqual([]);
       expect(result.inclusions).toEqual([]);
       expect(result.exclusions).toEqual([]);
+      expect(result.categories).toEqual([]);
     });
 
     it("applies default for isIncluded in activities", () => {
@@ -46,7 +48,8 @@ describe("PackageValidation", () => {
         "image",
         "description",
         "price",
-        "duration",
+        "days",
+        "nights",
         "accommodation",
         "excursions",
         "meals",
@@ -163,6 +166,7 @@ describe("PackageValidation", () => {
         activities: [],
         inclusions: [],
         exclusions: [],
+        categories: [],
       });
     });
 

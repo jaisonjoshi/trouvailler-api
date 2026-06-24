@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-24T15:24:52.556Z",
+  "generatedAt": "2026-06-24T19:12:51.703Z",
   "project": "trouvailler-admin",
   "version": "1.0",
-  "sourceCount": 54,
-  "symbolCount": 99,
-  "edgeCount": 398,
+  "sourceCount": 65,
+  "symbolCount": 131,
+  "edgeCount": 583,
   "projects": {
     "trouvailler-admin": {
       "folders": [
@@ -16,6 +16,7 @@
         "admin/src/pages",
         "admin/src/types",
         "admin/src/components/ui",
+        "admin/src/pages/categories",
         "admin/src/pages/packages",
         "admin/src/pages/packages/components"
       ],
@@ -61,6 +62,11 @@
     {
       "source": "admin:admin/src",
       "target": "admin:admin/src/pages",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src",
+      "target": "admin:admin/src/pages/categories",
       "type": "imports"
     },
     {
@@ -119,6 +125,21 @@
       "type": "imports"
     },
     {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/hooks",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/components/ui",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/pages/packages/components",
+      "type": "imports"
+    },
+    {
       "source": "admin:admin/src/pages/packages",
       "target": "admin:admin/src/types",
       "type": "imports"
@@ -151,6 +172,16 @@
     {
       "source": "admin:admin/src/pages/packages/components",
       "target": "admin:admin/src/components/ui",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/hooks",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/types",
       "type": "imports"
     },
     {
@@ -219,14 +250,24 @@
       "type": "references"
     },
     {
+      "source": "admin:admin/src/hooks",
+      "target": "admin:admin/src/handlers",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/hooks",
+      "type": "references"
+    },
+    {
       "source": "admin:admin/src/pages/packages",
       "target": "admin:admin/src/hooks",
       "type": "references"
     },
     {
-      "source": "admin:admin/src/hooks",
-      "target": "admin:admin/src/handlers",
-      "type": "calls"
+      "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/hooks",
+      "type": "references"
     },
     {
       "source": "admin:admin/src/pages",
@@ -244,6 +285,11 @@
       "type": "references"
     },
     {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/components/ui",
+      "type": "references"
+    },
+    {
       "source": "admin:admin/src/pages/packages",
       "target": "admin:admin/src/components/ui",
       "type": "references"
@@ -252,6 +298,31 @@
       "source": "admin:admin/src/pages/packages/components",
       "target": "admin:admin/src/components/ui",
       "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/hooks",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/hooks",
+      "type": "uses_hook"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/components/ui",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src",
+      "target": "admin:admin/src/pages/categories",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/pages/packages/components",
+      "type": "renders"
     },
     {
       "source": "admin:admin/src/pages/packages",
@@ -285,11 +356,26 @@
     },
     {
       "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/hooks",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/hooks",
+      "type": "uses_hook"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/components",
       "target": "admin:admin/src/components/ui",
       "type": "renders"
     },
     {
       "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/components",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
       "target": "admin:admin/src/pages/packages/components",
       "type": "references"
     }

@@ -6,6 +6,7 @@ export function buildPackage(overrides = {}) {
   return {
     destinationId: "amalfi",
     category: "Honeymoon",
+    categories: ["category-id-1"],
     title: "Amalfi Coast Explorer",
     location: "Italy, Europe",
     image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80",
@@ -15,8 +16,8 @@ export function buildPackage(overrides = {}) {
     description: "Glide along the stunning clifftops of Amalfi.",
     price: 1299,
     originalPrice: 1599,
-    duration: "5 Days / 4 Nights",
-    shortDuration: "5D / 4N",
+    days: 5,
+    nights: 4,
     accommodation: "4★ Sea-View Hotel",
     excursions: "Boat Cruise & Ravello Tour",
     meals: "Breakfast & Dinner",

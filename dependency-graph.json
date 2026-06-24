@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-24T15:24:52.556Z",
+  "generatedAt": "2026-06-24T19:12:51.703Z",
   "project": "trouvailler-admin",
   "version": "1.0",
-  "sourceCount": 54,
-  "symbolCount": 99,
-  "edgeCount": 398,
+  "sourceCount": 65,
+  "symbolCount": 131,
+  "edgeCount": 583,
   "files": [
     {
       "path": "admin/src/App.tsx",
@@ -26,7 +26,7 @@
         "admin/node_modules/@types/react/index.d.ts",
         "admin/node_modules/@types/react-dom/client.d.ts",
         "admin/src/App.tsx",
-        "./index.css"
+        "frontend/node_modules/next/types/global.d.ts"
       ],
       "exports": []
     },
@@ -38,7 +38,9 @@
         "admin/src/components/RootLayout.tsx",
         "admin/src/pages/packages/PackagesList.tsx",
         "admin/src/pages/packages/PackageEditor.tsx",
-        "admin/src/pages/Settings.tsx"
+        "admin/src/pages/Settings.tsx",
+        "admin/src/pages/categories/CategoriesList.tsx",
+        "admin/src/pages/categories/CategoryEditor.tsx"
       ],
       "exports": [
         "rootRoute",
@@ -47,7 +49,22 @@
         "packageCreateRoute",
         "packageEditRoute",
         "settingsRoute",
+        "categoriesRoute",
+        "categoryCreateRoute",
+        "categoryEditRoute",
         "router"
+      ]
+    },
+    {
+      "path": "api/routes/CategoryRoutes.js",
+      "project": "api",
+      "imports": [
+        "api/controllers/CategoryController.js",
+        "api/utils/validate.js",
+        "api/validation/CategoryValidation.js"
+      ],
+      "exports": [
+        "default"
       ]
     },
     {
@@ -63,10 +80,32 @@
       ]
     },
     {
+      "path": "api/controllers/CategoryController.js",
+      "project": "api",
+      "imports": [
+        "api/services/CategoryService.js"
+      ],
+      "exports": [
+        "default"
+      ]
+    },
+    {
       "path": "api/controllers/PackageController.js",
       "project": "api",
       "imports": [
-        "api/services/PackageService.js"
+        "api/services/PackageService.js",
+        "frontend/node_modules/@types/node/crypto.d.ts"
+      ],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "api/services/CategoryService.js",
+      "project": "api",
+      "imports": [
+        "api/repositories/CategoryRepository.js",
+        "api/validation/CategoryValidation.js"
       ],
       "exports": [
         "default"
@@ -84,6 +123,17 @@
       ]
     },
     {
+      "path": "api/validation/CategoryValidation.js",
+      "project": "api",
+      "imports": [
+        "admin/node_modules/zod/index.d.cts"
+      ],
+      "exports": [
+        "createCategorySchema",
+        "updateCategorySchema"
+      ]
+    },
+    {
       "path": "api/validation/PackageValidation.js",
       "project": "api",
       "imports": [
@@ -94,6 +144,16 @@
         "scheduleItemSchema",
         "createPackageSchema",
         "updatePackageSchema"
+      ]
+    },
+    {
+      "path": "api/models/Category.js",
+      "project": "api",
+      "imports": [
+        "api/node_modules/mongoose/types/aggregate.d.ts"
+      ],
+      "exports": [
+        "default"
       ]
     },
     {
@@ -123,7 +183,9 @@
       "path": "frontend/app/layout.tsx",
       "project": "frontend",
       "imports": [
-        "./globals.css"
+        "frontend/node_modules/next/index.d.ts",
+        "frontend/node_modules/next/font/google/index.d.ts",
+        "frontend/node_modules/next/types/global.d.ts"
       ],
       "exports": [
         "default",
@@ -141,7 +203,10 @@
     {
       "path": "frontend/components/ActivityCard.tsx",
       "project": "frontend",
-      "imports": [],
+      "imports": [
+        "frontend/node_modules/@types/react/index.d.ts",
+        "frontend/node_modules/next/image.d.ts"
+      ],
       "exports": [
         "default"
       ]
@@ -149,7 +214,9 @@
     {
       "path": "frontend/components/BookingForm.tsx",
       "project": "frontend",
-      "imports": [],
+      "imports": [
+        "frontend/node_modules/@types/react/index.d.ts"
+      ],
       "exports": [
         "default"
       ]
@@ -157,7 +224,12 @@
     {
       "path": "frontend/components/CarouselSection.tsx",
       "project": "frontend",
-      "imports": [],
+      "imports": [
+        "frontend/node_modules/@types/react/index.d.ts",
+        "frontend/node_modules/next/link.d.ts",
+        "frontend/node_modules/embla-carousel-react/esm/index.d.ts",
+        "frontend/node_modules/embla-carousel-wheel-gestures/dist/index.d.ts"
+      ],
       "exports": [
         "default"
       ]
@@ -165,7 +237,10 @@
     {
       "path": "frontend/components/CategoryCard.tsx",
       "project": "frontend",
-      "imports": [],
+      "imports": [
+        "frontend/node_modules/next/image.d.ts",
+        "frontend/node_modules/next/link.d.ts"
+      ],
       "exports": [
         "default"
       ]
@@ -173,7 +248,10 @@
     {
       "path": "frontend/components/DestinationCard.tsx",
       "project": "frontend",
-      "imports": [],
+      "imports": [
+        "frontend/node_modules/next/image.d.ts",
+        "frontend/node_modules/next/link.d.ts"
+      ],
       "exports": [
         "default"
       ]
@@ -181,7 +259,10 @@
     {
       "path": "frontend/components/DirectoryCard.tsx",
       "project": "frontend",
-      "imports": [],
+      "imports": [
+        "frontend/node_modules/next/image.d.ts",
+        "frontend/node_modules/next/link.d.ts"
+      ],
       "exports": [
         "default"
       ]
@@ -197,7 +278,10 @@
     {
       "path": "frontend/components/Footer.tsx",
       "project": "frontend",
-      "imports": [],
+      "imports": [
+        "frontend/node_modules/next/image.d.ts",
+        "frontend/node_modules/next/link.d.ts"
+      ],
       "exports": [
         "default"
       ]
@@ -205,7 +289,9 @@
     {
       "path": "frontend/components/Header.tsx",
       "project": "frontend",
-      "imports": [],
+      "imports": [
+        "frontend/node_modules/next/image.d.ts"
+      ],
       "exports": [
         "default"
       ]
@@ -213,7 +299,10 @@
     {
       "path": "frontend/components/ImageGallery.tsx",
       "project": "frontend",
-      "imports": [],
+      "imports": [
+        "frontend/node_modules/@types/react/index.d.ts",
+        "frontend/node_modules/next/image.d.ts"
+      ],
       "exports": [
         "default"
       ]
@@ -221,7 +310,11 @@
     {
       "path": "frontend/components/Navbar.tsx",
       "project": "frontend",
-      "imports": [],
+      "imports": [
+        "frontend/node_modules/@types/react/index.d.ts",
+        "frontend/node_modules/next/image.d.ts",
+        "frontend/node_modules/next/link.d.ts"
+      ],
       "exports": [
         "default"
       ]
@@ -229,7 +322,10 @@
     {
       "path": "frontend/components/PackageCard.tsx",
       "project": "frontend",
-      "imports": [],
+      "imports": [
+        "frontend/node_modules/next/image.d.ts",
+        "frontend/node_modules/next/link.d.ts"
+      ],
       "exports": [
         "default"
       ]
@@ -318,6 +414,21 @@
       ]
     },
     {
+      "path": "admin/src/handlers/categories.ts",
+      "project": "admin",
+      "imports": [
+        "admin/src/handlers/apiClient.ts",
+        "admin/src/types/category.ts"
+      ],
+      "exports": [
+        "getAllCategories",
+        "getCategoryById",
+        "createCategory",
+        "updateCategory",
+        "deleteCategory"
+      ]
+    },
+    {
       "path": "admin/src/handlers/packages.ts",
       "project": "admin",
       "imports": [
@@ -344,6 +455,25 @@
       ],
       "exports": [
         "packageKeys"
+      ]
+    },
+    {
+      "path": "admin/src/hooks/useCategories.ts",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@tanstack/react-query/build/modern/index.d.ts",
+        "admin/src/handlers/categories.ts",
+        "admin/src/handlers/apiClient.ts",
+        "admin/src/handlers/apiClient.ts",
+        "admin/src/types/category.ts"
+      ],
+      "exports": [
+        "categoryKeys",
+        "useCategoriesList",
+        "useCategoryDetails",
+        "useCreateCategory",
+        "useUpdateCategory",
+        "useDeleteCategory"
       ]
     },
     {
@@ -390,6 +520,14 @@
       ]
     },
     {
+      "path": "admin/src/types/category.ts",
+      "project": "admin",
+      "imports": [],
+      "exports": [
+        "Category"
+      ]
+    },
+    {
       "path": "admin/src/types/package.ts",
       "project": "admin",
       "imports": [],
@@ -408,7 +546,9 @@
     {
       "path": "frontend/app/destinations/page.tsx",
       "project": "frontend",
-      "imports": [],
+      "imports": [
+        "frontend/node_modules/next/image.d.ts"
+      ],
       "exports": [
         "default"
       ]
@@ -454,6 +594,53 @@
       ]
     },
     {
+      "path": "admin/src/pages/categories/CategoriesList.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
+        "admin/src/hooks/useCategories.ts",
+        "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
+        "admin/src/components/ui/Button.tsx",
+        "admin/node_modules/react-tooltip/dist/react-tooltip.d.ts"
+      ],
+      "exports": [
+        "CategoriesList"
+      ]
+    },
+    {
+      "path": "admin/src/pages/categories/CategoryEditor.tsx",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/@types/react/index.d.ts",
+        "admin/node_modules/@types/react-dom/index.d.ts",
+        "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
+        "admin/node_modules/react-hook-form/dist/index.d.ts",
+        "admin/node_modules/@hookform/resolvers/zod/dist/index.d.ts",
+        "admin/src/hooks/useCategories.ts",
+        "admin/src/pages/categories/schema.ts",
+        "admin/src/pages/categories/schema.ts",
+        "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
+        "admin/src/components/ui/Button.tsx",
+        "admin/src/hooks/useCloudinaryUpload.ts",
+        "admin/src/pages/packages/components/ImageCropperModal.tsx"
+      ],
+      "exports": [
+        "CategoryEditor"
+      ]
+    },
+    {
+      "path": "admin/src/pages/categories/schema.ts",
+      "project": "admin",
+      "imports": [
+        "admin/node_modules/zod/index.d.cts"
+      ],
+      "exports": [
+        "categorySchema",
+        "CategoryFormValues"
+      ]
+    },
+    {
       "path": "admin/src/pages/packages/PackageEditor.tsx",
       "project": "admin",
       "imports": [
@@ -477,7 +664,8 @@
         "admin/src/pages/packages/components/InclusionsSection.tsx",
         "admin/src/pages/packages/components/ItinerarySection.tsx",
         "admin/src/pages/packages/components/SeoSection.tsx",
-        "admin/src/pages/packages/components/PricingSection.tsx"
+        "admin/src/pages/packages/components/PricingSection.tsx",
+        "admin/src/hooks/useCategories.ts"
       ],
       "exports": [
         "PackageEditor"
@@ -492,7 +680,8 @@
         "admin/src/hooks/usePackages.ts",
         "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
         "admin/src/components/ui/Button.tsx",
-        "admin/node_modules/react-tooltip/dist/react-tooltip.d.ts"
+        "admin/node_modules/react-tooltip/dist/react-tooltip.d.ts",
+        "admin/src/hooks/useCategories.ts"
       ],
       "exports": [
         "PackagesList"
@@ -513,7 +702,11 @@
     {
       "path": "frontend/app/destinations/[id]/page.tsx",
       "project": "frontend",
-      "imports": [],
+      "imports": [
+        "frontend/node_modules/next/image.d.ts",
+        "frontend/node_modules/next/link.d.ts",
+        "frontend/node_modules/next/navigation.d.ts"
+      ],
       "exports": [
         "generateStaticParams",
         "default"
@@ -522,7 +715,10 @@
     {
       "path": "frontend/app/packages/[id]/page.tsx",
       "project": "frontend",
-      "imports": [],
+      "imports": [
+        "frontend/node_modules/next/link.d.ts",
+        "frontend/node_modules/next/navigation.d.ts"
+      ],
       "exports": [
         "generateStaticParams",
         "generateMetadata",
@@ -540,7 +736,8 @@
         "admin/src/pages/packages/schema.ts",
         "admin/src/components/ui/Input.tsx",
         "admin/src/components/ui/Select.tsx",
-        "admin/src/components/ui/Button.tsx"
+        "admin/src/components/ui/Button.tsx",
+        "admin/src/hooks/useCategories.ts"
       ],
       "exports": [
         "HeaderSection"
@@ -553,6 +750,7 @@
         "admin/node_modules/@types/react/index.d.ts",
         "admin/node_modules/@types/react-dom/index.d.ts",
         "admin/node_modules/react-image-crop/dist/index.d.ts",
+        "frontend/node_modules/next/types/global.d.ts",
         "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
         "admin/src/components/ui/Button.tsx"
       ],
@@ -636,7 +834,8 @@
         "admin/node_modules/react-hook-form/dist/index.d.ts",
         "admin/src/pages/packages/schema.ts",
         "admin/src/components/ui/Input.tsx",
-        "admin/src/components/ui/Button.tsx"
+        "admin/src/components/ui/Button.tsx",
+        "admin/src/types/category.ts"
       ],
       "exports": [
         "PricingSection"
@@ -669,6 +868,51 @@
       "project": "admin",
       "startLine": 16,
       "endLine": 22
+    },
+    {
+      "id": "FUNC:api/controllers/CategoryController.js:CategoryController.getAll",
+      "type": "FUNC",
+      "name": "CategoryController.getAll",
+      "file": "api/controllers/CategoryController.js",
+      "project": "api",
+      "startLine": 4,
+      "endLine": 16
+    },
+    {
+      "id": "FUNC:api/controllers/CategoryController.js:CategoryController.getById",
+      "type": "FUNC",
+      "name": "CategoryController.getById",
+      "file": "api/controllers/CategoryController.js",
+      "project": "api",
+      "startLine": 18,
+      "endLine": 26
+    },
+    {
+      "id": "FUNC:api/controllers/CategoryController.js:CategoryController.create",
+      "type": "FUNC",
+      "name": "CategoryController.create",
+      "file": "api/controllers/CategoryController.js",
+      "project": "api",
+      "startLine": 28,
+      "endLine": 35
+    },
+    {
+      "id": "FUNC:api/controllers/CategoryController.js:CategoryController.update",
+      "type": "FUNC",
+      "name": "CategoryController.update",
+      "file": "api/controllers/CategoryController.js",
+      "project": "api",
+      "startLine": 37,
+      "endLine": 45
+    },
+    {
+      "id": "FUNC:api/controllers/CategoryController.js:CategoryController.delete",
+      "type": "FUNC",
+      "name": "CategoryController.delete",
+      "file": "api/controllers/CategoryController.js",
+      "project": "api",
+      "startLine": 47,
+      "endLine": 58
     },
     {
       "id": "FUNC:api/controllers/PackageController.js:PackageController.getAll",
@@ -725,6 +969,51 @@
       "endLine": 135
     },
     {
+      "id": "FUNC:api/services/CategoryService.js:CategoryService.getAllCategories",
+      "type": "FUNC",
+      "name": "CategoryService.getAllCategories",
+      "file": "api/services/CategoryService.js",
+      "project": "api",
+      "startLine": 5,
+      "endLine": 7
+    },
+    {
+      "id": "FUNC:api/services/CategoryService.js:CategoryService.getCategoryById",
+      "type": "FUNC",
+      "name": "CategoryService.getCategoryById",
+      "file": "api/services/CategoryService.js",
+      "project": "api",
+      "startLine": 9,
+      "endLine": 17
+    },
+    {
+      "id": "FUNC:api/services/CategoryService.js:CategoryService.createCategory",
+      "type": "FUNC",
+      "name": "CategoryService.createCategory",
+      "file": "api/services/CategoryService.js",
+      "project": "api",
+      "startLine": 19,
+      "endLine": 32
+    },
+    {
+      "id": "FUNC:api/services/CategoryService.js:CategoryService.updateCategory",
+      "type": "FUNC",
+      "name": "CategoryService.updateCategory",
+      "file": "api/services/CategoryService.js",
+      "project": "api",
+      "startLine": 34,
+      "endLine": 52
+    },
+    {
+      "id": "FUNC:api/services/CategoryService.js:CategoryService.deleteCategory",
+      "type": "FUNC",
+      "name": "CategoryService.deleteCategory",
+      "file": "api/services/CategoryService.js",
+      "project": "api",
+      "startLine": 54,
+      "endLine": 58
+    },
+    {
       "id": "FUNC:api/services/PackageService.js:PackageService.getAllPackages",
       "type": "FUNC",
       "name": "PackageService.getAllPackages",
@@ -770,6 +1059,24 @@
       "endLine": 53
     },
     {
+      "id": "SCHEMA:api/validation/CategoryValidation.js:createCategorySchema",
+      "type": "SCHEMA",
+      "name": "createCategorySchema",
+      "file": "api/validation/CategoryValidation.js",
+      "project": "api",
+      "startLine": 3,
+      "endLine": 7
+    },
+    {
+      "id": "SCHEMA:api/validation/CategoryValidation.js:updateCategorySchema",
+      "type": "SCHEMA",
+      "name": "updateCategorySchema",
+      "file": "api/validation/CategoryValidation.js",
+      "project": "api",
+      "startLine": 9,
+      "endLine": 9
+    },
+    {
       "id": "SCHEMA:api/validation/PackageValidation.js:activityDetailSchema",
       "type": "SCHEMA",
       "name": "activityDetailSchema",
@@ -797,13 +1104,22 @@
       "endLine": 21
     },
     {
+      "id": "SCHEMA:api/validation/PackageValidation.js:basePackageSchema",
+      "type": "SCHEMA",
+      "name": "basePackageSchema",
+      "file": "api/validation/PackageValidation.js",
+      "project": "api",
+      "startLine": 23,
+      "endLine": 43
+    },
+    {
       "id": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
       "type": "SCHEMA",
       "name": "createPackageSchema",
       "file": "api/validation/PackageValidation.js",
       "project": "api",
-      "startLine": 23,
-      "endLine": 43
+      "startLine": 45,
+      "endLine": 51
     },
     {
       "id": "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema",
@@ -811,8 +1127,17 @@
       "name": "updatePackageSchema",
       "file": "api/validation/PackageValidation.js",
       "project": "api",
-      "startLine": 45,
-      "endLine": 45
+      "startLine": 53,
+      "endLine": 64
+    },
+    {
+      "id": "SCHEMA:api/models/Category.js:categorySchema",
+      "type": "SCHEMA",
+      "name": "categorySchema",
+      "file": "api/models/Category.js",
+      "project": "api",
+      "startLine": 3,
+      "endLine": 21
     },
     {
       "id": "SCHEMA:api/models/Package.js:activityDetailSchema",
@@ -848,7 +1173,7 @@
       "file": "api/models/Package.js",
       "project": "api",
       "startLine": 26,
-      "endLine": 105
+      "endLine": 108
     },
     {
       "id": "COMPONENT:frontend/app/layout.tsx:RootLayout",
@@ -1018,8 +1343,8 @@
       "name": "Sidebar",
       "file": "admin/src/components/Sidebar.tsx",
       "project": "admin",
-      "startLine": 12,
-      "endLine": 127
+      "startLine": 13,
+      "endLine": 129
     },
     {
       "id": "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar",
@@ -1047,6 +1372,51 @@
       "project": "admin",
       "startLine": 25,
       "endLine": 44
+    },
+    {
+      "id": "FUNC:admin/src/handlers/categories.ts:getAllCategories",
+      "type": "FUNC",
+      "name": "getAllCategories",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "admin",
+      "startLine": 5,
+      "endLine": 8
+    },
+    {
+      "id": "FUNC:admin/src/handlers/categories.ts:getCategoryById",
+      "type": "FUNC",
+      "name": "getCategoryById",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "admin",
+      "startLine": 11,
+      "endLine": 14
+    },
+    {
+      "id": "FUNC:admin/src/handlers/categories.ts:createCategory",
+      "type": "FUNC",
+      "name": "createCategory",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "admin",
+      "startLine": 17,
+      "endLine": 20
+    },
+    {
+      "id": "FUNC:admin/src/handlers/categories.ts:updateCategory",
+      "type": "FUNC",
+      "name": "updateCategory",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "admin",
+      "startLine": 23,
+      "endLine": 26
+    },
+    {
+      "id": "FUNC:admin/src/handlers/categories.ts:deleteCategory",
+      "type": "FUNC",
+      "name": "deleteCategory",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "admin",
+      "startLine": 29,
+      "endLine": 31
     },
     {
       "id": "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend",
@@ -1110,6 +1480,51 @@
       "project": "admin",
       "startLine": 123,
       "endLine": 125
+    },
+    {
+      "id": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "FUNC",
+      "name": "useCategoriesList",
+      "file": "admin/src/hooks/useCategories.ts",
+      "project": "admin",
+      "startLine": 21,
+      "endLine": 32
+    },
+    {
+      "id": "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails",
+      "type": "FUNC",
+      "name": "useCategoryDetails",
+      "file": "admin/src/hooks/useCategories.ts",
+      "project": "admin",
+      "startLine": 35,
+      "endLine": 48
+    },
+    {
+      "id": "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
+      "type": "FUNC",
+      "name": "useCreateCategory",
+      "file": "admin/src/hooks/useCategories.ts",
+      "project": "admin",
+      "startLine": 51,
+      "endLine": 65
+    },
+    {
+      "id": "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
+      "type": "FUNC",
+      "name": "useUpdateCategory",
+      "file": "admin/src/hooks/useCategories.ts",
+      "project": "admin",
+      "startLine": 68,
+      "endLine": 83
+    },
+    {
+      "id": "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
+      "type": "FUNC",
+      "name": "useDeleteCategory",
+      "file": "admin/src/hooks/useCategories.ts",
+      "project": "admin",
+      "startLine": 86,
+      "endLine": 100
     },
     {
       "id": "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload",
@@ -1193,13 +1608,40 @@
       "endLine": 31
     },
     {
+      "id": "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
+      "type": "COMPONENT",
+      "name": "CategoriesList",
+      "file": "admin/src/pages/categories/CategoriesList.tsx",
+      "project": "admin",
+      "startLine": 14,
+      "endLine": 229
+    },
+    {
+      "id": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "type": "COMPONENT",
+      "name": "CategoryEditor",
+      "file": "admin/src/pages/categories/CategoryEditor.tsx",
+      "project": "admin",
+      "startLine": 27,
+      "endLine": 448
+    },
+    {
+      "id": "SCHEMA:admin/src/pages/categories/schema.ts:categorySchema",
+      "type": "SCHEMA",
+      "name": "categorySchema",
+      "file": "admin/src/pages/categories/schema.ts",
+      "project": "admin",
+      "startLine": 3,
+      "endLine": 7
+    },
+    {
       "id": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
       "type": "COMPONENT",
       "name": "PackageEditor",
       "file": "admin/src/pages/packages/PackageEditor.tsx",
       "project": "admin",
-      "startLine": 54,
-      "endLine": 773
+      "startLine": 55,
+      "endLine": 784
     },
     {
       "id": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
@@ -1207,8 +1649,8 @@
       "name": "PackagesList",
       "file": "admin/src/pages/packages/PackagesList.tsx",
       "project": "admin",
-      "startLine": 14,
-      "endLine": 252
+      "startLine": 15,
+      "endLine": 266
     },
     {
       "id": "SCHEMA:admin/src/pages/packages/schema.ts:scheduleItemSchema",
@@ -1226,7 +1668,7 @@
       "file": "admin/src/pages/packages/schema.ts",
       "project": "admin",
       "startLine": 8,
-      "endLine": 33
+      "endLine": 36
     },
     {
       "id": "FUNC:frontend/app/destinations/[id]/page.tsx:generateStaticParams",
@@ -1288,8 +1730,8 @@
       "name": "HeaderSection",
       "file": "admin/src/pages/packages/components/HeaderSection.tsx",
       "project": "admin",
-      "startLine": 20,
-      "endLine": 133
+      "startLine": 22,
+      "endLine": 187
     },
     {
       "id": "FUNC:admin/src/pages/packages/components/ImageCropperModal.tsx:centerAspectCrop",
@@ -1351,8 +1793,8 @@
       "name": "PricingSection",
       "file": "admin/src/pages/packages/components/PricingSection.tsx",
       "project": "admin",
-      "startLine": 21,
-      "endLine": 148
+      "startLine": 23,
+      "endLine": 166
     },
     {
       "id": "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection",
@@ -1414,6 +1856,51 @@
       "name": "useContext",
       "file": "node_modules",
       "project": "admin",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "API:GET:/api/categories",
+      "type": "API",
+      "name": "GET /api/categories",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "api",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "API:GET:/api/categories/:id",
+      "type": "API",
+      "name": "GET /api/categories/:id",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "api",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "API:POST:/api/categories",
+      "type": "API",
+      "name": "POST /api/categories",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "api",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "API:PUT:/api/categories/:id",
+      "type": "API",
+      "name": "PUT /api/categories/:id",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "api",
+      "startLine": 0,
+      "endLine": 0
+    },
+    {
+      "id": "API:DELETE:/api/categories/:id",
+      "type": "API",
+      "name": "DELETE /api/categories/:id",
+      "file": "admin/src/handlers/categories.ts",
+      "project": "api",
       "startLine": 0,
       "endLine": 0
     },
@@ -1590,6 +2077,31 @@
       "type": "imports"
     },
     {
+      "source": "FILE:admin/src/router.tsx",
+      "target": "FILE:admin/src/pages/categories/CategoriesList.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/router.tsx",
+      "target": "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:api/routes/CategoryRoutes.js",
+      "target": "FILE:api/controllers/CategoryController.js",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:api/routes/CategoryRoutes.js",
+      "target": "FILE:api/utils/validate.js",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:api/routes/CategoryRoutes.js",
+      "target": "FILE:api/validation/CategoryValidation.js",
+      "type": "imports"
+    },
+    {
       "source": "FILE:api/routes/PackageRoutes.js",
       "target": "FILE:api/controllers/PackageController.js",
       "type": "imports"
@@ -1603,6 +2115,36 @@
       "source": "FILE:api/routes/PackageRoutes.js",
       "target": "FILE:api/validation/PackageValidation.js",
       "type": "imports"
+    },
+    {
+      "source": "FILE:api/controllers/CategoryController.js",
+      "target": "FILE:api/services/CategoryService.js",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:api/controllers/CategoryController.js",
+      "target": "FUNC:api/controllers/CategoryController.js:CategoryController.getAll",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/controllers/CategoryController.js",
+      "target": "FUNC:api/controllers/CategoryController.js:CategoryController.getById",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/controllers/CategoryController.js",
+      "target": "FUNC:api/controllers/CategoryController.js:CategoryController.create",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/controllers/CategoryController.js",
+      "target": "FUNC:api/controllers/CategoryController.js:CategoryController.update",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/controllers/CategoryController.js",
+      "target": "FUNC:api/controllers/CategoryController.js:CategoryController.delete",
+      "type": "defines"
     },
     {
       "source": "FILE:api/controllers/PackageController.js",
@@ -1637,6 +2179,41 @@
     {
       "source": "FILE:api/controllers/PackageController.js",
       "target": "FUNC:api/controllers/PackageController.js:PackageController.deleteMedia",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/services/CategoryService.js",
+      "target": "FILE:api/repositories/CategoryRepository.js",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:api/services/CategoryService.js",
+      "target": "FILE:api/validation/CategoryValidation.js",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:api/services/CategoryService.js",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.getAllCategories",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/services/CategoryService.js",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.getCategoryById",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/services/CategoryService.js",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.createCategory",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/services/CategoryService.js",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.updateCategory",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/services/CategoryService.js",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.deleteCategory",
       "type": "defines"
     },
     {
@@ -1675,6 +2252,16 @@
       "type": "defines"
     },
     {
+      "source": "FILE:api/validation/CategoryValidation.js",
+      "target": "SCHEMA:api/validation/CategoryValidation.js:createCategorySchema",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/validation/CategoryValidation.js",
+      "target": "SCHEMA:api/validation/CategoryValidation.js:updateCategorySchema",
+      "type": "defines"
+    },
+    {
       "source": "FILE:api/validation/PackageValidation.js",
       "target": "SCHEMA:api/validation/PackageValidation.js:activityDetailSchema",
       "type": "defines"
@@ -1691,12 +2278,22 @@
     },
     {
       "source": "FILE:api/validation/PackageValidation.js",
+      "target": "SCHEMA:api/validation/PackageValidation.js:basePackageSchema",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/validation/PackageValidation.js",
       "target": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
       "type": "defines"
     },
     {
       "source": "FILE:api/validation/PackageValidation.js",
       "target": "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:api/models/Category.js",
+      "target": "SCHEMA:api/models/Category.js:categorySchema",
       "type": "defines"
     },
     {
@@ -1855,6 +2452,41 @@
       "type": "defines"
     },
     {
+      "source": "FILE:admin/src/handlers/categories.ts",
+      "target": "FILE:admin/src/handlers/apiClient.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/handlers/categories.ts",
+      "target": "FILE:admin/src/types/category.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/handlers/categories.ts",
+      "target": "FUNC:admin/src/handlers/categories.ts:getAllCategories",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/handlers/categories.ts",
+      "target": "FUNC:admin/src/handlers/categories.ts:getCategoryById",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/handlers/categories.ts",
+      "target": "FUNC:admin/src/handlers/categories.ts:createCategory",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/handlers/categories.ts",
+      "target": "FUNC:admin/src/handlers/categories.ts:updateCategory",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/handlers/categories.ts",
+      "target": "FUNC:admin/src/handlers/categories.ts:deleteCategory",
+      "type": "defines"
+    },
+    {
       "source": "FILE:admin/src/handlers/packages.ts",
       "target": "FILE:admin/src/handlers/apiClient.ts",
       "type": "imports"
@@ -1903,6 +2535,46 @@
       "source": "FILE:admin/src/hooks/queryKeys.ts",
       "target": "FILE:admin/src/handlers/packages.ts",
       "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/hooks/useCategories.ts",
+      "target": "FILE:admin/src/handlers/categories.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/hooks/useCategories.ts",
+      "target": "FILE:admin/src/handlers/apiClient.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/hooks/useCategories.ts",
+      "target": "FILE:admin/src/types/category.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/hooks/useCategories.ts",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/hooks/useCategories.ts",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/hooks/useCategories.ts",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/hooks/useCategories.ts",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/hooks/useCategories.ts",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
+      "type": "defines"
     },
     {
       "source": "FILE:admin/src/hooks/useCloudinaryUpload.ts",
@@ -1972,6 +2644,56 @@
     {
       "source": "FILE:admin/src/components/ui/Button.tsx",
       "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoriesList.tsx",
+      "target": "FILE:admin/src/hooks/useCategories.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoriesList.tsx",
+      "target": "FILE:admin/src/components/ui/Button.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoriesList.tsx",
+      "target": "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+      "target": "FILE:admin/src/hooks/useCategories.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+      "target": "FILE:admin/src/pages/categories/schema.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+      "target": "FILE:admin/src/components/ui/Button.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+      "target": "FILE:admin/src/hooks/useCloudinaryUpload.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+      "target": "FILE:admin/src/pages/packages/components/ImageCropperModal.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+      "target": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "type": "defines"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/schema.ts",
+      "target": "SCHEMA:admin/src/pages/categories/schema.ts:categorySchema",
       "type": "defines"
     },
     {
@@ -2046,6 +2768,11 @@
     },
     {
       "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FILE:admin/src/hooks/useCategories.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
       "target": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
       "type": "defines"
     },
@@ -2057,6 +2784,11 @@
     {
       "source": "FILE:admin/src/pages/packages/PackagesList.tsx",
       "target": "FILE:admin/src/components/ui/Button.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackagesList.tsx",
+      "target": "FILE:admin/src/hooks/useCategories.ts",
       "type": "imports"
     },
     {
@@ -2122,6 +2854,11 @@
     {
       "source": "FILE:admin/src/pages/packages/components/HeaderSection.tsx",
       "target": "FILE:admin/src/components/ui/Button.tsx",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/HeaderSection.tsx",
+      "target": "FILE:admin/src/hooks/useCategories.ts",
       "type": "imports"
     },
     {
@@ -2251,6 +2988,11 @@
     },
     {
       "source": "FILE:admin/src/pages/packages/components/PricingSection.tsx",
+      "target": "FILE:admin/src/types/category.ts",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/PricingSection.tsx",
       "target": "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection",
       "type": "defines"
     },
@@ -2287,6 +3029,56 @@
     {
       "source": "FILE:admin/src/main.tsx",
       "target": "COMPONENT:admin/src/App.tsx:App",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/controllers/CategoryController.js:CategoryController.getAll",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.getAllCategories",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:api/routes/CategoryRoutes.js",
+      "target": "FUNC:api/controllers/CategoryController.js:CategoryController.getAll",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/controllers/CategoryController.js:CategoryController.getById",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.getCategoryById",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:api/routes/CategoryRoutes.js",
+      "target": "FUNC:api/controllers/CategoryController.js:CategoryController.getById",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/controllers/CategoryController.js:CategoryController.create",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.createCategory",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:api/routes/CategoryRoutes.js",
+      "target": "FUNC:api/controllers/CategoryController.js:CategoryController.create",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/controllers/CategoryController.js:CategoryController.update",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.updateCategory",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:api/routes/CategoryRoutes.js",
+      "target": "FUNC:api/controllers/CategoryController.js:CategoryController.update",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/controllers/CategoryController.js:CategoryController.delete",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.deleteCategory",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:api/routes/CategoryRoutes.js",
+      "target": "FUNC:api/controllers/CategoryController.js:CategoryController.delete",
       "type": "references"
     },
     {
@@ -2345,6 +3137,61 @@
       "type": "references"
     },
     {
+      "source": "FUNC:api/controllers/CategoryController.js:CategoryController.getAll",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.getAllCategories",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/services/CategoryService.js:CategoryService.updateCategory",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.getCategoryById",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/services/CategoryService.js:CategoryService.deleteCategory",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.getCategoryById",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/controllers/CategoryController.js:CategoryController.getById",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.getCategoryById",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/services/CategoryService.js:CategoryService.createCategory",
+      "target": "SCHEMA:api/validation/CategoryValidation.js:createCategorySchema",
+      "type": "uses_schema"
+    },
+    {
+      "source": "FUNC:api/controllers/CategoryController.js:CategoryController.create",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.createCategory",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/services/CategoryService.js:CategoryService.updateCategory",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.getCategoryById",
+      "type": "calls"
+    },
+    {
+      "source": "FUNC:api/services/CategoryService.js:CategoryService.updateCategory",
+      "target": "SCHEMA:api/validation/CategoryValidation.js:updateCategorySchema",
+      "type": "uses_schema"
+    },
+    {
+      "source": "FUNC:api/controllers/CategoryController.js:CategoryController.update",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.updateCategory",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/services/CategoryService.js:CategoryService.deleteCategory",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.getCategoryById",
+      "type": "calls"
+    },
+    {
+      "source": "FUNC:api/controllers/CategoryController.js:CategoryController.delete",
+      "target": "FUNC:api/services/CategoryService.js:CategoryService.deleteCategory",
+      "type": "references"
+    },
+    {
       "source": "FUNC:api/controllers/PackageController.js:PackageController.getAll",
       "target": "FUNC:api/services/PackageService.js:PackageService.getAllPackages",
       "type": "references"
@@ -2400,39 +3247,89 @@
       "type": "references"
     },
     {
-      "source": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "source": "SCHEMA:api/validation/CategoryValidation.js:updateCategorySchema",
+      "target": "SCHEMA:api/validation/CategoryValidation.js:createCategorySchema",
+      "type": "references"
+    },
+    {
+      "source": "FILE:api/services/CategoryService.js",
+      "target": "SCHEMA:api/validation/CategoryValidation.js:createCategorySchema",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/services/CategoryService.js:CategoryService.createCategory",
+      "target": "SCHEMA:api/validation/CategoryValidation.js:createCategorySchema",
+      "type": "references"
+    },
+    {
+      "source": "FILE:api/routes/CategoryRoutes.js",
+      "target": "SCHEMA:api/validation/CategoryValidation.js:createCategorySchema",
+      "type": "references"
+    },
+    {
+      "source": "SCHEMA:api/validation/CategoryValidation.js:updateCategorySchema",
+      "target": "SCHEMA:api/validation/CategoryValidation.js:createCategorySchema",
+      "type": "uses_schema"
+    },
+    {
+      "source": "FILE:api/services/CategoryService.js",
+      "target": "SCHEMA:api/validation/CategoryValidation.js:updateCategorySchema",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:api/services/CategoryService.js:CategoryService.updateCategory",
+      "target": "SCHEMA:api/validation/CategoryValidation.js:updateCategorySchema",
+      "type": "references"
+    },
+    {
+      "source": "FILE:api/routes/CategoryRoutes.js",
+      "target": "SCHEMA:api/validation/CategoryValidation.js:updateCategorySchema",
+      "type": "references"
+    },
+    {
+      "source": "SCHEMA:api/validation/PackageValidation.js:basePackageSchema",
       "target": "SCHEMA:api/validation/PackageValidation.js:activityDetailSchema",
       "type": "references"
     },
     {
-      "source": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "source": "SCHEMA:api/validation/PackageValidation.js:basePackageSchema",
       "target": "SCHEMA:api/validation/PackageValidation.js:scheduleItemSchema",
       "type": "references"
     },
     {
-      "source": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "source": "SCHEMA:api/validation/PackageValidation.js:basePackageSchema",
       "target": "SCHEMA:api/validation/PackageValidation.js:seoSchema",
       "type": "references"
     },
     {
-      "source": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "source": "SCHEMA:api/validation/PackageValidation.js:basePackageSchema",
       "target": "SCHEMA:api/validation/PackageValidation.js:scheduleItemSchema",
       "type": "uses_schema"
     },
     {
-      "source": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "source": "SCHEMA:api/validation/PackageValidation.js:basePackageSchema",
       "target": "SCHEMA:api/validation/PackageValidation.js:activityDetailSchema",
       "type": "uses_schema"
     },
     {
-      "source": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "source": "SCHEMA:api/validation/PackageValidation.js:basePackageSchema",
       "target": "SCHEMA:api/validation/PackageValidation.js:seoSchema",
       "type": "uses_schema"
+    },
+    {
+      "source": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "target": "SCHEMA:api/validation/PackageValidation.js:basePackageSchema",
+      "type": "references"
     },
     {
       "source": "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema",
-      "target": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "target": "SCHEMA:api/validation/PackageValidation.js:basePackageSchema",
       "type": "references"
+    },
+    {
+      "source": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "target": "SCHEMA:api/validation/PackageValidation.js:basePackageSchema",
+      "type": "uses_schema"
     },
     {
       "source": "FILE:api/services/PackageService.js",
@@ -2451,7 +3348,7 @@
     },
     {
       "source": "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema",
-      "target": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
+      "target": "SCHEMA:api/validation/PackageValidation.js:basePackageSchema",
       "type": "uses_schema"
     },
     {
@@ -2467,6 +3364,11 @@
     {
       "source": "FILE:api/routes/PackageRoutes.js",
       "target": "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema",
+      "type": "references"
+    },
+    {
+      "source": "FILE:api/models/Category.js",
+      "target": "SCHEMA:api/models/Category.js:categorySchema",
       "type": "references"
     },
     {
@@ -2680,6 +3582,36 @@
       "type": "references"
     },
     {
+      "source": "FILE:admin/src/hooks/useCategories.ts",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "references"
+    },
+    {
       "source": "FILE:admin/src/hooks/usePackages.ts",
       "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
       "type": "references"
@@ -2707,6 +3639,81 @@
     {
       "source": "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage",
       "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/categories.ts:getAllCategories",
+      "target": "API:GET:/api/categories",
+      "type": "calls_api"
+    },
+    {
+      "source": "FILE:admin/src/hooks/useCategories.ts",
+      "target": "FUNC:admin/src/handlers/categories.ts:getAllCategories",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "target": "FUNC:admin/src/handlers/categories.ts:getAllCategories",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/categories.ts:getCategoryById",
+      "target": "API:GET:/api/categories/:id",
+      "type": "calls_api"
+    },
+    {
+      "source": "FILE:admin/src/hooks/useCategories.ts",
+      "target": "FUNC:admin/src/handlers/categories.ts:getCategoryById",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails",
+      "target": "FUNC:admin/src/handlers/categories.ts:getCategoryById",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/categories.ts:createCategory",
+      "target": "API:POST:/api/categories",
+      "type": "calls_api"
+    },
+    {
+      "source": "FILE:admin/src/hooks/useCategories.ts",
+      "target": "FUNC:admin/src/handlers/categories.ts:createCategory",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
+      "target": "FUNC:admin/src/handlers/categories.ts:createCategory",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/categories.ts:updateCategory",
+      "target": "API:PUT:/api/categories/:id",
+      "type": "calls_api"
+    },
+    {
+      "source": "FILE:admin/src/hooks/useCategories.ts",
+      "target": "FUNC:admin/src/handlers/categories.ts:updateCategory",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
+      "target": "FUNC:admin/src/handlers/categories.ts:updateCategory",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/handlers/categories.ts:deleteCategory",
+      "target": "API:DELETE:/api/categories/:id",
+      "type": "calls_api"
+    },
+    {
+      "source": "FILE:admin/src/hooks/useCategories.ts",
+      "target": "FUNC:admin/src/handlers/categories.ts:deleteCategory",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
+      "target": "FUNC:admin/src/handlers/categories.ts:deleteCategory",
       "type": "references"
     },
     {
@@ -2830,9 +3837,189 @@
       "type": "references"
     },
     {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "target": "HOOK:useQuery",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "target": "FUNC:admin/src/handlers/categories.ts:getAllCategories",
+      "type": "calls"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoriesList.tsx",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/PackagesList.tsx",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/packages/components/HeaderSection.tsx",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails",
+      "target": "HOOK:useQuery",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails",
+      "target": "FUNC:admin/src/handlers/categories.ts:getCategoryById",
+      "type": "calls"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
+      "target": "HOOK:useQueryClient",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
+      "target": "HOOK:useMutation",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
+      "target": "FUNC:admin/src/handlers/categories.ts:createCategory",
+      "type": "calls"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
+      "target": "HOOK:useQueryClient",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
+      "target": "HOOK:useMutation",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
+      "target": "FUNC:admin/src/handlers/categories.ts:updateCategory",
+      "type": "calls"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
+      "type": "references"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
+      "target": "HOOK:useQueryClient",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
+      "target": "HOOK:useMutation",
+      "type": "uses_hook"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
+      "target": "FUNC:admin/src/handlers/categories.ts:deleteCategory",
+      "type": "calls"
+    },
+    {
+      "source": "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
+      "target": "FUNC:admin/src/handlers/apiClient.ts:handleApiError",
+      "type": "calls"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
+      "type": "references"
+    },
+    {
       "source": "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload",
       "target": "HOOK:useState",
       "type": "uses_hook"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+      "target": "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload",
+      "type": "references"
     },
     {
       "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
@@ -3010,6 +4197,26 @@
       "type": "references"
     },
     {
+      "source": "FILE:admin/src/pages/categories/CategoriesList.tsx",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "references"
+    },
+    {
       "source": "FILE:admin/src/pages/packages/PackageEditor.tsx",
       "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
       "type": "references"
@@ -3110,6 +4317,146 @@
       "type": "references"
     },
     {
+      "source": "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
+      "target": "HOOK:useNavigate",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
+      "target": "HOOK:useState",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "renders"
+    },
+    {
+      "source": "FILE:admin/src/router.tsx",
+      "target": "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "HOOK:useNavigate",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "HOOK:useParams",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "HOOK:useState",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "HOOK:useForm",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "HOOK:useEffect",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
+      "type": "renders"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
+      "type": "renders"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "SCHEMA:admin/src/pages/categories/schema.ts:categorySchema",
+      "type": "uses_schema"
+    },
+    {
+      "source": "FILE:admin/src/router.tsx",
+      "target": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/schema.ts",
+      "target": "SCHEMA:admin/src/pages/categories/schema.ts:categorySchema",
+      "type": "references"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+      "target": "SCHEMA:admin/src/pages/categories/schema.ts:categorySchema",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "SCHEMA:admin/src/pages/categories/schema.ts:categorySchema",
+      "type": "references"
+    },
+    {
       "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
       "target": "HOOK:useNavigate",
       "type": "uses_hook"
@@ -3172,6 +4519,16 @@
     {
       "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
       "target": "FUNC:admin/src/hooks/useCloudinaryUpload.ts:useCloudinaryUpload",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
       "type": "uses_hook"
     },
     {
@@ -3271,6 +4628,16 @@
     },
     {
       "source": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
       "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
       "type": "renders"
     },
@@ -3321,6 +4688,16 @@
     },
     {
       "source": "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "calls"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection",
+      "target": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection",
       "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
       "type": "renders"
     },
@@ -3363,6 +4740,16 @@
       "source": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
       "target": "COMPONENT:admin/src/components/ui/Button.tsx:Button",
       "type": "renders"
+    },
+    {
+      "source": "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+      "target": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
+      "type": "references"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+      "target": "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
+      "type": "references"
     },
     {
       "source": "FILE:admin/src/pages/packages/components/MediaSection.tsx",
@@ -3513,6 +4900,31 @@
       "source": "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
       "target": "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection",
       "type": "references"
+    },
+    {
+      "source": "API:GET:/api/packages",
+      "target": "FUNC:api/controllers/CategoryController.js:CategoryController.getAll",
+      "type": "routes_to"
+    },
+    {
+      "source": "API:GET:/api/packages/:id",
+      "target": "FUNC:api/controllers/CategoryController.js:CategoryController.getById",
+      "type": "routes_to"
+    },
+    {
+      "source": "API:POST:/api/packages",
+      "target": "FUNC:api/controllers/CategoryController.js:CategoryController.create",
+      "type": "routes_to"
+    },
+    {
+      "source": "API:PUT:/api/packages/:id",
+      "target": "FUNC:api/controllers/CategoryController.js:CategoryController.update",
+      "type": "routes_to"
+    },
+    {
+      "source": "API:DELETE:/api/packages/:id",
+      "target": "FUNC:api/controllers/CategoryController.js:CategoryController.delete",
+      "type": "routes_to"
     },
     {
       "source": "API:GET:/api/packages",

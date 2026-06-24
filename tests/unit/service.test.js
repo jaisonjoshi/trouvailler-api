@@ -44,12 +44,17 @@ describe("PackageService", () => {
 
     it("filters by category", async () => {
       PackageRepository.findAll.mockResolvedValue([mockPackages[0]]);
-      const result = await PackageService.getAllPackages(
+      await PackageService.getAllPackages(
         { category: "Honeymoon" },
         {}
       );
       expect(PackageRepository.findAll).toHaveBeenCalledWith(
-        { category: "Honeymoon" },
+        {
+          $or: [
+            { category: "Honeymoon" },
+            { categories: "Honeymoon" }
+          ]
+        },
         {}
       );
     });
@@ -153,7 +158,7 @@ describe("PackageService", () => {
       expect(result.title).toBe("Updated Title");
       expect(PackageRepository.update).toHaveBeenCalledWith(
         "abc123",
-        { title: "Updated Title", images: [], schedule: [], activities: [], inclusions: [], exclusions: [] }
+        { title: "Updated Title", images: [], schedule: [], activities: [], inclusions: [], exclusions: [], categories: [] }
       );
     });
 
@@ -187,6 +192,7 @@ describe("PackageService", () => {
         activities: [],
         inclusions: [],
         exclusions: [],
+        categories: [],
       });
     });
   });

@@ -6,6 +6,7 @@ import { apiReference } from "@scalar/express-api-reference";
 
 import { swaggerSpec } from "./utils/swagger.js";
 import packageRoutes from "./routes/PackageRoutes.js";
+import categoryRoutes from "./routes/CategoryRoutes.js";
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(
 );
 
 app.use("/api/packages", packageRoutes);
+app.use("/api/categories", categoryRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World from Trouvailler API Server with MongoDB! Head to /docs for API reference.");

@@ -8,8 +8,8 @@ class PackageService {
     if (filters.destinationId) {
       query.destinationId = filters.destinationId;
     }
-    if (filters.category) {
-      query.category = filters.category;
+    if (filters.categories && Array.isArray(filters.categories) && filters.categories.length > 0) {
+      query.categories = { $in: filters.categories };
     }
     if (filters.search) {
       query.$or = [
