@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-24T20:10:50.483Z",
+  "generatedAt": "2026-06-25T09:04:03.156Z",
   "project": "trouvailler-admin",
   "version": "1.0",
-  "sourceCount": 65,
-  "symbolCount": 131,
-  "edgeCount": 588,
+  "sourceCount": 76,
+  "symbolCount": 165,
+  "edgeCount": 801,
   "projects": {
     "trouvailler-admin": {
       "folders": [
@@ -17,6 +17,7 @@
         "admin/src/types",
         "admin/src/components/ui",
         "admin/src/pages/categories",
+        "admin/src/pages/locations",
         "admin/src/pages/packages",
         "admin/src/pages/packages/components"
       ],
@@ -67,6 +68,11 @@
     {
       "source": "admin:admin/src",
       "target": "admin:admin/src/pages/categories",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src",
+      "target": "admin:admin/src/pages/locations",
       "type": "imports"
     },
     {
@@ -157,6 +163,26 @@
     {
       "source": "admin:admin/src/pages/categories",
       "target": "admin:admin/src/pages/packages/components",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/hooks",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/components/ui",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/pages/packages/components",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/types",
       "type": "imports"
     },
     {
@@ -280,6 +306,11 @@
       "type": "references"
     },
     {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/hooks",
+      "type": "references"
+    },
+    {
       "source": "admin:admin/src/pages/packages",
       "target": "admin:admin/src/hooks",
       "type": "references"
@@ -306,6 +337,11 @@
     },
     {
       "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/components/ui",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
       "target": "admin:admin/src/components/ui",
       "type": "references"
     },
@@ -343,6 +379,31 @@
       "source": "admin:admin/src/pages/categories",
       "target": "admin:admin/src/pages/packages/components",
       "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/hooks",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/hooks",
+      "type": "uses_hook"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/components/ui",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/pages/packages/components",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src",
+      "target": "admin:admin/src/pages/locations",
+      "type": "references"
     },
     {
       "source": "admin:admin/src/pages/packages",
@@ -396,6 +457,11 @@
     },
     {
       "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/pages/packages/components",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
       "target": "admin:admin/src/pages/packages/components",
       "type": "references"
     }

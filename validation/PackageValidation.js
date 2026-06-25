@@ -2,16 +2,16 @@ import { z } from "zod";
 
 export const activityDetailSchema = z.object({
   name: z.string().min(1, "Activity name is required"),
-  image: z.string().url("Activity image must be a valid URL").optional().or(z.literal("")),
+  image: z.string().optional().or(z.literal("")),
   description: z.string().optional(),
   price: z.string().optional(),
-  isIncluded: z.boolean().default(true),
-  day: z.number().int().positive("Activity day must be a positive integer")
+  isIncluded: z.boolean().default(true)
 });
 
 export const scheduleItemSchema = z.object({
-  dayTitle: z.string().min(1, "Day title is required"),
-  dayDesc: z.string().min(1, "Day description is required")
+  title: z.string().min(1, "Day title is required"),
+  description: z.string().min(1, "Day description is required"),
+  activities: z.array(activityDetailSchema).default([])
 });
 
 const seoSchema = z.object({
@@ -37,7 +37,6 @@ const basePackageSchema = z.object({
   excursions: z.string().min(1, "Excursion details are required"),
   meals: z.string().min(1, "Meal details are required"),
   schedule: z.array(scheduleItemSchema).default([]),
-  activities: z.array(activityDetailSchema).default([]),
   inclusions: z.array(z.string()).default([]),
   exclusions: z.array(z.string()).default([]),
   seo: seoSchema.optional()

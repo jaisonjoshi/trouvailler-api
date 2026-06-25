@@ -6,14 +6,14 @@ const activityDetailSchema = new mongoose.Schema({
   image: { type: String },
   description: { type: String },
   price: { type: String }, // e.g. "Free" or "$50"
-  isIncluded: { type: Boolean, default: true },
-  day: { type: Number, required: true }
+  isIncluded: { type: Boolean, default: true }
 }, { _id: false });
 
 // Sub-schema for day-by-day itineraries
 const scheduleItemSchema = new mongoose.Schema({
-  dayTitle: { type: String, required: true },
-  dayDesc: { type: String, required: true }
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  activities: { type: [activityDetailSchema], default: [] }
 }, { _id: false });
 
 // Sub-schema for Search Engine Optimization metadata
@@ -94,10 +94,6 @@ const packageSchema = new mongoose.Schema({
   schedule: {
     type: [scheduleItemSchema],
     default: [] // Detailed day-by-day itinerary
-  },
-  activities: {
-    type: [activityDetailSchema],
-    default: [] // List of specific daily events/tours
   },
   inclusions: {
     type: [String],
