@@ -8,11 +8,26 @@ class PackageRepository {
     const sortOption = {};
     sortOption[sortBy] = sortOrder;
 
-    return await Package.find(filters).sort(sortOption);
+    const query = { isDeleted: { $ne: true } };
+    Object.assign(query, filters);
+
+    return await Package.find(query).sort(sortOption);
   }
 
-  async findById(id) {
-    return await Package.findById(id);
+  async findById(id, includeDeleted = false) {
+    const query = { _id: id };
+    if (!includeDeleted) {
+      query.isDeleted = { $ne: true };
+    }
+    return await Package.findOne(query);
+  }
+
+  async findBySlug(slug, includeDeleted = false) {
+    const query = { slug };
+    if (!includeDeleted) {
+      query.isDeleted = { $ne: true };
+    }
+    return await Package.findOne(query);
   }
 
   async create(data) {
@@ -29,7 +44,11 @@ class PackageRepository {
   }
 
   async delete(id) {
-    return await Package.findByIdAndDelete(id);
+    return await Package.findByIdAndUpdate(
+      id,
+      { $set: { isDeleted: true } },
+      { new: true }
+    );
   }
 }
 

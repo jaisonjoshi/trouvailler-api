@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
+import { PACKAGE_STATUS, PACKAGE_STATUS_VALUES } from "../utils/constants.js";
 
 // Sub-schema for day activities
 const activityDetailSchema = new mongoose.Schema({
   name: { type: String, required: true },
   image: { type: String },
   description: { type: String },
-  price: { type: String }, // e.g. "Free" or "$50"
   isIncluded: { type: Boolean, default: true }
 }, { _id: false });
 
@@ -24,19 +24,29 @@ const seoSchema = new mongoose.Schema({
 }, { _id: false });
 
 const packageSchema = new mongoose.Schema({
-  destinationId: {
-    type: String,
-    required: true,
-    trim: true
-  },
   categories: {
-    type: [String],
+    type: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category"
+    }],
     default: []
   },
   title: {
     type: String,
     required: true,
     trim: true
+  },
+  slug: {
+    type: String,
+    required: true,
+    unique: true,
+    lowercase: true,
+    trim: true
+  },
+  status: {
+    type: String,
+    enum: PACKAGE_STATUS_VALUES,
+    default: PACKAGE_STATUS.DRAFT
   },
   mainLocation: {
     type: mongoose.Schema.Types.ObjectId,
@@ -50,11 +60,11 @@ const packageSchema = new mongoose.Schema({
     }],
     default: []
   },
-  image: {
+  coverImage: {
     type: String,
     required: true // Cover image URL
   },
-  images: {
+  galleryImages: {
     type: [String],
     default: [] // Gallery slide URLs
   },
@@ -79,17 +89,12 @@ const packageSchema = new mongoose.Schema({
     required: true,
     min: 0
   },
-  accommodation: {
-    type: String,
-    required: true // e.g. "4★ Sea-View Hotel"
-  },
-  excursions: {
-    type: String,
-    required: true // e.g. "Boat Cruise & Ravello Tour"
-  },
-  meals: {
-    type: String,
-    required: true // e.g. "Breakfast & Dinner"
+  highlights: {
+    type: [{
+      icon: { type: String, required: true },
+      title: { type: String, required: true }
+    }],
+    default: []
   },
   schedule: {
     type: [scheduleItemSchema],
@@ -106,6 +111,10 @@ const packageSchema = new mongoose.Schema({
   seo: {
     type: seoSchema,
     default: () => ({})
+  },
+  isDeleted: {
+    type: Boolean,
+    default: false
   }
 }, {
   timestamps: true // Automatically manages createdAt and updatedAt

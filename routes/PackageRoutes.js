@@ -10,7 +10,7 @@ const router = express.Router();
  * /api/packages:
  *   get:
  *     summary: Retrieve all packages
- *     description: Fetch travel packages list. Supports optional filters for search query, destinationId, and category.
+ *     description: Fetch travel packages list. Supports optional filters for search query, status, and category.
  *     tags:
  *       - Packages
  *     parameters:
@@ -20,10 +20,11 @@ const router = express.Router();
  *           type: string
  *         description: Search keyword matching title
  *       - in: query
- *         name: destinationId
+ *         name: status
  *         schema:
  *           type: string
- *         description: Destination filter code (e.g. amalfi, bali)
+ *           enum: [draft, published, archived]
+ *         description: Package status filter
  *       - in: query
  *         name: category
  *         schema:

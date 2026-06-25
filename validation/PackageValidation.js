@@ -1,10 +1,10 @@
 import { z } from "zod";
+import { PACKAGE_STATUS, PACKAGE_STATUS_VALUES } from "../utils/constants.js";
 
 export const activityDetailSchema = z.object({
   name: z.string().min(1, "Activity name is required"),
   image: z.string().optional().or(z.literal("")),
   description: z.string().optional(),
-  price: z.string().optional(),
   isIncluded: z.boolean().default(true)
 });
 
@@ -21,25 +21,28 @@ const seoSchema = z.object({
 });
 
 const basePackageSchema = z.object({
-  destinationId: z.string().min(1, "Destination ID is required"),
-  categories: z.array(z.string()).default([]),
+  categories: z.array(z.string().regex(/^[0-9a-fA-F]{24}$/, "Invalid category ID")).default([]),
   title: z.string().min(1, "Package title is required"),
+  slug: z.string().optional(),
+  status: z.enum(PACKAGE_STATUS_VALUES).default(PACKAGE_STATUS.DRAFT),
   mainLocation: z.string().regex(/^[0-9a-fA-F]{24}$/, "Invalid main location ID"),
   locations: z.array(z.string().regex(/^[0-9a-fA-F]{24}$/, "Invalid location ID")).min(1, "At least one location is required"),
-  image: z.string().url("Cover image must be a valid URL"),
-  images: z.array(z.string().url("Gallery slides must be valid URLs")).default([]),
+  coverImage: z.string().url("Cover image must be a valid URL"),
+  galleryImages: z.array(z.string().url("Gallery slides must be valid URLs")).default([]),
   description: z.string().min(1, "Description is required"),
   price: z.number().nonnegative("Price must be a non-negative number"),
   originalPrice: z.number().nonnegative("Original price must be a non-negative number").optional().nullable(),
   days: z.number().int().min(1, "Days must be at least 1"),
   nights: z.number().int().min(0, "Nights must be at least 0"),
-  accommodation: z.string().min(1, "Accommodation details are required"),
-  excursions: z.string().min(1, "Excursion details are required"),
-  meals: z.string().min(1, "Meal details are required"),
+  highlights: z.array(z.object({
+    icon: z.string().min(1, "Icon key is required"),
+    title: z.string().min(1, "Highlight title is required")
+  })).default([]),
   schedule: z.array(scheduleItemSchema).default([]),
   inclusions: z.array(z.string()).default([]),
   exclusions: z.array(z.string()).default([]),
-  seo: seoSchema.optional()
+  seo: seoSchema.optional(),
+  isDeleted: z.boolean().default(false)
 });
 
 export const createPackageSchema = basePackageSchema.refine(

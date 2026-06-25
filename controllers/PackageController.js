@@ -5,10 +5,10 @@ class PackageController {
   async getAll(req, res, next) {
     try {
       const filters = {
-        destinationId: req.query.destinationId,
         categories: req.query.categories ? (Array.isArray(req.query.categories) ? req.query.categories : [req.query.categories]) : undefined,
         mainLocation: req.query.mainLocation,
         locations: req.query.locations ? (Array.isArray(req.query.locations) ? req.query.locations : [req.query.locations]) : undefined,
+        status: req.query.status,
         search: req.query.search
       };
       const options = {

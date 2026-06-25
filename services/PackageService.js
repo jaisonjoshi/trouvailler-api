@@ -1,13 +1,10 @@
 import PackageRepository from "../repositories/PackageRepository.js";
 import { createPackageSchema, updatePackageSchema } from "../validation/PackageValidation.js";
+import { generateSlug } from "../utils/slug.js";
 
 class PackageService {
   async getAllPackages(filters = {}, options = {}) {
-    // If we want to add search logic (e.g. by title), we can parse it here
     const query = {};
-    if (filters.destinationId) {
-      query.destinationId = filters.destinationId;
-    }
     if (filters.categories && Array.isArray(filters.categories) && filters.categories.length > 0) {
       query.categories = { $in: filters.categories };
     }
@@ -16,6 +13,9 @@ class PackageService {
     }
     if (filters.locations) {
       query.locations = { $in: Array.isArray(filters.locations) ? filters.locations : [filters.locations] };
+    }
+    if (filters.status) {
+      query.status = filters.status;
     }
     if (filters.search) {
       query.$or = [
@@ -45,6 +45,16 @@ class PackageService {
       throw error;
     }
 
+    // Generate unique slug
+    const baseSlug = generateSlug(validatedData.title);
+    let slug = baseSlug;
+    let counter = 1;
+    while (await PackageRepository.findBySlug(slug)) {
+      slug = `${baseSlug}-${counter}`;
+      counter++;
+    }
+    validatedData.slug = slug;
+
     return await PackageRepository.create(validatedData);
   }
 
@@ -66,6 +76,22 @@ class PackageService {
         error.statusCode = 400;
         throw error;
       }
+    }
+
+    // Regenerate slug if title changes
+    if (validatedData.title && validatedData.title !== pkg.title) {
+      const baseSlug = generateSlug(validatedData.title);
+      let slug = baseSlug;
+      let counter = 1;
+      while (true) {
+        const existing = await PackageRepository.findBySlug(slug);
+        if (!existing || existing._id.toString() === id) {
+          break;
+        }
+        slug = `${baseSlug}-${counter}`;
+        counter++;
+      }
+      validatedData.slug = slug;
     }
 
     return await PackageRepository.update(id, validatedData);

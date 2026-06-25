@@ -12,3 +12,11 @@ export const LOCATION_LEVEL = {
 };
 
 export const LOCATION_LEVEL_VALUES = Object.values(LOCATION_LEVEL);
+
+export const PACKAGE_STATUS = {
+  DRAFT: "draft",
+  PUBLISHED: "published",
+  ARCHIVED: "archived"
+};
+
+export const PACKAGE_STATUS_VALUES = Object.values(PACKAGE_STATUS);
