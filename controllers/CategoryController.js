@@ -4,6 +4,9 @@ class CategoryController {
   async getAll(req, res, next) {
     try {
       const filters = {};
+      if (req.query.appliesTo) {
+        filters.appliesTo = req.query.appliesTo;
+      }
       const options = {
         sortBy: req.query.sortBy,
         sortOrder: req.query.sortOrder

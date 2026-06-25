@@ -18,7 +18,7 @@ const router = express.Router();
  *         name: search
  *         schema:
  *           type: string
- *         description: Search keyword matching title or location
+ *         description: Search keyword matching title
  *       - in: query
  *         name: destinationId
  *         schema:

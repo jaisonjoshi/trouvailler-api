@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-24T19:12:51.703Z",
+  "generatedAt": "2026-06-24T20:10:50.483Z",
   "project": "trouvailler-admin",
   "version": "1.0",
   "sourceCount": 65,
   "symbolCount": 131,
-  "edgeCount": 583,
+  "edgeCount": 588,
   "symbols": {
     "COMPONENT:admin/src/App.tsx:App": {
       "name": "App",
@@ -29,7 +29,7 @@
       "project": "api",
       "range": {
         "start": 4,
-        "end": 16
+        "end": 19
       },
       "callers": [],
       "renders": [],
@@ -43,8 +43,8 @@
       "file": "api/controllers/CategoryController.js",
       "project": "api",
       "range": {
-        "start": 18,
-        "end": 26
+        "start": 21,
+        "end": 29
       },
       "callers": [],
       "renders": [],
@@ -58,8 +58,8 @@
       "file": "api/controllers/CategoryController.js",
       "project": "api",
       "range": {
-        "start": 28,
-        "end": 35
+        "start": 31,
+        "end": 38
       },
       "callers": [],
       "renders": [],
@@ -73,8 +73,8 @@
       "file": "api/controllers/CategoryController.js",
       "project": "api",
       "range": {
-        "start": 37,
-        "end": 45
+        "start": 40,
+        "end": 48
       },
       "callers": [],
       "renders": [],
@@ -88,8 +88,8 @@
       "file": "api/controllers/CategoryController.js",
       "project": "api",
       "range": {
-        "start": 47,
-        "end": 58
+        "start": 50,
+        "end": 61
       },
       "callers": [],
       "renders": [],
@@ -193,8 +193,8 @@
       "file": "api/services/CategoryService.js",
       "project": "api",
       "range": {
-        "start": 5,
-        "end": 7
+        "start": 6,
+        "end": 8
       },
       "callers": [
         "FUNC:api/controllers/CategoryController.js:CategoryController.getAll"
@@ -210,8 +210,8 @@
       "file": "api/services/CategoryService.js",
       "project": "api",
       "range": {
-        "start": 9,
-        "end": 17
+        "start": 10,
+        "end": 18
       },
       "callers": [
         "FUNC:api/controllers/CategoryController.js:CategoryController.getById",
@@ -231,8 +231,8 @@
       "file": "api/services/CategoryService.js",
       "project": "api",
       "range": {
-        "start": 19,
-        "end": 32
+        "start": 20,
+        "end": 43
       },
       "callers": [
         "FUNC:api/controllers/CategoryController.js:CategoryController.create"
@@ -248,8 +248,8 @@
       "file": "api/services/CategoryService.js",
       "project": "api",
       "range": {
-        "start": 34,
-        "end": 52
+        "start": 45,
+        "end": 73
       },
       "callers": [
         "FUNC:api/controllers/CategoryController.js:CategoryController.update"
@@ -265,8 +265,8 @@
       "file": "api/services/CategoryService.js",
       "project": "api",
       "range": {
-        "start": 54,
-        "end": 58
+        "start": 75,
+        "end": 79
       },
       "callers": [
         "FUNC:api/controllers/CategoryController.js:CategoryController.delete"
@@ -371,8 +371,8 @@
       "file": "api/validation/CategoryValidation.js",
       "project": "api",
       "range": {
-        "start": 3,
-        "end": 7
+        "start": 4,
+        "end": 9
       },
       "callers": [],
       "renders": [],
@@ -389,8 +389,8 @@
       "file": "api/validation/CategoryValidation.js",
       "project": "api",
       "range": {
-        "start": 9,
-        "end": 9
+        "start": 11,
+        "end": 11
       },
       "callers": [],
       "renders": [],
@@ -501,8 +501,8 @@
       "file": "api/models/Category.js",
       "project": "api",
       "range": {
-        "start": 3,
-        "end": 21
+        "start": 4,
+        "end": 35
       },
       "callers": [],
       "renders": [],
@@ -1431,7 +1431,7 @@
       "project": "admin",
       "range": {
         "start": 14,
-        "end": 229
+        "end": 256
       },
       "callers": [],
       "renders": [],
@@ -1445,8 +1445,8 @@
       "file": "admin/src/pages/categories/CategoryEditor.tsx",
       "project": "admin",
       "range": {
-        "start": 27,
-        "end": 448
+        "start": 28,
+        "end": 522
       },
       "callers": [],
       "renders": [],
@@ -1460,8 +1460,8 @@
       "file": "admin/src/pages/categories/schema.ts",
       "project": "admin",
       "range": {
-        "start": 3,
-        "end": 7
+        "start": 4,
+        "end": 9
       },
       "callers": [],
       "renders": [],

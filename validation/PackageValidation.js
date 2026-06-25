@@ -24,7 +24,8 @@ const basePackageSchema = z.object({
   destinationId: z.string().min(1, "Destination ID is required"),
   categories: z.array(z.string()).default([]),
   title: z.string().min(1, "Package title is required"),
-  location: z.string().min(1, "Location is required"),
+  mainLocation: z.string().regex(/^[0-9a-fA-F]{24}$/, "Invalid main location ID"),
+  locations: z.array(z.string().regex(/^[0-9a-fA-F]{24}$/, "Invalid location ID")).min(1, "At least one location is required"),
   image: z.string().url("Cover image must be a valid URL"),
   images: z.array(z.string().url("Gallery slides must be valid URLs")).default([]),
   description: z.string().min(1, "Description is required"),
@@ -48,6 +49,12 @@ export const createPackageSchema = basePackageSchema.refine(
     message: "Nights must be less than or equal to days",
     path: ["nights"]
   }
+).refine(
+  (data) => data.locations.includes(data.mainLocation),
+  {
+    message: "Primary destination (mainLocation) must be included in the destinations covered (locations) array",
+    path: ["mainLocation"]
+  }
 );
 
 export const updatePackageSchema = basePackageSchema.partial().refine(
@@ -60,5 +67,16 @@ export const updatePackageSchema = basePackageSchema.partial().refine(
   {
     message: "Nights must be less than or equal to days",
     path: ["nights"]
+  }
+).refine(
+  (data) => {
+    if (data.mainLocation !== undefined && data.locations !== undefined) {
+      return data.locations.includes(data.mainLocation);
+    }
+    return true;
+  },
+  {
+    message: "Primary destination (mainLocation) must be included in the destinations covered (locations) array",
+    path: ["mainLocation"]
   }
 );

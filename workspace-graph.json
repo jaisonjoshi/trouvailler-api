@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-24T19:12:51.703Z",
+  "generatedAt": "2026-06-24T20:10:50.483Z",
   "project": "trouvailler-admin",
   "version": "1.0",
   "sourceCount": 65,
   "symbolCount": 131,
-  "edgeCount": 583,
+  "edgeCount": 588,
   "projects": {
     "trouvailler-admin": {
       "folders": [
@@ -100,6 +100,21 @@
       "type": "imports"
     },
     {
+      "source": "api:api/services",
+      "target": "api:api/utils",
+      "type": "imports"
+    },
+    {
+      "source": "api:api/validation",
+      "target": "api:api/utils",
+      "type": "imports"
+    },
+    {
+      "source": "api:api/models",
+      "target": "api:api/utils",
+      "type": "imports"
+    },
+    {
       "source": "admin:admin/src/components",
       "target": "admin:admin/src/contexts",
       "type": "imports"
@@ -132,6 +147,11 @@
     {
       "source": "admin:admin/src/pages/categories",
       "target": "admin:admin/src/components/ui",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/types",
       "type": "imports"
     },
     {

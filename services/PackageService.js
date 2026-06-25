@@ -3,7 +3,7 @@ import { createPackageSchema, updatePackageSchema } from "../validation/PackageV
 
 class PackageService {
   async getAllPackages(filters = {}, options = {}) {
-    // If we want to add search logic (e.g. by title or location), we can parse it here
+    // If we want to add search logic (e.g. by title), we can parse it here
     const query = {};
     if (filters.destinationId) {
       query.destinationId = filters.destinationId;
@@ -11,10 +11,15 @@ class PackageService {
     if (filters.categories && Array.isArray(filters.categories) && filters.categories.length > 0) {
       query.categories = { $in: filters.categories };
     }
+    if (filters.mainLocation) {
+      query.mainLocation = filters.mainLocation;
+    }
+    if (filters.locations) {
+      query.locations = { $in: Array.isArray(filters.locations) ? filters.locations : [filters.locations] };
+    }
     if (filters.search) {
       query.$or = [
-        { title: { $regex: filters.search, $options: "i" } },
-        { location: { $regex: filters.search, $options: "i" } }
+        { title: { $regex: filters.search, $options: "i" } }
       ];
     }
     return await PackageRepository.findAll(query, options);
@@ -33,6 +38,13 @@ class PackageService {
   async createPackage(data) {
     // Validate request data
     const validatedData = createPackageSchema.parse(data);
+
+    if (!validatedData.locations.includes(validatedData.mainLocation)) {
+      const error = new Error("Primary destination (mainLocation) must be included in the destinations covered (locations) array");
+      error.statusCode = 400;
+      throw error;
+    }
+
     return await PackageRepository.create(validatedData);
   }
 
@@ -41,7 +53,20 @@ class PackageService {
     const validatedData = updatePackageSchema.parse(data);
     
     // Ensure package exists
-    await this.getPackageById(id);
+    const pkg = await this.getPackageById(id);
+
+    // Merge fields for business rules validation
+    const finalMainLocation = validatedData.mainLocation !== undefined ? validatedData.mainLocation : pkg.mainLocation;
+    const finalLocations = validatedData.locations !== undefined ? validatedData.locations : pkg.locations;
+
+    if (finalMainLocation && finalLocations) {
+      const locationsStr = finalLocations.map(loc => loc.toString());
+      if (!locationsStr.includes(finalMainLocation.toString())) {
+        const error = new Error("Primary destination (mainLocation) must be included in the destinations covered (locations) array");
+        error.statusCode = 400;
+        throw error;
+      }
+    }
 
     return await PackageRepository.update(id, validatedData);
   }

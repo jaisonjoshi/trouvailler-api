@@ -1,5 +1,6 @@
 import CategoryRepository from "../repositories/CategoryRepository.js";
 import { createCategorySchema, updateCategorySchema } from "../validation/CategoryValidation.js";
+import { generateSlug } from "../utils/slug.js";
 
 class CategoryService {
   async getAllCategories(filters = {}, options = {}) {
@@ -28,6 +29,16 @@ class CategoryService {
       throw error;
     }
 
+    // Generate and validate slug uniqueness
+    const slug = generateSlug(validatedData.name);
+    const existingSlug = await CategoryRepository.findBySlug(slug);
+    if (existingSlug) {
+      const error = new Error("Category slug already exists");
+      error.statusCode = 400;
+      throw error;
+    }
+    validatedData.slug = slug;
+
     return await CategoryRepository.create(validatedData);
   }
 
@@ -46,6 +57,16 @@ class CategoryService {
         error.statusCode = 400;
         throw error;
       }
+
+      // Regenerate and validate slug uniqueness
+      const newSlug = generateSlug(validatedData.name);
+      const existingSlug = await CategoryRepository.findBySlug(newSlug);
+      if (existingSlug && existingSlug._id.toString() !== id) {
+        const error = new Error("Category slug already exists");
+        error.statusCode = 400;
+        throw error;
+      }
+      validatedData.slug = newSlug;
     }
 
     return await CategoryRepository.update(id, validatedData);

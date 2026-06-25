@@ -38,9 +38,17 @@ const packageSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  location: {
-    type: String,
-    required: true // e.g. "Italy, Europe" or "Kashmir, India"
+  mainLocation: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Location",
+    required: true
+  },
+  locations: {
+    type: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Location"
+    }],
+    default: []
   },
   image: {
     type: String,

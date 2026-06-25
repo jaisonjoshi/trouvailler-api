@@ -6,6 +6,7 @@ import {
   activityDetailSchema
 } from "../validation/PackageValidation.js";
 import { createCategorySchema } from "../validation/CategoryValidation.js";
+import { createLocationSchema } from "../validation/LocationValidation.js";
 
 const options = {
   definition: {
@@ -39,3 +40,4 @@ swaggerSpec.components.schemas.Package = z.toJSONSchema(createPackageSchema, { t
 swaggerSpec.components.schemas.ScheduleItem = z.toJSONSchema(scheduleItemSchema, { target: "openapi-3.0" });
 swaggerSpec.components.schemas.ActivityDetail = z.toJSONSchema(activityDetailSchema, { target: "openapi-3.0" });
 swaggerSpec.components.schemas.Category = z.toJSONSchema(createCategorySchema, { target: "openapi-3.0" });
+swaggerSpec.components.schemas.Location = z.toJSONSchema(createLocationSchema, { target: "openapi-3.0" });

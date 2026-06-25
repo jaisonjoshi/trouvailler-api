@@ -20,6 +20,10 @@ class CategoryRepository {
     return await Category.findOne({ name: { $regex: `^${name}$`, $options: "i" } });
   }
 
+  async findBySlug(slug) {
+    return await Category.findOne({ slug: slug.toLowerCase() });
+  }
+
   async create(data) {
     const newCategory = new Category(data);
     return await newCategory.save();
