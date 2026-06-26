@@ -1100,6 +1100,7 @@ digraph G {
   "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection" [color="#9ca3af", style="dashed", label="references"];
   "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection" [color="#9ca3af", style="dashed", label="references"];
   "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection" -> "HOOK:useWatch" [color="#7c3aed", style="dotted", label="hook"];
+  "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection" -> "HOOK:useFieldArray" [color="#7c3aed", style="dotted", label="hook"];
   "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection" -> "COMPONENT:admin/src/components/ui/Button.tsx:Button" [color="#ca8a04", style="bold", label="renders"];
   "FILE:admin/src/pages/packages/PackageEditor.tsx" -> "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection" [color="#9ca3af", style="dashed", label="references"];
   "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor" -> "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection" [color="#9ca3af", style="dashed", label="references"];

@@ -59,7 +59,7 @@ class LocationController {
       await LocationService.deleteLocation(id);
       res.status(200).json({
         success: true,
-        message: "Location deleted successfully"
+        message: "Location deleted"
       });
     } catch (err) {
       next(err);

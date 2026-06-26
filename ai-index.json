@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-25T09:04:03.156Z",
+  "generatedAt": "2026-06-25T19:53:51.392Z",
   "project": "trouvailler-admin",
   "version": "1.0",
   "sourceCount": 76,
   "symbolCount": 165,
-  "edgeCount": 801,
+  "edgeCount": 805,
   "symbols": {
     "COMPONENT:admin/src/App.tsx:App": {
       "name": "App",
@@ -484,7 +484,7 @@
       "file": "api/services/PackageService.js",
       "project": "api",
       "range": {
-        "start": 5,
+        "start": 6,
         "end": 26
       },
       "callers": [
@@ -523,7 +523,7 @@
       "project": "api",
       "range": {
         "start": 38,
-        "end": 49
+        "end": 59
       },
       "callers": [
         "FUNC:api/controllers/PackageController.js:PackageController.create"
@@ -539,8 +539,8 @@
       "file": "api/services/PackageService.js",
       "project": "api",
       "range": {
-        "start": 51,
-        "end": 72
+        "start": 61,
+        "end": 98
       },
       "callers": [
         "FUNC:api/controllers/PackageController.js:PackageController.update"
@@ -556,8 +556,8 @@
       "file": "api/services/PackageService.js",
       "project": "api",
       "range": {
-        "start": 74,
-        "end": 78
+        "start": 100,
+        "end": 104
       },
       "callers": [
         "FUNC:api/controllers/PackageController.js:PackageController.delete"
@@ -643,7 +643,7 @@
       "file": "api/validation/PackageValidation.js",
       "project": "api",
       "range": {
-        "start": 3,
+        "start": 4,
         "end": 9
       },
       "callers": [],
@@ -689,7 +689,7 @@
       "project": "api",
       "range": {
         "start": 23,
-        "end": 43
+        "end": 46
       },
       "callers": [],
       "renders": [],
@@ -704,8 +704,8 @@
       "file": "api/validation/PackageValidation.js",
       "project": "api",
       "range": {
-        "start": 45,
-        "end": 57
+        "start": 48,
+        "end": 60
       },
       "callers": [],
       "renders": [],
@@ -721,8 +721,8 @@
       "file": "api/validation/PackageValidation.js",
       "project": "api",
       "range": {
-        "start": 59,
-        "end": 81
+        "start": 62,
+        "end": 84
       },
       "callers": [],
       "renders": [],
@@ -768,7 +768,7 @@
       "file": "api/models/Package.js",
       "project": "api",
       "range": {
-        "start": 4,
+        "start": 5,
         "end": 10
       },
       "callers": [],
@@ -814,7 +814,7 @@
       "project": "api",
       "range": {
         "start": 26,
-        "end": 112
+        "end": 121
       },
       "callers": [],
       "renders": [],
@@ -1361,8 +1361,8 @@
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
       "range": {
-        "start": 40,
-        "end": 82
+        "start": 41,
+        "end": 81
       },
       "callers": [
         "FUNC:admin/src/handlers/packages.ts:getPackageById",
@@ -1383,8 +1383,8 @@
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
       "range": {
-        "start": 85,
-        "end": 117
+        "start": 84,
+        "end": 114
       },
       "callers": [
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -1401,8 +1401,8 @@
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
       "range": {
-        "start": 130,
-        "end": 135
+        "start": 127,
+        "end": 132
       },
       "callers": [
         "FUNC:admin/src/hooks/usePackages.ts:usePackagesList"
@@ -1419,8 +1419,8 @@
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
       "range": {
-        "start": 138,
-        "end": 141
+        "start": 135,
+        "end": 138
       },
       "callers": [
         "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails"
@@ -1437,8 +1437,8 @@
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
       "range": {
-        "start": 144,
-        "end": 147
+        "start": 141,
+        "end": 144
       },
       "callers": [
         "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage"
@@ -1455,8 +1455,8 @@
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
       "range": {
-        "start": 150,
-        "end": 153
+        "start": 147,
+        "end": 150
       },
       "callers": [
         "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage"
@@ -1473,8 +1473,8 @@
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
       "range": {
-        "start": 156,
-        "end": 158
+        "start": 153,
+        "end": 155
       },
       "callers": [
         "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage"
@@ -1992,7 +1992,7 @@
       "project": "admin",
       "range": {
         "start": 56,
-        "end": 853
+        "end": 851
       },
       "callers": [],
       "renders": [],
@@ -2022,7 +2022,7 @@
       "project": "admin",
       "range": {
         "start": 3,
-        "end": 10
+        "end": 9
       },
       "callers": [],
       "renders": [],
@@ -2036,8 +2036,8 @@
       "file": "admin/src/pages/packages/schema.ts",
       "project": "admin",
       "range": {
-        "start": 12,
-        "end": 16
+        "start": 11,
+        "end": 15
       },
       "callers": [],
       "renders": [],
@@ -2051,7 +2051,7 @@
       "file": "admin/src/pages/packages/schema.ts",
       "project": "admin",
       "range": {
-        "start": 18,
+        "start": 17,
         "end": 50
       },
       "callers": [],
@@ -2231,7 +2231,7 @@
       "project": "admin",
       "range": {
         "start": 22,
-        "end": 374
+        "end": 358
       },
       "callers": [],
       "renders": [
@@ -2266,8 +2266,8 @@
       "file": "admin/src/pages/packages/components/OverviewSection.tsx",
       "project": "admin",
       "range": {
-        "start": 20,
-        "end": 129
+        "start": 33,
+        "end": 200
       },
       "callers": [],
       "renders": [
@@ -2285,7 +2285,7 @@
       "project": "admin",
       "range": {
         "start": 23,
-        "end": 166
+        "end": 191
       },
       "callers": [],
       "renders": [

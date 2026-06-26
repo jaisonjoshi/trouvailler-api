@@ -8,19 +8,20 @@ class LocationRepository {
     const sortOption = {};
     sortOption[sortBy] = sortOrder;
 
-    return await Location.find(filters).sort(sortOption);
+    const query = { isDeleted: { $ne: true }, ...filters };
+    return await Location.find(query).sort(sortOption);
   }
 
   async findById(id) {
-    return await Location.findById(id);
+    return await Location.findOne({ _id: id, isDeleted: { $ne: true } });
   }
 
   async findByName(name) {
-    return await Location.findOne({ name: { $regex: `^${name}$`, $options: "i" } });
+    return await Location.findOne({ name: { $regex: `^${name}$`, $options: "i" }, isDeleted: { $ne: true } });
   }
 
   async findBySlug(slug) {
-    return await Location.findOne({ slug: slug.toLowerCase() });
+    return await Location.findOne({ slug: slug.toLowerCase(), isDeleted: { $ne: true } });
   }
 
   async create(data) {
@@ -29,15 +30,19 @@ class LocationRepository {
   }
 
   async update(id, data) {
-    return await Location.findByIdAndUpdate(
-      id,
+    return await Location.findOneAndUpdate(
+      { _id: id, isDeleted: { $ne: true } },
       { $set: data },
       { new: true, runValidators: true }
     );
   }
 
   async delete(id) {
-    return await Location.findByIdAndDelete(id);
+    return await Location.findByIdAndUpdate(
+      id,
+      { $set: { isDeleted: true } },
+      { new: true }
+    );
   }
 }
 

@@ -10,8 +10,9 @@ export const createLocationSchema = z.object({
     errorMap: () => ({ message: "Level must be country, state, or destination" })
   }),
   parentLocation: z.string().regex(/^[0-9a-fA-F]{24}$/, "Invalid parent location ID").nullable().optional().or(z.literal("")),
-  categories: z.array(z.string()).default([]),
-  isActive: z.boolean().default(true)
+  categories: z.array(z.string().regex(/^[0-9a-fA-F]{24}$/, "Invalid category ID")).default([]),
+  isActive: z.boolean().default(true),
+  isDeleted: z.boolean().default(false)
 });
 
 export const updateLocationSchema = createLocationSchema.partial();

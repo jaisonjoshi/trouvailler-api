@@ -184,7 +184,12 @@ class LocationService {
   }
 
   async deleteLocation(id) {
-    await this.getLocationById(id);
+    const location = await LocationRepository.findById(id);
+    if (!location) {
+      const error = new Error("Location not found");
+      error.statusCode = 404;
+      throw error;
+    }
     return await LocationRepository.delete(id);
   }
 }

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-25T09:04:03.156Z",
+  "generatedAt": "2026-06-25T19:53:51.392Z",
   "project": "trouvailler-admin",
   "version": "1.0",
   "sourceCount": 76,
   "symbolCount": 165,
-  "edgeCount": 801,
+  "edgeCount": 805,
   "files": [
     {
       "path": "admin/src/App.tsx",
@@ -157,7 +157,8 @@
       "project": "api",
       "imports": [
         "api/repositories/PackageRepository.js",
-        "api/validation/PackageValidation.js"
+        "api/validation/PackageValidation.js",
+        "api/utils/slug.js"
       ],
       "exports": [
         "default"
@@ -191,7 +192,8 @@
       "path": "api/validation/PackageValidation.js",
       "project": "api",
       "imports": [
-        "admin/node_modules/zod/index.d.cts"
+        "admin/node_modules/zod/index.d.cts",
+        "api/utils/constants.js"
       ],
       "exports": [
         "activityDetailSchema",
@@ -226,7 +228,8 @@
       "path": "api/models/Package.js",
       "project": "api",
       "imports": [
-        "api/node_modules/mongoose/types/aggregate.d.ts"
+        "api/node_modules/mongoose/types/aggregate.d.ts",
+        "api/utils/constants.js"
       ],
       "exports": [
         "default"
@@ -650,6 +653,7 @@
         "ScheduleItem",
         "PlaceItem",
         "SeoItem",
+        "PackageStatus",
         "Package",
         "Location",
         "Category",
@@ -992,6 +996,7 @@
         "admin/src/components/ui/Button.tsx"
       ],
       "exports": [
+        "ICON_REGISTRY",
         "OverviewSection"
       ]
     },
@@ -1298,7 +1303,7 @@
       "name": "PackageService.getAllPackages",
       "file": "api/services/PackageService.js",
       "project": "api",
-      "startLine": 5,
+      "startLine": 6,
       "endLine": 26
     },
     {
@@ -1317,7 +1322,7 @@
       "file": "api/services/PackageService.js",
       "project": "api",
       "startLine": 38,
-      "endLine": 49
+      "endLine": 59
     },
     {
       "id": "FUNC:api/services/PackageService.js:PackageService.updatePackage",
@@ -1325,8 +1330,8 @@
       "name": "PackageService.updatePackage",
       "file": "api/services/PackageService.js",
       "project": "api",
-      "startLine": 51,
-      "endLine": 72
+      "startLine": 61,
+      "endLine": 98
     },
     {
       "id": "FUNC:api/services/PackageService.js:PackageService.deletePackage",
@@ -1334,8 +1339,8 @@
       "name": "PackageService.deletePackage",
       "file": "api/services/PackageService.js",
       "project": "api",
-      "startLine": 74,
-      "endLine": 78
+      "startLine": 100,
+      "endLine": 104
     },
     {
       "id": "SCHEMA:api/validation/CategoryValidation.js:createCategorySchema",
@@ -1379,7 +1384,7 @@
       "name": "activityDetailSchema",
       "file": "api/validation/PackageValidation.js",
       "project": "api",
-      "startLine": 3,
+      "startLine": 4,
       "endLine": 9
     },
     {
@@ -1407,7 +1412,7 @@
       "file": "api/validation/PackageValidation.js",
       "project": "api",
       "startLine": 23,
-      "endLine": 43
+      "endLine": 46
     },
     {
       "id": "SCHEMA:api/validation/PackageValidation.js:createPackageSchema",
@@ -1415,8 +1420,8 @@
       "name": "createPackageSchema",
       "file": "api/validation/PackageValidation.js",
       "project": "api",
-      "startLine": 45,
-      "endLine": 57
+      "startLine": 48,
+      "endLine": 60
     },
     {
       "id": "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema",
@@ -1424,8 +1429,8 @@
       "name": "updatePackageSchema",
       "file": "api/validation/PackageValidation.js",
       "project": "api",
-      "startLine": 59,
-      "endLine": 81
+      "startLine": 62,
+      "endLine": 84
     },
     {
       "id": "SCHEMA:api/models/Category.js:categorySchema",
@@ -1451,7 +1456,7 @@
       "name": "activityDetailSchema",
       "file": "api/models/Package.js",
       "project": "api",
-      "startLine": 4,
+      "startLine": 5,
       "endLine": 10
     },
     {
@@ -1479,7 +1484,7 @@
       "file": "api/models/Package.js",
       "project": "api",
       "startLine": 26,
-      "endLine": 112
+      "endLine": 121
     },
     {
       "id": "COMPONENT:frontend/app/layout.tsx:RootLayout",
@@ -1775,8 +1780,8 @@
       "name": "mapBackendPackageToFrontend",
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
-      "startLine": 40,
-      "endLine": 82
+      "startLine": 41,
+      "endLine": 81
     },
     {
       "id": "FUNC:admin/src/handlers/packages.ts:mapFrontendPackageToBackend",
@@ -1784,8 +1789,8 @@
       "name": "mapFrontendPackageToBackend",
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
-      "startLine": 85,
-      "endLine": 117
+      "startLine": 84,
+      "endLine": 114
     },
     {
       "id": "FUNC:admin/src/handlers/packages.ts:getAllPackages",
@@ -1793,8 +1798,8 @@
       "name": "getAllPackages",
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
-      "startLine": 130,
-      "endLine": 135
+      "startLine": 127,
+      "endLine": 132
     },
     {
       "id": "FUNC:admin/src/handlers/packages.ts:getPackageById",
@@ -1802,8 +1807,8 @@
       "name": "getPackageById",
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
-      "startLine": 138,
-      "endLine": 141
+      "startLine": 135,
+      "endLine": 138
     },
     {
       "id": "FUNC:admin/src/handlers/packages.ts:createPackage",
@@ -1811,8 +1816,8 @@
       "name": "createPackage",
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
-      "startLine": 144,
-      "endLine": 147
+      "startLine": 141,
+      "endLine": 144
     },
     {
       "id": "FUNC:admin/src/handlers/packages.ts:updatePackage",
@@ -1820,8 +1825,8 @@
       "name": "updatePackage",
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
-      "startLine": 150,
-      "endLine": 153
+      "startLine": 147,
+      "endLine": 150
     },
     {
       "id": "FUNC:admin/src/handlers/packages.ts:deletePackage",
@@ -1829,8 +1834,8 @@
       "name": "deletePackage",
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
-      "startLine": 156,
-      "endLine": 158
+      "startLine": 153,
+      "endLine": 155
     },
     {
       "id": "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
@@ -2064,7 +2069,7 @@
       "file": "admin/src/pages/packages/PackageEditor.tsx",
       "project": "admin",
       "startLine": 56,
-      "endLine": 853
+      "endLine": 851
     },
     {
       "id": "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
@@ -2082,7 +2087,7 @@
       "file": "admin/src/pages/packages/schema.ts",
       "project": "admin",
       "startLine": 3,
-      "endLine": 10
+      "endLine": 9
     },
     {
       "id": "SCHEMA:admin/src/pages/packages/schema.ts:scheduleItemSchema",
@@ -2090,8 +2095,8 @@
       "name": "scheduleItemSchema",
       "file": "admin/src/pages/packages/schema.ts",
       "project": "admin",
-      "startLine": 12,
-      "endLine": 16
+      "startLine": 11,
+      "endLine": 15
     },
     {
       "id": "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema",
@@ -2099,7 +2104,7 @@
       "name": "packageSchema",
       "file": "admin/src/pages/packages/schema.ts",
       "project": "admin",
-      "startLine": 18,
+      "startLine": 17,
       "endLine": 50
     },
     {
@@ -2199,7 +2204,7 @@
       "file": "admin/src/pages/packages/components/ItinerarySection.tsx",
       "project": "admin",
       "startLine": 22,
-      "endLine": 374
+      "endLine": 358
     },
     {
       "id": "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection",
@@ -2216,8 +2221,8 @@
       "name": "OverviewSection",
       "file": "admin/src/pages/packages/components/OverviewSection.tsx",
       "project": "admin",
-      "startLine": 20,
-      "endLine": 129
+      "startLine": 33,
+      "endLine": 200
     },
     {
       "id": "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection",
@@ -2226,7 +2231,7 @@
       "file": "admin/src/pages/packages/components/PricingSection.tsx",
       "project": "admin",
       "startLine": 23,
-      "endLine": 166
+      "endLine": 191
     },
     {
       "id": "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection",
@@ -2820,6 +2825,11 @@
     },
     {
       "source": "FILE:api/services/PackageService.js",
+      "target": "FILE:api/utils/slug.js",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:api/services/PackageService.js",
       "target": "FUNC:api/services/PackageService.js:PackageService.getAllPackages",
       "type": "defines"
     },
@@ -2875,6 +2885,11 @@
     },
     {
       "source": "FILE:api/validation/PackageValidation.js",
+      "target": "FILE:api/utils/constants.js",
+      "type": "imports"
+    },
+    {
+      "source": "FILE:api/validation/PackageValidation.js",
       "target": "SCHEMA:api/validation/PackageValidation.js:activityDetailSchema",
       "type": "defines"
     },
@@ -2922,6 +2937,11 @@
       "source": "FILE:api/models/Location.js",
       "target": "SCHEMA:api/models/Location.js:locationSchema",
       "type": "defines"
+    },
+    {
+      "source": "FILE:api/models/Package.js",
+      "target": "FILE:api/utils/constants.js",
+      "type": "imports"
     },
     {
       "source": "FILE:api/models/Package.js",
@@ -6386,6 +6406,11 @@
     {
       "source": "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection",
       "target": "HOOK:useWatch",
+      "type": "uses_hook"
+    },
+    {
+      "source": "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection",
+      "target": "HOOK:useFieldArray",
       "type": "uses_hook"
     },
     {

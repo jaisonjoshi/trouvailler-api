@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-25T09:04:03.156Z",
+  "generatedAt": "2026-06-25T19:53:51.392Z",
   "project": "trouvailler-admin",
   "version": "1.0",
   "sourceCount": 76,
   "symbolCount": 165,
-  "edgeCount": 801,
+  "edgeCount": 805,
   "projects": {
     "trouvailler-admin": {
       "folders": [
