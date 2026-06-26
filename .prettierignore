@@ -1,0 +1,14 @@
+node_modules
+coverage
+dist
+build
+logs
+tmp
+uploads
+.env
+.env.*
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+*.min.js
+*.bundle.js
