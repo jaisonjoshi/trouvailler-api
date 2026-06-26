@@ -29,6 +29,16 @@ class CategoryController {
     }
   }
 
+  async getBySlug(req, res, next) {
+    try {
+      const { slug } = req.params;
+      const category = await CategoryService.getCategoryBySlug(slug);
+      res.status(200).json(category);
+    } catch (err) {
+      next(err);
+    }
+  }
+
   async create(req, res, next) {
     try {
       const newCategory = await CategoryService.createCategory(req.body);

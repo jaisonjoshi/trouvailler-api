@@ -88,5 +88,53 @@ swaggerSpec.components.parameters = {
     name: "sortOrder",
     schema: { type: "string", enum: ["asc", "desc"] },
     description: "Sort direction"
+  },
+  locationSearchQuery: {
+    in: "query",
+    name: "search",
+    schema: { type: "string" },
+    description: "Search by location name or short description"
+  },
+  locationLevelFilter: {
+    in: "query",
+    name: "level",
+    schema: { type: "string", enum: ["country", "state", "destination"] },
+    description: "Filter by location level"
+  },
+  locationParentFilter: {
+    in: "query",
+    name: "parentLocation",
+    schema: { type: "string" },
+    description: "Filter by parent location ID"
+  },
+  locationSortBy: {
+    in: "query",
+    name: "sortBy",
+    schema: { type: "string" },
+    description: "Field to sort results by (e.g. createdAt, name)"
+  },
+  locationSortOrder: {
+    in: "query",
+    name: "sortOrder",
+    schema: { type: "string", enum: ["asc", "desc"] },
+    description: "Sort direction"
+  },
+  categoryAppliesToFilter: {
+    in: "query",
+    name: "appliesTo",
+    schema: { type: "string" },
+    description: "Filter by appliesTo value (package or location)"
+  },
+  categorySortBy: {
+    in: "query",
+    name: "sortBy",
+    schema: { type: "string" },
+    description: "Field to sort results by (e.g. createdAt, name)"
+  },
+  categorySortOrder: {
+    in: "query",
+    name: "sortOrder",
+    schema: { type: "string", enum: ["asc", "desc"] },
+    description: "Sort direction"
   }
 };

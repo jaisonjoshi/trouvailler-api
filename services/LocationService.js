@@ -31,6 +31,16 @@ class LocationService {
     return location;
   }
 
+  async getLocationBySlug(slug) {
+    const location = await LocationRepository.findBySlug(slug);
+    if (!location) {
+      const error = new Error("Location not found");
+      error.statusCode = 404;
+      throw error;
+    }
+    return location;
+  }
+
   async validateParentLocation(level, parentLocationId, currentLocationId = null) {
     if (parentLocationId && currentLocationId && parentLocationId.toString() === currentLocationId.toString()) {
       const error = new Error("A location cannot be its own parent");

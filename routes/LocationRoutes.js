@@ -13,21 +13,11 @@ const router = express.Router();
  *     tags:
  *       - Locations
  *     parameters:
- *       - in: query
- *         name: level
- *         schema:
- *           type: string
- *         description: Filter by location level (country, state, destination)
- *       - in: query
- *         name: parentLocation
- *         schema:
- *           type: string
- *         description: Filter by parent location ID
- *       - in: query
- *         name: search
- *         schema:
- *           type: string
- *         description: Search by location name or short description
+ *       - $ref: '#/components/parameters/locationSearchQuery'
+ *       - $ref: '#/components/parameters/locationLevelFilter'
+ *       - $ref: '#/components/parameters/locationParentFilter'
+ *       - $ref: '#/components/parameters/locationSortBy'
+ *       - $ref: '#/components/parameters/locationSortOrder'
  *     responses:
  *       200:
  *         description: A JSON array of locations
@@ -42,9 +32,60 @@ router.get("/", LocationController.getAll);
 
 /**
  * @openapi
+ * /api/locations:
+ *   post:
+ *     summary: Create Location
+ *     tags:
+ *       - Locations
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Location'
+ *     responses:
+ *       201:
+ *         description: Location created successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Location'
+ *       400:
+ *         description: Validation schema error (Zod)
+ */
+router.post("/", validateBody(createLocationSchema), LocationController.create);
+
+/**
+ * @openapi
+ * /api/locations/slug/{slug}:
+ *   get:
+ *     summary: Retrieve location by slug
+ *     tags:
+ *       - Locations
+ *     parameters:
+ *       - in: path
+ *         name: slug
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Location slug for SEO-friendly access
+ *     responses:
+ *       200:
+ *         description: Location object details
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Location'
+ *       404:
+ *         description: Location not found
+ */
+router.get("/slug/:slug", LocationController.getBySlug);
+
+/**
+ * @openapi
  * /api/locations/{id}:
  *   get:
- *     summary: Fetch location details by ID
+ *     summary: Retrieve location by ID
  *     tags:
  *       - Locations
  *     parameters:
@@ -68,34 +109,9 @@ router.get("/:id", LocationController.getById);
 
 /**
  * @openapi
- * /api/locations:
- *   post:
- *     summary: Create a new location
- *     tags:
- *       - Locations
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/Location'
- *     responses:
- *       201:
- *         description: Location created successfully
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Location'
- *       400:
- *         description: Validation schema error (Zod) or name collision
- */
-router.post("/", validateBody(createLocationSchema), LocationController.create);
-
-/**
- * @openapi
  * /api/locations/{id}:
  *   put:
- *     summary: Update an existing location
+ *     summary: Update Location
  *     tags:
  *       - Locations
  *     parameters:
@@ -104,6 +120,7 @@ router.post("/", validateBody(createLocationSchema), LocationController.create);
  *         required: true
  *         schema:
  *           type: string
+ *         description: Location ID
  *     requestBody:
  *       required: true
  *       content:
@@ -124,7 +141,7 @@ router.put("/:id", validateBody(updateLocationSchema), LocationController.update
  * @openapi
  * /api/locations/{id}:
  *   delete:
- *     summary: Delete a location
+ *     summary: Delete Location
  *     tags:
  *       - Locations
  *     parameters:
@@ -133,9 +150,10 @@ router.put("/:id", validateBody(updateLocationSchema), LocationController.update
  *         required: true
  *         schema:
  *           type: string
+ *         description: Location ID
  *     responses:
  *       200:
- *         description: Location deleted successfully
+ *         description: Deletion confirmation
  *       404:
  *         description: Location not found
  */

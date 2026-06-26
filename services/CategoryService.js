@@ -17,6 +17,16 @@ class CategoryService {
     return category;
   }
 
+  async getCategoryBySlug(slug) {
+    const category = await CategoryRepository.findBySlug(slug);
+    if (!category) {
+      const error = new Error("Category not found");
+      error.statusCode = 404;
+      throw error;
+    }
+    return category;
+  }
+
   async createCategory(data) {
     // Validate request data
     const validatedData = createCategorySchema.parse(data);

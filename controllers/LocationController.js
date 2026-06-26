@@ -34,6 +34,16 @@ class LocationController {
     }
   }
 
+  async getBySlug(req, res, next) {
+    try {
+      const { slug } = req.params;
+      const location = await LocationService.getLocationBySlug(slug);
+      res.status(200).json(location);
+    } catch (err) {
+      next(err);
+    }
+  }
+
   async create(req, res, next) {
     try {
       const newLocation = await LocationService.createLocation(req.body);
