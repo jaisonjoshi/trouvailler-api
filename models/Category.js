@@ -45,7 +45,6 @@ const categorySchema = new mongoose.Schema({
   timestamps: true
 });
 
-categorySchema.index({ slug: 1 });
 categorySchema.index({ appliesTo: 1 });
 categorySchema.index({ isActive: 1 });
 categorySchema.index({ isDeleted: 1 });

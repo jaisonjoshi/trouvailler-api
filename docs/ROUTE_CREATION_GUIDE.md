@@ -248,7 +248,7 @@ Create a new file: `routes/FeatureRoutes.js`
 ```javascript
 import express from "express";
 import FeatureController from "../controllers/FeatureController.js";
-import { validateBody } from "../utils/validate.js";
+import { validateBody } from "../middleware/validate.js";
 import { createFeatureSchema, updateFeatureSchema } from "../validation/FeatureValidation.js";
 
 const router = express.Router();

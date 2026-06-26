@@ -27,21 +27,13 @@ class PackageService {
 
   async getPackageById(id) {
     const pkg = await PackageRepository.findById(id);
-    if (!pkg) {
-      const error = new Error("Package not found");
-      error.statusCode = 404;
-      throw error;
-    }
+    if (!pkg) this.throwError("Package not found", 404);
     return pkg;
   }
 
   async getPackageBySlug(slug) {
     const pkg = await PackageRepository.findBySlug(slug);
-    if (!pkg) {
-      const error = new Error("Package not found");
-      error.statusCode = 404;
-      throw error;
-    }
+    if (!pkg) this.throwError("Package not found", 404);
     return pkg;
   }
 
@@ -49,7 +41,6 @@ class PackageService {
     const validatedData = createPackageSchema.parse(data);
 
     this.validateMainLocation(validatedData.mainLocation, validatedData.locations);
-
     await this.validateReferencedLocations(validatedData.mainLocation, validatedData.locations);
 
     if (validatedData.categories && validatedData.categories.length > 0) {
@@ -58,11 +49,7 @@ class PackageService {
 
     const slug = generateSlug(validatedData.title);
     const existingSlug = await PackageRepository.findBySlug(slug);
-    if (existingSlug) {
-      const error = new Error("A package with the same title already exists. Please choose a different title.");
-      error.statusCode = 400;
-      throw error;
-    }
+    if (existingSlug) this.throwError("A package with the same title already exists.");
     validatedData.slug = slug;
 
     return await PackageRepository.create(validatedData);
@@ -70,7 +57,6 @@ class PackageService {
 
   async updatePackage(id, data) {
     const validatedData = updatePackageSchema.parse(data);
-
     const pkg = await this.getPackageById(id);
 
     const finalMainLocation = validatedData.mainLocation !== undefined ? validatedData.mainLocation : pkg.mainLocation;
@@ -86,14 +72,10 @@ class PackageService {
       await this.validateReferencedCategories(validatedData.categories);
     }
 
-    if (validatedData.title !== undefined && validatedData.title !== pkg.title) {
+    if (validatedData.title !== undefined && validatedData.title.toLowerCase() !== pkg.title.toLowerCase()) {
       const slug = generateSlug(validatedData.title);
       const existing = await PackageRepository.findBySlug(slug);
-      if (existing && existing._id.toString() !== id) {
-        const error = new Error("A package with the same title already exists. Please choose a different title.");
-        error.statusCode = 400;
-        throw error;
-      }
+      if (existing && existing._id.toString() !== id) this.throwError("A package with the same title already exists.");
       validatedData.slug = slug;
     }
 
@@ -105,12 +87,16 @@ class PackageService {
     return await PackageRepository.delete(id);
   }
 
+  throwError(message, statusCode = 400) {
+    const error = new Error(message);
+    error.statusCode = statusCode;
+    throw error;
+  }
+
   validateMainLocation(mainLocation, locations) {
     const locationsStr = locations.map(loc => loc.toString());
     if (!locationsStr.includes(mainLocation.toString())) {
-      const error = new Error("Primary destination (mainLocation) must be included in the destinations covered (locations) array");
-      error.statusCode = 400;
-      throw error;
+      this.throwError("Primary destination (mainLocation) must be included in the destinations covered (locations) array");
     }
   }
 
@@ -123,13 +109,9 @@ class PackageService {
     const missingIds = uniqueIds.filter(id => !existingIds.has(id));
     if (missingIds.length > 0) {
       if (missingIds.includes(mainLocation.toString())) {
-        const error = new Error("Selected primary location does not exist.");
-        error.statusCode = 400;
-        throw error;
+        this.throwError("Selected primary location does not exist.");
       }
-      const error = new Error("One or more selected locations do not exist.");
-      error.statusCode = 400;
-      throw error;
+      this.throwError("One or more selected locations do not exist.");
     }
   }
 
@@ -138,10 +120,12 @@ class PackageService {
     const existingIds = new Set(existingCategories.map(cat => cat._id.toString()));
 
     const missingIds = categories.filter(id => !existingIds.has(id.toString()));
-    if (missingIds.length > 0) {
-      const error = new Error("One or more selected categories do not exist.");
-      error.statusCode = 400;
-      throw error;
+    if (missingIds.length > 0) this.throwError("One or more selected categories do not exist.");
+
+    for (const cat of existingCategories) {
+      if (!cat.appliesTo || !cat.appliesTo.includes("package")) {
+        this.throwError(`Category "${cat.name}" does not apply to packages`);
+      }
     }
   }
 }

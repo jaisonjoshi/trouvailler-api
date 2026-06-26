@@ -32,7 +32,7 @@ class CloudinaryService {
   }
 
   extractPublicIds(urls) {
-    return urls.map(url => this.extractPublicId(url)).filter(Boolean);
+    return [...new Set(urls.map(url => this.extractPublicId(url)).filter(Boolean))];
   }
 
   generateSignature(publicId, timestamp) {
@@ -44,21 +44,37 @@ class CloudinaryService {
     const timestamp = Math.round(Date.now() / 1000);
     const signature = this.generateSignature(publicId, timestamp);
 
-    const response = await fetch(
-      `https://api.cloudinary.com/v1_1/${this.cloudName}/image/destroy`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          public_id: publicId,
-          api_key: this.apiKey,
-          timestamp,
-          signature
-        })
-      }
-    );
+    try {
+      const response = await fetch(
+        `https://api.cloudinary.com/v1_1/${this.cloudName}/image/destroy`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            public_id: publicId,
+            api_key: this.apiKey,
+            timestamp,
+            signature
+          })
+        }
+      );
 
-    return await response.json();
+      if (!response.ok) {
+        let message = `Cloudinary returned ${response.status}`;
+        try {
+          const errorBody = await response.json();
+          if (errorBody?.error?.message) {
+            message = errorBody.error.message;
+          }
+        } catch {}
+        return { publicId, result: message };
+      }
+
+      const data = await response.json();
+      return { publicId, result: data.result || data.error?.message };
+    } catch {
+      return { publicId, result: "Cloudinary request failed" };
+    }
   }
 
   async deleteImages(urls) {
@@ -74,11 +90,9 @@ class CloudinaryService {
       return { success: true, message: "No valid Cloudinary public IDs found." };
     }
 
-    const results = [];
-    for (const publicId of publicIds) {
-      const data = await this.deleteImage(publicId);
-      results.push({ publicId, result: data.result || data.error?.message });
-    }
+    const results = await Promise.all(
+      publicIds.map(publicId => this.deleteImage(publicId))
+    );
 
     return { success: true, results };
   }

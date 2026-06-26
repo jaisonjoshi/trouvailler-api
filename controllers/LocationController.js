@@ -67,10 +67,7 @@ class LocationController {
     try {
       const { id } = req.params;
       await LocationService.deleteLocation(id);
-      res.status(200).json({
-        success: true,
-        message: "Location deleted"
-      });
+      res.status(200).json({ success: true, message: "Location deleted successfully" });
     } catch (err) {
       next(err);
     }

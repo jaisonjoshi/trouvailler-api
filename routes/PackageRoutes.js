@@ -1,6 +1,6 @@
 import express from "express";
 import PackageController from "../controllers/PackageController.js";
-import { validateBody } from "../utils/validate.js";
+import { validateBody } from "../middleware/validate.js";
 import { createPackageSchema, updatePackageSchema, deleteMediaSchema } from "../validation/PackageValidation.js";
 
 const router = express.Router();

@@ -64,7 +64,6 @@ const locationSchema = new mongoose.Schema(
   }
 );
 
-locationSchema.index({ slug: 1 });
 locationSchema.index({ parentLocation: 1 });
 locationSchema.index({ categories: 1 });
 locationSchema.index({ level: 1 });

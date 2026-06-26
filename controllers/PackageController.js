@@ -73,9 +73,7 @@ class PackageController {
     try {
       const { id } = req.params;
       await PackageService.deletePackage(id);
-      res
-        .status(200)
-        .json({ success: true, message: "Package successfully deleted" });
+      res.status(200).json({ success: true, message: "Package deleted successfully" });
     } catch (err) {
       next(err);
     }
