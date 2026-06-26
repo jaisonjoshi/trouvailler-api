@@ -1,4 +1,6 @@
 import PackageRepository from "../repositories/PackageRepository.js";
+import LocationRepository from "../repositories/LocationRepository.js";
+import CategoryRepository from "../repositories/CategoryRepository.js";
 import { createPackageSchema, updatePackageSchema } from "../validation/PackageValidation.js";
 import { generateSlug } from "../utils/slug.js";
 
@@ -18,9 +20,7 @@ class PackageService {
       query.status = filters.status;
     }
     if (filters.search) {
-      query.$or = [
-        { title: { $regex: filters.search, $options: "i" } }
-      ];
+      query.title = { $regex: filters.search, $options: "i" };
     }
     return await PackageRepository.findAll(query, options);
   }
@@ -35,23 +35,33 @@ class PackageService {
     return pkg;
   }
 
-  async createPackage(data) {
-    // Validate request data
-    const validatedData = createPackageSchema.parse(data);
-
-    if (!validatedData.locations.includes(validatedData.mainLocation)) {
-      const error = new Error("Primary destination (mainLocation) must be included in the destinations covered (locations) array");
-      error.statusCode = 400;
+  async getPackageBySlug(slug) {
+    const pkg = await PackageRepository.findBySlug(slug);
+    if (!pkg) {
+      const error = new Error("Package not found");
+      error.statusCode = 404;
       throw error;
     }
+    return pkg;
+  }
 
-    // Generate unique slug
-    const baseSlug = generateSlug(validatedData.title);
-    let slug = baseSlug;
-    let counter = 1;
-    while (await PackageRepository.findBySlug(slug)) {
-      slug = `${baseSlug}-${counter}`;
-      counter++;
+  async createPackage(data) {
+    const validatedData = createPackageSchema.parse(data);
+
+    this.validateMainLocation(validatedData.mainLocation, validatedData.locations);
+
+    await this.validateReferencedLocations(validatedData.mainLocation, validatedData.locations);
+
+    if (validatedData.categories && validatedData.categories.length > 0) {
+      await this.validateReferencedCategories(validatedData.categories);
+    }
+
+    const slug = generateSlug(validatedData.title);
+    const existingSlug = await PackageRepository.findBySlug(slug);
+    if (existingSlug) {
+      const error = new Error("A package with the same title already exists. Please choose a different title.");
+      error.statusCode = 400;
+      throw error;
     }
     validatedData.slug = slug;
 
@@ -59,37 +69,30 @@ class PackageService {
   }
 
   async updatePackage(id, data) {
-    // Validate update fields
     const validatedData = updatePackageSchema.parse(data);
-    
-    // Ensure package exists
+
     const pkg = await this.getPackageById(id);
 
-    // Merge fields for business rules validation
     const finalMainLocation = validatedData.mainLocation !== undefined ? validatedData.mainLocation : pkg.mainLocation;
     const finalLocations = validatedData.locations !== undefined ? validatedData.locations : pkg.locations;
 
-    if (finalMainLocation && finalLocations) {
-      const locationsStr = finalLocations.map(loc => loc.toString());
-      if (!locationsStr.includes(finalMainLocation.toString())) {
-        const error = new Error("Primary destination (mainLocation) must be included in the destinations covered (locations) array");
-        error.statusCode = 400;
-        throw error;
-      }
+    this.validateMainLocation(finalMainLocation, finalLocations);
+
+    if (validatedData.mainLocation !== undefined || validatedData.locations !== undefined) {
+      await this.validateReferencedLocations(finalMainLocation, finalLocations);
     }
 
-    // Regenerate slug if title changes
-    if (validatedData.title && validatedData.title !== pkg.title) {
-      const baseSlug = generateSlug(validatedData.title);
-      let slug = baseSlug;
-      let counter = 1;
-      while (true) {
-        const existing = await PackageRepository.findBySlug(slug);
-        if (!existing || existing._id.toString() === id) {
-          break;
-        }
-        slug = `${baseSlug}-${counter}`;
-        counter++;
+    if (validatedData.categories !== undefined && validatedData.categories.length > 0) {
+      await this.validateReferencedCategories(validatedData.categories);
+    }
+
+    if (validatedData.title !== undefined && validatedData.title !== pkg.title) {
+      const slug = generateSlug(validatedData.title);
+      const existing = await PackageRepository.findBySlug(slug);
+      if (existing && existing._id.toString() !== id) {
+        const error = new Error("A package with the same title already exists. Please choose a different title.");
+        error.statusCode = 400;
+        throw error;
       }
       validatedData.slug = slug;
     }
@@ -98,9 +101,48 @@ class PackageService {
   }
 
   async deletePackage(id) {
-    // Ensure package exists
     await this.getPackageById(id);
     return await PackageRepository.delete(id);
+  }
+
+  validateMainLocation(mainLocation, locations) {
+    const locationsStr = locations.map(loc => loc.toString());
+    if (!locationsStr.includes(mainLocation.toString())) {
+      const error = new Error("Primary destination (mainLocation) must be included in the destinations covered (locations) array");
+      error.statusCode = 400;
+      throw error;
+    }
+  }
+
+  async validateReferencedLocations(mainLocation, locations) {
+    const allIds = [mainLocation.toString(), ...locations.map(loc => loc.toString())];
+    const uniqueIds = [...new Set(allIds)];
+    const existingLocations = await LocationRepository.findByIds(uniqueIds);
+    const existingIds = new Set(existingLocations.map(loc => loc._id.toString()));
+
+    const missingIds = uniqueIds.filter(id => !existingIds.has(id));
+    if (missingIds.length > 0) {
+      if (missingIds.includes(mainLocation.toString())) {
+        const error = new Error("Selected primary location does not exist.");
+        error.statusCode = 400;
+        throw error;
+      }
+      const error = new Error("One or more selected locations do not exist.");
+      error.statusCode = 400;
+      throw error;
+    }
+  }
+
+  async validateReferencedCategories(categories) {
+    const existingCategories = await CategoryRepository.findByIds(categories);
+    const existingIds = new Set(existingCategories.map(cat => cat._id.toString()));
+
+    const missingIds = categories.filter(id => !existingIds.has(id.toString()));
+    if (missingIds.length > 0) {
+      const error = new Error("One or more selected categories do not exist.");
+      error.statusCode = 400;
+      throw error;
+    }
   }
 }
 

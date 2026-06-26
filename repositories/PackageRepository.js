@@ -36,16 +36,16 @@ class PackageRepository {
   }
 
   async update(id, data) {
-    return await Package.findByIdAndUpdate(
-      id,
+    return await Package.findOneAndUpdate(
+      { _id: id, isDeleted: { $ne: true } },
       { $set: data },
       { new: true, runValidators: true }
     );
   }
 
   async delete(id) {
-    return await Package.findByIdAndUpdate(
-      id,
+    return await Package.findOneAndUpdate(
+      { _id: id, isDeleted: { $ne: true } },
       { $set: { isDeleted: true } },
       { new: true }
     );

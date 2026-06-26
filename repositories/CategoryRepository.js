@@ -16,6 +16,10 @@ class CategoryRepository {
     return await Category.findOne({ _id: id, isDeleted: { $ne: true } });
   }
 
+  async findByIds(ids) {
+    return await Category.find({ _id: { $in: ids }, isDeleted: { $ne: true } });
+  }
+
   async findByName(name) {
     return await Category.findOne({ name: { $regex: `^${name}$`, $options: "i" }, isDeleted: { $ne: true } });
   }

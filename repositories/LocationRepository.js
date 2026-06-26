@@ -16,6 +16,10 @@ class LocationRepository {
     return await Location.findOne({ _id: id, isDeleted: { $ne: true } });
   }
 
+  async findByIds(ids) {
+    return await Location.find({ _id: { $in: ids }, isDeleted: { $ne: true } });
+  }
+
   async findByName(name) {
     return await Location.findOne({ name: { $regex: `^${name}$`, $options: "i" }, isDeleted: { $ne: true } });
   }
