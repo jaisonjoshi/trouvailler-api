@@ -73,8 +73,12 @@ class CategoryService {
   }
 
   async deleteCategory(id) {
-    // Ensure category exists
-    await this.getCategoryById(id);
+    const category = await CategoryRepository.findById(id);
+    if (!category) {
+      const error = new Error("Category not found");
+      error.statusCode = 404;
+      throw error;
+    }
     return await CategoryRepository.delete(id);
   }
 }

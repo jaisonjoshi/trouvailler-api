@@ -8,20 +8,20 @@ class CategoryRepository {
     const sortOption = {};
     sortOption[sortBy] = sortOrder;
 
-    return await Category.find(filters).sort(sortOption);
+    const query = options.showDeleted ? { ...filters } : { isDeleted: { $ne: true }, ...filters };
+    return await Category.find(query).sort(sortOption);
   }
 
   async findById(id) {
-    return await Category.findById(id);
+    return await Category.findOne({ _id: id, isDeleted: { $ne: true } });
   }
 
   async findByName(name) {
-    // Case-insensitive query to find category by name
-    return await Category.findOne({ name: { $regex: `^${name}$`, $options: "i" } });
+    return await Category.findOne({ name: { $regex: `^${name}$`, $options: "i" }, isDeleted: { $ne: true } });
   }
 
   async findBySlug(slug) {
-    return await Category.findOne({ slug: slug.toLowerCase() });
+    return await Category.findOne({ slug: slug.toLowerCase(), isDeleted: { $ne: true } });
   }
 
   async create(data) {
@@ -30,15 +30,19 @@ class CategoryRepository {
   }
 
   async update(id, data) {
-    return await Category.findByIdAndUpdate(
-      id,
+    return await Category.findOneAndUpdate(
+      { _id: id, isDeleted: { $ne: true } },
       { $set: data },
       { new: true, runValidators: true }
     );
   }
 
   async delete(id) {
-    return await Category.findByIdAndDelete(id);
+    return await Category.findByIdAndUpdate(
+      id,
+      { $set: { isDeleted: true } },
+      { new: true }
+    );
   }
 }
 

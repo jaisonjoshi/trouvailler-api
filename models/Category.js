@@ -25,14 +25,30 @@ const categorySchema = new mongoose.Schema({
     required: true
   },
   appliesTo: {
-    type: [String],
+    type: [{
+      type: String,
+      enum: APPLIES_TO_VALUES
+    }],
     required: true,
-    enum: APPLIES_TO_VALUES,
     default: ["package"]
+  },
+  isActive: {
+    type: Boolean,
+    required: true,
+    default: true
+  },
+  isDeleted: {
+    type: Boolean,
+    default: false
   }
 }, {
-  timestamps: true // Automatically manages createdAt and updatedAt
+  timestamps: true
 });
+
+categorySchema.index({ slug: 1 });
+categorySchema.index({ appliesTo: 1 });
+categorySchema.index({ isActive: 1 });
+categorySchema.index({ isDeleted: 1 });
 
 const Category = mongoose.model("Category", categorySchema);
 

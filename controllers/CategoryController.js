@@ -9,7 +9,8 @@ class CategoryController {
       }
       const options = {
         sortBy: req.query.sortBy,
-        sortOrder: req.query.sortOrder
+        sortOrder: req.query.sortOrder,
+        showDeleted: req.query.showDeleted === "true"
       };
       const categories = await CategoryService.getAllCategories(filters, options);
       res.status(200).json(categories);
@@ -53,7 +54,7 @@ class CategoryController {
       await CategoryService.deleteCategory(id);
       res.status(200).json({
         success: true,
-        message: "Category deleted successfully"
+        message: "Category deleted"
       });
     } catch (err) {
       next(err);
