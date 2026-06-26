@@ -7,6 +7,7 @@ on:
 
 jobs:
   deploy:
+    name: Deploy to Oracle Cloud
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +23,16 @@ jobs:
 
       - name: Test SSH Connection
         run: |
-          ssh -o StrictHostKeyChecking=yes \
-              -i ~/.ssh/id_ed25519 \
-              ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
-              "echo '✅ GitHub Actions connected successfully'"
+          ssh \
+            -o StrictHostKeyChecking=yes \
+            -i ~/.ssh/id_ed25519 \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+            "echo '✅ GitHub Actions connected successfully'"
+
+      - name: Deploy Application
+        run: |
+          ssh \
+            -o StrictHostKeyChecking=yes \
+            -i ~/.ssh/id_ed25519 \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+            "export DEPLOYED_BY='${{ github.actor }}'; bash /var/www/trouvailler-api/scripts/deploy.sh"
