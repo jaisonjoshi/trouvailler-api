@@ -13,7 +13,11 @@ const app = express();
 
 app.disable("x-powered-by");
 app.use(cors());
-app.use(express.json({ limit: "2mb" }));
+app.use(
+  express.json({
+    limit: "2mb",
+  }),
+);
 
 app.get("/openapi.json", (req, res) => {
   res.setHeader("Content-Type", "application/json");
@@ -40,6 +44,15 @@ app.get("/", (req, res) => {
     status: "ok",
     docs: "/docs",
     openapi: "/openapi.json",
+  });
+});
+
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    service: "Trouvailler API",
+    uptime: Math.floor(process.uptime()),
+    timestamp: new Date().toISOString(),
   });
 });
 
