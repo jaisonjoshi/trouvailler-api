@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-25T19:53:51.392Z",
+  "generatedAt": "2026-06-26T09:09:01.882Z",
   "project": "trouvailler-admin",
   "version": "1.0",
-  "sourceCount": 76,
-  "symbolCount": 165,
-  "edgeCount": 805,
+  "sourceCount": 117,
+  "symbolCount": 219,
+  "edgeCount": 1090,
   "projects": {
     "trouvailler-admin": {
       "folders": [
@@ -13,13 +13,28 @@
         "admin/src/contexts",
         "admin/src/handlers",
         "admin/src/hooks",
-        "admin/src/pages",
+        "admin/src/lib",
+        "admin/src/routes",
         "admin/src/types",
+        "admin/src/utils",
         "admin/src/components/ui",
         "admin/src/pages/categories",
         "admin/src/pages/locations",
         "admin/src/pages/packages",
-        "admin/src/pages/packages/components"
+        "admin/src/routes/categories",
+        "admin/src/routes/locations",
+        "admin/src/routes/packages",
+        "admin/src/pages/categories/components",
+        "admin/src/pages/categories/form",
+        "admin/src/pages/categories/services",
+        "admin/src/pages/locations/components",
+        "admin/src/pages/locations/form",
+        "admin/src/pages/locations/services",
+        "admin/src/pages/packages/components",
+        "admin/src/pages/packages/form",
+        "admin/src/pages/packages/hooks",
+        "admin/src/pages/packages/services",
+        "admin/src/pages/packages/utils"
       ],
       "dependencies": [
         "trouvailler-api"
@@ -52,27 +67,27 @@
   "moduleEdges": [
     {
       "source": "admin:admin/src",
-      "target": "admin:admin/src/components",
+      "target": "admin:admin/src/lib",
       "type": "imports"
     },
     {
       "source": "admin:admin/src",
-      "target": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/routes",
       "type": "imports"
     },
     {
       "source": "admin:admin/src",
-      "target": "admin:admin/src/pages",
+      "target": "admin:admin/src/routes/packages",
       "type": "imports"
     },
     {
       "source": "admin:admin/src",
-      "target": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/routes/locations",
       "type": "imports"
     },
     {
       "source": "admin:admin/src",
-      "target": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/routes/categories",
       "type": "imports"
     },
     {
@@ -82,7 +97,7 @@
     },
     {
       "source": "api:api/routes",
-      "target": "api:api/utils",
+      "target": "api:api/middleware",
       "type": "imports"
     },
     {
@@ -141,8 +156,8 @@
       "type": "imports"
     },
     {
-      "source": "admin:admin/src/pages",
-      "target": "admin:admin/src/components/ui",
+      "source": "admin:admin/src/routes",
+      "target": "admin:admin/src/components",
       "type": "imports"
     },
     {
@@ -157,7 +172,17 @@
     },
     {
       "source": "admin:admin/src/pages/categories",
-      "target": "admin:admin/src/types",
+      "target": "admin:admin/src/pages/categories/form",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/pages/categories/services",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/pages/categories/components",
       "type": "imports"
     },
     {
@@ -166,13 +191,33 @@
       "type": "imports"
     },
     {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/types",
+      "type": "imports"
+    },
+    {
       "source": "admin:admin/src/pages/locations",
       "target": "admin:admin/src/hooks",
       "type": "imports"
     },
     {
       "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/pages/locations/form",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/pages/locations/services",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
       "target": "admin:admin/src/components/ui",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/pages/locations/components",
       "type": "imports"
     },
     {
@@ -183,16 +228,6 @@
     {
       "source": "admin:admin/src/pages/locations",
       "target": "admin:admin/src/types",
-      "type": "imports"
-    },
-    {
-      "source": "admin:admin/src/pages/packages",
-      "target": "admin:admin/src/types",
-      "type": "imports"
-    },
-    {
-      "source": "admin:admin/src/pages/packages",
-      "target": "admin:admin/src/hooks",
       "type": "imports"
     },
     {
@@ -202,6 +237,31 @@
     },
     {
       "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/hooks",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/form",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/hooks",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/services",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/utils",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
       "target": "admin:admin/src/components/ui",
       "type": "imports"
     },
@@ -211,13 +271,68 @@
       "type": "imports"
     },
     {
-      "source": "admin:admin/src/pages/packages/components",
+      "source": "admin:admin/src/routes/categories",
+      "target": "admin:admin/src/pages/categories",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/routes/locations",
+      "target": "admin:admin/src/pages/locations",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/routes/packages",
       "target": "admin:admin/src/pages/packages",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/categories/components",
+      "target": "admin:admin/src/components/ui",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/categories/form",
+      "target": "admin:admin/src/pages/categories",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/categories/form",
+      "target": "admin:admin/src/types",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/categories/services",
+      "target": "admin:admin/src/pages/categories",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/locations/components",
+      "target": "admin:admin/src/components/ui",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/locations/form",
+      "target": "admin:admin/src/pages/locations",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/locations/form",
+      "target": "admin:admin/src/types",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/locations/services",
+      "target": "admin:admin/src/pages/locations",
       "type": "imports"
     },
     {
       "source": "admin:admin/src/pages/packages/components",
       "target": "admin:admin/src/components/ui",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/pages/packages",
       "type": "imports"
     },
     {
@@ -228,6 +343,46 @@
     {
       "source": "admin:admin/src/pages/packages/components",
       "target": "admin:admin/src/types",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/utils",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/form",
+      "target": "admin:admin/src/pages/packages",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/form",
+      "target": "admin:admin/src/types",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/hooks",
+      "target": "admin:admin/src/types",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/hooks",
+      "target": "admin:admin/src/pages/packages",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/services",
+      "target": "admin:admin/src/pages/packages",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/services",
+      "target": "admin:admin/src/handlers",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/utils",
+      "target": "admin:admin/src/pages/packages",
       "type": "imports"
     },
     {
@@ -276,7 +431,7 @@
       "type": "renders"
     },
     {
-      "source": "admin:admin/src",
+      "source": "admin:admin/src/routes",
       "target": "admin:admin/src/components",
       "type": "references"
     },
@@ -321,18 +476,8 @@
       "type": "references"
     },
     {
-      "source": "admin:admin/src/pages",
-      "target": "admin:admin/src/components/ui",
-      "type": "renders"
-    },
-    {
-      "source": "admin:admin/src",
-      "target": "admin:admin/src/pages",
-      "type": "references"
-    },
-    {
-      "source": "admin:admin/src/pages",
-      "target": "admin:admin/src/components/ui",
+      "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/utils",
       "type": "references"
     },
     {
@@ -341,7 +486,17 @@
       "type": "references"
     },
     {
+      "source": "admin:admin/src/pages/categories/components",
+      "target": "admin:admin/src/components/ui",
+      "type": "references"
+    },
+    {
       "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/components/ui",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/locations/components",
       "target": "admin:admin/src/components/ui",
       "type": "references"
     },
@@ -371,14 +526,39 @@
       "type": "renders"
     },
     {
-      "source": "admin:admin/src",
+      "source": "admin:admin/src/routes/categories",
       "target": "admin:admin/src/pages/categories",
       "type": "references"
     },
     {
       "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/pages/categories/form",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/pages/categories/form",
+      "type": "uses_hook"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/pages/categories/services",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
       "target": "admin:admin/src/pages/packages/components",
       "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/pages/categories/components",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/pages/categories/form",
+      "target": "admin:admin/src/pages/categories",
+      "type": "references"
     },
     {
       "source": "admin:admin/src/pages/locations",
@@ -392,6 +572,21 @@
     },
     {
       "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/pages/locations/form",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/pages/locations/form",
+      "type": "uses_hook"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/pages/locations/services",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
       "target": "admin:admin/src/components/ui",
       "type": "renders"
     },
@@ -401,7 +596,17 @@
       "type": "renders"
     },
     {
-      "source": "admin:admin/src",
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/pages/locations/components",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/routes/locations",
+      "target": "admin:admin/src/pages/locations",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/locations/form",
       "target": "admin:admin/src/pages/locations",
       "type": "references"
     },
@@ -417,7 +622,32 @@
     },
     {
       "source": "admin:admin/src/pages/packages",
-      "target": "admin:admin/src/handlers",
+      "target": "admin:admin/src/pages/packages/form",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/form",
+      "type": "uses_hook"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/hooks",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/hooks",
+      "type": "uses_hook"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/utils",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/services",
       "type": "calls"
     },
     {
@@ -431,8 +661,73 @@
       "type": "renders"
     },
     {
-      "source": "admin:admin/src",
+      "source": "admin:admin/src/routes/packages",
       "target": "admin:admin/src/pages/packages",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/form",
+      "target": "admin:admin/src/pages/packages",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/categories/components",
+      "target": "admin:admin/src/components/ui",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/pages/categories/components",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/categories/form",
+      "target": "admin:admin/src/pages/categories",
+      "type": "uses_schema"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/pages/categories/form",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/pages/categories/services",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/locations/components",
+      "target": "admin:admin/src/components/ui",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/pages/locations/components",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/locations/form",
+      "target": "admin:admin/src/pages/locations",
+      "type": "uses_schema"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/pages/locations/form",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/pages/locations/services",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/components/ui",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/components",
       "type": "references"
     },
     {
@@ -446,16 +741,6 @@
       "type": "uses_hook"
     },
     {
-      "source": "admin:admin/src/pages/packages/components",
-      "target": "admin:admin/src/components/ui",
-      "type": "renders"
-    },
-    {
-      "source": "admin:admin/src/pages/packages",
-      "target": "admin:admin/src/pages/packages/components",
-      "type": "references"
-    },
-    {
       "source": "admin:admin/src/pages/categories",
       "target": "admin:admin/src/pages/packages/components",
       "type": "references"
@@ -463,6 +748,36 @@
     {
       "source": "admin:admin/src/pages/locations",
       "target": "admin:admin/src/pages/packages/components",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/utils",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/form",
+      "target": "admin:admin/src/pages/packages",
+      "type": "uses_schema"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/form",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/hooks",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/services",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/pages/packages/utils",
       "type": "references"
     }
   ]

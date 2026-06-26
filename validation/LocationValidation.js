@@ -4,16 +4,16 @@ import { LOCATION_LEVEL_VALUES } from "../utils/constants.js";
 const objectIdSchema = z.string().regex(/^[0-9a-fA-F]{24}$/, "Invalid ObjectId");
 
 const baseLocationSchema = z.object({
-  name: z.string().min(1, "Location name is required").trim(),
-  shortDescription: z.string().min(1, "Short description is required").trim(),
-  description: z.string().min(1, "Detailed description is required").trim(),
+  name: z.string().trim().min(1, "Location name is required"),
+  shortDescription: z.string().trim().min(1, "Short description is required"),
+  description: z.string().trim().min(1, "Detailed description is required"),
   image: z.string().url("Location image must be a valid URL"),
   level: z.enum(LOCATION_LEVEL_VALUES, {
-    errorMap: () => ({ message: "Level must be country, state, or destination" })
+    errorMap: () => ({ message: "Level must be country, state, or destination" }),
   }),
   parentLocation: objectIdSchema.nullable().optional().or(z.literal("")),
   categories: z.array(objectIdSchema).default([]),
-  isActive: z.boolean().default(true)
+  isActive: z.boolean().default(true),
 });
 
 export const createLocationSchema = baseLocationSchema;

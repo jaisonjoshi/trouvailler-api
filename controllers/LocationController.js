@@ -8,14 +8,15 @@ class LocationController {
         filters.level = req.query.level;
       }
       if (req.query.parentLocation) {
-        filters.parentLocation = req.query.parentLocation === "null" ? null : req.query.parentLocation;
+        filters.parentLocation =
+          req.query.parentLocation === "null" ? null : req.query.parentLocation;
       }
       if (req.query.search) {
         filters.search = req.query.search;
       }
       const options = {
         sortBy: req.query.sortBy,
-        sortOrder: req.query.sortOrder
+        sortOrder: req.query.sortOrder,
       };
       const locations = await LocationService.getAllLocations(filters, options);
       res.status(200).json(locations);

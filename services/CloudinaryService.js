@@ -18,10 +18,14 @@ class CloudinaryService {
   }
 
   extractPublicId(url) {
-    if (!url.includes("res.cloudinary.com")) return null;
+    if (!url.includes("res.cloudinary.com")) {
+      return null;
+    }
     try {
       const parts = url.split("/upload/");
-      if (parts.length < 2) return null;
+      if (parts.length < 2) {
+        return null;
+      }
       const pathAfterUpload = parts[1];
       const withoutVersion = pathAfterUpload.replace(/^v\d+\//, "");
       const lastDotIndex = withoutVersion.lastIndexOf(".");
@@ -32,7 +36,7 @@ class CloudinaryService {
   }
 
   extractPublicIds(urls) {
-    return [...new Set(urls.map(url => this.extractPublicId(url)).filter(Boolean))];
+    return [...new Set(urls.map((url) => this.extractPublicId(url)).filter(Boolean))];
   }
 
   generateSignature(publicId, timestamp) {
@@ -54,9 +58,9 @@ class CloudinaryService {
             public_id: publicId,
             api_key: this.apiKey,
             timestamp,
-            signature
-          })
-        }
+            signature,
+          }),
+        },
       );
 
       if (!response.ok) {
@@ -66,7 +70,9 @@ class CloudinaryService {
           if (errorBody?.error?.message) {
             message = errorBody.error.message;
           }
-        } catch {}
+        } catch {
+          // Ignore JSON parse errors from Cloudinary error response
+        }
         return { publicId, result: message };
       }
 
@@ -81,7 +87,7 @@ class CloudinaryService {
     if (!this.isConfigured()) {
       return {
         success: false,
-        message: "Cloudinary credentials not configured on backend. Skipping delete."
+        message: "Cloudinary credentials not configured on backend. Skipping delete.",
       };
     }
 
@@ -90,9 +96,7 @@ class CloudinaryService {
       return { success: true, message: "No valid Cloudinary public IDs found." };
     }
 
-    const results = await Promise.all(
-      publicIds.map(publicId => this.deleteImage(publicId))
-    );
+    const results = await Promise.all(publicIds.map((publicId) => this.deleteImage(publicId)));
 
     return { success: true, results };
   }

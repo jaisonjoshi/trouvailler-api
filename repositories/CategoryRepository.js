@@ -1,7 +1,7 @@
 import Category from "../models/Category.js";
 
 class CategoryRepository {
-  async findAll(filters = {}, options = {}) {
+  findAll(filters = {}, options = {}) {
     const sortBy = options.sortBy || "createdAt";
     const sortOrder = options.sortOrder === "asc" ? 1 : -1;
 
@@ -9,44 +9,43 @@ class CategoryRepository {
     sortOption[sortBy] = sortOrder;
 
     const query = options.showDeleted ? { ...filters } : { isDeleted: { $ne: true }, ...filters };
-    return await Category.find(query).sort(sortOption);
+    return Category.find(query).sort(sortOption);
   }
 
-  async findById(id) {
-    return await Category.findOne({ _id: id, isDeleted: { $ne: true } });
+  findById(id) {
+    return Category.findOne({ _id: id, isDeleted: { $ne: true } });
   }
 
-  async findByIds(ids) {
-    return await Category.find({ _id: { $in: ids }, isDeleted: { $ne: true } });
+  findByIds(ids) {
+    return Category.find({ _id: { $in: ids }, isDeleted: { $ne: true } });
   }
 
-  async findByName(name) {
-    return await Category.findOne({ name: { $regex: `^${name}$`, $options: "i" }, isDeleted: { $ne: true } });
+  findByName(name) {
+    return Category.findOne({
+      name: { $regex: `^${name}$`, $options: "i" },
+      isDeleted: { $ne: true },
+    });
   }
 
-  async findBySlug(slug) {
-    return await Category.findOne({ slug: slug.toLowerCase(), isDeleted: { $ne: true } });
+  findBySlug(slug) {
+    return Category.findOne({ slug: slug.toLowerCase(), isDeleted: { $ne: true } });
   }
 
-  async create(data) {
+  create(data) {
     const newCategory = new Category(data);
-    return await newCategory.save();
+    return newCategory.save();
   }
 
-  async update(id, data) {
-    return await Category.findOneAndUpdate(
+  update(id, data) {
+    return Category.findOneAndUpdate(
       { _id: id, isDeleted: { $ne: true } },
       { $set: data },
-      { new: true, runValidators: true }
+      { new: true, runValidators: true },
     );
   }
 
-  async delete(id) {
-    return await Category.findByIdAndUpdate(
-      id,
-      { $set: { isDeleted: true } },
-      { new: true }
-    );
+  delete(id) {
+    return Category.findByIdAndUpdate(id, { $set: { isDeleted: true } }, { new: true });
   }
 }
 

@@ -27,7 +27,7 @@ app.use(
       content: swaggerSpec,
     },
     theme: "purple",
-  })
+  }),
 );
 
 app.use("/api/packages", packageRoutes);

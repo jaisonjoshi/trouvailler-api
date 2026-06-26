@@ -15,9 +15,12 @@ if (!MONGO_URI) {
 mongoose
   .connect(MONGO_URI)
   .then(() => {
+    // eslint-disable-next-line no-console
     console.log("Connected to MongoDB Atlas successfully");
     app.listen(PORT, () => {
+      // eslint-disable-next-line no-console
       console.log(`Server is running on port ${PORT}`);
+      // eslint-disable-next-line no-console
       console.log(`API Documentation available at http://localhost:${PORT}/docs`);
     });
   })

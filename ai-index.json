@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-25T19:53:51.392Z",
+  "generatedAt": "2026-06-26T09:09:01.882Z",
   "project": "trouvailler-admin",
   "version": "1.0",
-  "sourceCount": 76,
-  "symbolCount": 165,
-  "edgeCount": 805,
+  "sourceCount": 117,
+  "symbolCount": 219,
+  "edgeCount": 1090,
   "symbols": {
     "COMPONENT:admin/src/App.tsx:App": {
       "name": "App",
@@ -12,8 +12,8 @@
       "file": "admin/src/App.tsx",
       "project": "admin",
       "range": {
-        "start": 16,
-        "end": 22
+        "start": 8,
+        "end": 15
       },
       "callers": [],
       "renders": [],
@@ -29,7 +29,7 @@
       "project": "api",
       "range": {
         "start": 4,
-        "end": 19
+        "end": 20
       },
       "callers": [],
       "renders": [],
@@ -43,8 +43,23 @@
       "file": "api/controllers/CategoryController.js",
       "project": "api",
       "range": {
-        "start": 21,
-        "end": 29
+        "start": 22,
+        "end": 30
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "FILE:api/routes/CategoryRoutes.js"
+      ]
+    },
+    "FUNC:api/controllers/CategoryController.js:CategoryController.getBySlug": {
+      "name": "CategoryController.getBySlug",
+      "type": "FUNC",
+      "file": "api/controllers/CategoryController.js",
+      "project": "api",
+      "range": {
+        "start": 32,
+        "end": 40
       },
       "callers": [],
       "renders": [],
@@ -58,8 +73,8 @@
       "file": "api/controllers/CategoryController.js",
       "project": "api",
       "range": {
-        "start": 31,
-        "end": 38
+        "start": 42,
+        "end": 49
       },
       "callers": [],
       "renders": [],
@@ -73,8 +88,8 @@
       "file": "api/controllers/CategoryController.js",
       "project": "api",
       "range": {
-        "start": 40,
-        "end": 48
+        "start": 51,
+        "end": 59
       },
       "callers": [],
       "renders": [],
@@ -88,8 +103,8 @@
       "file": "api/controllers/CategoryController.js",
       "project": "api",
       "range": {
-        "start": 50,
-        "end": 61
+        "start": 61,
+        "end": 69
       },
       "callers": [],
       "renders": [],
@@ -104,7 +119,7 @@
       "project": "api",
       "range": {
         "start": 4,
-        "end": 25
+        "end": 26
       },
       "callers": [],
       "renders": [],
@@ -118,8 +133,23 @@
       "file": "api/controllers/LocationController.js",
       "project": "api",
       "range": {
-        "start": 27,
-        "end": 35
+        "start": 28,
+        "end": 36
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "FILE:api/routes/LocationRoutes.js"
+      ]
+    },
+    "FUNC:api/controllers/LocationController.js:LocationController.getBySlug": {
+      "name": "LocationController.getBySlug",
+      "type": "FUNC",
+      "file": "api/controllers/LocationController.js",
+      "project": "api",
+      "range": {
+        "start": 38,
+        "end": 46
       },
       "callers": [],
       "renders": [],
@@ -133,8 +163,8 @@
       "file": "api/controllers/LocationController.js",
       "project": "api",
       "range": {
-        "start": 37,
-        "end": 44
+        "start": 48,
+        "end": 55
       },
       "callers": [],
       "renders": [],
@@ -148,8 +178,8 @@
       "file": "api/controllers/LocationController.js",
       "project": "api",
       "range": {
-        "start": 46,
-        "end": 54
+        "start": 57,
+        "end": 65
       },
       "callers": [],
       "renders": [],
@@ -163,8 +193,8 @@
       "file": "api/controllers/LocationController.js",
       "project": "api",
       "range": {
-        "start": 56,
-        "end": 67
+        "start": 67,
+        "end": 75
       },
       "callers": [],
       "renders": [],
@@ -179,7 +209,7 @@
       "project": "api",
       "range": {
         "start": 5,
-        "end": 23
+        "end": 31
       },
       "callers": [],
       "renders": [],
@@ -193,8 +223,23 @@
       "file": "api/controllers/PackageController.js",
       "project": "api",
       "range": {
-        "start": 25,
-        "end": 33
+        "start": 33,
+        "end": 41
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "FILE:api/routes/PackageRoutes.js"
+      ]
+    },
+    "FUNC:api/controllers/PackageController.js:PackageController.getBySlug": {
+      "name": "PackageController.getBySlug",
+      "type": "FUNC",
+      "file": "api/controllers/PackageController.js",
+      "project": "api",
+      "range": {
+        "start": 43,
+        "end": 51
       },
       "callers": [],
       "renders": [],
@@ -208,8 +253,8 @@
       "file": "api/controllers/PackageController.js",
       "project": "api",
       "range": {
-        "start": 35,
-        "end": 42
+        "start": 53,
+        "end": 60
       },
       "callers": [],
       "renders": [],
@@ -223,8 +268,8 @@
       "file": "api/controllers/PackageController.js",
       "project": "api",
       "range": {
-        "start": 44,
-        "end": 52
+        "start": 62,
+        "end": 70
       },
       "callers": [],
       "renders": [],
@@ -238,8 +283,8 @@
       "file": "api/controllers/PackageController.js",
       "project": "api",
       "range": {
-        "start": 54,
-        "end": 62
+        "start": 72,
+        "end": 80
       },
       "callers": [],
       "renders": [],
@@ -253,8 +298,8 @@
       "file": "api/controllers/PackageController.js",
       "project": "api",
       "range": {
-        "start": 64,
-        "end": 137
+        "start": 82,
+        "end": 89
       },
       "callers": [],
       "renders": [],
@@ -286,7 +331,7 @@
       "project": "api",
       "range": {
         "start": 10,
-        "end": 18
+        "end": 16
       },
       "callers": [
         "FUNC:api/controllers/CategoryController.js:CategoryController.getById",
@@ -300,14 +345,31 @@
         "FUNC:api/controllers/CategoryController.js:CategoryController.getById"
       ]
     },
+    "FUNC:api/services/CategoryService.js:CategoryService.getCategoryBySlug": {
+      "name": "CategoryService.getCategoryBySlug",
+      "type": "FUNC",
+      "file": "api/services/CategoryService.js",
+      "project": "api",
+      "range": {
+        "start": 18,
+        "end": 24
+      },
+      "callers": [
+        "FUNC:api/controllers/CategoryController.js:CategoryController.getBySlug"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/controllers/CategoryController.js:CategoryController.getBySlug"
+      ]
+    },
     "FUNC:api/services/CategoryService.js:CategoryService.createCategory": {
       "name": "CategoryService.createCategory",
       "type": "FUNC",
       "file": "api/services/CategoryService.js",
       "project": "api",
       "range": {
-        "start": 20,
-        "end": 43
+        "start": 26,
+        "end": 42
       },
       "callers": [
         "FUNC:api/controllers/CategoryController.js:CategoryController.create"
@@ -323,8 +385,8 @@
       "file": "api/services/CategoryService.js",
       "project": "api",
       "range": {
-        "start": 45,
-        "end": 73
+        "start": 44,
+        "end": 63
       },
       "callers": [
         "FUNC:api/controllers/CategoryController.js:CategoryController.update"
@@ -340,8 +402,8 @@
       "file": "api/services/CategoryService.js",
       "project": "api",
       "range": {
-        "start": 75,
-        "end": 79
+        "start": 65,
+        "end": 68
       },
       "callers": [
         "FUNC:api/controllers/CategoryController.js:CategoryController.delete"
@@ -349,6 +411,131 @@
       "renders": [],
       "referencedBy": [
         "FUNC:api/controllers/CategoryController.js:CategoryController.delete"
+      ]
+    },
+    "FUNC:api/services/CategoryService.js:CategoryService.throwError": {
+      "name": "CategoryService.throwError",
+      "type": "FUNC",
+      "file": "api/services/CategoryService.js",
+      "project": "api",
+      "range": {
+        "start": 70,
+        "end": 74
+      },
+      "callers": [
+        "FUNC:api/services/CategoryService.js:CategoryService.getCategoryById",
+        "FUNC:api/services/CategoryService.js:CategoryService.getCategoryBySlug",
+        "FUNC:api/services/CategoryService.js:CategoryService.createCategory",
+        "FUNC:api/services/CategoryService.js:CategoryService.updateCategory"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/services/CategoryService.js:CategoryService.getCategoryById",
+        "FUNC:api/services/CategoryService.js:CategoryService.getCategoryBySlug",
+        "FUNC:api/services/CategoryService.js:CategoryService.createCategory",
+        "FUNC:api/services/CategoryService.js:CategoryService.updateCategory"
+      ]
+    },
+    "FUNC:api/services/CloudinaryService.js:CloudinaryService.isConfigured": {
+      "name": "CloudinaryService.isConfigured",
+      "type": "FUNC",
+      "file": "api/services/CloudinaryService.js",
+      "project": "api",
+      "range": {
+        "start": 16,
+        "end": 18
+      },
+      "callers": [
+        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"
+      ]
+    },
+    "FUNC:api/services/CloudinaryService.js:CloudinaryService.extractPublicId": {
+      "name": "CloudinaryService.extractPublicId",
+      "type": "FUNC",
+      "file": "api/services/CloudinaryService.js",
+      "project": "api",
+      "range": {
+        "start": 20,
+        "end": 36
+      },
+      "callers": [
+        "FUNC:api/services/CloudinaryService.js:CloudinaryService.extractPublicIds"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/services/CloudinaryService.js:CloudinaryService.extractPublicIds"
+      ]
+    },
+    "FUNC:api/services/CloudinaryService.js:CloudinaryService.extractPublicIds": {
+      "name": "CloudinaryService.extractPublicIds",
+      "type": "FUNC",
+      "file": "api/services/CloudinaryService.js",
+      "project": "api",
+      "range": {
+        "start": 38,
+        "end": 40
+      },
+      "callers": [
+        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"
+      ]
+    },
+    "FUNC:api/services/CloudinaryService.js:CloudinaryService.generateSignature": {
+      "name": "CloudinaryService.generateSignature",
+      "type": "FUNC",
+      "file": "api/services/CloudinaryService.js",
+      "project": "api",
+      "range": {
+        "start": 42,
+        "end": 45
+      },
+      "callers": [
+        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImage"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImage"
+      ]
+    },
+    "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImage": {
+      "name": "CloudinaryService.deleteImage",
+      "type": "FUNC",
+      "file": "api/services/CloudinaryService.js",
+      "project": "api",
+      "range": {
+        "start": 47,
+        "end": 84
+      },
+      "callers": [
+        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"
+      ]
+    },
+    "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages": {
+      "name": "CloudinaryService.deleteImages",
+      "type": "FUNC",
+      "file": "api/services/CloudinaryService.js",
+      "project": "api",
+      "range": {
+        "start": 86,
+        "end": 102
+      },
+      "callers": [
+        "FUNC:api/controllers/PackageController.js:PackageController.deleteMedia"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/controllers/PackageController.js:PackageController.deleteMedia"
       ]
     },
     "FUNC:api/services/LocationService.js:LocationService.getAllLocations": {
@@ -375,7 +562,7 @@
       "project": "api",
       "range": {
         "start": 24,
-        "end": 32
+        "end": 30
       },
       "callers": [
         "FUNC:api/controllers/LocationController.js:LocationController.getById",
@@ -389,14 +576,109 @@
         "FUNC:api/controllers/LocationController.js:LocationController.getById"
       ]
     },
+    "FUNC:api/services/LocationService.js:LocationService.getLocationBySlug": {
+      "name": "LocationService.getLocationBySlug",
+      "type": "FUNC",
+      "file": "api/services/LocationService.js",
+      "project": "api",
+      "range": {
+        "start": 32,
+        "end": 38
+      },
+      "callers": [
+        "FUNC:api/controllers/LocationController.js:LocationController.getBySlug"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/controllers/LocationController.js:LocationController.getBySlug"
+      ]
+    },
+    "FUNC:api/services/LocationService.js:LocationService.createLocation": {
+      "name": "LocationService.createLocation",
+      "type": "FUNC",
+      "file": "api/services/LocationService.js",
+      "project": "api",
+      "range": {
+        "start": 40,
+        "end": 63
+      },
+      "callers": [
+        "FUNC:api/controllers/LocationController.js:LocationController.create"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/controllers/LocationController.js:LocationController.create"
+      ]
+    },
+    "FUNC:api/services/LocationService.js:LocationService.updateLocation": {
+      "name": "LocationService.updateLocation",
+      "type": "FUNC",
+      "file": "api/services/LocationService.js",
+      "project": "api",
+      "range": {
+        "start": 65,
+        "end": 102
+      },
+      "callers": [
+        "FUNC:api/controllers/LocationController.js:LocationController.update"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/controllers/LocationController.js:LocationController.update"
+      ]
+    },
+    "FUNC:api/services/LocationService.js:LocationService.deleteLocation": {
+      "name": "LocationService.deleteLocation",
+      "type": "FUNC",
+      "file": "api/services/LocationService.js",
+      "project": "api",
+      "range": {
+        "start": 104,
+        "end": 107
+      },
+      "callers": [
+        "FUNC:api/controllers/LocationController.js:LocationController.delete"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/controllers/LocationController.js:LocationController.delete"
+      ]
+    },
+    "FUNC:api/services/LocationService.js:LocationService.throwError": {
+      "name": "LocationService.throwError",
+      "type": "FUNC",
+      "file": "api/services/LocationService.js",
+      "project": "api",
+      "range": {
+        "start": 109,
+        "end": 113
+      },
+      "callers": [
+        "FUNC:api/services/LocationService.js:LocationService.getLocationById",
+        "FUNC:api/services/LocationService.js:LocationService.getLocationBySlug",
+        "FUNC:api/services/LocationService.js:LocationService.createLocation",
+        "FUNC:api/services/LocationService.js:LocationService.updateLocation",
+        "FUNC:api/services/LocationService.js:LocationService.validateParentLocation",
+        "FUNC:api/services/LocationService.js:LocationService.validateCategories"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/services/LocationService.js:LocationService.getLocationById",
+        "FUNC:api/services/LocationService.js:LocationService.getLocationBySlug",
+        "FUNC:api/services/LocationService.js:LocationService.createLocation",
+        "FUNC:api/services/LocationService.js:LocationService.updateLocation",
+        "FUNC:api/services/LocationService.js:LocationService.validateParentLocation",
+        "FUNC:api/services/LocationService.js:LocationService.validateCategories"
+      ]
+    },
     "FUNC:api/services/LocationService.js:LocationService.validateParentLocation": {
       "name": "LocationService.validateParentLocation",
       "type": "FUNC",
       "file": "api/services/LocationService.js",
       "project": "api",
       "range": {
-        "start": 34,
-        "end": 81
+        "start": 115,
+        "end": 154
       },
       "callers": [
         "FUNC:api/services/LocationService.js:LocationService.createLocation",
@@ -414,8 +696,8 @@
       "file": "api/services/LocationService.js",
       "project": "api",
       "range": {
-        "start": 83,
-        "end": 99
+        "start": 156,
+        "end": 174
       },
       "callers": [
         "FUNC:api/services/LocationService.js:LocationService.createLocation",
@@ -425,57 +707,6 @@
       "referencedBy": [
         "FUNC:api/services/LocationService.js:LocationService.createLocation",
         "FUNC:api/services/LocationService.js:LocationService.updateLocation"
-      ]
-    },
-    "FUNC:api/services/LocationService.js:LocationService.createLocation": {
-      "name": "LocationService.createLocation",
-      "type": "FUNC",
-      "file": "api/services/LocationService.js",
-      "project": "api",
-      "range": {
-        "start": 101,
-        "end": 134
-      },
-      "callers": [
-        "FUNC:api/controllers/LocationController.js:LocationController.create"
-      ],
-      "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/LocationController.js:LocationController.create"
-      ]
-    },
-    "FUNC:api/services/LocationService.js:LocationService.updateLocation": {
-      "name": "LocationService.updateLocation",
-      "type": "FUNC",
-      "file": "api/services/LocationService.js",
-      "project": "api",
-      "range": {
-        "start": 136,
-        "end": 184
-      },
-      "callers": [
-        "FUNC:api/controllers/LocationController.js:LocationController.update"
-      ],
-      "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/LocationController.js:LocationController.update"
-      ]
-    },
-    "FUNC:api/services/LocationService.js:LocationService.deleteLocation": {
-      "name": "LocationService.deleteLocation",
-      "type": "FUNC",
-      "file": "api/services/LocationService.js",
-      "project": "api",
-      "range": {
-        "start": 186,
-        "end": 189
-      },
-      "callers": [
-        "FUNC:api/controllers/LocationController.js:LocationController.delete"
-      ],
-      "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/LocationController.js:LocationController.delete"
       ]
     },
     "FUNC:api/services/PackageService.js:PackageService.getAllPackages": {
@@ -484,8 +715,8 @@
       "file": "api/services/PackageService.js",
       "project": "api",
       "range": {
-        "start": 6,
-        "end": 26
+        "start": 8,
+        "end": 28
       },
       "callers": [
         "FUNC:api/controllers/PackageController.js:PackageController.getAll"
@@ -501,7 +732,7 @@
       "file": "api/services/PackageService.js",
       "project": "api",
       "range": {
-        "start": 28,
+        "start": 30,
         "end": 36
       },
       "callers": [
@@ -516,14 +747,31 @@
         "FUNC:api/controllers/PackageController.js:PackageController.getById"
       ]
     },
+    "FUNC:api/services/PackageService.js:PackageService.getPackageBySlug": {
+      "name": "PackageService.getPackageBySlug",
+      "type": "FUNC",
+      "file": "api/services/PackageService.js",
+      "project": "api",
+      "range": {
+        "start": 38,
+        "end": 44
+      },
+      "callers": [
+        "FUNC:api/controllers/PackageController.js:PackageController.getBySlug"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/controllers/PackageController.js:PackageController.getBySlug"
+      ]
+    },
     "FUNC:api/services/PackageService.js:PackageService.createPackage": {
       "name": "PackageService.createPackage",
       "type": "FUNC",
       "file": "api/services/PackageService.js",
       "project": "api",
       "range": {
-        "start": 38,
-        "end": 59
+        "start": 46,
+        "end": 64
       },
       "callers": [
         "FUNC:api/controllers/PackageController.js:PackageController.create"
@@ -539,7 +787,7 @@
       "file": "api/services/PackageService.js",
       "project": "api",
       "range": {
-        "start": 61,
+        "start": 66,
         "end": 98
       },
       "callers": [
@@ -557,7 +805,7 @@
       "project": "api",
       "range": {
         "start": 100,
-        "end": 104
+        "end": 103
       },
       "callers": [
         "FUNC:api/controllers/PackageController.js:PackageController.delete"
@@ -567,19 +815,135 @@
         "FUNC:api/controllers/PackageController.js:PackageController.delete"
       ]
     },
+    "FUNC:api/services/PackageService.js:PackageService.throwError": {
+      "name": "PackageService.throwError",
+      "type": "FUNC",
+      "file": "api/services/PackageService.js",
+      "project": "api",
+      "range": {
+        "start": 105,
+        "end": 109
+      },
+      "callers": [
+        "FUNC:api/services/PackageService.js:PackageService.getPackageById",
+        "FUNC:api/services/PackageService.js:PackageService.getPackageBySlug",
+        "FUNC:api/services/PackageService.js:PackageService.createPackage",
+        "FUNC:api/services/PackageService.js:PackageService.updatePackage",
+        "FUNC:api/services/PackageService.js:PackageService.validateMainLocation",
+        "FUNC:api/services/PackageService.js:PackageService.validateReferencedLocations",
+        "FUNC:api/services/PackageService.js:PackageService.validateReferencedCategories"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/services/PackageService.js:PackageService.getPackageById",
+        "FUNC:api/services/PackageService.js:PackageService.getPackageBySlug",
+        "FUNC:api/services/PackageService.js:PackageService.createPackage",
+        "FUNC:api/services/PackageService.js:PackageService.updatePackage",
+        "FUNC:api/services/PackageService.js:PackageService.validateMainLocation",
+        "FUNC:api/services/PackageService.js:PackageService.validateReferencedLocations",
+        "FUNC:api/services/PackageService.js:PackageService.validateReferencedCategories"
+      ]
+    },
+    "FUNC:api/services/PackageService.js:PackageService.validateMainLocation": {
+      "name": "PackageService.validateMainLocation",
+      "type": "FUNC",
+      "file": "api/services/PackageService.js",
+      "project": "api",
+      "range": {
+        "start": 111,
+        "end": 118
+      },
+      "callers": [
+        "FUNC:api/services/PackageService.js:PackageService.createPackage",
+        "FUNC:api/services/PackageService.js:PackageService.updatePackage"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/services/PackageService.js:PackageService.createPackage",
+        "FUNC:api/services/PackageService.js:PackageService.updatePackage"
+      ]
+    },
+    "FUNC:api/services/PackageService.js:PackageService.validateReferencedLocations": {
+      "name": "PackageService.validateReferencedLocations",
+      "type": "FUNC",
+      "file": "api/services/PackageService.js",
+      "project": "api",
+      "range": {
+        "start": 120,
+        "end": 133
+      },
+      "callers": [
+        "FUNC:api/services/PackageService.js:PackageService.createPackage",
+        "FUNC:api/services/PackageService.js:PackageService.updatePackage"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/services/PackageService.js:PackageService.createPackage",
+        "FUNC:api/services/PackageService.js:PackageService.updatePackage"
+      ]
+    },
+    "FUNC:api/services/PackageService.js:PackageService.validateReferencedCategories": {
+      "name": "PackageService.validateReferencedCategories",
+      "type": "FUNC",
+      "file": "api/services/PackageService.js",
+      "project": "api",
+      "range": {
+        "start": 135,
+        "end": 149
+      },
+      "callers": [
+        "FUNC:api/services/PackageService.js:PackageService.createPackage",
+        "FUNC:api/services/PackageService.js:PackageService.updatePackage"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:api/services/PackageService.js:PackageService.createPackage",
+        "FUNC:api/services/PackageService.js:PackageService.updatePackage"
+      ]
+    },
+    "SCHEMA:api/validation/CategoryValidation.js:appliesToSchema": {
+      "name": "appliesToSchema",
+      "type": "SCHEMA",
+      "file": "api/validation/CategoryValidation.js",
+      "project": "api",
+      "range": {
+        "start": 4,
+        "end": 4
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "SCHEMA:api/validation/CategoryValidation.js:baseCategorySchema"
+      ]
+    },
+    "SCHEMA:api/validation/CategoryValidation.js:baseCategorySchema": {
+      "name": "baseCategorySchema",
+      "type": "SCHEMA",
+      "file": "api/validation/CategoryValidation.js",
+      "project": "api",
+      "range": {
+        "start": 6,
+        "end": 14
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "SCHEMA:api/validation/CategoryValidation.js:createCategorySchema",
+        "SCHEMA:api/validation/CategoryValidation.js:updateCategorySchema"
+      ]
+    },
     "SCHEMA:api/validation/CategoryValidation.js:createCategorySchema": {
       "name": "createCategorySchema",
       "type": "SCHEMA",
       "file": "api/validation/CategoryValidation.js",
       "project": "api",
       "range": {
-        "start": 4,
-        "end": 9
+        "start": 16,
+        "end": 16
       },
       "callers": [],
       "renders": [],
       "referencedBy": [
-        "SCHEMA:api/validation/CategoryValidation.js:updateCategorySchema",
         "FILE:api/services/CategoryService.js",
         "FUNC:api/services/CategoryService.js:CategoryService.createCategory",
         "FILE:api/routes/CategoryRoutes.js"
@@ -591,8 +955,8 @@
       "file": "api/validation/CategoryValidation.js",
       "project": "api",
       "range": {
-        "start": 11,
-        "end": 11
+        "start": 18,
+        "end": 18
       },
       "callers": [],
       "renders": [],
@@ -602,19 +966,49 @@
         "FILE:api/routes/CategoryRoutes.js"
       ]
     },
+    "SCHEMA:api/validation/LocationValidation.js:objectIdSchema": {
+      "name": "objectIdSchema",
+      "type": "SCHEMA",
+      "file": "api/validation/LocationValidation.js",
+      "project": "api",
+      "range": {
+        "start": 4,
+        "end": 4
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "SCHEMA:api/validation/LocationValidation.js:baseLocationSchema"
+      ]
+    },
+    "SCHEMA:api/validation/LocationValidation.js:baseLocationSchema": {
+      "name": "baseLocationSchema",
+      "type": "SCHEMA",
+      "file": "api/validation/LocationValidation.js",
+      "project": "api",
+      "range": {
+        "start": 6,
+        "end": 17
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "SCHEMA:api/validation/LocationValidation.js:createLocationSchema",
+        "SCHEMA:api/validation/LocationValidation.js:updateLocationSchema"
+      ]
+    },
     "SCHEMA:api/validation/LocationValidation.js:createLocationSchema": {
       "name": "createLocationSchema",
       "type": "SCHEMA",
       "file": "api/validation/LocationValidation.js",
       "project": "api",
       "range": {
-        "start": 4,
-        "end": 15
+        "start": 19,
+        "end": 19
       },
       "callers": [],
       "renders": [],
       "referencedBy": [
-        "SCHEMA:api/validation/LocationValidation.js:updateLocationSchema",
         "FILE:api/services/LocationService.js",
         "FUNC:api/services/LocationService.js:LocationService.createLocation",
         "FILE:api/routes/LocationRoutes.js"
@@ -626,8 +1020,8 @@
       "file": "api/validation/LocationValidation.js",
       "project": "api",
       "range": {
-        "start": 17,
-        "end": 17
+        "start": 21,
+        "end": 21
       },
       "callers": [],
       "renders": [],
@@ -637,14 +1031,29 @@
         "FILE:api/routes/LocationRoutes.js"
       ]
     },
+    "SCHEMA:api/validation/PackageValidation.js:objectIdSchema": {
+      "name": "objectIdSchema",
+      "type": "SCHEMA",
+      "file": "api/validation/PackageValidation.js",
+      "project": "api",
+      "range": {
+        "start": 4,
+        "end": 4
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "SCHEMA:api/validation/PackageValidation.js:basePackageSchema"
+      ]
+    },
     "SCHEMA:api/validation/PackageValidation.js:activityDetailSchema": {
       "name": "activityDetailSchema",
       "type": "SCHEMA",
       "file": "api/validation/PackageValidation.js",
       "project": "api",
       "range": {
-        "start": 4,
-        "end": 9
+        "start": 6,
+        "end": 11
       },
       "callers": [],
       "renders": [],
@@ -658,8 +1067,23 @@
       "file": "api/validation/PackageValidation.js",
       "project": "api",
       "range": {
-        "start": 11,
-        "end": 15
+        "start": 13,
+        "end": 17
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "SCHEMA:api/validation/PackageValidation.js:basePackageSchema"
+      ]
+    },
+    "SCHEMA:api/validation/PackageValidation.js:highlightSchema": {
+      "name": "highlightSchema",
+      "type": "SCHEMA",
+      "file": "api/validation/PackageValidation.js",
+      "project": "api",
+      "range": {
+        "start": 19,
+        "end": 22
       },
       "callers": [],
       "renders": [],
@@ -673,8 +1097,8 @@
       "file": "api/validation/PackageValidation.js",
       "project": "api",
       "range": {
-        "start": 17,
-        "end": 21
+        "start": 24,
+        "end": 28
       },
       "callers": [],
       "renders": [],
@@ -688,8 +1112,8 @@
       "file": "api/validation/PackageValidation.js",
       "project": "api",
       "range": {
-        "start": 23,
-        "end": 46
+        "start": 30,
+        "end": 56
       },
       "callers": [],
       "renders": [],
@@ -704,8 +1128,8 @@
       "file": "api/validation/PackageValidation.js",
       "project": "api",
       "range": {
-        "start": 48,
-        "end": 60
+        "start": 58,
+        "end": 67
       },
       "callers": [],
       "renders": [],
@@ -715,14 +1139,29 @@
         "FILE:api/routes/PackageRoutes.js"
       ]
     },
+    "SCHEMA:api/validation/PackageValidation.js:deleteMediaSchema": {
+      "name": "deleteMediaSchema",
+      "type": "SCHEMA",
+      "file": "api/validation/PackageValidation.js",
+      "project": "api",
+      "range": {
+        "start": 69,
+        "end": 73
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "FILE:api/routes/PackageRoutes.js"
+      ]
+    },
     "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema": {
       "name": "updatePackageSchema",
       "type": "SCHEMA",
       "file": "api/validation/PackageValidation.js",
       "project": "api",
       "range": {
-        "start": 62,
-        "end": 84
+        "start": 75,
+        "end": 101
       },
       "callers": [],
       "renders": [],
@@ -739,7 +1178,7 @@
       "project": "api",
       "range": {
         "start": 4,
-        "end": 35
+        "end": 51
       },
       "callers": [],
       "renders": [],
@@ -754,7 +1193,7 @@
       "project": "api",
       "range": {
         "start": 4,
-        "end": 53
+        "end": 65
       },
       "callers": [],
       "renders": [],
@@ -769,7 +1208,7 @@
       "project": "api",
       "range": {
         "start": 5,
-        "end": 10
+        "end": 13
       },
       "callers": [],
       "renders": [],
@@ -783,8 +1222,8 @@
       "file": "api/models/Package.js",
       "project": "api",
       "range": {
-        "start": 13,
-        "end": 17
+        "start": 16,
+        "end": 23
       },
       "callers": [],
       "renders": [],
@@ -798,8 +1237,8 @@
       "file": "api/models/Package.js",
       "project": "api",
       "range": {
-        "start": 20,
-        "end": 24
+        "start": 26,
+        "end": 33
       },
       "callers": [],
       "renders": [],
@@ -813,8 +1252,8 @@
       "file": "api/models/Package.js",
       "project": "api",
       "range": {
-        "start": 26,
-        "end": 121
+        "start": 35,
+        "end": 139
       },
       "callers": [],
       "renders": [],
@@ -1023,8 +1462,8 @@
       "file": "admin/src/components/Header.tsx",
       "project": "admin",
       "range": {
-        "start": 11,
-        "end": 70
+        "start": 15,
+        "end": 40
       },
       "callers": [],
       "renders": [
@@ -1041,8 +1480,8 @@
       "file": "admin/src/components/RootLayout.tsx",
       "project": "admin",
       "range": {
-        "start": 7,
-        "end": 30
+        "start": 6,
+        "end": 25
       },
       "callers": [],
       "renders": [
@@ -1058,13 +1497,13 @@
       "file": "admin/src/components/RootLayout.tsx",
       "project": "admin",
       "range": {
-        "start": 33,
-        "end": 39
+        "start": 27,
+        "end": 33
       },
       "callers": [],
       "renders": [],
       "referencedBy": [
-        "FILE:admin/src/router.tsx"
+        "FILE:admin/src/routes/__root.tsx"
       ]
     },
     "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar": {
@@ -1073,8 +1512,8 @@
       "file": "admin/src/components/Sidebar.tsx",
       "project": "admin",
       "range": {
-        "start": 14,
-        "end": 131
+        "start": 18,
+        "end": 115
       },
       "callers": [],
       "renders": [
@@ -1085,14 +1524,32 @@
         "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent"
       ]
     },
-    "FUNC:admin/src/contexts/SidebarContext.tsx:useSidebar": {
-      "name": "useSidebar",
-      "type": "FUNC",
-      "file": "admin/src/contexts/SidebarContext.tsx",
+    "COMPONENT:admin/src/contexts/SidebarProvider.tsx:SidebarProvider": {
+      "name": "SidebarProvider",
+      "type": "COMPONENT",
+      "file": "admin/src/contexts/SidebarProvider.tsx",
       "project": "admin",
       "range": {
-        "start": 15,
+        "start": 5,
         "end": 15
+      },
+      "callers": [],
+      "renders": [
+        "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout"
+      ],
+      "referencedBy": [
+        "FILE:admin/src/components/RootLayout.tsx",
+        "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout"
+      ]
+    },
+    "FUNC:admin/src/contexts/useSidebar.ts:useSidebar": {
+      "name": "useSidebar",
+      "type": "FUNC",
+      "file": "admin/src/contexts/useSidebar.ts",
+      "project": "admin",
+      "range": {
+        "start": 4,
+        "end": 10
       },
       "callers": [
         "COMPONENT:admin/src/components/Header.tsx:Header",
@@ -1109,70 +1566,19 @@
         "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar"
       ]
     },
-    "COMPONENT:admin/src/contexts/SidebarContext.tsx:SidebarProvider": {
-      "name": "SidebarProvider",
-      "type": "COMPONENT",
-      "file": "admin/src/contexts/SidebarContext.tsx",
-      "project": "admin",
-      "range": {
-        "start": 17,
-        "end": 28
-      },
-      "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout"
-      ],
-      "referencedBy": [
-        "FILE:admin/src/components/RootLayout.tsx",
-        "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout"
-      ]
-    },
     "FUNC:admin/src/handlers/apiClient.ts:handleApiError": {
       "name": "handleApiError",
       "type": "FUNC",
       "file": "admin/src/handlers/apiClient.ts",
       "project": "admin",
       "range": {
-        "start": 25,
-        "end": 44
+        "start": 29,
+        "end": 67
       },
-      "callers": [
-        "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
-        "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails",
-        "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
-        "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
-        "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
-        "FUNC:admin/src/hooks/useLocations.ts:useLocationsList",
-        "FUNC:admin/src/hooks/useLocations.ts:useLocationDetails",
-        "FUNC:admin/src/hooks/useLocations.ts:useCreateLocation",
-        "FUNC:admin/src/hooks/useLocations.ts:useUpdateLocation",
-        "FUNC:admin/src/hooks/useLocations.ts:useDeleteLocation",
-        "FUNC:admin/src/hooks/usePackages.ts:usePackagesList",
-        "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails",
-        "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
-        "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage",
-        "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage"
-      ],
+      "callers": [],
       "renders": [],
       "referencedBy": [
-        "FILE:admin/src/hooks/useCategories.ts",
-        "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList",
-        "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails",
-        "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory",
-        "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory",
-        "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory",
-        "FILE:admin/src/hooks/useLocations.ts",
-        "FUNC:admin/src/hooks/useLocations.ts:useLocationsList",
-        "FUNC:admin/src/hooks/useLocations.ts:useLocationDetails",
-        "FUNC:admin/src/hooks/useLocations.ts:useCreateLocation",
-        "FUNC:admin/src/hooks/useLocations.ts:useUpdateLocation",
-        "FUNC:admin/src/hooks/useLocations.ts:useDeleteLocation",
-        "FILE:admin/src/hooks/usePackages.ts",
-        "FUNC:admin/src/hooks/usePackages.ts:usePackagesList",
-        "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails",
-        "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage",
-        "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage",
-        "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage"
+        "FILE:admin/src/handlers/apiClient.ts"
       ]
     },
     "FUNC:admin/src/handlers/categories.ts:getAllCategories": {
@@ -1181,8 +1587,8 @@
       "file": "admin/src/handlers/categories.ts",
       "project": "admin",
       "range": {
-        "start": 5,
-        "end": 8
+        "start": 7,
+        "end": 11
       },
       "callers": [
         "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList"
@@ -1199,8 +1605,8 @@
       "file": "admin/src/handlers/categories.ts",
       "project": "admin",
       "range": {
-        "start": 11,
-        "end": 14
+        "start": 13,
+        "end": 16
       },
       "callers": [
         "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails"
@@ -1217,12 +1623,10 @@
       "file": "admin/src/handlers/categories.ts",
       "project": "admin",
       "range": {
-        "start": 17,
-        "end": 20
+        "start": 18,
+        "end": 21
       },
-      "callers": [
-        "FUNC:admin/src/hooks/useCategories.ts:useCreateCategory"
-      ],
+      "callers": [],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/hooks/useCategories.ts",
@@ -1236,7 +1640,7 @@
       "project": "admin",
       "range": {
         "start": 23,
-        "end": 26
+        "end": 29
       },
       "callers": [
         "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory"
@@ -1253,12 +1657,10 @@
       "file": "admin/src/handlers/categories.ts",
       "project": "admin",
       "range": {
-        "start": 29,
-        "end": 31
+        "start": 31,
+        "end": 33
       },
-      "callers": [
-        "FUNC:admin/src/hooks/useCategories.ts:useDeleteCategory"
-      ],
+      "callers": [],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/hooks/useCategories.ts",
@@ -1271,8 +1673,8 @@
       "file": "admin/src/handlers/locations.ts",
       "project": "admin",
       "range": {
-        "start": 13,
-        "end": 18
+        "start": 15,
+        "end": 20
       },
       "callers": [
         "FUNC:admin/src/hooks/useLocations.ts:useLocationsList"
@@ -1289,8 +1691,8 @@
       "file": "admin/src/handlers/locations.ts",
       "project": "admin",
       "range": {
-        "start": 21,
-        "end": 24
+        "start": 22,
+        "end": 25
       },
       "callers": [
         "FUNC:admin/src/hooks/useLocations.ts:useLocationDetails"
@@ -1310,9 +1712,7 @@
         "start": 27,
         "end": 30
       },
-      "callers": [
-        "FUNC:admin/src/hooks/useLocations.ts:useCreateLocation"
-      ],
+      "callers": [],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/hooks/useLocations.ts",
@@ -1325,8 +1725,8 @@
       "file": "admin/src/handlers/locations.ts",
       "project": "admin",
       "range": {
-        "start": 33,
-        "end": 36
+        "start": 32,
+        "end": 38
       },
       "callers": [
         "FUNC:admin/src/hooks/useLocations.ts:useUpdateLocation"
@@ -1343,26 +1743,24 @@
       "file": "admin/src/handlers/locations.ts",
       "project": "admin",
       "range": {
-        "start": 39,
-        "end": 41
+        "start": 40,
+        "end": 42
       },
-      "callers": [
-        "FUNC:admin/src/hooks/useLocations.ts:useDeleteLocation"
-      ],
+      "callers": [],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/hooks/useLocations.ts",
         "FUNC:admin/src/hooks/useLocations.ts:useDeleteLocation"
       ]
     },
-    "FUNC:admin/src/handlers/packages.ts:mapBackendPackageToFrontend": {
-      "name": "mapBackendPackageToFrontend",
+    "FUNC:admin/src/handlers/packages.ts:toPackage": {
+      "name": "toPackage",
       "type": "FUNC",
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
       "range": {
-        "start": 41,
-        "end": 81
+        "start": 14,
+        "end": 53
       },
       "callers": [
         "FUNC:admin/src/handlers/packages.ts:getPackageById",
@@ -1377,32 +1775,14 @@
         "FUNC:admin/src/handlers/packages.ts:updatePackage"
       ]
     },
-    "FUNC:admin/src/handlers/packages.ts:mapFrontendPackageToBackend": {
-      "name": "mapFrontendPackageToBackend",
-      "type": "FUNC",
-      "file": "admin/src/handlers/packages.ts",
-      "project": "admin",
-      "range": {
-        "start": 84,
-        "end": 114
-      },
-      "callers": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
-      "renders": [],
-      "referencedBy": [
-        "FILE:admin/src/pages/packages/PackageEditor.tsx",
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ]
-    },
     "FUNC:admin/src/handlers/packages.ts:getAllPackages": {
       "name": "getAllPackages",
       "type": "FUNC",
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
       "range": {
-        "start": 127,
-        "end": 132
+        "start": 59,
+        "end": 64
       },
       "callers": [
         "FUNC:admin/src/hooks/usePackages.ts:usePackagesList"
@@ -1419,8 +1799,8 @@
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
       "range": {
-        "start": 135,
-        "end": 138
+        "start": 66,
+        "end": 69
       },
       "callers": [
         "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails"
@@ -1437,12 +1817,10 @@
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
       "range": {
-        "start": 141,
-        "end": 144
+        "start": 71,
+        "end": 74
       },
-      "callers": [
-        "FUNC:admin/src/hooks/usePackages.ts:useCreatePackage"
-      ],
+      "callers": [],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/hooks/usePackages.ts",
@@ -1455,8 +1833,8 @@
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
       "range": {
-        "start": 147,
-        "end": 150
+        "start": 76,
+        "end": 82
       },
       "callers": [
         "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage"
@@ -1473,16 +1851,30 @@
       "file": "admin/src/handlers/packages.ts",
       "project": "admin",
       "range": {
-        "start": 153,
-        "end": 155
+        "start": 84,
+        "end": 86
       },
-      "callers": [
-        "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage"
-      ],
+      "callers": [],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/hooks/usePackages.ts",
         "FUNC:admin/src/hooks/usePackages.ts:useDeletePackage"
+      ]
+    },
+    "FUNC:admin/src/handlers/packages.ts:deletePackageMedia": {
+      "name": "deletePackageMedia",
+      "type": "FUNC",
+      "file": "admin/src/handlers/packages.ts",
+      "project": "admin",
+      "range": {
+        "start": 88,
+        "end": 90
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/PackageEditor.tsx",
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
       ]
     },
     "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList": {
@@ -1491,8 +1883,8 @@
       "file": "admin/src/hooks/useCategories.ts",
       "project": "admin",
       "range": {
-        "start": 21,
-        "end": 32
+        "start": 13,
+        "end": 18
       },
       "callers": [
         "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
@@ -1524,8 +1916,8 @@
       "file": "admin/src/hooks/useCategories.ts",
       "project": "admin",
       "range": {
-        "start": 35,
-        "end": 48
+        "start": 20,
+        "end": 29
       },
       "callers": [
         "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
@@ -1542,8 +1934,8 @@
       "file": "admin/src/hooks/useCategories.ts",
       "project": "admin",
       "range": {
-        "start": 51,
-        "end": 65
+        "start": 31,
+        "end": 39
       },
       "callers": [
         "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
@@ -1560,8 +1952,8 @@
       "file": "admin/src/hooks/useCategories.ts",
       "project": "admin",
       "range": {
-        "start": 68,
-        "end": 83
+        "start": 41,
+        "end": 50
       },
       "callers": [
         "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
@@ -1578,8 +1970,8 @@
       "file": "admin/src/hooks/useCategories.ts",
       "project": "admin",
       "range": {
-        "start": 86,
-        "end": 100
+        "start": 52,
+        "end": 60
       },
       "callers": [
         "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
@@ -1596,8 +1988,8 @@
       "file": "admin/src/hooks/useCloudinaryUpload.ts",
       "project": "admin",
       "range": {
-        "start": 7,
-        "end": 39
+        "start": 11,
+        "end": 43
       },
       "callers": [
         "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
@@ -1620,8 +2012,8 @@
       "file": "admin/src/hooks/useLocations.ts",
       "project": "admin",
       "range": {
-        "start": 22,
-        "end": 33
+        "start": 14,
+        "end": 19
       },
       "callers": [
         "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor",
@@ -1647,8 +2039,8 @@
       "file": "admin/src/hooks/useLocations.ts",
       "project": "admin",
       "range": {
-        "start": 36,
-        "end": 49
+        "start": 21,
+        "end": 30
       },
       "callers": [
         "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
@@ -1665,8 +2057,8 @@
       "file": "admin/src/hooks/useLocations.ts",
       "project": "admin",
       "range": {
-        "start": 52,
-        "end": 66
+        "start": 32,
+        "end": 40
       },
       "callers": [
         "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
@@ -1683,8 +2075,8 @@
       "file": "admin/src/hooks/useLocations.ts",
       "project": "admin",
       "range": {
-        "start": 69,
-        "end": 84
+        "start": 42,
+        "end": 51
       },
       "callers": [
         "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
@@ -1701,8 +2093,8 @@
       "file": "admin/src/hooks/useLocations.ts",
       "project": "admin",
       "range": {
-        "start": 87,
-        "end": 101
+        "start": 53,
+        "end": 61
       },
       "callers": [
         "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
@@ -1719,8 +2111,8 @@
       "file": "admin/src/hooks/usePackages.ts",
       "project": "admin",
       "range": {
-        "start": 16,
-        "end": 27
+        "start": 14,
+        "end": 19
       },
       "callers": [
         "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"
@@ -1737,8 +2129,8 @@
       "file": "admin/src/hooks/usePackages.ts",
       "project": "admin",
       "range": {
-        "start": 30,
-        "end": 43
+        "start": 21,
+        "end": 30
       },
       "callers": [
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -1755,8 +2147,8 @@
       "file": "admin/src/hooks/usePackages.ts",
       "project": "admin",
       "range": {
-        "start": 46,
-        "end": 60
+        "start": 32,
+        "end": 40
       },
       "callers": [
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -1773,8 +2165,8 @@
       "file": "admin/src/hooks/usePackages.ts",
       "project": "admin",
       "range": {
-        "start": 63,
-        "end": 78
+        "start": 42,
+        "end": 51
       },
       "callers": [
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -1791,8 +2183,8 @@
       "file": "admin/src/hooks/usePackages.ts",
       "project": "admin",
       "range": {
-        "start": 81,
-        "end": 95
+        "start": 53,
+        "end": 61
       },
       "callers": [
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -1803,19 +2195,58 @@
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
       ]
     },
-    "COMPONENT:admin/src/pages/Settings.tsx:Settings": {
-      "name": "Settings",
-      "type": "COMPONENT",
-      "file": "admin/src/pages/Settings.tsx",
+    "FUNC:admin/src/utils/formatCurrency.ts:formatCurrency": {
+      "name": "formatCurrency",
+      "type": "FUNC",
+      "file": "admin/src/utils/formatCurrency.ts",
       "project": "admin",
       "range": {
-        "start": 6,
-        "end": 59
+        "start": 1,
+        "end": 3
       },
-      "callers": [],
+      "callers": [
+        "COMPONENT:admin/src/pages/packages/components/PackageRow.tsx:PackageRow"
+      ],
       "renders": [],
       "referencedBy": [
-        "FILE:admin/src/router.tsx"
+        "FILE:admin/src/pages/packages/components/PackageRow.tsx",
+        "COMPONENT:admin/src/pages/packages/components/PackageRow.tsx:PackageRow"
+      ]
+    },
+    "FUNC:admin/src/utils/formatDate.ts:formatDate": {
+      "name": "formatDate",
+      "type": "FUNC",
+      "file": "admin/src/utils/formatDate.ts",
+      "project": "admin",
+      "range": {
+        "start": 1,
+        "end": 6
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/packages/components/PackageRow.tsx:PackageRow"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/components/PackageRow.tsx",
+        "COMPONENT:admin/src/pages/packages/components/PackageRow.tsx:PackageRow"
+      ]
+    },
+    "FUNC:admin/src/utils/formatDuration.ts:formatDuration": {
+      "name": "formatDuration",
+      "type": "FUNC",
+      "file": "admin/src/utils/formatDuration.ts",
+      "project": "admin",
+      "range": {
+        "start": 1,
+        "end": 4
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/packages/components/PackageRow.tsx:PackageRow"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/components/PackageRow.tsx",
+        "COMPONENT:admin/src/pages/packages/components/PackageRow.tsx:PackageRow"
       ]
     },
     "COMPONENT:frontend/app/destinations/page.tsx:DestinationsPage": {
@@ -1838,41 +2269,46 @@
       "project": "admin",
       "range": {
         "start": 7,
-        "end": 31
+        "end": 30
       },
       "callers": [],
       "renders": [
-        "COMPONENT:admin/src/pages/Settings.tsx:Settings",
         "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
         "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
         "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor",
         "COMPONENT:admin/src/pages/locations/LocationsList.tsx:LocationsList",
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
         "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+        "COMPONENT:admin/src/pages/categories/components/DeleteCategoryDialog.tsx:DeleteCategoryDialog",
+        "COMPONENT:admin/src/pages/locations/components/DeleteLocationDialog.tsx:DeleteLocationDialog",
+        "COMPONENT:admin/src/pages/packages/components/DeletePackageDialog.tsx:DeletePackageDialog",
         "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection",
         "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal",
         "COMPONENT:admin/src/pages/packages/components/InclusionsSection.tsx:InclusionsSection",
         "COMPONENT:admin/src/pages/packages/components/ItinerarySection.tsx:ItinerarySection",
         "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection",
         "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection",
+        "COMPONENT:admin/src/pages/packages/components/PackageEditorActions.tsx:PackageEditorActions",
+        "COMPONENT:admin/src/pages/packages/components/PackageRow.tsx:PackageRow",
         "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection",
         "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection"
       ],
       "referencedBy": [
-        "FILE:admin/src/pages/Settings.tsx",
-        "COMPONENT:admin/src/pages/Settings.tsx:Settings",
         "FILE:admin/src/pages/categories/CategoriesList.tsx",
         "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList",
         "FILE:admin/src/pages/categories/CategoryEditor.tsx",
         "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+        "FILE:admin/src/pages/categories/components/DeleteCategoryDialog.tsx",
+        "COMPONENT:admin/src/pages/categories/components/DeleteCategoryDialog.tsx:DeleteCategoryDialog",
         "FILE:admin/src/pages/locations/LocationEditor.tsx",
         "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor",
         "FILE:admin/src/pages/locations/LocationsList.tsx",
         "COMPONENT:admin/src/pages/locations/LocationsList.tsx:LocationsList",
-        "FILE:admin/src/pages/packages/PackageEditor.tsx",
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor",
+        "FILE:admin/src/pages/locations/components/DeleteLocationDialog.tsx",
+        "COMPONENT:admin/src/pages/locations/components/DeleteLocationDialog.tsx:DeleteLocationDialog",
         "FILE:admin/src/pages/packages/PackagesList.tsx",
         "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList",
+        "FILE:admin/src/pages/packages/components/DeletePackageDialog.tsx",
+        "COMPONENT:admin/src/pages/packages/components/DeletePackageDialog.tsx:DeletePackageDialog",
         "FILE:admin/src/pages/packages/components/HeaderSection.tsx",
         "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection",
         "FILE:admin/src/pages/packages/components/ImageCropperModal.tsx",
@@ -1885,10 +2321,38 @@
         "COMPONENT:admin/src/pages/packages/components/MediaSection.tsx:MediaSection",
         "FILE:admin/src/pages/packages/components/OverviewSection.tsx",
         "COMPONENT:admin/src/pages/packages/components/OverviewSection.tsx:OverviewSection",
+        "FILE:admin/src/pages/packages/components/PackageEditorActions.tsx",
+        "COMPONENT:admin/src/pages/packages/components/PackageEditorActions.tsx:PackageEditorActions",
+        "FILE:admin/src/pages/packages/components/PackageRow.tsx",
+        "COMPONENT:admin/src/pages/packages/components/PackageRow.tsx:PackageRow",
         "FILE:admin/src/pages/packages/components/PricingSection.tsx",
         "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection",
         "FILE:admin/src/pages/packages/components/SeoSection.tsx",
         "COMPONENT:admin/src/pages/packages/components/SeoSection.tsx:SeoSection"
+      ]
+    },
+    "COMPONENT:admin/src/components/ui/SavingOverlay.tsx:SavingOverlay": {
+      "name": "SavingOverlay",
+      "type": "COMPONENT",
+      "file": "admin/src/components/ui/SavingOverlay.tsx",
+      "project": "admin",
+      "range": {
+        "start": 10,
+        "end": 25
+      },
+      "callers": [],
+      "renders": [
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor",
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ],
+      "referencedBy": [
+        "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor",
+        "FILE:admin/src/pages/locations/LocationEditor.tsx",
+        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor",
+        "FILE:admin/src/pages/packages/PackageEditor.tsx",
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
       ]
     },
     "COMPONENT:admin/src/pages/categories/CategoriesList.tsx:CategoriesList": {
@@ -1897,13 +2361,13 @@
       "file": "admin/src/pages/categories/CategoriesList.tsx",
       "project": "admin",
       "range": {
-        "start": 14,
-        "end": 256
+        "start": 10,
+        "end": 302
       },
       "callers": [],
       "renders": [],
       "referencedBy": [
-        "FILE:admin/src/router.tsx"
+        "FILE:admin/src/routes/categories/index.tsx"
       ]
     },
     "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor": {
@@ -1912,13 +2376,14 @@
       "file": "admin/src/pages/categories/CategoryEditor.tsx",
       "project": "admin",
       "range": {
-        "start": 28,
-        "end": 522
+        "start": 26,
+        "end": 431
       },
       "callers": [],
       "renders": [],
       "referencedBy": [
-        "FILE:admin/src/router.tsx"
+        "FILE:admin/src/routes/categories/$categoryId.tsx",
+        "FILE:admin/src/routes/categories/create.tsx"
       ]
     },
     "SCHEMA:admin/src/pages/categories/schema.ts:categorySchema": {
@@ -1928,14 +2393,14 @@
       "project": "admin",
       "range": {
         "start": 4,
-        "end": 9
+        "end": 12
       },
       "callers": [],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/categories/schema.ts",
-        "FILE:admin/src/pages/categories/CategoryEditor.tsx",
-        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+        "FILE:admin/src/pages/categories/form/useCategoryForm.ts",
+        "FUNC:admin/src/pages/categories/form/useCategoryForm.ts:useCategoryForm"
       ]
     },
     "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor": {
@@ -1944,13 +2409,14 @@
       "file": "admin/src/pages/locations/LocationEditor.tsx",
       "project": "admin",
       "range": {
-        "start": 30,
-        "end": 671
+        "start": 29,
+        "end": 541
       },
       "callers": [],
       "renders": [],
       "referencedBy": [
-        "FILE:admin/src/router.tsx"
+        "FILE:admin/src/routes/locations/$locationId.tsx",
+        "FILE:admin/src/routes/locations/create.tsx"
       ]
     },
     "COMPONENT:admin/src/pages/locations/LocationsList.tsx:LocationsList": {
@@ -1959,13 +2425,13 @@
       "file": "admin/src/pages/locations/LocationsList.tsx",
       "project": "admin",
       "range": {
-        "start": 15,
-        "end": 296
+        "start": 11,
+        "end": 275
       },
       "callers": [],
       "renders": [],
       "referencedBy": [
-        "FILE:admin/src/router.tsx"
+        "FILE:admin/src/routes/locations/index.tsx"
       ]
     },
     "SCHEMA:admin/src/pages/locations/schema.ts:locationSchema": {
@@ -1975,14 +2441,14 @@
       "project": "admin",
       "range": {
         "start": 4,
-        "end": 24
+        "end": 30
       },
       "callers": [],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/locations/schema.ts",
-        "FILE:admin/src/pages/locations/LocationEditor.tsx",
-        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
+        "FILE:admin/src/pages/locations/form/useLocationForm.ts",
+        "FUNC:admin/src/pages/locations/form/useLocationForm.ts:useLocationForm"
       ]
     },
     "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor": {
@@ -1991,13 +2457,14 @@
       "file": "admin/src/pages/packages/PackageEditor.tsx",
       "project": "admin",
       "range": {
-        "start": 56,
-        "end": 851
+        "start": 39,
+        "end": 328
       },
       "callers": [],
       "renders": [],
       "referencedBy": [
-        "FILE:admin/src/router.tsx"
+        "FILE:admin/src/routes/packages/$packageId.tsx",
+        "FILE:admin/src/routes/packages/create.tsx"
       ]
     },
     "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList": {
@@ -2006,13 +2473,13 @@
       "file": "admin/src/pages/packages/PackagesList.tsx",
       "project": "admin",
       "range": {
-        "start": 16,
-        "end": 276
+        "start": 33,
+        "end": 147
       },
       "callers": [],
       "renders": [],
       "referencedBy": [
-        "FILE:admin/src/router.tsx"
+        "FILE:admin/src/routes/packages/index.tsx"
       ]
     },
     "SCHEMA:admin/src/pages/packages/schema.ts:activityItemSchema": {
@@ -2045,21 +2512,51 @@
         "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema"
       ]
     },
+    "SCHEMA:admin/src/pages/packages/schema.ts:highlightSchema": {
+      "name": "highlightSchema",
+      "type": "SCHEMA",
+      "file": "admin/src/pages/packages/schema.ts",
+      "project": "admin",
+      "range": {
+        "start": 17,
+        "end": 20
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema"
+      ]
+    },
+    "SCHEMA:admin/src/pages/packages/schema.ts:seoSchema": {
+      "name": "seoSchema",
+      "type": "SCHEMA",
+      "file": "admin/src/pages/packages/schema.ts",
+      "project": "admin",
+      "range": {
+        "start": 22,
+        "end": 26
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": [
+        "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema"
+      ]
+    },
     "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema": {
       "name": "packageSchema",
       "type": "SCHEMA",
       "file": "admin/src/pages/packages/schema.ts",
       "project": "admin",
       "range": {
-        "start": 17,
-        "end": 50
+        "start": 28,
+        "end": 65
       },
       "callers": [],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/schema.ts",
-        "FILE:admin/src/pages/packages/PackageEditor.tsx",
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+        "FILE:admin/src/pages/packages/form/usePackageForm.ts",
+        "FUNC:admin/src/pages/packages/form/usePackageForm.ts:usePackageForm"
       ]
     },
     "FUNC:frontend/app/destinations/[id]/page.tsx:generateStaticParams": {
@@ -2144,6 +2641,132 @@
       "renders": [],
       "referencedBy": []
     },
+    "COMPONENT:admin/src/pages/categories/components/DeleteCategoryDialog.tsx:DeleteCategoryDialog": {
+      "name": "DeleteCategoryDialog",
+      "type": "COMPONENT",
+      "file": "admin/src/pages/categories/components/DeleteCategoryDialog.tsx",
+      "project": "admin",
+      "range": {
+        "start": 11,
+        "end": 52
+      },
+      "callers": [],
+      "renders": [
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+      ],
+      "referencedBy": [
+        "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+      ]
+    },
+    "FUNC:admin/src/pages/categories/form/useCategoryForm.ts:useCategoryForm": {
+      "name": "useCategoryForm",
+      "type": "FUNC",
+      "file": "admin/src/pages/categories/form/useCategoryForm.ts",
+      "project": "admin",
+      "range": {
+        "start": 21,
+        "end": 69
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+      ]
+    },
+    "FUNC:admin/src/pages/categories/services/submitCategory.ts:submitCategory": {
+      "name": "submitCategory",
+      "type": "FUNC",
+      "file": "admin/src/pages/categories/services/submitCategory.ts",
+      "project": "admin",
+      "range": {
+        "start": 25,
+        "end": 56
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/categories/CategoryEditor.tsx",
+        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
+      ]
+    },
+    "COMPONENT:admin/src/pages/locations/components/DeleteLocationDialog.tsx:DeleteLocationDialog": {
+      "name": "DeleteLocationDialog",
+      "type": "COMPONENT",
+      "file": "admin/src/pages/locations/components/DeleteLocationDialog.tsx",
+      "project": "admin",
+      "range": {
+        "start": 12,
+        "end": 54
+      },
+      "callers": [],
+      "renders": [
+        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
+      ],
+      "referencedBy": [
+        "FILE:admin/src/pages/locations/LocationEditor.tsx",
+        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
+      ]
+    },
+    "FUNC:admin/src/pages/locations/form/useLocationForm.ts:useLocationForm": {
+      "name": "useLocationForm",
+      "type": "FUNC",
+      "file": "admin/src/pages/locations/form/useLocationForm.ts",
+      "project": "admin",
+      "range": {
+        "start": 25,
+        "end": 86
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/locations/LocationEditor.tsx",
+        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
+      ]
+    },
+    "FUNC:admin/src/pages/locations/services/submitLocation.ts:submitLocation": {
+      "name": "submitLocation",
+      "type": "FUNC",
+      "file": "admin/src/pages/locations/services/submitLocation.ts",
+      "project": "admin",
+      "range": {
+        "start": 28,
+        "end": 62
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/locations/LocationEditor.tsx",
+        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
+      ]
+    },
+    "COMPONENT:admin/src/pages/packages/components/DeletePackageDialog.tsx:DeletePackageDialog": {
+      "name": "DeletePackageDialog",
+      "type": "COMPONENT",
+      "file": "admin/src/pages/packages/components/DeletePackageDialog.tsx",
+      "project": "admin",
+      "range": {
+        "start": 11,
+        "end": 48
+      },
+      "callers": [],
+      "renders": [
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/PackageEditor.tsx",
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ]
+    },
     "COMPONENT:admin/src/pages/packages/components/HeaderSection.tsx:HeaderSection": {
       "name": "HeaderSection",
       "type": "COMPONENT",
@@ -2151,7 +2774,7 @@
       "project": "admin",
       "range": {
         "start": 23,
-        "end": 271
+        "end": 303
       },
       "callers": [],
       "renders": [
@@ -2168,8 +2791,8 @@
       "file": "admin/src/pages/packages/components/ImageCropperModal.tsx",
       "project": "admin",
       "range": {
-        "start": 15,
-        "end": 33
+        "start": 18,
+        "end": 24
       },
       "callers": [
         "COMPONENT:admin/src/pages/packages/components/ImageCropperModal.tsx:ImageCropperModal"
@@ -2185,8 +2808,8 @@
       "file": "admin/src/pages/packages/components/ImageCropperModal.tsx",
       "project": "admin",
       "range": {
-        "start": 35,
-        "end": 180
+        "start": 26,
+        "end": 159
       },
       "callers": [],
       "renders": [
@@ -2213,7 +2836,7 @@
       "project": "admin",
       "range": {
         "start": 22,
-        "end": 192
+        "end": 232
       },
       "callers": [],
       "renders": [
@@ -2231,7 +2854,7 @@
       "project": "admin",
       "range": {
         "start": 22,
-        "end": 358
+        "end": 429
       },
       "callers": [],
       "renders": [
@@ -2248,7 +2871,7 @@
       "file": "admin/src/pages/packages/components/MediaSection.tsx",
       "project": "admin",
       "range": {
-        "start": 26,
+        "start": 25,
         "end": 322
       },
       "callers": [],
@@ -2266,8 +2889,8 @@
       "file": "admin/src/pages/packages/components/OverviewSection.tsx",
       "project": "admin",
       "range": {
-        "start": 33,
-        "end": 200
+        "start": 21,
+        "end": 208
       },
       "callers": [],
       "renders": [
@@ -2278,6 +2901,117 @@
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
       ]
     },
+    "COMPONENT:admin/src/pages/packages/components/PackageEditorActions.tsx:PackageEditorActions": {
+      "name": "PackageEditorActions",
+      "type": "COMPONENT",
+      "file": "admin/src/pages/packages/components/PackageEditorActions.tsx",
+      "project": "admin",
+      "range": {
+        "start": 10,
+        "end": 36
+      },
+      "callers": [],
+      "renders": [
+        "COMPONENT:admin/src/pages/packages/components/PackageEditorFooter.tsx:PackageEditorFooter",
+        "COMPONENT:admin/src/pages/packages/components/PackageEditorHeader.tsx:PackageEditorHeader"
+      ],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/components/PackageEditorFooter.tsx",
+        "COMPONENT:admin/src/pages/packages/components/PackageEditorFooter.tsx:PackageEditorFooter",
+        "FILE:admin/src/pages/packages/components/PackageEditorHeader.tsx",
+        "COMPONENT:admin/src/pages/packages/components/PackageEditorHeader.tsx:PackageEditorHeader"
+      ]
+    },
+    "COMPONENT:admin/src/pages/packages/components/PackageEditorFooter.tsx:PackageEditorFooter": {
+      "name": "PackageEditorFooter",
+      "type": "COMPONENT",
+      "file": "admin/src/pages/packages/components/PackageEditorFooter.tsx",
+      "project": "admin",
+      "range": {
+        "start": 10,
+        "end": 29
+      },
+      "callers": [],
+      "renders": [
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/PackageEditor.tsx",
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ]
+    },
+    "COMPONENT:admin/src/pages/packages/components/PackageEditorHeader.tsx:PackageEditorHeader": {
+      "name": "PackageEditorHeader",
+      "type": "COMPONENT",
+      "file": "admin/src/pages/packages/components/PackageEditorHeader.tsx",
+      "project": "admin",
+      "range": {
+        "start": 10,
+        "end": 44
+      },
+      "callers": [],
+      "renders": [
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/PackageEditor.tsx",
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ]
+    },
+    "COMPONENT:admin/src/pages/packages/components/PackageImageTooltip.tsx:PackageImageTooltip": {
+      "name": "PackageImageTooltip",
+      "type": "COMPONENT",
+      "file": "admin/src/pages/packages/components/PackageImageTooltip.tsx",
+      "project": "admin",
+      "range": {
+        "start": 3,
+        "end": 17
+      },
+      "callers": [],
+      "renders": [
+        "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"
+      ],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/PackagesList.tsx",
+        "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"
+      ]
+    },
+    "COMPONENT:admin/src/pages/packages/components/PackageRow.tsx:PackageRow": {
+      "name": "PackageRow",
+      "type": "COMPONENT",
+      "file": "admin/src/pages/packages/components/PackageRow.tsx",
+      "project": "admin",
+      "range": {
+        "start": 16,
+        "end": 98
+      },
+      "callers": [],
+      "renders": [
+        "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"
+      ],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/PackagesList.tsx",
+        "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"
+      ]
+    },
+    "COMPONENT:admin/src/pages/packages/components/PackageTableState.tsx:PackageTableState": {
+      "name": "PackageTableState",
+      "type": "COMPONENT",
+      "file": "admin/src/pages/packages/components/PackageTableState.tsx",
+      "project": "admin",
+      "range": {
+        "start": 9,
+        "end": 48
+      },
+      "callers": [],
+      "renders": [
+        "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"
+      ],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/PackagesList.tsx",
+        "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"
+      ]
+    },
     "COMPONENT:admin/src/pages/packages/components/PricingSection.tsx:PricingSection": {
       "name": "PricingSection",
       "type": "COMPONENT",
@@ -2285,7 +3019,25 @@
       "project": "admin",
       "range": {
         "start": 23,
-        "end": 191
+        "end": 207
+      },
+      "callers": [],
+      "renders": [
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/PackageEditor.tsx",
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ]
+    },
+    "COMPONENT:admin/src/pages/packages/components/SectionProgressHeader.tsx:SectionProgressHeader": {
+      "name": "SectionProgressHeader",
+      "type": "COMPONENT",
+      "file": "admin/src/pages/packages/components/SectionProgressHeader.tsx",
+      "project": "admin",
+      "range": {
+        "start": 7,
+        "end": 30
       },
       "callers": [],
       "renders": [
@@ -2303,12 +3055,154 @@
       "project": "admin",
       "range": {
         "start": 23,
-        "end": 143
+        "end": 166
       },
       "callers": [],
       "renders": [
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
       ],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/PackageEditor.tsx",
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ]
+    },
+    "FUNC:admin/src/pages/packages/form/populateForm.ts:populatePackageForm": {
+      "name": "populatePackageForm",
+      "type": "FUNC",
+      "file": "admin/src/pages/packages/form/populateForm.ts",
+      "project": "admin",
+      "range": {
+        "start": 5,
+        "end": 32
+      },
+      "callers": [
+        "FUNC:admin/src/pages/packages/form/usePackageForm.ts:usePackageForm"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/form/usePackageForm.ts",
+        "FUNC:admin/src/pages/packages/form/usePackageForm.ts:usePackageForm"
+      ]
+    },
+    "FUNC:admin/src/pages/packages/form/usePackageForm.ts:usePackageForm": {
+      "name": "usePackageForm",
+      "type": "FUNC",
+      "file": "admin/src/pages/packages/form/usePackageForm.ts",
+      "project": "admin",
+      "range": {
+        "start": 16,
+        "end": 58
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/PackageEditor.tsx",
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ]
+    },
+    "FUNC:admin/src/pages/packages/hooks/useEditableSections.ts:useEditableSections": {
+      "name": "useEditableSections",
+      "type": "FUNC",
+      "file": "admin/src/pages/packages/hooks/useEditableSections.ts",
+      "project": "admin",
+      "range": {
+        "start": 37,
+        "end": 187
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/PackageEditor.tsx",
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ]
+    },
+    "FUNC:admin/src/pages/packages/hooks/usePackageCompletion.ts:usePackageCompletion": {
+      "name": "usePackageCompletion",
+      "type": "FUNC",
+      "file": "admin/src/pages/packages/hooks/usePackageCompletion.ts",
+      "project": "admin",
+      "range": {
+        "start": 5,
+        "end": 68
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/PackageEditor.tsx",
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ]
+    },
+    "FUNC:admin/src/pages/packages/services/submitPackage.ts:submitPackage": {
+      "name": "submitPackage",
+      "type": "FUNC",
+      "file": "admin/src/pages/packages/services/submitPackage.ts",
+      "project": "admin",
+      "range": {
+        "start": 25,
+        "end": 137
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FILE:admin/src/pages/packages/PackageEditor.tsx",
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ]
+    },
+    "FUNC:admin/src/pages/packages/utils/revokeBlobUrls.ts:revokeGalleryUrls": {
+      "name": "revokeGalleryUrls",
+      "type": "FUNC",
+      "file": "admin/src/pages/packages/utils/revokeBlobUrls.ts",
+      "project": "admin",
+      "range": {
+        "start": 3,
+        "end": 12
+      },
+      "callers": [
+        "FUNC:admin/src/pages/packages/utils/revokeBlobUrls.ts:revokePackageBlobUrls"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:admin/src/pages/packages/utils/revokeBlobUrls.ts:revokePackageBlobUrls"
+      ]
+    },
+    "FUNC:admin/src/pages/packages/utils/revokeBlobUrls.ts:revokeScheduleUrls": {
+      "name": "revokeScheduleUrls",
+      "type": "FUNC",
+      "file": "admin/src/pages/packages/utils/revokeBlobUrls.ts",
+      "project": "admin",
+      "range": {
+        "start": 14,
+        "end": 22
+      },
+      "callers": [
+        "FUNC:admin/src/pages/packages/utils/revokeBlobUrls.ts:revokePackageBlobUrls"
+      ],
+      "renders": [],
+      "referencedBy": [
+        "FUNC:admin/src/pages/packages/utils/revokeBlobUrls.ts:revokePackageBlobUrls"
+      ]
+    },
+    "FUNC:admin/src/pages/packages/utils/revokeBlobUrls.ts:revokePackageBlobUrls": {
+      "name": "revokePackageBlobUrls",
+      "type": "FUNC",
+      "file": "admin/src/pages/packages/utils/revokeBlobUrls.ts",
+      "project": "admin",
+      "range": {
+        "start": 24,
+        "end": 27
+      },
+      "callers": [
+        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
+      ],
+      "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -2587,6 +3481,19 @@
       "renders": [],
       "referencedBy": []
     },
+    "API:POST:/api/packages/media/delete": {
+      "name": "POST /api/packages/media/delete",
+      "type": "API",
+      "file": "admin/src/handlers/packages.ts",
+      "project": "api",
+      "range": {
+        "start": 0,
+        "end": 0
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": []
+    },
     "HOOK:useQuery": {
       "name": "useQuery",
       "type": "HOOK",
@@ -2639,6 +3546,19 @@
       "renders": [],
       "referencedBy": []
     },
+    "HOOK:useMemo": {
+      "name": "useMemo",
+      "type": "HOOK",
+      "file": "node_modules",
+      "project": "admin",
+      "range": {
+        "start": 0,
+        "end": 0
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": []
+    },
     "HOOK:useParams": {
       "name": "useParams",
       "type": "HOOK",
@@ -2665,8 +3585,8 @@
       "renders": [],
       "referencedBy": []
     },
-    "HOOK:useWatch": {
-      "name": "useWatch",
+    "HOOK:useRef": {
+      "name": "useRef",
       "type": "HOOK",
       "file": "node_modules",
       "project": "admin",
@@ -2678,21 +3598,8 @@
       "renders": [],
       "referencedBy": []
     },
-    "API:POST:/api/packages/media/delete": {
-      "name": "POST /api/packages/media/delete",
-      "type": "API",
-      "file": "admin/src/pages/packages/PackageEditor.tsx",
-      "project": "api",
-      "range": {
-        "start": 0,
-        "end": 0
-      },
-      "callers": [],
-      "renders": [],
-      "referencedBy": []
-    },
-    "HOOK:useRef": {
-      "name": "useRef",
+    "HOOK:useWatch": {
+      "name": "useWatch",
       "type": "HOOK",
       "file": "node_modules",
       "project": "admin",
@@ -2709,6 +3616,19 @@
       "type": "HOOK",
       "file": "node_modules",
       "project": "admin",
+      "range": {
+        "start": 0,
+        "end": 0
+      },
+      "callers": [],
+      "renders": [],
+      "referencedBy": []
+    },
+    "API:GET:/api/packages/slug/:slug": {
+      "name": "GET /api/packages/slug/:slug",
+      "type": "API",
+      "file": "api/routes/CategoryRoutes.js",
+      "project": "api",
       "range": {
         "start": 0,
         "end": 0

@@ -10,7 +10,7 @@ class CategoryController {
       const options = {
         sortBy: req.query.sortBy,
         sortOrder: req.query.sortOrder,
-        showDeleted: req.query.showDeleted === "true"
+        showDeleted: req.query.showDeleted === "true",
       };
       const categories = await CategoryService.getAllCategories(filters, options);
       res.status(200).json(categories);

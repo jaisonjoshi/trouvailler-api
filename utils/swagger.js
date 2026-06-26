@@ -4,7 +4,7 @@ import {
   createPackageSchema,
   scheduleItemSchema,
   activityDetailSchema,
-  deleteMediaSchema
+  deleteMediaSchema,
 } from "../validation/PackageValidation.js";
 import { createCategorySchema } from "../validation/CategoryValidation.js";
 import { createLocationSchema } from "../validation/LocationValidation.js";
@@ -16,7 +16,8 @@ const options = {
     info: {
       title: "Trouvailler API Documentation",
       version: "1.0.0",
-      description: "A premium API specification for the Trouvailler backend, built with layered architecture.",
+      description:
+        "A premium API specification for the Trouvailler backend, built with layered architecture.",
     },
     servers: [
       {
@@ -38,12 +39,24 @@ if (!swaggerSpec.components.schemas) {
   swaggerSpec.components.schemas = {};
 }
 
-swaggerSpec.components.schemas.Package = z.toJSONSchema(createPackageSchema, { target: "openapi-3.0" });
-swaggerSpec.components.schemas.ScheduleItem = z.toJSONSchema(scheduleItemSchema, { target: "openapi-3.0" });
-swaggerSpec.components.schemas.ActivityDetail = z.toJSONSchema(activityDetailSchema, { target: "openapi-3.0" });
-swaggerSpec.components.schemas.Category = z.toJSONSchema(createCategorySchema, { target: "openapi-3.0" });
-swaggerSpec.components.schemas.Location = z.toJSONSchema(createLocationSchema, { target: "openapi-3.0" });
-swaggerSpec.components.schemas.DeleteMediaRequest = z.toJSONSchema(deleteMediaSchema, { target: "openapi-3.0" });
+swaggerSpec.components.schemas.Package = z.toJSONSchema(createPackageSchema, {
+  target: "openapi-3.0",
+});
+swaggerSpec.components.schemas.ScheduleItem = z.toJSONSchema(scheduleItemSchema, {
+  target: "openapi-3.0",
+});
+swaggerSpec.components.schemas.ActivityDetail = z.toJSONSchema(activityDetailSchema, {
+  target: "openapi-3.0",
+});
+swaggerSpec.components.schemas.Category = z.toJSONSchema(createCategorySchema, {
+  target: "openapi-3.0",
+});
+swaggerSpec.components.schemas.Location = z.toJSONSchema(createLocationSchema, {
+  target: "openapi-3.0",
+});
+swaggerSpec.components.schemas.DeleteMediaRequest = z.toJSONSchema(deleteMediaSchema, {
+  target: "openapi-3.0",
+});
 
 // Reusable query parameter definitions
 swaggerSpec.components.parameters = {
@@ -51,90 +64,90 @@ swaggerSpec.components.parameters = {
     in: "query",
     name: "search",
     schema: { type: "string" },
-    description: "Search keyword matching package title"
+    description: "Search keyword matching package title",
   },
   packageStatusFilter: {
     in: "query",
     name: "status",
     schema: { type: "string", enum: PACKAGE_STATUS_VALUES },
-    description: "Filter by package status"
+    description: "Filter by package status",
   },
   packageCategoriesFilter: {
     in: "query",
     name: "categories",
     schema: { type: "string" },
-    description: "Filter by category ID(s). Separate multiple IDs with commas."
+    description: "Filter by category ID(s). Separate multiple IDs with commas.",
   },
   packageMainLocationFilter: {
     in: "query",
     name: "mainLocation",
     schema: { type: "string" },
-    description: "Filter by primary location ID"
+    description: "Filter by primary location ID",
   },
   packageLocationsFilter: {
     in: "query",
     name: "locations",
     schema: { type: "string" },
-    description: "Filter by location ID(s). Separate multiple IDs with commas."
+    description: "Filter by location ID(s). Separate multiple IDs with commas.",
   },
   packageSortBy: {
     in: "query",
     name: "sortBy",
     schema: { type: "string" },
-    description: "Field to sort results by (e.g. createdAt, title)"
+    description: "Field to sort results by (e.g. createdAt, title)",
   },
   packageSortOrder: {
     in: "query",
     name: "sortOrder",
     schema: { type: "string", enum: ["asc", "desc"] },
-    description: "Sort direction"
+    description: "Sort direction",
   },
   locationSearchQuery: {
     in: "query",
     name: "search",
     schema: { type: "string" },
-    description: "Search by location name or short description"
+    description: "Search by location name or short description",
   },
   locationLevelFilter: {
     in: "query",
     name: "level",
     schema: { type: "string", enum: ["country", "state", "destination"] },
-    description: "Filter by location level"
+    description: "Filter by location level",
   },
   locationParentFilter: {
     in: "query",
     name: "parentLocation",
     schema: { type: "string" },
-    description: "Filter by parent location ID"
+    description: "Filter by parent location ID",
   },
   locationSortBy: {
     in: "query",
     name: "sortBy",
     schema: { type: "string" },
-    description: "Field to sort results by (e.g. createdAt, name)"
+    description: "Field to sort results by (e.g. createdAt, name)",
   },
   locationSortOrder: {
     in: "query",
     name: "sortOrder",
     schema: { type: "string", enum: ["asc", "desc"] },
-    description: "Sort direction"
+    description: "Sort direction",
   },
   categoryAppliesToFilter: {
     in: "query",
     name: "appliesTo",
     schema: { type: "string" },
-    description: "Filter by appliesTo value (package or location)"
+    description: "Filter by appliesTo value (package or location)",
   },
   categorySortBy: {
     in: "query",
     name: "sortBy",
     schema: { type: "string" },
-    description: "Field to sort results by (e.g. createdAt, name)"
+    description: "Field to sort results by (e.g. createdAt, name)",
   },
   categorySortOrder: {
     in: "query",
     name: "sortOrder",
     schema: { type: "string", enum: ["asc", "desc"] },
-    description: "Sort direction"
-  }
+    description: "Sort direction",
+  },
 };

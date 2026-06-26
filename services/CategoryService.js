@@ -3,19 +3,23 @@ import { createCategorySchema, updateCategorySchema } from "../validation/Catego
 import { generateSlug } from "../utils/slug.js";
 
 class CategoryService {
-  async getAllCategories(filters = {}, options = {}) {
-    return await CategoryRepository.findAll(filters, options);
+  getAllCategories(filters = {}, options = {}) {
+    return CategoryRepository.findAll(filters, options);
   }
 
   async getCategoryById(id) {
     const category = await CategoryRepository.findById(id);
-    if (!category) this.throwError("Category not found", 404);
+    if (!category) {
+      this.throwError("Category not found", 404);
+    }
     return category;
   }
 
   async getCategoryBySlug(slug) {
     const category = await CategoryRepository.findBySlug(slug);
-    if (!category) this.throwError("Category not found", 404);
+    if (!category) {
+      this.throwError("Category not found", 404);
+    }
     return category;
   }
 
@@ -23,14 +27,18 @@ class CategoryService {
     const validatedData = createCategorySchema.parse(data);
 
     const existingCategory = await CategoryRepository.findByName(validatedData.name);
-    if (existingCategory) this.throwError("A category with the same name already exists.");
+    if (existingCategory) {
+      this.throwError("A category with the same name already exists.");
+    }
 
     const slug = generateSlug(validatedData.name);
     const existingSlug = await CategoryRepository.findBySlug(slug);
-    if (existingSlug) this.throwError("A category with the same slug already exists.");
+    if (existingSlug) {
+      this.throwError("A category with the same slug already exists.");
+    }
     validatedData.slug = slug;
 
-    return await CategoryRepository.create(validatedData);
+    return CategoryRepository.create(validatedData);
   }
 
   async updateCategory(id, data) {
@@ -39,20 +47,24 @@ class CategoryService {
 
     if (validatedData.name && validatedData.name.toLowerCase() !== category.name.toLowerCase()) {
       const existingCategory = await CategoryRepository.findByName(validatedData.name);
-      if (existingCategory) this.throwError("A category with the same name already exists.");
+      if (existingCategory) {
+        this.throwError("A category with the same name already exists.");
+      }
 
       const newSlug = generateSlug(validatedData.name);
       const existingSlug = await CategoryRepository.findBySlug(newSlug);
-      if (existingSlug && existingSlug._id.toString() !== id) this.throwError("A category with the same slug already exists.");
+      if (existingSlug && existingSlug._id.toString() !== id) {
+        this.throwError("A category with the same slug already exists.");
+      }
       validatedData.slug = newSlug;
     }
 
-    return await CategoryRepository.update(id, validatedData);
+    return CategoryRepository.update(id, validatedData);
   }
 
   async deleteCategory(id) {
     await this.getCategoryById(id);
-    return await CategoryRepository.delete(id);
+    return CategoryRepository.delete(id);
   }
 
   throwError(message, statusCode = 400) {

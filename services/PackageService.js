@@ -5,7 +5,7 @@ import { createPackageSchema, updatePackageSchema } from "../validation/PackageV
 import { generateSlug } from "../utils/slug.js";
 
 class PackageService {
-  async getAllPackages(filters = {}, options = {}) {
+  getAllPackages(filters = {}, options = {}) {
     const query = {};
     if (filters.categories && Array.isArray(filters.categories) && filters.categories.length > 0) {
       query.categories = { $in: filters.categories };
@@ -14,7 +14,9 @@ class PackageService {
       query.mainLocation = filters.mainLocation;
     }
     if (filters.locations) {
-      query.locations = { $in: Array.isArray(filters.locations) ? filters.locations : [filters.locations] };
+      query.locations = {
+        $in: Array.isArray(filters.locations) ? filters.locations : [filters.locations],
+      };
     }
     if (filters.status) {
       query.status = filters.status;
@@ -22,18 +24,22 @@ class PackageService {
     if (filters.search) {
       query.title = { $regex: filters.search, $options: "i" };
     }
-    return await PackageRepository.findAll(query, options);
+    return PackageRepository.findAll(query, options);
   }
 
   async getPackageById(id) {
     const pkg = await PackageRepository.findById(id);
-    if (!pkg) this.throwError("Package not found", 404);
+    if (!pkg) {
+      this.throwError("Package not found", 404);
+    }
     return pkg;
   }
 
   async getPackageBySlug(slug) {
     const pkg = await PackageRepository.findBySlug(slug);
-    if (!pkg) this.throwError("Package not found", 404);
+    if (!pkg) {
+      this.throwError("Package not found", 404);
+    }
     return pkg;
   }
 
@@ -49,18 +55,22 @@ class PackageService {
 
     const slug = generateSlug(validatedData.title);
     const existingSlug = await PackageRepository.findBySlug(slug);
-    if (existingSlug) this.throwError("A package with the same title already exists.");
+    if (existingSlug) {
+      this.throwError("A package with the same title already exists.");
+    }
     validatedData.slug = slug;
 
-    return await PackageRepository.create(validatedData);
+    return PackageRepository.create(validatedData);
   }
 
   async updatePackage(id, data) {
     const validatedData = updatePackageSchema.parse(data);
     const pkg = await this.getPackageById(id);
 
-    const finalMainLocation = validatedData.mainLocation !== undefined ? validatedData.mainLocation : pkg.mainLocation;
-    const finalLocations = validatedData.locations !== undefined ? validatedData.locations : pkg.locations;
+    const finalMainLocation =
+      validatedData.mainLocation !== undefined ? validatedData.mainLocation : pkg.mainLocation;
+    const finalLocations =
+      validatedData.locations !== undefined ? validatedData.locations : pkg.locations;
 
     this.validateMainLocation(finalMainLocation, finalLocations);
 
@@ -72,19 +82,24 @@ class PackageService {
       await this.validateReferencedCategories(validatedData.categories);
     }
 
-    if (validatedData.title !== undefined && validatedData.title.toLowerCase() !== pkg.title.toLowerCase()) {
+    if (
+      validatedData.title !== undefined &&
+      validatedData.title.toLowerCase() !== pkg.title.toLowerCase()
+    ) {
       const slug = generateSlug(validatedData.title);
       const existing = await PackageRepository.findBySlug(slug);
-      if (existing && existing._id.toString() !== id) this.throwError("A package with the same title already exists.");
+      if (existing && existing._id.toString() !== id) {
+        this.throwError("A package with the same title already exists.");
+      }
       validatedData.slug = slug;
     }
 
-    return await PackageRepository.update(id, validatedData);
+    return PackageRepository.update(id, validatedData);
   }
 
   async deletePackage(id) {
     await this.getPackageById(id);
-    return await PackageRepository.delete(id);
+    return PackageRepository.delete(id);
   }
 
   throwError(message, statusCode = 400) {
@@ -94,19 +109,21 @@ class PackageService {
   }
 
   validateMainLocation(mainLocation, locations) {
-    const locationsStr = locations.map(loc => loc.toString());
+    const locationsStr = locations.map((loc) => loc.toString());
     if (!locationsStr.includes(mainLocation.toString())) {
-      this.throwError("Primary destination (mainLocation) must be included in the destinations covered (locations) array");
+      this.throwError(
+        "Primary destination (mainLocation) must be included in the destinations covered (locations) array",
+      );
     }
   }
 
   async validateReferencedLocations(mainLocation, locations) {
-    const allIds = [mainLocation.toString(), ...locations.map(loc => loc.toString())];
+    const allIds = [mainLocation.toString(), ...locations.map((loc) => loc.toString())];
     const uniqueIds = [...new Set(allIds)];
     const existingLocations = await LocationRepository.findByIds(uniqueIds);
-    const existingIds = new Set(existingLocations.map(loc => loc._id.toString()));
+    const existingIds = new Set(existingLocations.map((loc) => loc._id.toString()));
 
-    const missingIds = uniqueIds.filter(id => !existingIds.has(id));
+    const missingIds = uniqueIds.filter((id) => !existingIds.has(id));
     if (missingIds.length > 0) {
       if (missingIds.includes(mainLocation.toString())) {
         this.throwError("Selected primary location does not exist.");
@@ -117,10 +134,12 @@ class PackageService {
 
   async validateReferencedCategories(categories) {
     const existingCategories = await CategoryRepository.findByIds(categories);
-    const existingIds = new Set(existingCategories.map(cat => cat._id.toString()));
+    const existingIds = new Set(existingCategories.map((cat) => cat._id.toString()));
 
-    const missingIds = categories.filter(id => !existingIds.has(id.toString()));
-    if (missingIds.length > 0) this.throwError("One or more selected categories do not exist.");
+    const missingIds = categories.filter((id) => !existingIds.has(id.toString()));
+    if (missingIds.length > 0) {
+      this.throwError("One or more selected categories do not exist.");
+    }
 
     for (const cat of existingCategories) {
       if (!cat.appliesTo || !cat.appliesTo.includes("package")) {

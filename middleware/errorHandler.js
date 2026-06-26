@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { ZodError } from "zod";
 
-export default function errorHandler(err, req, res, next) {
+export default function errorHandler(err, req, res, _next) {
   if (err instanceof mongoose.Error.CastError) {
     return res.status(400).json({
       success: false,
@@ -27,7 +27,7 @@ export default function errorHandler(err, req, res, next) {
     console.error("Error caught in global handler:", err);
   }
 
-  res.status(statusCode).json({
+  return res.status(statusCode).json({
     success: false,
     message: err.message || "Internal Server Error",
     stack: process.env.NODE_ENV === "development" ? err.stack : undefined,

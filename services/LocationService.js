@@ -4,7 +4,7 @@ import { createLocationSchema, updateLocationSchema } from "../validation/Locati
 import { generateSlug } from "../utils/slug.js";
 
 class LocationService {
-  async getAllLocations(filters = {}, options = {}) {
+  getAllLocations(filters = {}, options = {}) {
     const query = {};
     if (filters.level) {
       query.level = filters.level;
@@ -15,21 +15,25 @@ class LocationService {
     if (filters.search) {
       query.$or = [
         { name: { $regex: filters.search, $options: "i" } },
-        { shortDescription: { $regex: filters.search, $options: "i" } }
+        { shortDescription: { $regex: filters.search, $options: "i" } },
       ];
     }
-    return await LocationRepository.findAll(query, options);
+    return LocationRepository.findAll(query, options);
   }
 
   async getLocationById(id) {
     const location = await LocationRepository.findById(id);
-    if (!location) this.throwError("Location not found", 404);
+    if (!location) {
+      this.throwError("Location not found", 404);
+    }
     return location;
   }
 
   async getLocationBySlug(slug) {
     const location = await LocationRepository.findBySlug(slug);
-    if (!location) this.throwError("Location not found", 404);
+    if (!location) {
+      this.throwError("Location not found", 404);
+    }
     return location;
   }
 
@@ -37,11 +41,15 @@ class LocationService {
     const validatedData = createLocationSchema.parse(data);
 
     const existing = await LocationRepository.findByName(validatedData.name);
-    if (existing) this.throwError("A location with the same name already exists.");
+    if (existing) {
+      this.throwError("A location with the same name already exists.");
+    }
 
     const slug = generateSlug(validatedData.name);
     const existingSlug = await LocationRepository.findBySlug(slug);
-    if (existingSlug) this.throwError("A location with the same slug already exists.");
+    if (existingSlug) {
+      this.throwError("A location with the same slug already exists.");
+    }
     validatedData.slug = slug;
 
     await this.validateParentLocation(validatedData.level, validatedData.parentLocation);
@@ -51,7 +59,7 @@ class LocationService {
       validatedData.parentLocation = null;
     }
 
-    return await LocationRepository.create(validatedData);
+    return LocationRepository.create(validatedData);
   }
 
   async updateLocation(id, data) {
@@ -60,11 +68,15 @@ class LocationService {
 
     if (validatedData.name && validatedData.name.toLowerCase() !== location.name.toLowerCase()) {
       const existing = await LocationRepository.findByName(validatedData.name);
-      if (existing) this.throwError("A location with the same name already exists.");
+      if (existing) {
+        this.throwError("A location with the same name already exists.");
+      }
 
       const newSlug = generateSlug(validatedData.name);
       const existingSlug = await LocationRepository.findBySlug(newSlug);
-      if (existingSlug && existingSlug._id.toString() !== id) this.throwError("A location with the same slug already exists.");
+      if (existingSlug && existingSlug._id.toString() !== id) {
+        this.throwError("A location with the same slug already exists.");
+      }
       validatedData.slug = newSlug;
     }
 
@@ -86,12 +98,12 @@ class LocationService {
       validatedData.parentLocation = null;
     }
 
-    return await LocationRepository.update(id, validatedData);
+    return LocationRepository.update(id, validatedData);
   }
 
   async deleteLocation(id) {
     await this.getLocationById(id);
-    return await LocationRepository.delete(id);
+    return LocationRepository.delete(id);
   }
 
   throwError(message, statusCode = 400) {
@@ -101,25 +113,37 @@ class LocationService {
   }
 
   async validateParentLocation(level, parentLocationId, currentLocationId = null) {
-    if (parentLocationId && currentLocationId && parentLocationId.toString() === currentLocationId.toString()) {
+    if (
+      parentLocationId &&
+      currentLocationId &&
+      parentLocationId.toString() === currentLocationId.toString()
+    ) {
       this.throwError("A location cannot be its own parent");
     }
 
     if (level === "country") {
-      if (parentLocationId) this.throwError("A country cannot have a parent location");
+      if (parentLocationId) {
+        this.throwError("A country cannot have a parent location");
+      }
       return;
     }
 
     if (!parentLocationId) {
-      if (level === "state") this.throwError("A state must have a parent country location");
+      if (level === "state") {
+        this.throwError("A state must have a parent country location");
+      }
       return;
     }
 
     const parentLocation = await LocationRepository.findById(parentLocationId);
-    if (!parentLocation) this.throwError("Parent location not found");
+    if (!parentLocation) {
+      this.throwError("Parent location not found");
+    }
 
     if (level === "state") {
-      if (parentLocation.level !== "country") this.throwError("A state's parent must be a country");
+      if (parentLocation.level !== "country") {
+        this.throwError("A state's parent must be a country");
+      }
     }
 
     if (level === "destination") {
@@ -130,13 +154,17 @@ class LocationService {
   }
 
   async validateCategories(categoryIds) {
-    if (!categoryIds || categoryIds.length === 0) return;
+    if (!categoryIds || categoryIds.length === 0) {
+      return;
+    }
 
     const existingCategories = await CategoryRepository.findByIds(categoryIds);
-    const existingIds = new Set(existingCategories.map(cat => cat._id.toString()));
+    const existingIds = new Set(existingCategories.map((cat) => cat._id.toString()));
 
-    const missingIds = categoryIds.filter(id => !existingIds.has(id.toString()));
-    if (missingIds.length > 0) this.throwError("One or more selected categories do not exist.");
+    const missingIds = categoryIds.filter((id) => !existingIds.has(id.toString()));
+    if (missingIds.length > 0) {
+      this.throwError("One or more selected categories do not exist.");
+    }
 
     for (const cat of existingCategories) {
       if (!cat.appliesTo || !cat.appliesTo.includes("location")) {

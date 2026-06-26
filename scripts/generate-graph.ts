@@ -2,7 +2,9 @@ import { Project, SyntaxKind, Node, CallExpression } from "ts-morph";
 import * as path from "path";
 import * as fs from "fs";
 
-console.log("Initializing ts-morph project spanning all three Trouvailler workspaces (admin, api, frontend)...");
+console.log(
+  "Initializing ts-morph project spanning all three Trouvailler workspaces (admin, api, frontend)...",
+);
 
 // Initialize ts-morph project without config file since API is JS-only
 const project = new Project({
@@ -18,10 +20,7 @@ const workspaces = [
   {
     name: "admin",
     pathSuffix: "trouvailler-admin",
-    paths: [
-      "../trouvailler-admin/src/**/*.ts",
-      "../trouvailler-admin/src/**/*.tsx",
-    ],
+    paths: ["../trouvailler-admin/src/**/*.ts", "../trouvailler-admin/src/**/*.tsx"],
   },
   {
     name: "api",
@@ -48,7 +47,7 @@ const workspaces = [
   },
 ];
 
-const workspaceRoots = workspaces.map(w => {
+const workspaceRoots = workspaces.map((w) => {
   const absPath = path.resolve(projectRoot, w.name === "api" ? "." : `../${w.pathSuffix}`);
   return {
     name: w.name,
@@ -82,7 +81,7 @@ for (const workspace of workspaces) {
   }
 }
 
-const sourceFiles = project.getSourceFiles().filter(file => {
+const sourceFiles = project.getSourceFiles().filter((file) => {
   const rel = cleanPath(file.getFilePath());
   // Skip scanning node_modules or dependencies
   return !rel.includes("node_modules") && !rel.startsWith(".");
@@ -110,7 +109,16 @@ interface SymbolNode {
 interface Edge {
   source: string;
   target: string;
-  type: "imports" | "calls" | "defines" | "routes_to" | "renders" | "uses_hook" | "uses_schema" | "calls_api" | "references";
+  type:
+    | "imports"
+    | "calls"
+    | "defines"
+    | "routes_to"
+    | "renders"
+    | "uses_hook"
+    | "uses_schema"
+    | "calls_api"
+    | "references";
 }
 
 const files: FileNode[] = [];
@@ -129,7 +137,11 @@ const isZodSchema = (node: Node, name: string): boolean => {
 
 const isReactComponent = (node: Node): boolean => {
   let name = "";
-  if (Node.isVariableDeclaration(node) || Node.isFunctionDeclaration(node) || Node.isClassDeclaration(node)) {
+  if (
+    Node.isVariableDeclaration(node) ||
+    Node.isFunctionDeclaration(node) ||
+    Node.isClassDeclaration(node)
+  ) {
     name = node.getName() || "";
   } else if (Node.isMethodDeclaration(node)) {
     name = node.getName();
@@ -175,7 +187,11 @@ for (const sourceFile of sourceFiles) {
   const fileImports: string[] = [];
   for (const importDecl of sourceFile.getImportDeclarations()) {
     const moduleSpecifier = importDecl.getModuleSpecifierValue();
-    const resolvedFile = importDecl.getModuleSpecifier().getSymbol()?.getDeclarations()?.[0]?.getSourceFile();
+    const resolvedFile = importDecl
+      .getModuleSpecifier()
+      .getSymbol()
+      ?.getDeclarations()?.[0]
+      ?.getSourceFile();
     if (resolvedFile) {
       fileImports.push(cleanPath(resolvedFile.getFilePath()));
     } else if (moduleSpecifier.startsWith(".")) {
@@ -208,7 +224,7 @@ for (const sourceFile of sourceFiles) {
 
   // Track file-to-file import relationships
   for (const imp of fileImports) {
-    if (!imp.includes("node_modules") && workspaces.some(ws => imp.startsWith(`${ws.name}/`))) {
+    if (!imp.includes("node_modules") && workspaces.some((ws) => imp.startsWith(`${ws.name}/`))) {
       edges.push({
         source: `FILE:${filePath}`,
         target: `FILE:${imp}`,
@@ -222,7 +238,7 @@ for (const sourceFile of sourceFiles) {
     const startLine = node.getStartLineNumber();
     const endLine = node.getEndLineNumber();
     const id = `${type}:${filePath}:${name}`;
-    
+
     const symbolNode: SymbolNode = {
       id,
       type,
@@ -232,7 +248,7 @@ for (const sourceFile of sourceFiles) {
       startLine,
       endLine,
     };
-    
+
     symbols.push(symbolNode);
     declarationMap.set(node, symbolNode);
 
@@ -248,7 +264,11 @@ for (const sourceFile of sourceFiles) {
   for (const funcDecl of sourceFile.getFunctions()) {
     const name = funcDecl.getName();
     if (name) {
-      const type = isZodSchema(funcDecl, name) ? "SCHEMA" : (isReactComponent(funcDecl) ? "COMPONENT" : "FUNC");
+      const type = isZodSchema(funcDecl, name)
+        ? "SCHEMA"
+        : isReactComponent(funcDecl)
+          ? "COMPONENT"
+          : "FUNC";
       addSymbol(funcDecl, name, type);
     }
   }
@@ -258,8 +278,16 @@ for (const sourceFile of sourceFiles) {
     const initializer = varDecl.getInitializer();
     if (initializer) {
       const name = varDecl.getName();
-      if (Node.isArrowFunction(initializer) || Node.isFunctionExpression(initializer) || isZodSchema(varDecl, name)) {
-        const type = isZodSchema(varDecl, name) ? "SCHEMA" : (isReactComponent(varDecl) || /^[A-Z]/.test(name) ? "COMPONENT" : "FUNC");
+      if (
+        Node.isArrowFunction(initializer) ||
+        Node.isFunctionExpression(initializer) ||
+        isZodSchema(varDecl, name)
+      ) {
+        const type = isZodSchema(varDecl, name)
+          ? "SCHEMA"
+          : isReactComponent(varDecl) || /^[A-Z]/.test(name)
+            ? "COMPONENT"
+            : "FUNC";
         addSymbol(varDecl, name, type);
       }
     }
@@ -279,7 +307,9 @@ for (const sourceFile of sourceFiles) {
 // ==========================================
 // PASS 2: Trace deeper AST relationships
 // ==========================================
-console.log("Analyzing deep AST relationships (calls, renders, hook/schema usage, API endpoints)...");
+console.log(
+  "Analyzing deep AST relationships (calls, renders, hook/schema usage, API endpoints)...",
+);
 
 // Helper to extract REST API endpoint from axios/apiClient calls
 const parseApiCall = (callExpr: CallExpression) => {
@@ -287,7 +317,7 @@ const parseApiCall = (callExpr: CallExpression) => {
   if (Node.isPropertyAccessExpression(expr)) {
     const baseName = expr.getExpression().getText();
     const propName = expr.getName(); // get, post, put, delete
-    
+
     if (baseName === "apiClient" && ["get", "post", "put", "delete"].includes(propName)) {
       const arg = callExpr.getArguments()[0];
       if (arg) {
@@ -304,7 +334,7 @@ const parseApiCall = (callExpr: CallExpression) => {
         } else if (Node.isNoSubstitutionTemplateLiteral(arg)) {
           routePath = arg.getLiteralText();
         }
-        
+
         if (routePath) {
           return {
             method: propName.toUpperCase(),
@@ -319,15 +349,15 @@ const parseApiCall = (callExpr: CallExpression) => {
 
 for (const [sourceNode, sourceSymbol] of declarationMap.entries()) {
   const callExpressions = sourceNode.getDescendantsOfKind(SyntaxKind.CallExpression);
-  
+
   for (const callExpr of callExpressions) {
     // 1. Check API Client Calls
     const apiCall = parseApiCall(callExpr);
     if (apiCall) {
       const apiNodeId = `API:${apiCall.method}:${apiCall.path}`;
-      
+
       // Ensure API node is registered if not already present
-      if (!symbols.some(s => s.id === apiNodeId)) {
+      if (!symbols.some((s) => s.id === apiNodeId)) {
         symbols.push({
           id: apiNodeId,
           type: "API",
@@ -338,7 +368,7 @@ for (const [sourceNode, sourceSymbol] of declarationMap.entries()) {
           endLine: 0,
         });
       }
-      
+
       edges.push({
         source: sourceSymbol.id,
         target: apiNodeId,
@@ -350,7 +380,7 @@ for (const [sourceNode, sourceSymbol] of declarationMap.entries()) {
     // 2. Trace Standard Function & Component Calls
     const expr = callExpr.getExpression();
     let symbol = expr.getSymbol() || typeChecker.getSymbolAtLocation(expr);
-    
+
     if (symbol) {
       symbol = getResolvedSymbol(symbol);
       const declarations = symbol.getDeclarations();
@@ -384,11 +414,11 @@ for (const [sourceNode, sourceSymbol] of declarationMap.entries()) {
             customHookResolved = true;
           }
         }
-        
+
         // If it's a library hook (e.g. useEffect, useQuery, useForm)
         if (!customHookResolved) {
           const hookNodeId = `HOOK:${callName}`;
-          if (!symbols.some(s => s.id === hookNodeId)) {
+          if (!symbols.some((s) => s.id === hookNodeId)) {
             symbols.push({
               id: hookNodeId,
               type: "HOOK",
@@ -411,11 +441,14 @@ for (const [sourceNode, sourceSymbol] of declarationMap.entries()) {
 
   // 4. Trace React Component Render Trees (JSX Hierarchy)
   if (sourceSymbol.type === "COMPONENT") {
-    const jsxElements = sourceNode.getDescendantsOfKind(SyntaxKind.JsxOpeningElement).concat(sourceNode.getDescendantsOfKind(SyntaxKind.JsxSelfClosingElement));
+    const jsxElements = sourceNode
+      .getDescendantsOfKind(SyntaxKind.JsxOpeningElement)
+      .concat(sourceNode.getDescendantsOfKind(SyntaxKind.JsxSelfClosingElement));
     for (const element of jsxElements) {
       const tagNode = element.getTagNameNode();
       const tagName = tagNode.getText();
-      if (/^[A-Z]/.test(tagName)) { // capital name component tags
+      if (/^[A-Z]/.test(tagName)) {
+        // capital name component tags
         let tagSymbol = tagNode.getSymbol() || typeChecker.getSymbolAtLocation(tagNode);
         if (tagSymbol) {
           tagSymbol = getResolvedSymbol(tagSymbol);
@@ -464,11 +497,14 @@ for (const [sourceNode, sourceSymbol] of declarationMap.entries()) {
   for (const idNode of identifiers) {
     // Skip declarations names to avoid self-linking
     const parent = idNode.getParent();
-    if (parent && ((Node.isVariableDeclaration(parent) && parent.getNameNode() === idNode) ||
-                   (Node.isFunctionDeclaration(parent) && parent.getNameNode() === idNode))) {
+    if (
+      parent &&
+      ((Node.isVariableDeclaration(parent) && parent.getNameNode() === idNode) ||
+        (Node.isFunctionDeclaration(parent) && parent.getNameNode() === idNode))
+    ) {
       continue;
     }
-    
+
     let symbol = idNode.getSymbol() || typeChecker.getSymbolAtLocation(idNode);
     if (symbol) {
       symbol = getResolvedSymbol(symbol);
@@ -488,7 +524,11 @@ for (const [sourceNode, sourceSymbol] of declarationMap.entries()) {
   // 7. Find References (Replicates VS Code compiler find-references behavior)
   let referencedSymbols: Node[] = [];
   try {
-    if (Node.isFunctionDeclaration(sourceNode) || Node.isMethodDeclaration(sourceNode) || Node.isVariableDeclaration(sourceNode)) {
+    if (
+      Node.isFunctionDeclaration(sourceNode) ||
+      Node.isMethodDeclaration(sourceNode) ||
+      Node.isVariableDeclaration(sourceNode)
+    ) {
       const nameNode = (sourceNode as any).getNameNode?.();
       if (nameNode) {
         referencedSymbols = nameNode.findReferencesAsNodes();
@@ -499,8 +539,8 @@ for (const [sourceNode, sourceSymbol] of declarationMap.entries()) {
   for (const refNode of referencedSymbols) {
     const refFile = refNode.getSourceFile();
     const cleanedRefFile = cleanPath(refFile.getFilePath());
-    
-    const containingCallable = refNode.getFirstAncestor(n => declarationMap.has(n));
+
+    const containingCallable = refNode.getFirstAncestor((n) => declarationMap.has(n));
     if (containingCallable) {
       const containerSymbol = declarationMap.get(containingCallable);
       if (containerSymbol && containerSymbol.id !== sourceSymbol.id) {
@@ -533,22 +573,26 @@ for (const sourceFile of sourceFiles) {
       if (Node.isPropertyAccessExpression(expr)) {
         const baseName = expr.getExpression().getText();
         const propName = expr.getName(); // get, post, put, delete
-        
+
         if (baseName === "router" && ["get", "post", "put", "delete"].includes(propName)) {
           const args = callExpr.getArguments();
           const pathArg = args[0];
-          
+
           // Find argument pointing to controller method
-          const handlerArg = args.find(arg => {
-            return (Node.isPropertyAccessExpression(arg) && arg.getExpression().getText().endsWith("Controller")) ||
-                   (Node.isIdentifier(arg) && arg.getText().endsWith("Controller"));
-          }) || args[args.length - 1];
-          
+          const handlerArg =
+            args.find((arg) => {
+              return (
+                (Node.isPropertyAccessExpression(arg) &&
+                  arg.getExpression().getText().endsWith("Controller")) ||
+                (Node.isIdentifier(arg) && arg.getText().endsWith("Controller"))
+              );
+            }) || args[args.length - 1];
+
           if (pathArg && Node.isStringLiteral(pathArg)) {
             const routePath = pathArg.getLiteralValue();
             const fullPath = ("/api/packages" + routePath).replace(/\/+/g, "/").replace(/\/$/, "");
             const apiNodeId = `API:${propName.toUpperCase()}:${fullPath}`;
-            
+
             // Add route mappings from API endpoint to Controller method
             if (handlerArg) {
               const symbol = handlerArg.getSymbol() || typeChecker.getSymbolAtLocation(handlerArg);
@@ -558,7 +602,7 @@ for (const sourceFile of sourceFiles) {
                   const targetSymbol = declarationMap.get(decl);
                   if (targetSymbol) {
                     // Ensure API endpoint is registered
-                    if (!symbols.some(s => s.id === apiNodeId)) {
+                    if (!symbols.some((s) => s.id === apiNodeId)) {
                       symbols.push({
                         id: apiNodeId,
                         type: "API",
@@ -569,7 +613,7 @@ for (const sourceFile of sourceFiles) {
                         endLine: 0,
                       });
                     }
-                    
+
                     edges.push({
                       source: apiNodeId,
                       target: targetSymbol.id,
@@ -604,24 +648,37 @@ const metadata = {
   version: "1.0",
   sourceCount: sourceFiles.length,
   symbolCount: symbols.length,
-  edgeCount: uniqueEdges.length
+  edgeCount: uniqueEdges.length,
 };
 
 // 1. dependency-graph.json
 const dependencyGraphJson = {
   ...metadata,
-  files: files.map(f => ({ path: f.path, project: f.project, imports: f.imports, exports: f.exports })),
-  symbols: symbols.map(s => ({ id: s.id, type: s.type, name: s.name, file: s.file, project: s.project, startLine: s.startLine, endLine: s.endLine })),
+  files: files.map((f) => ({
+    path: f.path,
+    project: f.project,
+    imports: f.imports,
+    exports: f.exports,
+  })),
+  symbols: symbols.map((s) => ({
+    id: s.id,
+    type: s.type,
+    name: s.name,
+    file: s.file,
+    project: s.project,
+    startLine: s.startLine,
+    endLine: s.endLine,
+  })),
   edges: uniqueEdges,
 };
 fs.writeFileSync("dependency-graph.json", JSON.stringify(dependencyGraphJson, null, 2));
 console.log("Generated: dependency-graph.json");
 
-
 // 2. dependency-graph.dot
-let dotContent = 'digraph G {\n';
-dotContent += '  rankdir=LR;\n';
-dotContent += '  node [shape=box, style="filled,rounded", fillcolor="#e0f2fe", color="#0284c7", fontname="Helvetica"];\n';
+let dotContent = "digraph G {\n";
+dotContent += "  rankdir=LR;\n";
+dotContent +=
+  '  node [shape=box, style="filled,rounded", fillcolor="#e0f2fe", color="#0284c7", fontname="Helvetica"];\n';
 dotContent += '  edge [fontname="Helvetica", fontsize=9];\n\n';
 
 const fileGroups = new Map<string, SymbolNode[]>();
@@ -642,7 +699,7 @@ for (const [filePath, syms] of fileGroups.entries()) {
   dotContent += '    style="filled,dashed";\n';
   dotContent += '    fillcolor="#fafafa";\n';
   dotContent += '    color="#d1d5db";\n';
-  
+
   for (const sym of syms) {
     let fillColor = "#e0f2fe"; // FUNC default: light blue
     let borderColor = "#0284c7";
@@ -658,7 +715,7 @@ for (const [filePath, syms] of fileGroups.entries()) {
     }
     dotContent += `    "${sym.id}" [label="${sym.name}\\n(${sym.type})", fillcolor="${fillColor}", color="${borderColor}"];\n`;
   }
-  dotContent += '  }\n\n';
+  dotContent += "  }\n\n";
 }
 
 // Add edges to DOT file
@@ -683,21 +740,26 @@ for (const edge of uniqueEdges) {
   } else if (edge.type === "references") {
     style = '[color="#9ca3af", style="dashed", label="references"]';
   }
-  
+
   dotContent += `  "${edge.source}" -> "${edge.target}" ${style};\n`;
 }
-dotContent += '}\n';
+dotContent += "}\n";
 fs.writeFileSync("dependency-graph.dot", dotContent);
 console.log("Generated: dependency-graph.dot");
-
 
 // 3. ai-index.json
 const aiIndex: Record<string, any> = {};
 for (const sym of symbols) {
-  const callers = uniqueEdges.filter(e => e.target === sym.id && e.type === "calls").map(e => e.source);
-  const renderers = uniqueEdges.filter(e => e.target === sym.id && e.type === "renders").map(e => e.source);
-  const references = uniqueEdges.filter(e => e.target === sym.id && e.type === "references").map(e => e.source);
-  
+  const callers = uniqueEdges
+    .filter((e) => e.target === sym.id && e.type === "calls")
+    .map((e) => e.source);
+  const renderers = uniqueEdges
+    .filter((e) => e.target === sym.id && e.type === "renders")
+    .map((e) => e.source);
+  const references = uniqueEdges
+    .filter((e) => e.target === sym.id && e.type === "references")
+    .map((e) => e.source);
+
   aiIndex[sym.id] = {
     name: sym.name,
     type: sym.type,
@@ -715,7 +777,6 @@ const aiIndexOutput = {
 };
 fs.writeFileSync("ai-index.json", JSON.stringify(aiIndexOutput, null, 2));
 console.log("Generated: ai-index.json");
-
 
 // 4. workspace-graph.json
 const projects: Record<string, { folders: string[]; dependencies: string[] }> = {};
@@ -750,7 +811,7 @@ const moduleEdgesMap = new Map<string, { source: string; target: string; type: s
 for (const edge of uniqueEdges) {
   let srcFile = "";
   let tgtFile = "";
-  
+
   // Extract file names from symbol IDs
   if (edge.source.includes(":") && !edge.source.startsWith("Router")) {
     srcFile = edge.source.split(":")[1];
@@ -758,17 +819,17 @@ for (const edge of uniqueEdges) {
   if (edge.target.includes(":")) {
     tgtFile = edge.target.split(":")[1];
   }
-  
+
   if (srcFile && tgtFile && srcFile !== tgtFile) {
     const srcProject = getProjectName(srcFile);
     const tgtProject = getProjectName(tgtFile);
     const srcDir = path.dirname(srcFile);
     const tgtDir = path.dirname(tgtFile);
-    
+
     if (srcDir !== "." && tgtDir !== ".") {
       const srcModule = `${srcProject}:${srcDir}`;
       const tgtModule = `${tgtProject}:${tgtDir}`;
-      
+
       if (srcModule !== tgtModule) {
         const key = `${srcModule}->${tgtModule}:${edge.type}`;
         moduleEdgesMap.set(key, {
@@ -789,4 +850,6 @@ const workspaceGraph = {
 fs.writeFileSync("workspace-graph.json", JSON.stringify(workspaceGraph, null, 2));
 console.log("Generated: workspace-graph.json");
 
-console.log("\nTrouvailler codebase graph generation complete! All 4 visual and machine-readable models constructed successfully.");
+console.log(
+  "\nTrouvailler codebase graph generation complete! All 4 visual and machine-readable models constructed successfully.",
+);

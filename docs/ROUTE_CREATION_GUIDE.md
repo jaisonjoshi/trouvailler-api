@@ -7,30 +7,34 @@ Replace **`Feature`** (capitalized) and **`feature`** (lowercase) with the name 
 ---
 
 ## Step 1: Create the Database Model
+
 Create a new file: `models/Feature.js`
 
 ```javascript
 import mongoose from "mongoose";
 
-const featureSchema = new mongoose.Schema({
-  // Define fields here
-  name: {
-    type: String,
-    required: true,
-    trim: true
+const featureSchema = new mongoose.Schema(
+  {
+    // Define fields here
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    description: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
   },
-  description: {
-    type: String,
-    required: true,
-    trim: true
+  {
+    timestamps: true, // Automatically manages createdAt and updatedAt
   },
-  image: {
-    type: String,
-    required: true
-  }
-}, {
-  timestamps: true // Automatically manages createdAt and updatedAt
-});
+);
 
 const Feature = mongoose.model("Feature", featureSchema);
 
@@ -40,6 +44,7 @@ export default Feature;
 ---
 
 ## Step 2: Create the Validation Schemas
+
 Create a new file: `validation/FeatureValidation.js`
 
 ```javascript
@@ -48,7 +53,7 @@ import { z } from "zod";
 export const createFeatureSchema = z.object({
   name: z.string().min(1, "Name is required").trim(),
   description: z.string().min(1, "Description is required").trim(),
-  image: z.string().url("Image must be a valid URL")
+  image: z.string().url("Image must be a valid URL"),
 });
 
 export const updateFeatureSchema = createFeatureSchema.partial();
@@ -57,6 +62,7 @@ export const updateFeatureSchema = createFeatureSchema.partial();
 ---
 
 ## Step 3: Create the Repository
+
 Create a new file: `repositories/FeatureRepository.js`
 
 ```javascript
@@ -87,11 +93,7 @@ class FeatureRepository {
   }
 
   async update(id, data) {
-    return await Feature.findByIdAndUpdate(
-      id,
-      { $set: data },
-      { new: true, runValidators: true }
-    );
+    return await Feature.findByIdAndUpdate(id, { $set: data }, { new: true, runValidators: true });
   }
 
   async delete(id) {
@@ -105,6 +107,7 @@ export default new FeatureRepository();
 ---
 
 ## Step 4: Create the Service Layer
+
 Create a new file: `services/FeatureService.js`
 
 ```javascript
@@ -174,6 +177,7 @@ export default new FeatureService();
 ---
 
 ## Step 5: Create the Controller
+
 Create a new file: `controllers/FeatureController.js`
 
 ```javascript
@@ -185,7 +189,7 @@ class FeatureController {
       const filters = {};
       const options = {
         sortBy: req.query.sortBy,
-        sortOrder: req.query.sortOrder
+        sortOrder: req.query.sortOrder,
       };
       const features = await FeatureService.getAllFeatures(filters, options);
       res.status(200).json(features);
@@ -229,7 +233,7 @@ class FeatureController {
       await FeatureService.deleteFeature(id);
       res.status(200).json({
         success: true,
-        message: "Feature deleted successfully"
+        message: "Feature deleted successfully",
       });
     } catch (err) {
       next(err);
@@ -243,6 +247,7 @@ export default new FeatureController();
 ---
 
 ## Step 6: Create Routes and OpenAPI Specs
+
 Create a new file: `routes/FeatureRoutes.js`
 
 ```javascript
@@ -379,6 +384,7 @@ export default router;
 ---
 
 ## Step 7: Mount the Router
+
 Open: [app.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvailler/trouvailler-api/app.js)
 
 1. Import the router:
@@ -393,6 +399,7 @@ Open: [app.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvaill
 ---
 
 ## Step 8: Map the OpenAPI schemas dynamically
+
 Open: [utils/swagger.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvailler/trouvailler-api/utils/swagger.js)
 
 1. Import the validation Zod schema:
@@ -401,13 +408,17 @@ Open: [utils/swagger.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects
    ```
 2. Convert and inject it at the bottom:
    ```javascript
-   swaggerSpec.components.schemas.Feature = z.toJSONSchema(createFeatureSchema, { target: "openapi-3.0" });
+   swaggerSpec.components.schemas.Feature = z.toJSONSchema(createFeatureSchema, {
+     target: "openapi-3.0",
+   });
    ```
 
 ---
 
 ## Step 9: Rebuild the Codebase graphs
+
 Run the following command in `trouvailler-api/` to refresh the index/graph artifacts:
+
 ```bash
 npm run graph
 ```

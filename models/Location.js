@@ -61,7 +61,7 @@ const locationSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 locationSchema.index({ parentLocation: 1 });
