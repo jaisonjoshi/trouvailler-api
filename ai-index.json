@@ -17,10 +17,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:admin/src/App.tsx",
-        "FILE:admin/src/main.tsx"
-      ]
+      "referencedBy": ["FILE:admin/src/App.tsx", "FILE:admin/src/main.tsx"]
     },
     "FUNC:api/controllers/CategoryController.js:CategoryController.getAll": {
       "name": "CategoryController.getAll",
@@ -33,9 +30,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/CategoryRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/CategoryRoutes.js"]
     },
     "FUNC:api/controllers/CategoryController.js:CategoryController.getById": {
       "name": "CategoryController.getById",
@@ -48,9 +43,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/CategoryRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/CategoryRoutes.js"]
     },
     "FUNC:api/controllers/CategoryController.js:CategoryController.getBySlug": {
       "name": "CategoryController.getBySlug",
@@ -63,9 +56,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/CategoryRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/CategoryRoutes.js"]
     },
     "FUNC:api/controllers/CategoryController.js:CategoryController.create": {
       "name": "CategoryController.create",
@@ -78,9 +69,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/CategoryRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/CategoryRoutes.js"]
     },
     "FUNC:api/controllers/CategoryController.js:CategoryController.update": {
       "name": "CategoryController.update",
@@ -93,9 +82,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/CategoryRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/CategoryRoutes.js"]
     },
     "FUNC:api/controllers/CategoryController.js:CategoryController.delete": {
       "name": "CategoryController.delete",
@@ -108,9 +95,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/CategoryRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/CategoryRoutes.js"]
     },
     "FUNC:api/controllers/LocationController.js:LocationController.getAll": {
       "name": "LocationController.getAll",
@@ -123,9 +108,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/LocationRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/LocationRoutes.js"]
     },
     "FUNC:api/controllers/LocationController.js:LocationController.getById": {
       "name": "LocationController.getById",
@@ -138,9 +121,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/LocationRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/LocationRoutes.js"]
     },
     "FUNC:api/controllers/LocationController.js:LocationController.getBySlug": {
       "name": "LocationController.getBySlug",
@@ -153,9 +134,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/LocationRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/LocationRoutes.js"]
     },
     "FUNC:api/controllers/LocationController.js:LocationController.create": {
       "name": "LocationController.create",
@@ -168,9 +147,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/LocationRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/LocationRoutes.js"]
     },
     "FUNC:api/controllers/LocationController.js:LocationController.update": {
       "name": "LocationController.update",
@@ -183,9 +160,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/LocationRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/LocationRoutes.js"]
     },
     "FUNC:api/controllers/LocationController.js:LocationController.delete": {
       "name": "LocationController.delete",
@@ -198,9 +173,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/LocationRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/LocationRoutes.js"]
     },
     "FUNC:api/controllers/PackageController.js:PackageController.getAll": {
       "name": "PackageController.getAll",
@@ -213,9 +186,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/PackageRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/PackageRoutes.js"]
     },
     "FUNC:api/controllers/PackageController.js:PackageController.getById": {
       "name": "PackageController.getById",
@@ -228,9 +199,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/PackageRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/PackageRoutes.js"]
     },
     "FUNC:api/controllers/PackageController.js:PackageController.getBySlug": {
       "name": "PackageController.getBySlug",
@@ -243,9 +212,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/PackageRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/PackageRoutes.js"]
     },
     "FUNC:api/controllers/PackageController.js:PackageController.create": {
       "name": "PackageController.create",
@@ -258,9 +225,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/PackageRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/PackageRoutes.js"]
     },
     "FUNC:api/controllers/PackageController.js:PackageController.update": {
       "name": "PackageController.update",
@@ -273,9 +238,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/PackageRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/PackageRoutes.js"]
     },
     "FUNC:api/controllers/PackageController.js:PackageController.delete": {
       "name": "PackageController.delete",
@@ -288,9 +251,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/PackageRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/PackageRoutes.js"]
     },
     "FUNC:api/controllers/PackageController.js:PackageController.deleteMedia": {
       "name": "PackageController.deleteMedia",
@@ -303,9 +264,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/PackageRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/PackageRoutes.js"]
     },
     "FUNC:api/services/CategoryService.js:CategoryService.getAllCategories": {
       "name": "CategoryService.getAllCategories",
@@ -316,13 +275,9 @@
         "start": 6,
         "end": 8
       },
-      "callers": [
-        "FUNC:api/controllers/CategoryController.js:CategoryController.getAll"
-      ],
+      "callers": ["FUNC:api/controllers/CategoryController.js:CategoryController.getAll"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/CategoryController.js:CategoryController.getAll"
-      ]
+      "referencedBy": ["FUNC:api/controllers/CategoryController.js:CategoryController.getAll"]
     },
     "FUNC:api/services/CategoryService.js:CategoryService.getCategoryById": {
       "name": "CategoryService.getCategoryById",
@@ -354,13 +309,9 @@
         "start": 18,
         "end": 24
       },
-      "callers": [
-        "FUNC:api/controllers/CategoryController.js:CategoryController.getBySlug"
-      ],
+      "callers": ["FUNC:api/controllers/CategoryController.js:CategoryController.getBySlug"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/CategoryController.js:CategoryController.getBySlug"
-      ]
+      "referencedBy": ["FUNC:api/controllers/CategoryController.js:CategoryController.getBySlug"]
     },
     "FUNC:api/services/CategoryService.js:CategoryService.createCategory": {
       "name": "CategoryService.createCategory",
@@ -371,13 +322,9 @@
         "start": 26,
         "end": 42
       },
-      "callers": [
-        "FUNC:api/controllers/CategoryController.js:CategoryController.create"
-      ],
+      "callers": ["FUNC:api/controllers/CategoryController.js:CategoryController.create"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/CategoryController.js:CategoryController.create"
-      ]
+      "referencedBy": ["FUNC:api/controllers/CategoryController.js:CategoryController.create"]
     },
     "FUNC:api/services/CategoryService.js:CategoryService.updateCategory": {
       "name": "CategoryService.updateCategory",
@@ -388,13 +335,9 @@
         "start": 44,
         "end": 63
       },
-      "callers": [
-        "FUNC:api/controllers/CategoryController.js:CategoryController.update"
-      ],
+      "callers": ["FUNC:api/controllers/CategoryController.js:CategoryController.update"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/CategoryController.js:CategoryController.update"
-      ]
+      "referencedBy": ["FUNC:api/controllers/CategoryController.js:CategoryController.update"]
     },
     "FUNC:api/services/CategoryService.js:CategoryService.deleteCategory": {
       "name": "CategoryService.deleteCategory",
@@ -405,13 +348,9 @@
         "start": 65,
         "end": 68
       },
-      "callers": [
-        "FUNC:api/controllers/CategoryController.js:CategoryController.delete"
-      ],
+      "callers": ["FUNC:api/controllers/CategoryController.js:CategoryController.delete"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/CategoryController.js:CategoryController.delete"
-      ]
+      "referencedBy": ["FUNC:api/controllers/CategoryController.js:CategoryController.delete"]
     },
     "FUNC:api/services/CategoryService.js:CategoryService.throwError": {
       "name": "CategoryService.throwError",
@@ -445,13 +384,9 @@
         "start": 16,
         "end": 18
       },
-      "callers": [
-        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"
-      ],
+      "callers": ["FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"
-      ]
+      "referencedBy": ["FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"]
     },
     "FUNC:api/services/CloudinaryService.js:CloudinaryService.extractPublicId": {
       "name": "CloudinaryService.extractPublicId",
@@ -462,13 +397,9 @@
         "start": 20,
         "end": 36
       },
-      "callers": [
-        "FUNC:api/services/CloudinaryService.js:CloudinaryService.extractPublicIds"
-      ],
+      "callers": ["FUNC:api/services/CloudinaryService.js:CloudinaryService.extractPublicIds"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/services/CloudinaryService.js:CloudinaryService.extractPublicIds"
-      ]
+      "referencedBy": ["FUNC:api/services/CloudinaryService.js:CloudinaryService.extractPublicIds"]
     },
     "FUNC:api/services/CloudinaryService.js:CloudinaryService.extractPublicIds": {
       "name": "CloudinaryService.extractPublicIds",
@@ -479,13 +410,9 @@
         "start": 38,
         "end": 40
       },
-      "callers": [
-        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"
-      ],
+      "callers": ["FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"
-      ]
+      "referencedBy": ["FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"]
     },
     "FUNC:api/services/CloudinaryService.js:CloudinaryService.generateSignature": {
       "name": "CloudinaryService.generateSignature",
@@ -496,13 +423,9 @@
         "start": 42,
         "end": 45
       },
-      "callers": [
-        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImage"
-      ],
+      "callers": ["FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImage"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImage"
-      ]
+      "referencedBy": ["FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImage"]
     },
     "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImage": {
       "name": "CloudinaryService.deleteImage",
@@ -513,13 +436,9 @@
         "start": 47,
         "end": 84
       },
-      "callers": [
-        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"
-      ],
+      "callers": ["FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"
-      ]
+      "referencedBy": ["FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages"]
     },
     "FUNC:api/services/CloudinaryService.js:CloudinaryService.deleteImages": {
       "name": "CloudinaryService.deleteImages",
@@ -530,13 +449,9 @@
         "start": 86,
         "end": 102
       },
-      "callers": [
-        "FUNC:api/controllers/PackageController.js:PackageController.deleteMedia"
-      ],
+      "callers": ["FUNC:api/controllers/PackageController.js:PackageController.deleteMedia"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/PackageController.js:PackageController.deleteMedia"
-      ]
+      "referencedBy": ["FUNC:api/controllers/PackageController.js:PackageController.deleteMedia"]
     },
     "FUNC:api/services/LocationService.js:LocationService.getAllLocations": {
       "name": "LocationService.getAllLocations",
@@ -547,13 +462,9 @@
         "start": 7,
         "end": 22
       },
-      "callers": [
-        "FUNC:api/controllers/LocationController.js:LocationController.getAll"
-      ],
+      "callers": ["FUNC:api/controllers/LocationController.js:LocationController.getAll"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/LocationController.js:LocationController.getAll"
-      ]
+      "referencedBy": ["FUNC:api/controllers/LocationController.js:LocationController.getAll"]
     },
     "FUNC:api/services/LocationService.js:LocationService.getLocationById": {
       "name": "LocationService.getLocationById",
@@ -585,13 +496,9 @@
         "start": 32,
         "end": 38
       },
-      "callers": [
-        "FUNC:api/controllers/LocationController.js:LocationController.getBySlug"
-      ],
+      "callers": ["FUNC:api/controllers/LocationController.js:LocationController.getBySlug"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/LocationController.js:LocationController.getBySlug"
-      ]
+      "referencedBy": ["FUNC:api/controllers/LocationController.js:LocationController.getBySlug"]
     },
     "FUNC:api/services/LocationService.js:LocationService.createLocation": {
       "name": "LocationService.createLocation",
@@ -602,13 +509,9 @@
         "start": 40,
         "end": 63
       },
-      "callers": [
-        "FUNC:api/controllers/LocationController.js:LocationController.create"
-      ],
+      "callers": ["FUNC:api/controllers/LocationController.js:LocationController.create"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/LocationController.js:LocationController.create"
-      ]
+      "referencedBy": ["FUNC:api/controllers/LocationController.js:LocationController.create"]
     },
     "FUNC:api/services/LocationService.js:LocationService.updateLocation": {
       "name": "LocationService.updateLocation",
@@ -619,13 +522,9 @@
         "start": 65,
         "end": 102
       },
-      "callers": [
-        "FUNC:api/controllers/LocationController.js:LocationController.update"
-      ],
+      "callers": ["FUNC:api/controllers/LocationController.js:LocationController.update"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/LocationController.js:LocationController.update"
-      ]
+      "referencedBy": ["FUNC:api/controllers/LocationController.js:LocationController.update"]
     },
     "FUNC:api/services/LocationService.js:LocationService.deleteLocation": {
       "name": "LocationService.deleteLocation",
@@ -636,13 +535,9 @@
         "start": 104,
         "end": 107
       },
-      "callers": [
-        "FUNC:api/controllers/LocationController.js:LocationController.delete"
-      ],
+      "callers": ["FUNC:api/controllers/LocationController.js:LocationController.delete"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/LocationController.js:LocationController.delete"
-      ]
+      "referencedBy": ["FUNC:api/controllers/LocationController.js:LocationController.delete"]
     },
     "FUNC:api/services/LocationService.js:LocationService.throwError": {
       "name": "LocationService.throwError",
@@ -718,13 +613,9 @@
         "start": 8,
         "end": 28
       },
-      "callers": [
-        "FUNC:api/controllers/PackageController.js:PackageController.getAll"
-      ],
+      "callers": ["FUNC:api/controllers/PackageController.js:PackageController.getAll"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/PackageController.js:PackageController.getAll"
-      ]
+      "referencedBy": ["FUNC:api/controllers/PackageController.js:PackageController.getAll"]
     },
     "FUNC:api/services/PackageService.js:PackageService.getPackageById": {
       "name": "PackageService.getPackageById",
@@ -756,13 +647,9 @@
         "start": 38,
         "end": 44
       },
-      "callers": [
-        "FUNC:api/controllers/PackageController.js:PackageController.getBySlug"
-      ],
+      "callers": ["FUNC:api/controllers/PackageController.js:PackageController.getBySlug"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/PackageController.js:PackageController.getBySlug"
-      ]
+      "referencedBy": ["FUNC:api/controllers/PackageController.js:PackageController.getBySlug"]
     },
     "FUNC:api/services/PackageService.js:PackageService.createPackage": {
       "name": "PackageService.createPackage",
@@ -773,13 +660,9 @@
         "start": 46,
         "end": 64
       },
-      "callers": [
-        "FUNC:api/controllers/PackageController.js:PackageController.create"
-      ],
+      "callers": ["FUNC:api/controllers/PackageController.js:PackageController.create"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/PackageController.js:PackageController.create"
-      ]
+      "referencedBy": ["FUNC:api/controllers/PackageController.js:PackageController.create"]
     },
     "FUNC:api/services/PackageService.js:PackageService.updatePackage": {
       "name": "PackageService.updatePackage",
@@ -790,13 +673,9 @@
         "start": 66,
         "end": 98
       },
-      "callers": [
-        "FUNC:api/controllers/PackageController.js:PackageController.update"
-      ],
+      "callers": ["FUNC:api/controllers/PackageController.js:PackageController.update"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/PackageController.js:PackageController.update"
-      ]
+      "referencedBy": ["FUNC:api/controllers/PackageController.js:PackageController.update"]
     },
     "FUNC:api/services/PackageService.js:PackageService.deletePackage": {
       "name": "PackageService.deletePackage",
@@ -807,13 +686,9 @@
         "start": 100,
         "end": 103
       },
-      "callers": [
-        "FUNC:api/controllers/PackageController.js:PackageController.delete"
-      ],
+      "callers": ["FUNC:api/controllers/PackageController.js:PackageController.delete"],
       "renders": [],
-      "referencedBy": [
-        "FUNC:api/controllers/PackageController.js:PackageController.delete"
-      ]
+      "referencedBy": ["FUNC:api/controllers/PackageController.js:PackageController.delete"]
     },
     "FUNC:api/services/PackageService.js:PackageService.throwError": {
       "name": "PackageService.throwError",
@@ -912,9 +787,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "SCHEMA:api/validation/CategoryValidation.js:baseCategorySchema"
-      ]
+      "referencedBy": ["SCHEMA:api/validation/CategoryValidation.js:baseCategorySchema"]
     },
     "SCHEMA:api/validation/CategoryValidation.js:baseCategorySchema": {
       "name": "baseCategorySchema",
@@ -977,9 +850,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "SCHEMA:api/validation/LocationValidation.js:baseLocationSchema"
-      ]
+      "referencedBy": ["SCHEMA:api/validation/LocationValidation.js:baseLocationSchema"]
     },
     "SCHEMA:api/validation/LocationValidation.js:baseLocationSchema": {
       "name": "baseLocationSchema",
@@ -1042,9 +913,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "SCHEMA:api/validation/PackageValidation.js:basePackageSchema"
-      ]
+      "referencedBy": ["SCHEMA:api/validation/PackageValidation.js:basePackageSchema"]
     },
     "SCHEMA:api/validation/PackageValidation.js:activityDetailSchema": {
       "name": "activityDetailSchema",
@@ -1057,9 +926,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "SCHEMA:api/validation/PackageValidation.js:scheduleItemSchema"
-      ]
+      "referencedBy": ["SCHEMA:api/validation/PackageValidation.js:scheduleItemSchema"]
     },
     "SCHEMA:api/validation/PackageValidation.js:scheduleItemSchema": {
       "name": "scheduleItemSchema",
@@ -1072,9 +939,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "SCHEMA:api/validation/PackageValidation.js:basePackageSchema"
-      ]
+      "referencedBy": ["SCHEMA:api/validation/PackageValidation.js:basePackageSchema"]
     },
     "SCHEMA:api/validation/PackageValidation.js:highlightSchema": {
       "name": "highlightSchema",
@@ -1087,9 +952,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "SCHEMA:api/validation/PackageValidation.js:basePackageSchema"
-      ]
+      "referencedBy": ["SCHEMA:api/validation/PackageValidation.js:basePackageSchema"]
     },
     "SCHEMA:api/validation/PackageValidation.js:seoSchema": {
       "name": "seoSchema",
@@ -1102,9 +965,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "SCHEMA:api/validation/PackageValidation.js:basePackageSchema"
-      ]
+      "referencedBy": ["SCHEMA:api/validation/PackageValidation.js:basePackageSchema"]
     },
     "SCHEMA:api/validation/PackageValidation.js:basePackageSchema": {
       "name": "basePackageSchema",
@@ -1150,9 +1011,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/routes/PackageRoutes.js"
-      ]
+      "referencedBy": ["FILE:api/routes/PackageRoutes.js"]
     },
     "SCHEMA:api/validation/PackageValidation.js:updatePackageSchema": {
       "name": "updatePackageSchema",
@@ -1182,9 +1041,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/models/Category.js"
-      ]
+      "referencedBy": ["FILE:api/models/Category.js"]
     },
     "SCHEMA:api/models/Location.js:locationSchema": {
       "name": "locationSchema",
@@ -1197,9 +1054,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/models/Location.js"
-      ]
+      "referencedBy": ["FILE:api/models/Location.js"]
     },
     "SCHEMA:api/models/Package.js:activityDetailSchema": {
       "name": "activityDetailSchema",
@@ -1212,9 +1067,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "SCHEMA:api/models/Package.js:scheduleItemSchema"
-      ]
+      "referencedBy": ["SCHEMA:api/models/Package.js:scheduleItemSchema"]
     },
     "SCHEMA:api/models/Package.js:scheduleItemSchema": {
       "name": "scheduleItemSchema",
@@ -1227,9 +1080,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "SCHEMA:api/models/Package.js:packageSchema"
-      ]
+      "referencedBy": ["SCHEMA:api/models/Package.js:packageSchema"]
     },
     "SCHEMA:api/models/Package.js:seoSchema": {
       "name": "seoSchema",
@@ -1242,9 +1093,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "SCHEMA:api/models/Package.js:packageSchema"
-      ]
+      "referencedBy": ["SCHEMA:api/models/Package.js:packageSchema"]
     },
     "SCHEMA:api/models/Package.js:packageSchema": {
       "name": "packageSchema",
@@ -1257,9 +1106,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:api/models/Package.js"
-      ]
+      "referencedBy": ["FILE:api/models/Package.js"]
     },
     "COMPONENT:frontend/app/layout.tsx:RootLayout": {
       "name": "RootLayout",
@@ -1466,9 +1313,7 @@
         "end": 40
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent"
-      ],
+      "renders": ["COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent"],
       "referencedBy": [
         "FILE:admin/src/components/RootLayout.tsx",
         "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent"
@@ -1484,12 +1329,8 @@
         "end": 25
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout"
-      ],
-      "referencedBy": [
-        "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout"
-      ]
+      "renders": ["COMPONENT:admin/src/components/RootLayout.tsx:RootLayout"],
+      "referencedBy": ["COMPONENT:admin/src/components/RootLayout.tsx:RootLayout"]
     },
     "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout": {
       "name": "RootLayout",
@@ -1502,9 +1343,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:admin/src/routes/__root.tsx"
-      ]
+      "referencedBy": ["FILE:admin/src/routes/__root.tsx"]
     },
     "COMPONENT:admin/src/components/Sidebar.tsx:Sidebar": {
       "name": "Sidebar",
@@ -1516,9 +1355,7 @@
         "end": 115
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent"
-      ],
+      "renders": ["COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent"],
       "referencedBy": [
         "FILE:admin/src/components/RootLayout.tsx",
         "COMPONENT:admin/src/components/RootLayout.tsx:LayoutContent"
@@ -1534,9 +1371,7 @@
         "end": 15
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout"
-      ],
+      "renders": ["COMPONENT:admin/src/components/RootLayout.tsx:RootLayout"],
       "referencedBy": [
         "FILE:admin/src/components/RootLayout.tsx",
         "COMPONENT:admin/src/components/RootLayout.tsx:RootLayout"
@@ -1577,9 +1412,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:admin/src/handlers/apiClient.ts"
-      ]
+      "referencedBy": ["FILE:admin/src/handlers/apiClient.ts"]
     },
     "FUNC:admin/src/handlers/categories.ts:getAllCategories": {
       "name": "getAllCategories",
@@ -1590,9 +1423,7 @@
         "start": 7,
         "end": 11
       },
-      "callers": [
-        "FUNC:admin/src/hooks/useCategories.ts:useCategoriesList"
-      ],
+      "callers": ["FUNC:admin/src/hooks/useCategories.ts:useCategoriesList"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/hooks/useCategories.ts",
@@ -1608,9 +1439,7 @@
         "start": 13,
         "end": 16
       },
-      "callers": [
-        "FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails"
-      ],
+      "callers": ["FUNC:admin/src/hooks/useCategories.ts:useCategoryDetails"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/hooks/useCategories.ts",
@@ -1642,9 +1471,7 @@
         "start": 23,
         "end": 29
       },
-      "callers": [
-        "FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory"
-      ],
+      "callers": ["FUNC:admin/src/hooks/useCategories.ts:useUpdateCategory"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/hooks/useCategories.ts",
@@ -1676,9 +1503,7 @@
         "start": 15,
         "end": 20
       },
-      "callers": [
-        "FUNC:admin/src/hooks/useLocations.ts:useLocationsList"
-      ],
+      "callers": ["FUNC:admin/src/hooks/useLocations.ts:useLocationsList"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/hooks/useLocations.ts",
@@ -1694,9 +1519,7 @@
         "start": 22,
         "end": 25
       },
-      "callers": [
-        "FUNC:admin/src/hooks/useLocations.ts:useLocationDetails"
-      ],
+      "callers": ["FUNC:admin/src/hooks/useLocations.ts:useLocationDetails"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/hooks/useLocations.ts",
@@ -1728,9 +1551,7 @@
         "start": 32,
         "end": 38
       },
-      "callers": [
-        "FUNC:admin/src/hooks/useLocations.ts:useUpdateLocation"
-      ],
+      "callers": ["FUNC:admin/src/hooks/useLocations.ts:useUpdateLocation"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/hooks/useLocations.ts",
@@ -1784,9 +1605,7 @@
         "start": 59,
         "end": 64
       },
-      "callers": [
-        "FUNC:admin/src/hooks/usePackages.ts:usePackagesList"
-      ],
+      "callers": ["FUNC:admin/src/hooks/usePackages.ts:usePackagesList"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/hooks/usePackages.ts",
@@ -1802,9 +1621,7 @@
         "start": 66,
         "end": 69
       },
-      "callers": [
-        "FUNC:admin/src/hooks/usePackages.ts:usePackageDetails"
-      ],
+      "callers": ["FUNC:admin/src/hooks/usePackages.ts:usePackageDetails"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/hooks/usePackages.ts",
@@ -1836,9 +1653,7 @@
         "start": 76,
         "end": 82
       },
-      "callers": [
-        "FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage"
-      ],
+      "callers": ["FUNC:admin/src/hooks/usePackages.ts:useUpdatePackage"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/hooks/usePackages.ts",
@@ -1919,9 +1734,7 @@
         "start": 20,
         "end": 29
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/categories/CategoryEditor.tsx",
@@ -1937,9 +1750,7 @@
         "start": 31,
         "end": 39
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/categories/CategoryEditor.tsx",
@@ -1955,9 +1766,7 @@
         "start": 41,
         "end": 50
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/categories/CategoryEditor.tsx",
@@ -1973,9 +1782,7 @@
         "start": 52,
         "end": 60
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/categories/CategoryEditor.tsx",
@@ -2042,9 +1849,7 @@
         "start": 21,
         "end": 30
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/locations/LocationEditor.tsx",
@@ -2060,9 +1865,7 @@
         "start": 32,
         "end": 40
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/locations/LocationEditor.tsx",
@@ -2078,9 +1881,7 @@
         "start": 42,
         "end": 51
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/locations/LocationEditor.tsx",
@@ -2096,9 +1897,7 @@
         "start": 53,
         "end": 61
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/locations/LocationEditor.tsx",
@@ -2114,9 +1913,7 @@
         "start": 14,
         "end": 19
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackagesList.tsx",
@@ -2132,9 +1929,7 @@
         "start": 21,
         "end": 30
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
@@ -2150,9 +1945,7 @@
         "start": 32,
         "end": 40
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
@@ -2168,9 +1961,7 @@
         "start": 42,
         "end": 51
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
@@ -2186,9 +1977,7 @@
         "start": 53,
         "end": 61
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
@@ -2204,9 +1993,7 @@
         "start": 1,
         "end": 3
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/packages/components/PackageRow.tsx:PackageRow"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/packages/components/PackageRow.tsx:PackageRow"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/components/PackageRow.tsx",
@@ -2222,9 +2009,7 @@
         "start": 1,
         "end": 6
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/packages/components/PackageRow.tsx:PackageRow"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/packages/components/PackageRow.tsx:PackageRow"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/components/PackageRow.tsx",
@@ -2240,9 +2025,7 @@
         "start": 1,
         "end": 4
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/packages/components/PackageRow.tsx:PackageRow"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/packages/components/PackageRow.tsx:PackageRow"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/components/PackageRow.tsx",
@@ -2366,9 +2149,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:admin/src/routes/categories/index.tsx"
-      ]
+      "referencedBy": ["FILE:admin/src/routes/categories/index.tsx"]
     },
     "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor": {
       "name": "CategoryEditor",
@@ -2430,9 +2211,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:admin/src/routes/locations/index.tsx"
-      ]
+      "referencedBy": ["FILE:admin/src/routes/locations/index.tsx"]
     },
     "SCHEMA:admin/src/pages/locations/schema.ts:locationSchema": {
       "name": "locationSchema",
@@ -2478,9 +2257,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "FILE:admin/src/routes/packages/index.tsx"
-      ]
+      "referencedBy": ["FILE:admin/src/routes/packages/index.tsx"]
     },
     "SCHEMA:admin/src/pages/packages/schema.ts:activityItemSchema": {
       "name": "activityItemSchema",
@@ -2493,9 +2270,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "SCHEMA:admin/src/pages/packages/schema.ts:scheduleItemSchema"
-      ]
+      "referencedBy": ["SCHEMA:admin/src/pages/packages/schema.ts:scheduleItemSchema"]
     },
     "SCHEMA:admin/src/pages/packages/schema.ts:scheduleItemSchema": {
       "name": "scheduleItemSchema",
@@ -2508,9 +2283,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema"
-      ]
+      "referencedBy": ["SCHEMA:admin/src/pages/packages/schema.ts:packageSchema"]
     },
     "SCHEMA:admin/src/pages/packages/schema.ts:highlightSchema": {
       "name": "highlightSchema",
@@ -2523,9 +2296,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema"
-      ]
+      "referencedBy": ["SCHEMA:admin/src/pages/packages/schema.ts:packageSchema"]
     },
     "SCHEMA:admin/src/pages/packages/schema.ts:seoSchema": {
       "name": "seoSchema",
@@ -2538,9 +2309,7 @@
       },
       "callers": [],
       "renders": [],
-      "referencedBy": [
-        "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema"
-      ]
+      "referencedBy": ["SCHEMA:admin/src/pages/packages/schema.ts:packageSchema"]
     },
     "SCHEMA:admin/src/pages/packages/schema.ts:packageSchema": {
       "name": "packageSchema",
@@ -2620,13 +2389,9 @@
         "start": 36,
         "end": 118
       },
-      "callers": [
-        "COMPONENT:frontend/app/packages/[id]/page.tsx:PackageDetailPage"
-      ],
+      "callers": ["COMPONENT:frontend/app/packages/[id]/page.tsx:PackageDetailPage"],
       "renders": [],
-      "referencedBy": [
-        "COMPONENT:frontend/app/packages/[id]/page.tsx:PackageDetailPage"
-      ]
+      "referencedBy": ["COMPONENT:frontend/app/packages/[id]/page.tsx:PackageDetailPage"]
     },
     "COMPONENT:frontend/app/packages/[id]/page.tsx:PackageDetailPage": {
       "name": "PackageDetailPage",
@@ -2651,9 +2416,7 @@
         "end": 52
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"],
       "referencedBy": [
         "FILE:admin/src/pages/categories/CategoryEditor.tsx",
         "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
@@ -2668,9 +2431,7 @@
         "start": 21,
         "end": 69
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/categories/CategoryEditor.tsx",
@@ -2686,9 +2447,7 @@
         "start": 25,
         "end": 56
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/categories/CategoryEditor.tsx:CategoryEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/categories/CategoryEditor.tsx",
@@ -2705,9 +2464,7 @@
         "end": 54
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"],
       "referencedBy": [
         "FILE:admin/src/pages/locations/LocationEditor.tsx",
         "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
@@ -2722,9 +2479,7 @@
         "start": 25,
         "end": 86
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/locations/LocationEditor.tsx",
@@ -2740,9 +2495,7 @@
         "start": 28,
         "end": 62
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/locations/LocationEditor.tsx:LocationEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/locations/LocationEditor.tsx",
@@ -2759,9 +2512,7 @@
         "end": 48
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -2777,9 +2528,7 @@
         "end": 303
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -2839,9 +2588,7 @@
         "end": 232
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -2857,9 +2604,7 @@
         "end": 429
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -2875,9 +2620,7 @@
         "end": 322
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -2893,9 +2636,7 @@
         "end": 208
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -2932,9 +2673,7 @@
         "end": 29
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -2950,9 +2689,7 @@
         "end": 44
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -2968,9 +2705,7 @@
         "end": 17
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackagesList.tsx",
         "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"
@@ -2986,9 +2721,7 @@
         "end": 98
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackagesList.tsx",
         "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"
@@ -3004,9 +2737,7 @@
         "end": 48
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackagesList.tsx",
         "COMPONENT:admin/src/pages/packages/PackagesList.tsx:PackagesList"
@@ -3022,9 +2753,7 @@
         "end": 207
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -3040,9 +2769,7 @@
         "end": 30
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -3058,9 +2785,7 @@
         "end": 166
       },
       "callers": [],
-      "renders": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "renders": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
         "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
@@ -3075,9 +2800,7 @@
         "start": 5,
         "end": 32
       },
-      "callers": [
-        "FUNC:admin/src/pages/packages/form/usePackageForm.ts:usePackageForm"
-      ],
+      "callers": ["FUNC:admin/src/pages/packages/form/usePackageForm.ts:usePackageForm"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/form/usePackageForm.ts",
@@ -3093,9 +2816,7 @@
         "start": 16,
         "end": 58
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
@@ -3111,9 +2832,7 @@
         "start": 37,
         "end": 187
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
@@ -3129,9 +2848,7 @@
         "start": 5,
         "end": 68
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
@@ -3147,9 +2864,7 @@
         "start": 25,
         "end": 137
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",
@@ -3165,9 +2880,7 @@
         "start": 3,
         "end": 12
       },
-      "callers": [
-        "FUNC:admin/src/pages/packages/utils/revokeBlobUrls.ts:revokePackageBlobUrls"
-      ],
+      "callers": ["FUNC:admin/src/pages/packages/utils/revokeBlobUrls.ts:revokePackageBlobUrls"],
       "renders": [],
       "referencedBy": [
         "FUNC:admin/src/pages/packages/utils/revokeBlobUrls.ts:revokePackageBlobUrls"
@@ -3182,9 +2895,7 @@
         "start": 14,
         "end": 22
       },
-      "callers": [
-        "FUNC:admin/src/pages/packages/utils/revokeBlobUrls.ts:revokePackageBlobUrls"
-      ],
+      "callers": ["FUNC:admin/src/pages/packages/utils/revokeBlobUrls.ts:revokePackageBlobUrls"],
       "renders": [],
       "referencedBy": [
         "FUNC:admin/src/pages/packages/utils/revokeBlobUrls.ts:revokePackageBlobUrls"
@@ -3199,9 +2910,7 @@
         "start": 24,
         "end": 27
       },
-      "callers": [
-        "COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"
-      ],
+      "callers": ["COMPONENT:admin/src/pages/packages/PackageEditor.tsx:PackageEditor"],
       "renders": [],
       "referencedBy": [
         "FILE:admin/src/pages/packages/PackageEditor.tsx",

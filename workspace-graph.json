@@ -36,18 +36,10 @@
         "admin/src/pages/packages/services",
         "admin/src/pages/packages/utils"
       ],
-      "dependencies": [
-        "trouvailler-api"
-      ]
+      "dependencies": ["trouvailler-api"]
     },
     "trouvailler-api": {
-      "folders": [
-        "api/routes",
-        "api/controllers",
-        "api/services",
-        "api/validation",
-        "api/models"
-      ],
+      "folders": ["api/routes", "api/controllers", "api/services", "api/validation", "api/models"],
       "dependencies": []
     },
     "trouvailler-frontend": {
@@ -59,9 +51,7 @@
         "frontend/app/destinations/[id]",
         "frontend/app/packages/[id]"
       ],
-      "dependencies": [
-        "trouvailler-api"
-      ]
+      "dependencies": ["trouvailler-api"]
     }
   },
   "moduleEdges": [

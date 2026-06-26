@@ -17,9 +17,7 @@
         "admin/src/router.tsx",
         "admin/src/lib/queryClient.ts"
       ],
-      "exports": [
-        "default"
-      ]
+      "exports": ["default"]
     },
     {
       "path": "admin/src/main.tsx",
@@ -39,9 +37,7 @@
         "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
         "admin/src/routeTree.gen.ts"
       ],
-      "exports": [
-        "router"
-      ]
+      "exports": ["router"]
     },
     {
       "path": "admin/src/routeTree.gen.ts",
@@ -76,9 +72,7 @@
         "api/middleware/validate.js",
         "api/validation/CategoryValidation.js"
       ],
-      "exports": [
-        "default"
-      ]
+      "exports": ["default"]
     },
     {
       "path": "api/routes/LocationRoutes.js",
@@ -88,9 +82,7 @@
         "api/middleware/validate.js",
         "api/validation/LocationValidation.js"
       ],
-      "exports": [
-        "default"
-      ]
+      "exports": ["default"]
     },
     {
       "path": "api/routes/PackageRoutes.js",
@@ -100,40 +92,25 @@
         "api/middleware/validate.js",
         "api/validation/PackageValidation.js"
       ],
-      "exports": [
-        "default"
-      ]
+      "exports": ["default"]
     },
     {
       "path": "api/controllers/CategoryController.js",
       "project": "api",
-      "imports": [
-        "api/services/CategoryService.js"
-      ],
-      "exports": [
-        "default"
-      ]
+      "imports": ["api/services/CategoryService.js"],
+      "exports": ["default"]
     },
     {
       "path": "api/controllers/LocationController.js",
       "project": "api",
-      "imports": [
-        "api/services/LocationService.js"
-      ],
-      "exports": [
-        "default"
-      ]
+      "imports": ["api/services/LocationService.js"],
+      "exports": ["default"]
     },
     {
       "path": "api/controllers/PackageController.js",
       "project": "api",
-      "imports": [
-        "api/services/PackageService.js",
-        "api/services/CloudinaryService.js"
-      ],
-      "exports": [
-        "default"
-      ]
+      "imports": ["api/services/PackageService.js", "api/services/CloudinaryService.js"],
+      "exports": ["default"]
     },
     {
       "path": "api/services/CategoryService.js",
@@ -143,19 +120,13 @@
         "api/validation/CategoryValidation.js",
         "api/utils/slug.js"
       ],
-      "exports": [
-        "default"
-      ]
+      "exports": ["default"]
     },
     {
       "path": "api/services/CloudinaryService.js",
       "project": "api",
-      "imports": [
-        "frontend/node_modules/@types/node/crypto.d.ts"
-      ],
-      "exports": [
-        "default"
-      ]
+      "imports": ["frontend/node_modules/@types/node/crypto.d.ts"],
+      "exports": ["default"]
     },
     {
       "path": "api/services/LocationService.js",
@@ -166,9 +137,7 @@
         "api/validation/LocationValidation.js",
         "api/utils/slug.js"
       ],
-      "exports": [
-        "default"
-      ]
+      "exports": ["default"]
     },
     {
       "path": "api/services/PackageService.js",
@@ -180,41 +149,24 @@
         "api/validation/PackageValidation.js",
         "api/utils/slug.js"
       ],
-      "exports": [
-        "default"
-      ]
+      "exports": ["default"]
     },
     {
       "path": "api/validation/CategoryValidation.js",
       "project": "api",
-      "imports": [
-        "admin/node_modules/zod/index.d.cts",
-        "api/utils/constants.js"
-      ],
-      "exports": [
-        "createCategorySchema",
-        "updateCategorySchema"
-      ]
+      "imports": ["admin/node_modules/zod/index.d.cts", "api/utils/constants.js"],
+      "exports": ["createCategorySchema", "updateCategorySchema"]
     },
     {
       "path": "api/validation/LocationValidation.js",
       "project": "api",
-      "imports": [
-        "admin/node_modules/zod/index.d.cts",
-        "api/utils/constants.js"
-      ],
-      "exports": [
-        "createLocationSchema",
-        "updateLocationSchema"
-      ]
+      "imports": ["admin/node_modules/zod/index.d.cts", "api/utils/constants.js"],
+      "exports": ["createLocationSchema", "updateLocationSchema"]
     },
     {
       "path": "api/validation/PackageValidation.js",
       "project": "api",
-      "imports": [
-        "admin/node_modules/zod/index.d.cts",
-        "api/utils/constants.js"
-      ],
+      "imports": ["admin/node_modules/zod/index.d.cts", "api/utils/constants.js"],
       "exports": [
         "activityDetailSchema",
         "scheduleItemSchema",
@@ -226,35 +178,20 @@
     {
       "path": "api/models/Category.js",
       "project": "api",
-      "imports": [
-        "api/node_modules/mongoose/types/aggregate.d.ts",
-        "api/utils/constants.js"
-      ],
-      "exports": [
-        "default"
-      ]
+      "imports": ["api/node_modules/mongoose/types/aggregate.d.ts", "api/utils/constants.js"],
+      "exports": ["default"]
     },
     {
       "path": "api/models/Location.js",
       "project": "api",
-      "imports": [
-        "api/node_modules/mongoose/types/aggregate.d.ts",
-        "api/utils/constants.js"
-      ],
-      "exports": [
-        "default"
-      ]
+      "imports": ["api/node_modules/mongoose/types/aggregate.d.ts", "api/utils/constants.js"],
+      "exports": ["default"]
     },
     {
       "path": "api/models/Package.js",
       "project": "api",
-      "imports": [
-        "api/node_modules/mongoose/types/aggregate.d.ts",
-        "api/utils/constants.js"
-      ],
-      "exports": [
-        "default"
-      ]
+      "imports": ["api/node_modules/mongoose/types/aggregate.d.ts", "api/utils/constants.js"],
+      "exports": ["default"]
     },
     {
       "path": "frontend/app/data.ts",
@@ -277,18 +214,13 @@
         "frontend/node_modules/next/font/google/index.d.ts",
         "frontend/node_modules/next/types/global.d.ts"
       ],
-      "exports": [
-        "default",
-        "metadata"
-      ]
+      "exports": ["default", "metadata"]
     },
     {
       "path": "frontend/app/page.tsx",
       "project": "frontend",
       "imports": [],
-      "exports": [
-        "default"
-      ]
+      "exports": ["default"]
     },
     {
       "path": "frontend/components/ActivityCard.tsx",
@@ -297,19 +229,13 @@
         "admin/node_modules/@types/react/index.d.ts",
         "frontend/node_modules/next/image.d.ts"
       ],
-      "exports": [
-        "default"
-      ]
+      "exports": ["default"]
     },
     {
       "path": "frontend/components/BookingForm.tsx",
       "project": "frontend",
-      "imports": [
-        "admin/node_modules/@types/react/index.d.ts"
-      ],
-      "exports": [
-        "default"
-      ]
+      "imports": ["admin/node_modules/@types/react/index.d.ts"],
+      "exports": ["default"]
     },
     {
       "path": "frontend/components/CarouselSection.tsx",
@@ -320,71 +246,43 @@
         "frontend/node_modules/embla-carousel-react/esm/index.d.ts",
         "frontend/node_modules/embla-carousel-wheel-gestures/dist/index.d.ts"
       ],
-      "exports": [
-        "default"
-      ]
+      "exports": ["default"]
     },
     {
       "path": "frontend/components/CategoryCard.tsx",
       "project": "frontend",
-      "imports": [
-        "frontend/node_modules/next/image.d.ts",
-        "frontend/node_modules/next/link.d.ts"
-      ],
-      "exports": [
-        "default"
-      ]
+      "imports": ["frontend/node_modules/next/image.d.ts", "frontend/node_modules/next/link.d.ts"],
+      "exports": ["default"]
     },
     {
       "path": "frontend/components/DestinationCard.tsx",
       "project": "frontend",
-      "imports": [
-        "frontend/node_modules/next/image.d.ts",
-        "frontend/node_modules/next/link.d.ts"
-      ],
-      "exports": [
-        "default"
-      ]
+      "imports": ["frontend/node_modules/next/image.d.ts", "frontend/node_modules/next/link.d.ts"],
+      "exports": ["default"]
     },
     {
       "path": "frontend/components/DirectoryCard.tsx",
       "project": "frontend",
-      "imports": [
-        "frontend/node_modules/next/image.d.ts",
-        "frontend/node_modules/next/link.d.ts"
-      ],
-      "exports": [
-        "default"
-      ]
+      "imports": ["frontend/node_modules/next/image.d.ts", "frontend/node_modules/next/link.d.ts"],
+      "exports": ["default"]
     },
     {
       "path": "frontend/components/DynamicSections.tsx",
       "project": "frontend",
       "imports": [],
-      "exports": [
-        "default"
-      ]
+      "exports": ["default"]
     },
     {
       "path": "frontend/components/Footer.tsx",
       "project": "frontend",
-      "imports": [
-        "frontend/node_modules/next/image.d.ts",
-        "frontend/node_modules/next/link.d.ts"
-      ],
-      "exports": [
-        "default"
-      ]
+      "imports": ["frontend/node_modules/next/image.d.ts", "frontend/node_modules/next/link.d.ts"],
+      "exports": ["default"]
     },
     {
       "path": "frontend/components/Header.tsx",
       "project": "frontend",
-      "imports": [
-        "frontend/node_modules/next/image.d.ts"
-      ],
-      "exports": [
-        "default"
-      ]
+      "imports": ["frontend/node_modules/next/image.d.ts"],
+      "exports": ["default"]
     },
     {
       "path": "frontend/components/ImageGallery.tsx",
@@ -393,9 +291,7 @@
         "admin/node_modules/@types/react/index.d.ts",
         "frontend/node_modules/next/image.d.ts"
       ],
-      "exports": [
-        "default"
-      ]
+      "exports": ["default"]
     },
     {
       "path": "frontend/components/Navbar.tsx",
@@ -405,28 +301,19 @@
         "frontend/node_modules/next/image.d.ts",
         "frontend/node_modules/next/link.d.ts"
       ],
-      "exports": [
-        "default"
-      ]
+      "exports": ["default"]
     },
     {
       "path": "frontend/components/PackageCard.tsx",
       "project": "frontend",
-      "imports": [
-        "frontend/node_modules/next/image.d.ts",
-        "frontend/node_modules/next/link.d.ts"
-      ],
-      "exports": [
-        "default"
-      ]
+      "imports": ["frontend/node_modules/next/image.d.ts", "frontend/node_modules/next/link.d.ts"],
+      "exports": ["default"]
     },
     {
       "path": "frontend/components/SearchBar.tsx",
       "project": "frontend",
       "imports": [],
-      "exports": [
-        "default"
-      ]
+      "exports": ["default"]
     },
     {
       "path": "frontend/types/index.ts",
@@ -449,9 +336,7 @@
         "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
         "admin/src/contexts/useSidebar.ts"
       ],
-      "exports": [
-        "Header"
-      ]
+      "exports": ["Header"]
     },
     {
       "path": "admin/src/components/RootLayout.tsx",
@@ -463,9 +348,7 @@
         "admin/src/contexts/SidebarProvider.tsx",
         "admin/src/contexts/useSidebar.ts"
       ],
-      "exports": [
-        "RootLayout"
-      ]
+      "exports": ["RootLayout"]
     },
     {
       "path": "admin/src/components/Sidebar.tsx",
@@ -476,20 +359,13 @@
         "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
         "admin/src/contexts/useSidebar.ts"
       ],
-      "exports": [
-        "Sidebar"
-      ]
+      "exports": ["Sidebar"]
     },
     {
       "path": "admin/src/contexts/SidebarContext.ts",
       "project": "admin",
-      "imports": [
-        "admin/node_modules/@types/react/index.d.ts"
-      ],
-      "exports": [
-        "SidebarContextType",
-        "SidebarContext"
-      ]
+      "imports": ["admin/node_modules/@types/react/index.d.ts"],
+      "exports": ["SidebarContextType", "SidebarContext"]
     },
     {
       "path": "admin/src/contexts/SidebarProvider.tsx",
@@ -499,9 +375,7 @@
         "admin/node_modules/@types/react/index.d.ts",
         "admin/src/contexts/SidebarContext.ts"
       ],
-      "exports": [
-        "SidebarProvider"
-      ]
+      "exports": ["SidebarProvider"]
     },
     {
       "path": "admin/src/contexts/useSidebar.ts",
@@ -510,30 +384,18 @@
         "admin/node_modules/@types/react/index.d.ts",
         "admin/src/contexts/SidebarContext.ts"
       ],
-      "exports": [
-        "useSidebar"
-      ]
+      "exports": ["useSidebar"]
     },
     {
       "path": "admin/src/handlers/apiClient.ts",
       "project": "admin",
-      "imports": [
-        "admin/node_modules/axios/index.d.ts"
-      ],
-      "exports": [
-        "apiClient",
-        "ApiError",
-        "ApiErrorResponse",
-        "handleApiError"
-      ]
+      "imports": ["admin/node_modules/axios/index.d.ts"],
+      "exports": ["apiClient", "ApiError", "ApiErrorResponse", "handleApiError"]
     },
     {
       "path": "admin/src/handlers/categories.ts",
       "project": "admin",
-      "imports": [
-        "admin/src/handlers/apiClient.ts",
-        "admin/src/types/category.ts"
-      ],
+      "imports": ["admin/src/handlers/apiClient.ts", "admin/src/types/category.ts"],
       "exports": [
         "getAllCategories",
         "getCategoryById",
@@ -545,10 +407,7 @@
     {
       "path": "admin/src/handlers/locations.ts",
       "project": "admin",
-      "imports": [
-        "admin/src/handlers/apiClient.ts",
-        "admin/src/types/location.ts"
-      ],
+      "imports": ["admin/src/handlers/apiClient.ts", "admin/src/types/location.ts"],
       "exports": [
         "LocationFilters",
         "getAllLocations",
@@ -561,10 +420,7 @@
     {
       "path": "admin/src/handlers/packages.ts",
       "project": "admin",
-      "imports": [
-        "admin/src/handlers/apiClient.ts",
-        "admin/src/types/package.ts"
-      ],
+      "imports": ["admin/src/handlers/apiClient.ts", "admin/src/types/package.ts"],
       "exports": [
         "PackageFilters",
         "CreatePackageInput",
@@ -580,15 +436,8 @@
     {
       "path": "admin/src/hooks/queryKeys.ts",
       "project": "admin",
-      "imports": [
-        "admin/src/handlers/packages.ts",
-        "admin/src/handlers/locations.ts"
-      ],
-      "exports": [
-        "packageKeys",
-        "categoryKeys",
-        "locationKeys"
-      ]
+      "imports": ["admin/src/handlers/packages.ts", "admin/src/handlers/locations.ts"],
+      "exports": ["packageKeys", "categoryKeys", "locationKeys"]
     },
     {
       "path": "admin/src/hooks/useCategories.ts",
@@ -611,12 +460,8 @@
     {
       "path": "admin/src/hooks/useCloudinaryUpload.ts",
       "project": "admin",
-      "imports": [
-        "admin/node_modules/@types/react/index.d.ts"
-      ],
-      "exports": [
-        "useCloudinaryUpload"
-      ]
+      "imports": ["admin/node_modules/@types/react/index.d.ts"],
+      "exports": ["useCloudinaryUpload"]
     },
     {
       "path": "admin/src/hooks/useLocations.ts",
@@ -659,12 +504,8 @@
     {
       "path": "admin/src/lib/queryClient.ts",
       "project": "admin",
-      "imports": [
-        "admin/node_modules/@tanstack/react-query/build/modern/index.d.ts"
-      ],
-      "exports": [
-        "queryClient"
-      ]
+      "imports": ["admin/node_modules/@tanstack/react-query/build/modern/index.d.ts"],
+      "exports": ["queryClient"]
     },
     {
       "path": "admin/src/routes/__root.tsx",
@@ -673,39 +514,25 @@
         "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
         "admin/src/components/RootLayout.tsx"
       ],
-      "exports": [
-        "Route"
-      ]
+      "exports": ["Route"]
     },
     {
       "path": "admin/src/routes/index.tsx",
       "project": "admin",
-      "imports": [
-        "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts"
-      ],
-      "exports": [
-        "Route"
-      ]
+      "imports": ["admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts"],
+      "exports": ["Route"]
     },
     {
       "path": "admin/src/types/category.ts",
       "project": "admin",
       "imports": [],
-      "exports": [
-        "APPLIES_TO_VALUES",
-        "AppliesToType",
-        "Category"
-      ]
+      "exports": ["APPLIES_TO_VALUES", "AppliesToType", "Category"]
     },
     {
       "path": "admin/src/types/location.ts",
       "project": "admin",
       "imports": [],
-      "exports": [
-        "LOCATION_LEVELS",
-        "LocationLevel",
-        "Location"
-      ]
+      "exports": ["LOCATION_LEVELS", "LocationLevel", "Location"]
     },
     {
       "path": "admin/src/types/package.ts",
@@ -728,55 +555,37 @@
       "path": "admin/src/utils/formatCurrency.ts",
       "project": "admin",
       "imports": [],
-      "exports": [
-        "formatCurrency"
-      ]
+      "exports": ["formatCurrency"]
     },
     {
       "path": "admin/src/utils/formatDate.ts",
       "project": "admin",
       "imports": [],
-      "exports": [
-        "formatDate"
-      ]
+      "exports": ["formatDate"]
     },
     {
       "path": "admin/src/utils/formatDuration.ts",
       "project": "admin",
       "imports": [],
-      "exports": [
-        "formatDuration"
-      ]
+      "exports": ["formatDuration"]
     },
     {
       "path": "frontend/app/destinations/page.tsx",
       "project": "frontend",
-      "imports": [
-        "frontend/node_modules/next/image.d.ts"
-      ],
-      "exports": [
-        "default"
-      ]
+      "imports": ["frontend/node_modules/next/image.d.ts"],
+      "exports": ["default"]
     },
     {
       "path": "admin/src/components/ui/Button.tsx",
       "project": "admin",
-      "imports": [
-        "admin/node_modules/@types/react/index.d.ts"
-      ],
-      "exports": [
-        "Button"
-      ]
+      "imports": ["admin/node_modules/@types/react/index.d.ts"],
+      "exports": ["Button"]
     },
     {
       "path": "admin/src/components/ui/Input.tsx",
       "project": "admin",
-      "imports": [
-        "admin/node_modules/@types/react/index.d.ts"
-      ],
-      "exports": [
-        "Input"
-      ]
+      "imports": ["admin/node_modules/@types/react/index.d.ts"],
+      "exports": ["Input"]
     },
     {
       "path": "admin/src/components/ui/SavingOverlay.tsx",
@@ -785,29 +594,19 @@
         "admin/node_modules/@types/react-dom/index.d.ts",
         "admin/node_modules/lucide-react/dist/lucide-react.d.ts"
       ],
-      "exports": [
-        "SavingOverlay"
-      ]
+      "exports": ["SavingOverlay"]
     },
     {
       "path": "admin/src/components/ui/Select.tsx",
       "project": "admin",
-      "imports": [
-        "admin/node_modules/@types/react/index.d.ts"
-      ],
-      "exports": [
-        "Select"
-      ]
+      "imports": ["admin/node_modules/@types/react/index.d.ts"],
+      "exports": ["Select"]
     },
     {
       "path": "admin/src/components/ui/Textarea.tsx",
       "project": "admin",
-      "imports": [
-        "admin/node_modules/@types/react/index.d.ts"
-      ],
-      "exports": [
-        "Textarea"
-      ]
+      "imports": ["admin/node_modules/@types/react/index.d.ts"],
+      "exports": ["Textarea"]
     },
     {
       "path": "admin/src/pages/categories/CategoriesList.tsx",
@@ -820,9 +619,7 @@
         "admin/src/components/ui/Button.tsx",
         "admin/node_modules/react-tooltip/dist/react-tooltip.d.ts"
       ],
-      "exports": [
-        "CategoriesList"
-      ]
+      "exports": ["CategoriesList"]
     },
     {
       "path": "admin/src/pages/categories/CategoryEditor.tsx",
@@ -842,21 +639,13 @@
         "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
         "admin/src/components/ui/Button.tsx"
       ],
-      "exports": [
-        "CategoryEditor"
-      ]
+      "exports": ["CategoryEditor"]
     },
     {
       "path": "admin/src/pages/categories/schema.ts",
       "project": "admin",
-      "imports": [
-        "admin/node_modules/zod/index.d.cts",
-        "admin/src/types/category.ts"
-      ],
-      "exports": [
-        "categorySchema",
-        "CategoryFormValues"
-      ]
+      "imports": ["admin/node_modules/zod/index.d.cts", "admin/src/types/category.ts"],
+      "exports": ["categorySchema", "CategoryFormValues"]
     },
     {
       "path": "admin/src/pages/locations/LocationEditor.tsx",
@@ -878,9 +667,7 @@
         "admin/src/components/ui/Button.tsx",
         "admin/src/types/location.ts"
       ],
-      "exports": [
-        "LocationEditor"
-      ]
+      "exports": ["LocationEditor"]
     },
     {
       "path": "admin/src/pages/locations/LocationsList.tsx",
@@ -894,29 +681,19 @@
         "admin/src/components/ui/Button.tsx",
         "admin/node_modules/react-tooltip/dist/react-tooltip.d.ts"
       ],
-      "exports": [
-        "LocationsList"
-      ]
+      "exports": ["LocationsList"]
     },
     {
       "path": "admin/src/pages/locations/schema.ts",
       "project": "admin",
-      "imports": [
-        "admin/node_modules/zod/index.d.cts",
-        "admin/src/types/location.ts"
-      ],
-      "exports": [
-        "locationSchema",
-        "LocationFormValues"
-      ]
+      "imports": ["admin/node_modules/zod/index.d.cts", "admin/src/types/location.ts"],
+      "exports": ["locationSchema", "LocationFormValues"]
     },
     {
       "path": "admin/src/pages/packages/constants.ts",
       "project": "admin",
       "imports": [],
-      "exports": [
-        "ICON_REGISTRY"
-      ]
+      "exports": ["ICON_REGISTRY"]
     },
     {
       "path": "admin/src/pages/packages/PackageEditor.tsx",
@@ -948,9 +725,7 @@
         "admin/src/pages/packages/components/SeoSection.tsx",
         "admin/src/pages/packages/components/PricingSection.tsx"
       ],
-      "exports": [
-        "PackageEditor"
-      ]
+      "exports": ["PackageEditor"]
     },
     {
       "path": "admin/src/pages/packages/PackagesList.tsx",
@@ -967,16 +742,12 @@
         "admin/src/pages/packages/components/PackageTableState.tsx",
         "admin/src/pages/packages/components/PackageImageTooltip.tsx"
       ],
-      "exports": [
-        "PackagesList"
-      ]
+      "exports": ["PackagesList"]
     },
     {
       "path": "admin/src/pages/packages/schema.ts",
       "project": "admin",
-      "imports": [
-        "admin/node_modules/zod/index.d.cts"
-      ],
+      "imports": ["admin/node_modules/zod/index.d.cts"],
       "exports": [
         "activityItemSchema",
         "scheduleItemSchema",
@@ -993,9 +764,7 @@
         "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
         "admin/src/pages/categories/CategoryEditor.tsx"
       ],
-      "exports": [
-        "Route"
-      ]
+      "exports": ["Route"]
     },
     {
       "path": "admin/src/routes/categories/create.tsx",
@@ -1004,9 +773,7 @@
         "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
         "admin/src/pages/categories/CategoryEditor.tsx"
       ],
-      "exports": [
-        "Route"
-      ]
+      "exports": ["Route"]
     },
     {
       "path": "admin/src/routes/categories/index.tsx",
@@ -1015,9 +782,7 @@
         "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
         "admin/src/pages/categories/CategoriesList.tsx"
       ],
-      "exports": [
-        "Route"
-      ]
+      "exports": ["Route"]
     },
     {
       "path": "admin/src/routes/locations/$locationId.tsx",
@@ -1026,9 +791,7 @@
         "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
         "admin/src/pages/locations/LocationEditor.tsx"
       ],
-      "exports": [
-        "Route"
-      ]
+      "exports": ["Route"]
     },
     {
       "path": "admin/src/routes/locations/create.tsx",
@@ -1037,9 +800,7 @@
         "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
         "admin/src/pages/locations/LocationEditor.tsx"
       ],
-      "exports": [
-        "Route"
-      ]
+      "exports": ["Route"]
     },
     {
       "path": "admin/src/routes/locations/index.tsx",
@@ -1048,9 +809,7 @@
         "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
         "admin/src/pages/locations/LocationsList.tsx"
       ],
-      "exports": [
-        "Route"
-      ]
+      "exports": ["Route"]
     },
     {
       "path": "admin/src/routes/packages/$packageId.tsx",
@@ -1059,9 +818,7 @@
         "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
         "admin/src/pages/packages/PackageEditor.tsx"
       ],
-      "exports": [
-        "Route"
-      ]
+      "exports": ["Route"]
     },
     {
       "path": "admin/src/routes/packages/create.tsx",
@@ -1070,9 +827,7 @@
         "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
         "admin/src/pages/packages/PackageEditor.tsx"
       ],
-      "exports": [
-        "Route"
-      ]
+      "exports": ["Route"]
     },
     {
       "path": "admin/src/routes/packages/index.tsx",
@@ -1081,9 +836,7 @@
         "admin/node_modules/@tanstack/react-router/dist/esm/index.d.ts",
         "admin/src/pages/packages/PackagesList.tsx"
       ],
-      "exports": [
-        "Route"
-      ]
+      "exports": ["Route"]
     },
     {
       "path": "frontend/app/destinations/[id]/page.tsx",
@@ -1093,10 +846,7 @@
         "frontend/node_modules/next/link.d.ts",
         "frontend/node_modules/next/navigation.d.ts"
       ],
-      "exports": [
-        "generateStaticParams",
-        "default"
-      ]
+      "exports": ["generateStaticParams", "default"]
     },
     {
       "path": "frontend/app/packages/[id]/page.tsx",
@@ -1105,11 +855,7 @@
         "frontend/node_modules/next/link.d.ts",
         "frontend/node_modules/next/navigation.d.ts"
       ],
-      "exports": [
-        "generateStaticParams",
-        "generateMetadata",
-        "default"
-      ]
+      "exports": ["generateStaticParams", "generateMetadata", "default"]
     },
     {
       "path": "admin/src/pages/categories/components/DeleteCategoryDialog.tsx",
@@ -1118,9 +864,7 @@
         "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
         "admin/src/components/ui/Button.tsx"
       ],
-      "exports": [
-        "DeleteCategoryDialog"
-      ]
+      "exports": ["DeleteCategoryDialog"]
     },
     {
       "path": "admin/src/pages/categories/form/useCategoryForm.ts",
@@ -1133,20 +877,13 @@
         "admin/src/pages/categories/schema.ts",
         "admin/src/types/category.ts"
       ],
-      "exports": [
-        "useCategoryForm"
-      ]
+      "exports": ["useCategoryForm"]
     },
     {
       "path": "admin/src/pages/categories/services/submitCategory.ts",
       "project": "admin",
-      "imports": [
-        "admin/src/pages/categories/schema.ts"
-      ],
-      "exports": [
-        "submitCategory",
-        "SubmitCategoryPayload"
-      ]
+      "imports": ["admin/src/pages/categories/schema.ts"],
+      "exports": ["submitCategory", "SubmitCategoryPayload"]
     },
     {
       "path": "admin/src/pages/locations/components/DeleteLocationDialog.tsx",
@@ -1155,9 +892,7 @@
         "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
         "admin/src/components/ui/Button.tsx"
       ],
-      "exports": [
-        "DeleteLocationDialog"
-      ]
+      "exports": ["DeleteLocationDialog"]
     },
     {
       "path": "admin/src/pages/locations/form/useLocationForm.ts",
@@ -1171,20 +906,13 @@
         "admin/src/types/location.ts",
         "admin/src/types/location.ts"
       ],
-      "exports": [
-        "useLocationForm"
-      ]
+      "exports": ["useLocationForm"]
     },
     {
       "path": "admin/src/pages/locations/services/submitLocation.ts",
       "project": "admin",
-      "imports": [
-        "admin/src/pages/locations/schema.ts"
-      ],
-      "exports": [
-        "submitLocation",
-        "SubmitLocationPayload"
-      ]
+      "imports": ["admin/src/pages/locations/schema.ts"],
+      "exports": ["submitLocation", "SubmitLocationPayload"]
     },
     {
       "path": "admin/src/pages/packages/components/DeletePackageDialog.tsx",
@@ -1193,9 +921,7 @@
         "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
         "admin/src/components/ui/Button.tsx"
       ],
-      "exports": [
-        "DeletePackageDialog"
-      ]
+      "exports": ["DeletePackageDialog"]
     },
     {
       "path": "admin/src/pages/packages/components/HeaderSection.tsx",
@@ -1212,9 +938,7 @@
         "admin/src/hooks/useCategories.ts",
         "admin/src/hooks/useLocations.ts"
       ],
-      "exports": [
-        "HeaderSection"
-      ]
+      "exports": ["HeaderSection"]
     },
     {
       "path": "admin/src/pages/packages/components/ImageCropperModal.tsx",
@@ -1227,9 +951,7 @@
         "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
         "admin/src/components/ui/Button.tsx"
       ],
-      "exports": [
-        "ImageCropperModal"
-      ]
+      "exports": ["ImageCropperModal"]
     },
     {
       "path": "admin/src/pages/packages/components/InclusionsSection.tsx",
@@ -1243,9 +965,7 @@
         "admin/src/components/ui/Input.tsx",
         "admin/src/components/ui/Button.tsx"
       ],
-      "exports": [
-        "InclusionsSection"
-      ]
+      "exports": ["InclusionsSection"]
     },
     {
       "path": "admin/src/pages/packages/components/ItinerarySection.tsx",
@@ -1261,9 +981,7 @@
         "admin/src/components/ui/Button.tsx",
         "admin/src/pages/packages/components/ImageCropperModal.tsx"
       ],
-      "exports": [
-        "ItinerarySection"
-      ]
+      "exports": ["ItinerarySection"]
     },
     {
       "path": "admin/src/pages/packages/components/MediaSection.tsx",
@@ -1277,9 +995,7 @@
         "admin/src/components/ui/Button.tsx",
         "admin/src/pages/packages/components/ImageCropperModal.tsx"
       ],
-      "exports": [
-        "MediaSection"
-      ]
+      "exports": ["MediaSection"]
     },
     {
       "path": "admin/src/pages/packages/components/OverviewSection.tsx",
@@ -1295,19 +1011,13 @@
         "admin/src/components/ui/Button.tsx",
         "admin/src/pages/packages/constants.ts"
       ],
-      "exports": [
-        "OverviewSection"
-      ]
+      "exports": ["OverviewSection"]
     },
     {
       "path": "admin/src/pages/packages/components/PackageEditorActions.tsx",
       "project": "admin",
-      "imports": [
-        "admin/src/components/ui/Button.tsx"
-      ],
-      "exports": [
-        "PackageEditorActions"
-      ]
+      "imports": ["admin/src/components/ui/Button.tsx"],
+      "exports": ["PackageEditorActions"]
     },
     {
       "path": "admin/src/pages/packages/components/PackageEditorFooter.tsx",
@@ -1316,9 +1026,7 @@
         "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
         "admin/src/pages/packages/components/PackageEditorActions.tsx"
       ],
-      "exports": [
-        "PackageEditorFooter"
-      ]
+      "exports": ["PackageEditorFooter"]
     },
     {
       "path": "admin/src/pages/packages/components/PackageEditorHeader.tsx",
@@ -1327,19 +1035,13 @@
         "admin/node_modules/lucide-react/dist/lucide-react.d.ts",
         "admin/src/pages/packages/components/PackageEditorActions.tsx"
       ],
-      "exports": [
-        "PackageEditorHeader"
-      ]
+      "exports": ["PackageEditorHeader"]
     },
     {
       "path": "admin/src/pages/packages/components/PackageImageTooltip.tsx",
       "project": "admin",
-      "imports": [
-        "admin/node_modules/react-tooltip/dist/react-tooltip.d.ts"
-      ],
-      "exports": [
-        "PackageImageTooltip"
-      ]
+      "imports": ["admin/node_modules/react-tooltip/dist/react-tooltip.d.ts"],
+      "exports": ["PackageImageTooltip"]
     },
     {
       "path": "admin/src/pages/packages/components/PackageRow.tsx",
@@ -1353,19 +1055,13 @@
         "admin/src/utils/formatDate.ts",
         "admin/src/utils/formatDuration.ts"
       ],
-      "exports": [
-        "PackageRow"
-      ]
+      "exports": ["PackageRow"]
     },
     {
       "path": "admin/src/pages/packages/components/PackageTableState.tsx",
       "project": "admin",
-      "imports": [
-        "admin/node_modules/lucide-react/dist/lucide-react.d.ts"
-      ],
-      "exports": [
-        "PackageTableState"
-      ]
+      "imports": ["admin/node_modules/lucide-react/dist/lucide-react.d.ts"],
+      "exports": ["PackageTableState"]
     },
     {
       "path": "admin/src/pages/packages/components/PricingSection.tsx",
@@ -1380,17 +1076,13 @@
         "admin/src/components/ui/Button.tsx",
         "admin/src/types/category.ts"
       ],
-      "exports": [
-        "PricingSection"
-      ]
+      "exports": ["PricingSection"]
     },
     {
       "path": "admin/src/pages/packages/components/SectionProgressHeader.tsx",
       "project": "admin",
       "imports": [],
-      "exports": [
-        "SectionProgressHeader"
-      ]
+      "exports": ["SectionProgressHeader"]
     },
     {
       "path": "admin/src/pages/packages/components/SeoSection.tsx",
@@ -1405,19 +1097,13 @@
         "admin/src/components/ui/Textarea.tsx",
         "admin/src/components/ui/Button.tsx"
       ],
-      "exports": [
-        "SeoSection"
-      ]
+      "exports": ["SeoSection"]
     },
     {
       "path": "admin/src/pages/packages/form/defaultValues.ts",
       "project": "admin",
-      "imports": [
-        "admin/src/pages/packages/schema.ts"
-      ],
-      "exports": [
-        "defaultPackageValues"
-      ]
+      "imports": ["admin/src/pages/packages/schema.ts"],
+      "exports": ["defaultPackageValues"]
     },
     {
       "path": "admin/src/pages/packages/form/populateForm.ts",
@@ -1427,9 +1113,7 @@
         "admin/src/pages/packages/schema.ts",
         "admin/src/pages/packages/form/defaultValues.ts"
       ],
-      "exports": [
-        "populatePackageForm"
-      ]
+      "exports": ["populatePackageForm"]
     },
     {
       "path": "admin/src/pages/packages/form/usePackageForm.ts",
@@ -1445,9 +1129,7 @@
         "admin/src/pages/packages/form/defaultValues.ts",
         "admin/src/pages/packages/form/populateForm.ts"
       ],
-      "exports": [
-        "usePackageForm"
-      ]
+      "exports": ["usePackageForm"]
     },
     {
       "path": "admin/src/pages/packages/hooks/useEditableSections.ts",
@@ -1458,9 +1140,7 @@
         "admin/src/types/package.ts",
         "admin/src/pages/packages/schema.ts"
       ],
-      "exports": [
-        "useEditableSections"
-      ]
+      "exports": ["useEditableSections"]
     },
     {
       "path": "admin/src/pages/packages/hooks/usePackageCompletion.ts",
@@ -1470,32 +1150,19 @@
         "admin/node_modules/react-hook-form/dist/index.d.ts",
         "admin/src/pages/packages/schema.ts"
       ],
-      "exports": [
-        "usePackageCompletion"
-      ]
+      "exports": ["usePackageCompletion"]
     },
     {
       "path": "admin/src/pages/packages/services/submitPackage.ts",
       "project": "admin",
-      "imports": [
-        "admin/src/pages/packages/schema.ts",
-        "admin/src/handlers/packages.ts"
-      ],
-      "exports": [
-        "submitPackage"
-      ]
+      "imports": ["admin/src/pages/packages/schema.ts", "admin/src/handlers/packages.ts"],
+      "exports": ["submitPackage"]
     },
     {
       "path": "admin/src/pages/packages/utils/revokeBlobUrls.ts",
       "project": "admin",
-      "imports": [
-        "admin/src/pages/packages/schema.ts"
-      ],
-      "exports": [
-        "revokeGalleryUrls",
-        "revokeScheduleUrls",
-        "revokePackageBlobUrls"
-      ]
+      "imports": ["admin/src/pages/packages/schema.ts"],
+      "exports": ["revokeGalleryUrls", "revokeScheduleUrls", "revokePackageBlobUrls"]
     }
   ],
   "symbols": [
