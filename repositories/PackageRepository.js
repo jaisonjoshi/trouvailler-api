@@ -1,29 +1,54 @@
 import Package from "../models/Package.js";
 
 class PackageRepository {
-  async findAll(filters = {}) {
-    return await Package.find(filters).sort({ createdAt: -1 });
+  findAll(filters = {}, options = {}) {
+    const sortBy = options.sortBy || "createdAt";
+    const sortOrder = options.sortOrder === "asc" ? 1 : -1;
+
+    const sortOption = {};
+    sortOption[sortBy] = sortOrder;
+
+    const query = { isDeleted: { $ne: true } };
+    Object.assign(query, filters);
+
+    return Package.find(query).sort(sortOption);
   }
 
-  async findById(id) {
-    return await Package.findById(id);
+  findById(id, includeDeleted = false) {
+    const query = { _id: id };
+    if (!includeDeleted) {
+      query.isDeleted = { $ne: true };
+    }
+    return Package.findOne(query);
   }
 
-  async create(data) {
+  findBySlug(slug, includeDeleted = false) {
+    const query = { slug };
+    if (!includeDeleted) {
+      query.isDeleted = { $ne: true };
+    }
+    return Package.findOne(query);
+  }
+
+  create(data) {
     const newPackage = new Package(data);
-    return await newPackage.save();
+    return newPackage.save();
   }
 
-  async update(id, data) {
-    return await Package.findByIdAndUpdate(
-      id,
+  update(id, data) {
+    return Package.findOneAndUpdate(
+      { _id: id, isDeleted: { $ne: true } },
       { $set: data },
-      { new: true, runValidators: true }
+      { new: true, runValidators: true },
     );
   }
 
-  async delete(id) {
-    return await Package.findByIdAndDelete(id);
+  delete(id) {
+    return Package.findOneAndUpdate(
+      { _id: id, isDeleted: { $ne: true } },
+      { $set: { isDeleted: true } },
+      { new: true },
+    );
   }
 }
 
