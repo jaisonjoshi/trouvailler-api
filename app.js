@@ -1,6 +1,11 @@
 import express from "express";
 import cors from "cors";
 import { apiReference } from "@scalar/express-api-reference";
+import fs from "fs";
+
+const packageJson = JSON.parse(
+  fs.readFileSync(new URL("./package.json", import.meta.url), "utf-8")
+);
 
 import { swaggerSpec } from "./utils/swagger.js";
 import errorHandler from "./middleware/errorHandler.js";
@@ -63,6 +68,7 @@ app.get("/health", (req, res) => {
   res.status(200).json({
     status: "ok",
     service: "Trouvailler API",
+    version: packageJson.version,
     uptime: Math.floor(process.uptime()),
     timestamp: new Date().toISOString(),
   });
