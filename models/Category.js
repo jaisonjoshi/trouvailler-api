@@ -1,6 +1,15 @@
 import mongoose from "mongoose";
 import { APPLIES_TO_VALUES } from "../utils/constants.js";
 
+const seoSchema = new mongoose.Schema(
+  {
+    title: { type: String, default: "" },
+    description: { type: String, default: "" },
+    keywords: { type: String, default: "" },
+  },
+  { _id: false },
+);
+
 const categorySchema = new mongoose.Schema(
   {
     name: {
@@ -43,6 +52,10 @@ const categorySchema = new mongoose.Schema(
     isDeleted: {
       type: Boolean,
       default: false,
+    },
+    seo: {
+      type: seoSchema,
+      default: () => ({}),
     },
   },
   {

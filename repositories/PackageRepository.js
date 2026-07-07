@@ -11,7 +11,16 @@ class PackageRepository {
     const query = { isDeleted: { $ne: true } };
     Object.assign(query, filters);
 
-    return Package.find(query).sort(sortOption);
+    let dbQuery = Package.find(query).sort(sortOption);
+
+    if (options.limit) {
+      dbQuery = dbQuery.limit(Number(options.limit));
+    }
+    if (options.skip) {
+      dbQuery = dbQuery.skip(Number(options.skip));
+    }
+
+    return dbQuery;
   }
 
   findById(id, includeDeleted = false) {
@@ -20,6 +29,10 @@ class PackageRepository {
       query.isDeleted = { $ne: true };
     }
     return Package.findOne(query);
+  }
+
+  findByIds(ids) {
+    return Package.find({ _id: { $in: ids }, isDeleted: { $ne: true } });
   }
 
   findBySlug(slug, includeDeleted = false) {

@@ -1,6 +1,15 @@
 import mongoose from "mongoose";
 import { LOCATION_LEVEL_VALUES } from "../utils/constants.js";
 
+const seoSchema = new mongoose.Schema(
+  {
+    title: { type: String, default: "" },
+    description: { type: String, default: "" },
+    keywords: { type: String, default: "" },
+  },
+  { _id: false },
+);
+
 const locationSchema = new mongoose.Schema(
   {
     name: {
@@ -57,6 +66,10 @@ const locationSchema = new mongoose.Schema(
     isDeleted: {
       type: Boolean,
       default: false,
+    },
+    seo: {
+      type: seoSchema,
+      default: () => ({}),
     },
   },
   {

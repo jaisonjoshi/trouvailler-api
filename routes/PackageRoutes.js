@@ -108,6 +108,7 @@ router.post("/media/delete", validateBody(deleteMediaSchema), PackageController.
  *         description: Package not found
  */
 router.get("/slug/:slug", PackageController.getBySlug);
+router.get("/:idOrSlug/related", PackageController.getRelated);
 
 /**
  * @openapi

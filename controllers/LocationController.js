@@ -45,6 +45,16 @@ class LocationController {
     }
   }
 
+  async getRelated(req, res, next) {
+    try {
+      const { idOrSlug } = req.params;
+      const related = await LocationService.getRelatedLocations(idOrSlug);
+      res.status(200).json(related);
+    } catch (err) {
+      next(err);
+    }
+  }
+
   async create(req, res, next) {
     try {
       const newLocation = await LocationService.createLocation(req.body);

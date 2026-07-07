@@ -8,7 +8,7 @@ class CategoryRepository {
     const sortOption = {};
     sortOption[sortBy] = sortOrder;
 
-    const query = options.showDeleted ? { ...filters } : { isDeleted: { $ne: true }, ...filters };
+    const query = { isDeleted: { $ne: true }, ...filters };
     return Category.find(query).sort(sortOption);
   }
 
@@ -21,8 +21,9 @@ class CategoryRepository {
   }
 
   findByName(name) {
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     return Category.findOne({
-      name: { $regex: `^${name}$`, $options: "i" },
+      name: { $regex: `^${escaped}$`, $options: "i" },
       isDeleted: { $ne: true },
     });
   }
@@ -45,7 +46,11 @@ class CategoryRepository {
   }
 
   delete(id) {
-    return Category.findByIdAndUpdate(id, { $set: { isDeleted: true } }, { new: true });
+    return Category.findOneAndUpdate(
+      { _id: id, isDeleted: { $ne: true } },
+      { $set: { isDeleted: true } },
+      { new: true },
+    );
   }
 }
 
