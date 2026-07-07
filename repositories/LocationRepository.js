@@ -21,8 +21,9 @@ class LocationRepository {
   }
 
   findByName(name) {
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     return Location.findOne({
-      name: { $regex: `^${name}$`, $options: "i" },
+      name: { $regex: `^${escaped}$`, $options: "i" },
       isDeleted: { $ne: true },
     });
   }
@@ -45,7 +46,11 @@ class LocationRepository {
   }
 
   delete(id) {
-    return Location.findByIdAndUpdate(id, { $set: { isDeleted: true } }, { new: true });
+    return Location.findOneAndUpdate(
+      { _id: id, isDeleted: { $ne: true } },
+      { $set: { isDeleted: true } },
+      { new: true },
+    );
   }
 }
 

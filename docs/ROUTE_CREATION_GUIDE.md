@@ -47,6 +47,11 @@ export default Feature;
 
 Create a new file: `validation/FeatureValidation.js`
 
+Request validation happens in two layers:
+
+- **Route middleware** (`validateBody`) — Always present. Catches malformed input early and returns `400` before the request reaches the controller.
+- **Service-level parsing** (`.parse()`) — Optional. Used only when the service is expected to be called outside the HTTP layer (jobs, scripts, CLI tools, scheduled tasks). If the service is only called from controllers, route-level validation is sufficient.
+
 ```javascript
 import { z } from "zod";
 
@@ -59,50 +64,80 @@ export const createFeatureSchema = z.object({
 export const updateFeatureSchema = createFeatureSchema.partial();
 ```
 
+**Validation conventions:**
+
+- Trim all user-entered string fields with `.trim()`.
+- For fields that reference MongoDB ObjectIds (e.g. a `categoryId` or `parentId`), use the project's shared ObjectId validation pattern:
+  ```javascript
+  z.string().regex(/^[0-9a-fA-F]{24}$/, "Invalid ObjectId")
+  ```
+
 ---
 
 ## Step 3: Create the Repository
 
 Create a new file: `repositories/FeatureRepository.js`
 
+Repositories contain **persistence logic only**. They isolate Mongoose queries and must not contain business rules or request validation.
+
 ```javascript
 import Feature from "../models/Feature.js";
 
+const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
 class FeatureRepository {
-  async findAll(filters = {}, options = {}) {
+  findAll(filters = {}, options = {}) {
     const sortBy = options.sortBy || "createdAt";
     const sortOrder = options.sortOrder === "asc" ? 1 : -1;
 
     const sortOption = {};
     sortOption[sortBy] = sortOrder;
 
-    return await Feature.find(filters).sort(sortOption);
+    return Feature.find(filters).sort(sortOption);
   }
 
-  async findById(id) {
-    return await Feature.findById(id);
+  findById(id) {
+    return Feature.findById(id);
   }
 
-  async findByName(name) {
-    return await Feature.findOne({ name: { $regex: `^${name}$`, $options: "i" } });
+  findByName(name) {
+    const safe = escapeRegex(name);
+    return Feature.findOne({ name: { $regex: `^${safe}$`, $options: "i" } });
   }
 
-  async create(data) {
+  create(data) {
     const newFeature = new Feature(data);
-    return await newFeature.save();
+    return newFeature.save();
   }
 
-  async update(id, data) {
-    return await Feature.findByIdAndUpdate(id, { $set: data }, { new: true, runValidators: true });
+  update(id, data) {
+    return Feature.findOneAndUpdate(
+      { _id: id, isDeleted: { $ne: true } },
+      { $set: data },
+      { new: true, runValidators: true },
+    );
   }
 
-  async delete(id) {
-    return await Feature.findByIdAndDelete(id);
+  delete(id) {
+    return Feature.findOneAndUpdate(
+      { _id: id, isDeleted: { $ne: true } },
+      { $set: { isDeleted: true } },
+      { new: true },
+    );
   }
 }
 
 export default new FeatureRepository();
 ```
+
+**Repository conventions:**
+
+- Persistence layer only — no business rules, no request validation.
+- User input used in `$regex` queries must be escaped to prevent regex injection.
+- Methods that return Mongoose queries directly (`.find()`, `.findOne()`) do not need `async/await`.
+- Update operations use `findOneAndUpdate` with `{ new: true, runValidators: true }`.
+- If the resource supports soft deletes (`isDeleted`), consistently filter deleted records in every query and use `findOneAndUpdate` for delete instead of `findByIdAndDelete`.
+- If the resource does not require soft deletes (e.g. transient data like tickets), `findByIdAndDelete` may be used instead.
 
 ---
 
@@ -110,75 +145,77 @@ export default new FeatureRepository();
 
 Create a new file: `services/FeatureService.js`
 
+Services contain **business rules, orchestration, uniqueness checks, cross-entity validation, and algorithm logic**. They coordinate repositories and remain the single place where domain decisions are made.
+
 ```javascript
 import FeatureRepository from "../repositories/FeatureRepository.js";
-import { createFeatureSchema, updateFeatureSchema } from "../validation/FeatureValidation.js";
 
 class FeatureService {
-  async getAllFeatures(filters = {}, options = {}) {
-    return await FeatureRepository.findAll(filters, options);
+  getAllFeatures(filters = {}, options = {}) {
+    return FeatureRepository.findAll(filters, options);
   }
 
   async getFeatureById(id) {
     const feature = await FeatureRepository.findById(id);
     if (!feature) {
-      const error = new Error("Feature not found");
-      error.statusCode = 404;
-      throw error;
+      this.throwError("Feature not found", 404);
     }
     return feature;
   }
 
   async createFeature(data) {
-    // Validate request data
-    const validatedData = createFeatureSchema.parse(data);
-
-    // Business check: unique constraint (optional)
-    const existing = await FeatureRepository.findByName(validatedData.name);
-    if (existing) {
-      const error = new Error("Feature name already exists");
-      error.statusCode = 400;
-      throw error;
-    }
-
-    return await FeatureRepository.create(validatedData);
+    // Optional: parse if called outside HTTP layer
+    // const validatedData = createFeatureSchema.parse(data);
+    await this._ensureUniqueName(data.name);
+    return FeatureRepository.create(data);
   }
 
   async updateFeature(id, data) {
-    // Validate request data
-    const validatedData = updateFeatureSchema.parse(data);
-
-    // Ensure resource exists
-    const feature = await this.getCategoryById(id);
-
-    // Check unique constraint conflict (optional)
-    if (validatedData.name && validatedData.name.toLowerCase() !== feature.name.toLowerCase()) {
-      const existing = await FeatureRepository.findByName(validatedData.name);
-      if (existing) {
-        const error = new Error("Feature name already exists");
-        error.statusCode = 400;
-        throw error;
-      }
+    await this.getFeatureById(id);
+    if (data.name) {
+      await this._ensureUniqueName(data.name, id);
     }
-
-    return await FeatureRepository.update(id, validatedData);
+    return FeatureRepository.update(id, data);
   }
 
   async deleteFeature(id) {
-    // Ensure resource exists
     await this.getFeatureById(id);
-    return await FeatureRepository.delete(id);
+    return FeatureRepository.delete(id);
+  }
+
+  async _ensureUniqueName(name, excludeId = null) {
+    const existing = await FeatureRepository.findByName(name);
+    if (existing && (!excludeId || existing._id.toString() !== excludeId)) {
+      this.throwError("Feature name already exists");
+    }
+  }
+
+  throwError(message, statusCode = 400) {
+    const error = new Error(message);
+    error.statusCode = statusCode;
+    throw error;
   }
 }
 
 export default new FeatureService();
 ```
 
+**Service conventions:**
+
+- **Public orchestration methods** (`create`, `update`, `getAll`, `getById`, `delete`) accept plain data, delegate to repositories, and stay small.
+- **Private helpers** (prefixed with `_`) encapsulate reusable business logic — uniqueness checks, existence validation, derived field constraints.
+- Repositories are called **only from services**. Controllers never interact with repositories directly.
+- Controllers remain **thin** — extract request data, call one service method, return the response.
+- Services throw consistent domain errors via a `throwError` helper that sets `statusCode` on the error object.
+- Most services export a singleton (`export default new ServiceName()`) since they are stateless.
+
 ---
 
 ## Step 5: Create the Controller
 
 Create a new file: `controllers/FeatureController.js`
+
+Controllers remain **thin** — they extract request data, construct `filters` and `options` objects, call one service method, and return the response. Business logic belongs in the service layer.
 
 ```javascript
 import FeatureService from "../services/FeatureService.js";
@@ -398,7 +435,22 @@ Open: [app.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvaill
 
 ---
 
-## Step 8: Map the OpenAPI schemas dynamically
+## Step 8: Initialize Required System Data (Optional)
+
+If your feature introduces mandatory system records that must exist before the API handles traffic (e.g. a default page, a default configuration), register their initialization in [services/BootstrapService.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvailler/trouvailler-api/services/BootstrapService.js) instead of creating them lazily during request handling.
+
+BootstrapService runs in `index.js` after a successful MongoDB connection and before the server starts listening:
+
+```javascript
+async run() {
+  await this.ensureHomePageExists();
+  // Add your initialization call here
+}
+```
+
+---
+
+## Step 9: Map the OpenAPI schemas dynamically
 
 Open: [utils/swagger.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvailler/trouvailler-api/utils/swagger.js)
 
@@ -415,7 +467,7 @@ Open: [utils/swagger.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects
 
 ---
 
-## Step 9: Rebuild the Codebase graphs
+## Step 10: Rebuild the Codebase graphs
 
 Run the following command in `trouvailler-api/` to refresh the index/graph artifacts:
 

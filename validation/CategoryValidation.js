@@ -3,6 +3,12 @@ import { APPLIES_TO_VALUES } from "../utils/constants.js";
 
 const appliesToSchema = z.enum(APPLIES_TO_VALUES);
 
+const seoValidationSchema = z.object({
+  title: z.string().trim().optional().default(""),
+  description: z.string().trim().optional().default(""),
+  keywords: z.string().trim().optional().default(""),
+}).optional();
+
 const baseCategorySchema = z.object({
   name: z.string().trim().min(1, "Category name is required"),
   description: z.string().trim().min(1, "Category description is required"),
@@ -11,6 +17,7 @@ const baseCategorySchema = z.object({
     .array(appliesToSchema)
     .min(1, "At least one target (package or location) must be selected"),
   isActive: z.boolean().default(true),
+  seo: seoValidationSchema,
 });
 
 export const createCategorySchema = baseCategorySchema;

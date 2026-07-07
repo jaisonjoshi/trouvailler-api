@@ -8,6 +8,11 @@ import {
 } from "../validation/PackageValidation.js";
 import { createCategorySchema } from "../validation/CategoryValidation.js";
 import { createLocationSchema } from "../validation/LocationValidation.js";
+import { createLocationSectionSchema } from "../validation/LocationSectionValidation.js";
+import { createCategorySectionSchema } from "../validation/CategorySectionValidation.js";
+import { createPackageSectionSchema } from "../validation/PackageSectionValidation.js";
+import { createPageSchema } from "../validation/PageValidation.js";
+import { createTicketSchema } from "../validation/TicketValidation.js";
 import { PACKAGE_STATUS_VALUES } from "./constants.js";
 
 const options = {
@@ -55,6 +60,21 @@ swaggerSpec.components.schemas.Location = z.toJSONSchema(createLocationSchema, {
   target: "openapi-3.0",
 });
 swaggerSpec.components.schemas.DeleteMediaRequest = z.toJSONSchema(deleteMediaSchema, {
+  target: "openapi-3.0",
+});
+swaggerSpec.components.schemas.LocationSection = z.toJSONSchema(createLocationSectionSchema, {
+  target: "openapi-3.0",
+});
+swaggerSpec.components.schemas.CategorySection = z.toJSONSchema(createCategorySectionSchema, {
+  target: "openapi-3.0",
+});
+swaggerSpec.components.schemas.PackageSection = z.toJSONSchema(createPackageSectionSchema, {
+  target: "openapi-3.0",
+});
+swaggerSpec.components.schemas.Page = z.toJSONSchema(createPageSchema, {
+  target: "openapi-3.0",
+});
+swaggerSpec.components.schemas.Ticket = z.toJSONSchema(createTicketSchema, {
   target: "openapi-3.0",
 });
 

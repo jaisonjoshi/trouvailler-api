@@ -18,10 +18,16 @@ class PackageController {
           : undefined,
         status: req.query.status,
         search: req.query.search,
+        minPrice: req.query.minPrice,
+        maxPrice: req.query.maxPrice,
+        minDays: req.query.minDays,
+        maxDays: req.query.maxDays,
       };
       const options = {
         sortBy: req.query.sortBy,
         sortOrder: req.query.sortOrder,
+        limit: req.query.limit,
+        skip: req.query.skip,
       };
       const packages = await PackageService.getAllPackages(filters, options);
       res.status(200).json(packages);
@@ -45,6 +51,16 @@ class PackageController {
       const { slug } = req.params;
       const pkg = await PackageService.getPackageBySlug(slug);
       res.status(200).json(pkg);
+    } catch (err) {
+      next(err);
+    }
+  }
+
+  async getRelated(req, res, next) {
+    try {
+      const { idOrSlug } = req.params;
+      const related = await PackageService.getRelatedPackages(idOrSlug);
+      res.status(200).json(related);
     } catch (err) {
       next(err);
     }

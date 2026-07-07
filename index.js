@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import app from "./app.js";
+import BootstrapService from "./services/BootstrapService.js";
 
 dotenv.config();
 
@@ -15,7 +16,8 @@ if (!MONGO_URI) {
 
 mongoose
   .connect(MONGO_URI)
-  .then(() => {
+  .then(async () => {
+    await BootstrapService.run();
     app.listen(PORT, HOST, () => {
       // eslint-disable-next-line no-console
       console.log("========================================");

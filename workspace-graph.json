@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-26T09:09:01.882Z",
+  "generatedAt": "2026-07-07T07:45:31.968Z",
   "project": "trouvailler-admin",
   "version": "1.0",
-  "sourceCount": 117,
-  "symbolCount": 219,
-  "edgeCount": 1090,
+  "sourceCount": 212,
+  "symbolCount": 482,
+  "edgeCount": 2209,
   "projects": {
     "trouvailler-admin": {
       "folders": [
@@ -19,11 +19,21 @@
         "admin/src/utils",
         "admin/src/components/ui",
         "admin/src/pages/categories",
+        "admin/src/pages/category-sections",
+        "admin/src/pages/location-sections",
         "admin/src/pages/locations",
+        "admin/src/pages/package-sections",
         "admin/src/pages/packages",
+        "admin/src/pages/pages",
+        "admin/src/pages/tickets",
         "admin/src/routes/categories",
+        "admin/src/routes/category-sections",
+        "admin/src/routes/location-sections",
         "admin/src/routes/locations",
+        "admin/src/routes/package-sections",
         "admin/src/routes/packages",
+        "admin/src/routes/pages",
+        "admin/src/routes/tickets",
         "admin/src/pages/categories/components",
         "admin/src/pages/categories/form",
         "admin/src/pages/categories/services",
@@ -36,10 +46,18 @@
         "admin/src/pages/packages/services",
         "admin/src/pages/packages/utils"
       ],
-      "dependencies": ["trouvailler-api"]
+      "dependencies": [
+        "trouvailler-api"
+      ]
     },
     "trouvailler-api": {
-      "folders": ["api/routes", "api/controllers", "api/services", "api/validation", "api/models"],
+      "folders": [
+        "api/routes",
+        "api/controllers",
+        "api/services",
+        "api/validation",
+        "api/models"
+      ],
       "dependencies": []
     },
     "trouvailler-frontend": {
@@ -47,11 +65,16 @@
         "frontend/app",
         "frontend/components",
         "frontend/types",
-        "frontend/app/destinations",
+        "frontend/app/categories",
+        "frontend/components/icons",
+        "frontend/app/categories/[slug]",
         "frontend/app/destinations/[id]",
-        "frontend/app/packages/[id]"
+        "frontend/app/packages/[id]",
+        "frontend/app/packages/[id]/components"
       ],
-      "dependencies": ["trouvailler-api"]
+      "dependencies": [
+        "trouvailler-api"
+      ]
     }
   },
   "moduleEdges": [
@@ -67,12 +90,37 @@
     },
     {
       "source": "admin:admin/src",
+      "target": "admin:admin/src/routes/tickets",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src",
+      "target": "admin:admin/src/routes/pages",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src",
       "target": "admin:admin/src/routes/packages",
       "type": "imports"
     },
     {
       "source": "admin:admin/src",
+      "target": "admin:admin/src/routes/package-sections",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src",
       "target": "admin:admin/src/routes/locations",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src",
+      "target": "admin:admin/src/routes/location-sections",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src",
+      "target": "admin:admin/src/routes/category-sections",
       "type": "imports"
     },
     {
@@ -116,6 +164,11 @@
       "type": "imports"
     },
     {
+      "source": "api:api/services",
+      "target": "api:api/models",
+      "type": "imports"
+    },
+    {
       "source": "api:api/validation",
       "target": "api:api/utils",
       "type": "imports"
@@ -128,6 +181,11 @@
     {
       "source": "admin:admin/src/components",
       "target": "admin:admin/src/contexts",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/components",
+      "target": "admin:admin/src/components/ui",
       "type": "imports"
     },
     {
@@ -182,7 +240,32 @@
     },
     {
       "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/components",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
       "target": "admin:admin/src/types",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/category-sections",
+      "target": "admin:admin/src/hooks",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/category-sections",
+      "target": "admin:admin/src/components/ui",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/location-sections",
+      "target": "admin:admin/src/hooks",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/location-sections",
+      "target": "admin:admin/src/components/ui",
       "type": "imports"
     },
     {
@@ -218,6 +301,21 @@
     {
       "source": "admin:admin/src/pages/locations",
       "target": "admin:admin/src/types",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/components",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/package-sections",
+      "target": "admin:admin/src/hooks",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/package-sections",
+      "target": "admin:admin/src/components/ui",
       "type": "imports"
     },
     {
@@ -261,8 +359,53 @@
       "type": "imports"
     },
     {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/components",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/pages",
+      "target": "admin:admin/src/hooks",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/pages",
+      "target": "admin:admin/src/components/ui",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/pages",
+      "target": "admin:admin/src/types",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/tickets",
+      "target": "admin:admin/src/hooks",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/tickets",
+      "target": "admin:admin/src/types",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/pages/tickets",
+      "target": "admin:admin/src/components/ui",
+      "type": "imports"
+    },
+    {
       "source": "admin:admin/src/routes/categories",
       "target": "admin:admin/src/pages/categories",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/routes/category-sections",
+      "target": "admin:admin/src/pages/category-sections",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/routes/location-sections",
+      "target": "admin:admin/src/pages/location-sections",
       "type": "imports"
     },
     {
@@ -271,8 +414,33 @@
       "type": "imports"
     },
     {
+      "source": "admin:admin/src/routes/package-sections",
+      "target": "admin:admin/src/pages/package-sections",
+      "type": "imports"
+    },
+    {
       "source": "admin:admin/src/routes/packages",
       "target": "admin:admin/src/pages/packages",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/routes/pages",
+      "target": "admin:admin/src/pages/pages",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/routes/pages",
+      "target": "admin:admin/src/hooks",
+      "type": "imports"
+    },
+    {
+      "source": "admin:admin/src/routes/tickets",
+      "target": "admin:admin/src/pages/tickets",
+      "type": "imports"
+    },
+    {
+      "source": "frontend:frontend/app/packages/[id]",
+      "target": "frontend:frontend/app/packages/[id]/components",
       "type": "imports"
     },
     {
@@ -426,6 +594,21 @@
       "type": "references"
     },
     {
+      "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/components",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/components",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/components",
+      "type": "references"
+    },
+    {
       "source": "admin:admin/src/components",
       "target": "admin:admin/src/contexts",
       "type": "references"
@@ -451,6 +634,11 @@
       "type": "references"
     },
     {
+      "source": "admin:admin/src/pages/category-sections",
+      "target": "admin:admin/src/hooks",
+      "type": "references"
+    },
+    {
       "source": "admin:admin/src/pages/locations",
       "target": "admin:admin/src/hooks",
       "type": "references"
@@ -462,6 +650,31 @@
     },
     {
       "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/hooks",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/pages",
+      "target": "admin:admin/src/hooks",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/location-sections",
+      "target": "admin:admin/src/hooks",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/package-sections",
+      "target": "admin:admin/src/hooks",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/routes/pages",
+      "target": "admin:admin/src/hooks",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/tickets",
       "target": "admin:admin/src/hooks",
       "type": "references"
     },
@@ -481,6 +694,16 @@
       "type": "references"
     },
     {
+      "source": "admin:admin/src/pages/category-sections",
+      "target": "admin:admin/src/components/ui",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/location-sections",
+      "target": "admin:admin/src/components/ui",
+      "type": "references"
+    },
+    {
       "source": "admin:admin/src/pages/locations",
       "target": "admin:admin/src/components/ui",
       "type": "references"
@@ -491,12 +714,27 @@
       "type": "references"
     },
     {
+      "source": "admin:admin/src/pages/package-sections",
+      "target": "admin:admin/src/components/ui",
+      "type": "references"
+    },
+    {
       "source": "admin:admin/src/pages/packages",
       "target": "admin:admin/src/components/ui",
       "type": "references"
     },
     {
       "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/components/ui",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/pages",
+      "target": "admin:admin/src/components/ui",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/tickets",
       "target": "admin:admin/src/components/ui",
       "type": "references"
     },
@@ -537,6 +775,11 @@
     },
     {
       "source": "admin:admin/src/pages/categories",
+      "target": "admin:admin/src/components",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/pages/categories",
       "target": "admin:admin/src/pages/packages/components",
       "type": "renders"
     },
@@ -548,6 +791,46 @@
     {
       "source": "admin:admin/src/pages/categories/form",
       "target": "admin:admin/src/pages/categories",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/category-sections",
+      "target": "admin:admin/src/hooks",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/category-sections",
+      "target": "admin:admin/src/hooks",
+      "type": "uses_hook"
+    },
+    {
+      "source": "admin:admin/src/pages/category-sections",
+      "target": "admin:admin/src/components/ui",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/routes/category-sections",
+      "target": "admin:admin/src/pages/category-sections",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/location-sections",
+      "target": "admin:admin/src/hooks",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/location-sections",
+      "target": "admin:admin/src/hooks",
+      "type": "uses_hook"
+    },
+    {
+      "source": "admin:admin/src/pages/location-sections",
+      "target": "admin:admin/src/components/ui",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/routes/location-sections",
+      "target": "admin:admin/src/pages/location-sections",
       "type": "references"
     },
     {
@@ -582,6 +865,11 @@
     },
     {
       "source": "admin:admin/src/pages/locations",
+      "target": "admin:admin/src/components",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/pages/locations",
       "target": "admin:admin/src/pages/packages/components",
       "type": "renders"
     },
@@ -598,6 +886,31 @@
     {
       "source": "admin:admin/src/pages/locations/form",
       "target": "admin:admin/src/pages/locations",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/package-sections",
+      "target": "admin:admin/src/hooks",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/package-sections",
+      "target": "admin:admin/src/hooks",
+      "type": "uses_hook"
+    },
+    {
+      "source": "admin:admin/src/pages/package-sections",
+      "target": "admin:admin/src/components/ui",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/routes/package-sections",
+      "target": "admin:admin/src/pages/package-sections",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/pages/packages",
       "type": "references"
     },
     {
@@ -651,6 +964,11 @@
       "type": "renders"
     },
     {
+      "source": "admin:admin/src/pages/packages",
+      "target": "admin:admin/src/components",
+      "type": "renders"
+    },
+    {
       "source": "admin:admin/src/routes/packages",
       "target": "admin:admin/src/pages/packages",
       "type": "references"
@@ -659,6 +977,61 @@
       "source": "admin:admin/src/pages/packages/form",
       "target": "admin:admin/src/pages/packages",
       "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/pages",
+      "target": "admin:admin/src/hooks",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/pages",
+      "target": "admin:admin/src/hooks",
+      "type": "uses_hook"
+    },
+    {
+      "source": "admin:admin/src/pages/pages",
+      "target": "admin:admin/src/components/ui",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/routes/pages",
+      "target": "admin:admin/src/pages/pages",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/pages/tickets",
+      "target": "admin:admin/src/hooks",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/tickets",
+      "target": "admin:admin/src/hooks",
+      "type": "uses_hook"
+    },
+    {
+      "source": "admin:admin/src/pages/tickets",
+      "target": "admin:admin/src/components/ui",
+      "type": "renders"
+    },
+    {
+      "source": "admin:admin/src/routes/tickets",
+      "target": "admin:admin/src/pages/tickets",
+      "type": "references"
+    },
+    {
+      "source": "admin:admin/src/routes/pages",
+      "target": "admin:admin/src/hooks",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/routes/pages",
+      "target": "admin:admin/src/hooks",
+      "type": "uses_hook"
+    },
+    {
+      "source": "frontend:frontend/app/packages/[id]",
+      "target": "frontend:frontend/app/packages/[id]/components",
+      "type": "renders"
     },
     {
       "source": "admin:admin/src/pages/categories/components",
@@ -742,6 +1115,11 @@
     },
     {
       "source": "admin:admin/src/pages/packages/components",
+      "target": "admin:admin/src/pages/packages",
+      "type": "calls"
+    },
+    {
+      "source": "admin:admin/src/pages/packages/components",
       "target": "admin:admin/src/utils",
       "type": "calls"
     },
@@ -768,6 +1146,11 @@
     {
       "source": "admin:admin/src/pages/packages",
       "target": "admin:admin/src/pages/packages/utils",
+      "type": "references"
+    },
+    {
+      "source": "frontend:frontend/app/packages/[id]",
+      "target": "frontend:frontend/app/packages/[id]/components",
       "type": "references"
     }
   ]

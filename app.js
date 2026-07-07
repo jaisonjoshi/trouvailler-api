@@ -8,6 +8,12 @@ import notFoundHandler from "./middleware/notFoundHandler.js";
 import packageRoutes from "./routes/PackageRoutes.js";
 import categoryRoutes from "./routes/CategoryRoutes.js";
 import locationRoutes from "./routes/LocationRoutes.js";
+import packageSectionRoutes from "./routes/PackageSectionRoutes.js";
+import pageRoutes from "./routes/PageRoutes.js";
+import locationSectionRoutes from "./routes/LocationSectionRoutes.js";
+import categorySectionRoutes from "./routes/CategorySectionRoutes.js";
+import searchRoutes from "./routes/SearchRoutes.js";
+import ticketRoutes from "./routes/TicketRoutes.js";
 
 const app = express();
 
@@ -37,6 +43,12 @@ app.use(
 app.use("/api/packages", packageRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/locations", locationRoutes);
+app.use("/api/package-sections", packageSectionRoutes);
+app.use("/api/pages", pageRoutes);
+app.use("/api/location-sections", locationSectionRoutes);
+app.use("/api/category-sections", categorySectionRoutes);
+app.use("/api/search", searchRoutes);
+app.use("/api/tickets", ticketRoutes);
 
 app.get("/", (req, res) => {
   res.json({

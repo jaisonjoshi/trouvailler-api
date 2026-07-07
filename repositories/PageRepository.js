@@ -1,6 +1,6 @@
-import Package from "../models/Package.js";
+import Page from "../models/Page.js";
 
-class PackageRepository {
+class PageRepository {
   findAll(filters = {}, options = {}) {
     const sortBy = options.sortBy || "createdAt";
     const sortOrder = options.sortOrder === "asc" ? 1 : -1;
@@ -11,16 +11,7 @@ class PackageRepository {
     const query = { isDeleted: { $ne: true } };
     Object.assign(query, filters);
 
-    let dbQuery = Package.find(query).sort(sortOption);
-
-    if (options.limit) {
-      dbQuery = dbQuery.limit(Number(options.limit));
-    }
-    if (options.skip) {
-      dbQuery = dbQuery.skip(Number(options.skip));
-    }
-
-    return dbQuery;
+    return Page.find(query).sort(sortOption);
   }
 
   findById(id, includeDeleted = false) {
@@ -28,28 +19,24 @@ class PackageRepository {
     if (!includeDeleted) {
       query.isDeleted = { $ne: true };
     }
-    return Package.findOne(query);
-  }
-
-  findByIds(ids) {
-    return Package.find({ _id: { $in: ids }, isDeleted: { $ne: true } });
+    return Page.findOne(query);
   }
 
   findBySlug(slug, includeDeleted = false) {
-    const query = { slug };
+    const query = { slug: slug.toLowerCase() };
     if (!includeDeleted) {
       query.isDeleted = { $ne: true };
     }
-    return Package.findOne(query);
+    return Page.findOne(query);
   }
 
   create(data) {
-    const newPackage = new Package(data);
-    return newPackage.save();
+    const newPage = new Page(data);
+    return newPage.save();
   }
 
   update(id, data) {
-    return Package.findOneAndUpdate(
+    return Page.findOneAndUpdate(
       { _id: id, isDeleted: { $ne: true } },
       { $set: data },
       { new: true, runValidators: true },
@@ -57,7 +44,7 @@ class PackageRepository {
   }
 
   delete(id) {
-    return Package.findOneAndUpdate(
+    return Page.findOneAndUpdate(
       { _id: id, isDeleted: { $ne: true } },
       { $set: { isDeleted: true } },
       { new: true },
@@ -65,4 +52,4 @@ class PackageRepository {
   }
 }
 
-export default new PackageRepository();
+export default new PageRepository();

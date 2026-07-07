@@ -24,9 +24,23 @@ graph TD
 | **Routing**    | Maps HTTP paths/methods to Controller actions.             | `routes/`       | [CategoryRoutes.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvailler/trouvailler-api/routes/CategoryRoutes.js)               |
 | **Validation** | Zod schemas describing and validating JSON payloads.       | `validation/`   | [CategoryValidation.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvailler/trouvailler-api/validation/CategoryValidation.js)   |
 | **Controller** | Handles HTTP req/res, extracts params, calls Services.     | `controllers/`  | [CategoryController.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvailler/trouvailler-api/controllers/CategoryController.js)  |
-| **Service**    | Implements core business logic, checks unique constraints. | `services/`     | [CategoryService.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvailler/trouvailler-api/services/CategoryService.js)           |
-| **Repository** | Database query abstraction. Isolates Mongoose queries.     | `repositories/` | [CategoryRepository.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvailler/trouvailler-api/repositories/CategoryRepository.js) |
+| **Service**    | Business rules, orchestration, uniqueness checks, cross-entity validation, algorithm logic, coordinates repositories. | `services/`     | [CategoryService.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvailler/trouvailler-api/services/CategoryService.js)           |
+| **Repository** | Persistence logic only. Isolates Mongoose queries. Contains no business rules or request validation. | `repositories/` | [CategoryRepository.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvailler/trouvailler-api/repositories/CategoryRepository.js) |
 | **Model**      | Mongoose Schema definition defining MongoDB collections.   | `models/`       | [Category.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvailler/trouvailler-api/models/Category.js)                           |
+
+### 1.1 Application Startup Flow
+
+Application initialization follows a separate flow that runs once at startup, before any requests are processed:
+
+```mermaid
+graph TD
+    Start[Application Start] --> DB[MongoDB Connection]
+    DB --> BS[BootstrapService.run&#40;&#41;]
+    BS --> Ensure[Ensure Home Page Exists]
+    Ensure --> Server[Express Starts Accepting Requests]
+```
+
+This ensures required system data exists before the API begins serving traffic, eliminating lazy initialization side effects from request handlers.
 
 ---
 
@@ -69,18 +83,13 @@ async create(req, res, next) {
 
 ### Step D: Service / Business Logic
 
-The [CategoryService.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvailler/trouvailler-api/services/CategoryService.js) runs Zod `.parse()` again for safety (defense-in-depth), performs database uniqueness checks, and handles errors:
+The [CategoryService.js](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvailler/trouvailler-api/services/CategoryService.js) orchestrates business rules, validates data (often running Zod `.parse()` as defense-in-depth), performs uniqueness checks, and coordinates repositories:
 
 ```javascript
 async createCategory(data) {
   const validatedData = createCategorySchema.parse(data);
-  const existing = await CategoryRepository.findByName(validatedData.name);
-  if (existing) {
-    const error = new Error("Category name already exists");
-    error.statusCode = 400;
-    throw error;
-  }
-  return await CategoryRepository.create(validatedData);
+  await this._ensureUniqueName(validatedData.name);
+  return CategoryRepository.create(validatedData);
 }
 ```
 
@@ -110,9 +119,44 @@ const categorySchema = new mongoose.Schema(
 );
 ```
 
+### 2.7 Service Conventions
+
+Services across the project follow consistent patterns:
+
+- **Public orchestration methods** (`create`, `update`, `getAll`, `getById`, `delete`) accept plain data, delegate to repositories, and handle errors.
+- **Private helper methods** (prefixed with `_`) encapsulate reusable logic:
+  - `_ensureUnique...` — validates no duplicate slug/name/title exists before creation or update.
+  - `_ensure...Exist` — validates that referenced entities exist before persisting (e.g. packages in a section).
+  - `_apply...Constraint` — applies derived field values (e.g. auto-disable a section when its entity list is empty).
+- Repositories are called only from services. Controllers never interact with repositories directly.
+- Controllers remain thin — they extract request data, call one service method, and return the response.
+- Most services export a singleton (`export default new ServiceName()`) since they are stateless.
+
 ---
 
-## 3. Dynamic Swagger/OpenAPI Spec Conversion
+## 3. Startup Initialization
+
+### BootstrapService
+
+[`services/BootstrapService.js`](file:///Users/jaisonjoshi/Documents/Personal%20Projects/Trouvailler/trouvailler-api/services/BootstrapService.js) handles one-time application initialization tasks. Its responsibilities are:
+
+- **System data seeding** — Ensures required system records exist. Currently this is the Home page.
+- **Idempotency** — If a record already exists (e.g. from a previous startup), BootstrapService skips creation safely.
+
+The `run()` method is called in `index.js` immediately after `mongoose.connect()` resolves and before `app.listen()` executes:
+
+```javascript
+mongoose.connect(MONGO_URI).then(async () => {
+  await BootstrapService.run();
+  app.listen(PORT, HOST, () => { ... });
+});
+```
+
+Because initialization happens at startup, request handlers no longer create database records as a side effect.
+
+---
+
+## 4. Dynamic Swagger/OpenAPI Spec Conversion
 
 API reference documentation is automatically generated:
 
@@ -127,7 +171,7 @@ API reference documentation is automatically generated:
 
 ---
 
-## 4. Checklist for Adding New Features
+## 5. Checklist for Adding New Features
 
 When adding new routes (e.g. `Destinations`), follow these steps:
 
@@ -140,3 +184,4 @@ When adding new routes (e.g. `Destinations`), follow these steps:
 7. **Mount**: Mount the router in `app.js` using `app.use()`.
 8. **Swagger**: Export and map Zod schemas in `utils/swagger.js`.
 9. **Regenerate Graphs**: Run `npm run graph` inside the `trouvailler-api` workspace directory to index the new codebase files.
+10. **BootstrapService**: If the feature introduces required system data (e.g. a default page or configuration record), register its initialization in `services/BootstrapService.js`.
