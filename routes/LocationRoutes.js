@@ -80,6 +80,7 @@ router.post("/", validateBody(createLocationSchema), LocationController.create);
  *         description: Location not found
  */
 router.get("/slug/:slug", LocationController.getBySlug);
+router.get("/:idOrSlug/related", LocationController.getRelated);
 
 /**
  * @openapi
